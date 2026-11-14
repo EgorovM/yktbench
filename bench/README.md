@@ -18,7 +18,7 @@ git clone https://github.com/daanaea/ykt_bench.git
 ```
 
 ```bash
-cd ykt_bench && git checkout bench-eval
+cd ykt_bench
 ```
 
 ```bash
