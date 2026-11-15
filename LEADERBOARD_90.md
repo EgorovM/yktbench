@@ -2,7 +2,7 @@
 
 ## vals_90
 
-Snapshot: 2026-11-15T22:29:29+00:00. Scores are percentages.
+Snapshot: 2026-11-15T22:44:55+00:00. Scores are percentages.
 
 **Evaluation is in progress.** Partial scores use graded questions only;
 their denominators differ and they are not final rankings. API failures
@@ -15,15 +15,15 @@ Bold accuracy marks the best completed run; bold token usage marks the largest o
 | GPT-6 Astra | OpenAI | 41.1 | 61.2 | 45.5 (11/11) | 44.0 (25/25) | 39.3 (28/28) | 37.5 (24/24) | 90/90 | 21775 | 0 | Complete |
 | GPT-6.1 Sol **(judge model)** | OpenAI | 38.9 | 58.8 | 45.5 (11/11) | 36.0 (25/25) | 50.0 (28/28) | 25.0 (24/24) | 90/90 | 28446 | 0 | Complete |
 | DeepSeek V4.1 Flash | DeepSeek | 25.6 | 42.3 | 45.5 (11/11) | 20.0 (25/25) | 32.1 (28/28) | 16.7 (24/24) | 90/90 | 33000 | 0 | Complete |
+| Grok 4.7 | SpaceX (xAI) | 23.3 | 32.3 | 18.2 (11/11) | 32.0 (25/25) | 28.6 (28/28) | 12.5 (24/24) | 90/90 | **51390** | 26 | Complete |
 | Inkling 2 Small | Thinking Machines Lab | 22.2 | 34.5 | 27.3 (11/11) | 16.0 (25/25) | 32.1 (28/28) | 16.7 (24/24) | 90/90 | 33000 | 0 | Complete |
 | GLM 5.3 | Z.ai | 14.4 | 21.9 | 18.2 (11/11) | 12.0 (25/25) | 21.4 (28/28) | 8.3 (24/24) | 90/90 | 33000 | 0 | Complete |
 | GigaChat 3.5 Ultra | Sber | 6.7 | 14.2 | 9.1 (11/11) | 12.0 (25/25) | 3.6 (28/28) | 4.2 (24/24) | 90/90 | 900 | 0 | Complete |
 | Qwen3.8 Max | Alibaba | 100.0 | 100.0 | — (0/11) | 100.0 (1/25) | — (0/28) | — (0/24) | 1/90 | — | — | API errors |
 | Inkling | Thinking Machines Lab | 42.9 | 68.6 | 0.0 (1/11) | 100.0 (2/25) | 33.3 (3/28) | 0.0 (1/24) | 7/90 | — | — | API errors |
 | DeepSeek V4 Pro | DeepSeek | 26.1 | 37.2 | 0.0 (1/11) | 20.0 (10/25) | 25.0 (8/28) | 66.7 (3/24) | 23/90 | — | — | API errors |
-| Grok 4.7 | SpaceX (xAI) | 23.6 | 32.6 | 18.2 (11/11) | 32.0 (25/25) | 29.6 (27/28) | 12.5 (24/24) | 89/90 | **41172** | 3 | Running |
 | Qwen3.8 Flash | Alibaba | 18.9 | 22.6 | 25.0 (4/11) | 30.8 (13/25) | 9.1 (11/28) | 11.1 (9/24) | 37/90 | — | — | API errors |
-| Qwen3.8 27B | Alibaba | 12.5 | 14.1 | — (0/11) | 0.0 (1/25) | 0.0 (3/28) | 25.0 (4/24) | 8/90 | — | — | Running |
+| Qwen3.8 27B | Alibaba | 7.1 | 9.2 | — (0/11) | 0.0 (16/25) | 10.7 (28/28) | 8.3 (24/24) | 70/90 | — | — | Running |
 | Gemma 4 31B | Google | 4.5 | 6.0 | 0.0 (11/11) | 10.0 (20/25) | 4.8 (21/28) | 0.0 (13/24) | 66/90 | — | — | API errors |
 | Gemini 4 Argon | Google | — | — | — (0/11) | — (0/25) | — (0/28) | — (0/24) | 0/90 | — | — | API errors |
 

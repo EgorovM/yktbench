@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15T22:29:29+00:00",
+  "updated_utc": "2026-11-15T22:44:55+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -1877,18 +1877,22 @@
       }
     },
     {
-      "graded": 89,
+      "graded": 90,
       "questions": 90,
       "correct": 21.0,
-      "accuracy": 23.59550561797753,
-      "partial": 32.64357053682897,
+      "accuracy": 23.333333333333332,
+      "partial": 32.28086419753087,
       "model": "grok-4.7",
       "run_id": "35066cb0-074c-43c1-8942-743618bea169",
       "run_ids": [
         "35066cb0-074c-43c1-8942-743618bea169"
       ],
-      "status": "IN_PROGRESS",
+      "status": "FINISHED",
       "task_rewards": {
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
         "g4p1-L04-011": {
           "reward": 0.0,
           "partial_credit": 0.0
@@ -2248,12 +2252,12 @@
       },
       "model_name": "Grok 4.7",
       "company": "SpaceX (xAI)",
-      "complete": false,
-      "max_output_tokens": 41172,
-      "over_limit": 3,
+      "complete": true,
+      "max_output_tokens": 51390,
+      "over_limit": 26,
       "judge_model": false,
-      "timed_out": 0,
-      "responses_with_usage": 37,
+      "timed_out": 29,
+      "responses_with_usage": 90,
       "grades": {
         "1": {
           "total": 11,
@@ -2267,8 +2271,8 @@
         },
         "3": {
           "total": 28,
-          "graded": 27,
-          "accuracy": 29.62962962962963
+          "graded": 28,
+          "accuracy": 28.571428571428573
         },
         "4": {
           "total": 24,
@@ -3280,11 +3284,11 @@
       }
     },
     {
-      "graded": 8,
+      "graded": 70,
       "questions": 90,
-      "correct": 1.0,
-      "accuracy": 12.5,
-      "partial": 14.0625,
+      "correct": 5.0,
+      "accuracy": 7.142857142857143,
+      "partial": 9.158163265306122,
       "model": "qwen-3.8-27b",
       "run_id": "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
       "run_ids": [
@@ -3306,6 +3310,254 @@
           "partial_credit": 0.0
         },
         "g3p1-L17-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L30-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L17-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p1-L33-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.2857142857142857
+        },
+        "g3p2-L05-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L31-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L26-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L09-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-003": {
           "reward": 0.0,
           "partial_credit": 0.0
         },
@@ -3340,18 +3592,18 @@
         },
         "2": {
           "total": 25,
-          "graded": 1,
+          "graded": 16,
           "accuracy": 0.0
         },
         "3": {
           "total": 28,
-          "graded": 3,
-          "accuracy": 0.0
+          "graded": 28,
+          "accuracy": 10.714285714285714
         },
         "4": {
           "total": 24,
-          "graded": 4,
-          "accuracy": 25.0
+          "graded": 24,
+          "accuracy": 8.333333333333334
         }
       }
     },
