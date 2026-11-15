@@ -7,6 +7,7 @@ import sys
 import tomllib
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from providers import make_provider
 
 

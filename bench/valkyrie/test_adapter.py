@@ -1,4 +1,5 @@
 import json
+import subprocess
 import sys
 import tempfile
 import tomllib
@@ -61,6 +62,13 @@ class AdapterTests(unittest.TestCase):
         self.assertEqual(native, grade.judge_prompt(item, "candidate"))
         self.assertIn(item["eval_instruction"], native)
         self.assertNotIn(item["eval_instruction"], build.ykt_eval.solver_prompt(item))
+
+    def test_agent_imports_bundle_modules_with_python_safe_path(self):
+        out = self.root / "isolated"
+        build.build(self.data, self.system, out)
+        result = subprocess.run([sys.executable, "-I", str(out / "agent/agent.py"), "--help"],
+                                text=True, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_visual_items_and_duplicate_ids_are_rejected(self):
         for rows in ([self.items[0], self.items[0]], [dict(self.items[0], needs_visual=True)]):

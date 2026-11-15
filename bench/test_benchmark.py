@@ -52,6 +52,13 @@ class DatasetTests(unittest.TestCase):
         passage = next(it for it in self.items if it["id"] == "g2p2-L33-005")
         self.assertIn("Икки уол", passage["answer"])
 
+    def test_exercise_grading_instructions_survive_normalization(self):
+        row = dict(self.rows[0], eval_instruction="  Accept equivalent Sakha words.  ")
+        item = dataset.build([row], version="vals_90")[0]
+        self.assertEqual(item["eval_instruction"], "Accept equivalent Sakha words.")
+        self.assertIn(item["eval_instruction"], evaluator.judge_prompt(item, "answer"))
+        self.assertNotIn(item["eval_instruction"], evaluator.solver_prompt(item))
+
     def test_legacy_build_reproduces_frozen_v0(self):
         rebuilt = dataset.build(dataset.read_xlsx(ROOT / "data" / "sample.xlsx"), version="v0")
         frozen = [json.loads(line) for line in (ROOT / "bench" / "data" / "ykt_sample.jsonl").read_text(encoding="utf-8").splitlines()]
