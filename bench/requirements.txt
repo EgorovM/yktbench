@@ -1,3 +1,4 @@
 anthropic>=2.8,<3
 openai>=3.51,<4
+python-dotenv>=1.0,<2
 tomli>=2.0; python_version < "3.11"

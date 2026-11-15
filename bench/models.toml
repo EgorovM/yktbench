@@ -2,17 +2,19 @@
 # The table name is what you pass on the command line.
 #
 # provider:
-#   anthropic         Anthropic Messages API (key: ANTHROPIC_API_KEY, or an `ant auth login` profile)
+#   anthropic         Anthropic Messages API (key from api_key_env)
 #   openai_responses  OpenAI Responses API (key from api_key_env)
 #   openai_chat       any OpenAI-compatible Chat Completions endpoint, e.g. Z.ai (key from api_key_env)
 #   mock              offline stand-in for testing the pipeline; makes no network calls
 #
-# Every model runs at the same reasoning effort ("high") so the comparison is fair.
-# Change it per model if you want to sweep effort.
+# Request high reasoning effort where supported. Effort levels aren't equivalent
+# across vendors. Gemma uses its default non-thinking mode: thinking exhausted
+# its 16,384-token output ceiling before producing an answer in the smoke test.
 
 [models."fable-5.2"]
 provider = "anthropic"
 model = "claude-fable-5-2"
+api_key_env = "ANTHROPIC_API_KEY"
 effort = "high"        # thinking is always on for Fable 5.2; effort sets how much
 max_tokens = 32000
 # Server-side refusal fallback: if Fable declines, the API re-runs the request on another
@@ -22,12 +24,11 @@ fallbacks = true
 
 [models."glm-5.3"]
 provider = "openai_chat"
-model = "glm-5.3"
-base_url = "https://api.z.ai/api/paas/v4/"   # GLM Coding Plan keys use https://api.z.ai/api/coding/paas/v4/
-api_key_env = "ZAI_API_KEY"
+model = "z-ai/glm-5.3"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
 max_tokens = 32000
-# GLM-5.3 always reasons ("disabled" is rejected). reasoning_effort: low | high | max.
-extra_body = { thinking = { type = "enabled" }, reasoning_effort = "high" }
+extra_body = { reasoning = { effort = "high" } }
 
 [models."astra"]
 provider = "openai_responses"
@@ -36,11 +37,109 @@ api_key_env = "OPENAI_API_KEY"
 effort = "high"        # low | medium | high | xhigh | max
 max_tokens = 32000
 
+[models."deepseek-v4"]
+provider = "openai_chat"
+model = "deepseek/deepseek-v4-pro"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 32000
+extra_body = { reasoning = { effort = "high" } }
+
+[models."gemini-4-argon"]
+provider = "openai_chat"
+model = "google/gemini-4-argon"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 32000
+extra_body = { reasoning = { effort = "high" } }
+
+[models."deepseek-v4.1-flash"]
+provider = "openai_chat"
+model = "deepseek/deepseek-v4.1-flash"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 32000
+extra_body = { reasoning = { effort = "high" } }
+
+[models."grok-4.7"]
+provider = "openai_chat"
+model = "x-ai/grok-4.7"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 32000
+extra_body = { reasoning = { effort = "high" } }
+
+[models."gemma-4-31b"]
+provider = "openai_chat"
+model = "google/gemma-4-31b-it"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 16384
+extra_body = { reasoning = { enabled = false } }
+
+[models."inkling-flagship"]
+provider = "openai_chat"
+model = "thinkingmachines/inkling"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 32000
+extra_body = { reasoning = { effort = "high" } }
+
+[models."inkling-2-small"]
+provider = "openai_chat"
+model = "thinkingmachines/inkling-2-small"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 32000
+extra_body = { reasoning = { effort = "high" } }
+
+[models."qwen-3.8-max"]
+provider = "openai_chat"
+model = "qwen/qwen3.8-max-0902"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 32000
+extra_body = { reasoning = { effort = "high" } }
+
+[models."qwen-3.8-27b"]
+provider = "openai_chat"
+model = "qwen/qwen3.8-27b"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 32000
+extra_body = { reasoning = { effort = "high" } }
+
+[models."qwen-3.8-flash"]
+provider = "openai_chat"
+# Official hosted model based on Qwen3.8-Flash-Next; label with the served name.
+model = "qwen/qwen3.8-flash"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 32000
+extra_body = { reasoning = { effort = "high" } }
+
+# Evaluate the judge as a solver with the same budget as other main solvers.
+# Keep its grading configuration below unchanged.
+[models."sol-6.1-eval"]
+provider = "openai_responses"
+model = "gpt-6.1-sol"
+api_key_env = "OPENAI_API_KEY"
+effort = "high"
+max_tokens = 32000
+
 # ---- judges ----
+
+[models."sol-6.1"]
+provider = "openai_responses"
+model = "gpt-6.1-sol"
+api_key_env = "OPENAI_API_KEY"
+effort = "high"
+max_tokens = 16000
 
 [models."opus-5.5"]
 provider = "anthropic"
 model = "claude-opus-5-5"
+api_key_env = "ANTHROPIC_API_KEY"
 effort = "high"        # Opus 5.5 defaults to medium; grading deserves high
 max_tokens = 16000
 fallbacks = true

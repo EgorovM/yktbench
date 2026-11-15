@@ -53,8 +53,11 @@ class AnthropicProvider:
         import anthropic
 
         self.name, self.cfg = name, cfg
-        # No api_key argument: the SDK reads ANTHROPIC_API_KEY or an `ant auth login` profile.
-        self.client = anthropic.Anthropic(max_retries=cfg.get("max_retries", 6))
+        self.client = anthropic.Anthropic(
+            api_key=_api_key(cfg, name),
+            max_retries=cfg.get("max_retries", 6),
+            timeout=cfg.get("timeout", 900),
+        )
 
     def complete(self, system, user, schema=None):
         cfg = self.cfg
@@ -191,7 +194,7 @@ class MockProvider:
         self.name, self.cfg = name, cfg
         from pathlib import Path
 
-        path = Path(__file__).parent / "data" / "ykt_sample.jsonl"
+        path = Path(cfg.get("data", Path(__file__).parent / "data" / "ykt_primary_v1.jsonl"))
         self.items = [json.loads(line) for line in path.open(encoding="utf-8")]
 
     @staticmethod

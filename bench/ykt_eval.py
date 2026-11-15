@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Sakha textbook QA eval: ask models the questions, grade answers with an LLM judge, report accuracy.
 
-  python bench/ykt_eval.py all     --models fable-5.2,glm-5.3,astra --judges opus-5.5
+  python bench/ykt_eval.py all     --models fable-5.2,glm-5.3,astra --judges sol-6.1
   python bench/ykt_eval.py solve   --models fable-5.2,glm-5.3,astra   # ask the models
-  python bench/ykt_eval.py judge   --judges opus-5.5                  # grade the answers
+  python bench/ykt_eval.py judge   --judges sol-6.1                   # grade the answers
   python bench/ykt_eval.py report                                     # tables -> report.md, scores.csv
   python bench/ykt_eval.py preview --id g1-L02-004                    # print the prompts for one item
 
@@ -15,6 +15,7 @@ import argparse
 import csv
 import hashlib
 import json
+import os
 import random
 import re
 import sys
@@ -33,6 +34,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from providers import make_provider  # noqa: E402
 
 BENCH = Path(__file__).resolve().parent
+DEFAULT_DATA = BENCH / "data" / "ykt_primary_v1.jsonl"
+DEFAULT_RUN_DIR = BENCH / "results" / "v1"
 SOLVER_SYSTEM = (BENCH / "prompts" / "solver_system.md").read_text(encoding="utf-8").strip()
 JUDGE_SYSTEM = (BENCH / "prompts" / "judge_system.md").read_text(encoding="utf-8").strip()
 
@@ -142,12 +145,31 @@ def now():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+def validate_run_dataset(run_dir, data):
+    """Reject stale cached answers/grades when a dataset changes under the same IDs."""
+    path = Path(run_dir) / "meta.jsonl"
+    if not path.exists():
+        return
+    expected = sha(Path(data).read_text(encoding="utf-8"))
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        previous = json.loads(line).get("dataset_sha")
+        if previous and previous != expected:
+            sys.exit(
+                f"dataset differs from the one recorded in {path}; use a new --run-dir "
+                "for this dataset, or select the original dataset with --data"
+            )
+
+
 def write_meta(run_dir, command, args, config, names):
+    validate_run_dataset(run_dir, args.data)
     rec = {
         "ts": now(),
         "command": command,
         "argv": sys.argv[1:],
         "dataset_sha": sha(Path(args.data).read_text(encoding="utf-8")),
+        "dataset_file": str(Path(args.data).resolve()),
         "solver_prompt_sha": sha(SOLVER_SYSTEM),
         "judge_prompt_sha": sha(JUDGE_SYSTEM),
         "models": {n: config[n] for n in names},
@@ -355,6 +377,7 @@ def cohen_kappa(a, b):
 def cmd_report(args, config):
     items = load_items(args)
     run_dir = Path(args.run_dir)
+    validate_run_dataset(run_dir, args.data)
     responses = Log(run_dir / "responses.jsonl", ["model", "item_id", "sample"]).latest
     judgments = Log(run_dir / "judgments.jsonl", ["judge", "model", "item_id", "sample"]).latest
     judgments = {k: v for k, v in judgments.items() if not v.get("error")}
@@ -369,6 +392,13 @@ def cmd_report(args, config):
         sys.exit(f"no judgments by {primary!r}; available: {judges}")
     models = sorted({k[0] for k in responses})
     samples = sorted({k[2] for k in responses})
+    versions = ", ".join(sorted({it.get("dataset_version", "v0") for it in items}))
+    judge_model_ids = {config.get(j, {}).get("model") for j in judges}
+
+    def model_label(model):
+        if config.get(model, {}).get("model") in judge_model_ids:
+            return f"{model} (judge model)"
+        return model
 
     lines = [
         "# YKT textbook QA: results",
@@ -376,9 +406,18 @@ def cmd_report(args, config):
         f"Run: `{run_dir}`. Items: {len(items)}. Samples per item: {len(samples)}. "
         f"Judge: **{primary}** ({config.get(primary, {}).get('model', '?')}).",
         "",
+        f"Dataset: **{versions}**, `{Path(args.data).name}` "
+        f"(SHA-256 prefix `{sha(Path(args.data).read_text(encoding='utf-8'))}`).",
+        "",
+        "Solvers that also serve as a judge are marked **(judge model)**; their scores "
+        "under that same model's grading are self-judged.",
+        "",
         "**Accuracy** = all parts of the answer correct. **Partial** = share of parts correct "
         "(numbered sub-answers). Missing or failed answers count as wrong. "
         "95% CI is a bootstrap over items.",
+        "",
+        "Token columns show the configured request limit and API-reported output usage, "
+        "which can include reasoning tokens.",
         "",
     ]
 
@@ -413,9 +452,17 @@ def cmd_report(args, config):
         vals = list(strict.values())
         lo, hi = bootstrap_ci(vals)
         out_tok = [r["output_tokens"] for r in ok if r.get("output_tokens")]
+        requested_limit = config.get(m, {}).get("max_tokens")
+        over_limit = [n for n in out_tok if requested_limit and n > requested_limit]
+        if over_limit:
+            warnings.append(
+                f"{m}: API reported output token usage above requested max_tokens={requested_limit} "
+                f"in {len(over_limit)} answers (maximum {max(over_limit)}). "
+                "Effective total token budgets were not equal across providers."
+            )
         lat = [r["latency_s"] for r in ok if r.get("latency_s")]
         summary_rows.append([
-            m,
+            model_label(m),
             config.get(m, {}).get("model", ""),
             pct(sum(vals) / len(vals)),
             f"{pct(lo)}–{pct(hi)}",
@@ -424,6 +471,9 @@ def cmd_report(args, config):
             sum(1 for r in ok if not r.get("has_marker")),
             sum(1 for r in ok if r.get("fallback_ran")),
             sum(1 for r in ok if r.get("stop_reason") in ("refusal", "max_tokens", "length") or str(r.get("stop_reason", "")).startswith("incomplete")),
+            requested_limit if requested_limit is not None else "",
+            max(out_tok) if out_tok else "",
+            len(over_limit),
             round(sum(out_tok) / len(out_tok)) if out_tok else "",
             f"{sum(lat) / len(lat):.0f}" if lat else "",
         ])
@@ -437,6 +487,11 @@ def cmd_report(args, config):
                     "needs_visual": int(it["needs_visual"]), "sample": s,
                     "reference": it["answer"], "final_answer": r.get("final_answer", ""),
                     "error": r.get("error", ""),
+                    "requested_output_token_limit": requested_limit,
+                    "reported_output_tokens": r.get("output_tokens"),
+                    "output_over_requested_limit": int(bool(
+                        requested_limit and (r.get("output_tokens") or 0) > requested_limit
+                    )),
                 }
                 for j in judges:
                     jr = judgments.get((j, m, it["id"], s))
@@ -448,7 +503,8 @@ def cmd_report(args, config):
     summary_rows.sort(key=lambda r: -float(r[2]))
     lines += ["## Summary", "", table(
         ["model", "model id", "accuracy %", "95% CI", "partial %", "missing", "no ХОРУЙ line",
-         "fallback-served", "refused/truncated", "avg output tok", "avg latency s"],
+         "fallback-served", "refused/truncated", "requested token limit", "max reported output tok",
+         "over-limit answers", "avg output tok", "avg latency s"],
         summary_rows,
     ), ""]
 
@@ -456,7 +512,7 @@ def cmd_report(args, config):
         rows = []
         for m in models:
             strict = item_scores(m, primary, "strict")
-            row = [m]
+            row = [model_label(m)]
             for k in keys:
                 vals = [strict[it["id"]] for it in items if key_fn(it) == k]
                 row.append(f"{pct(sum(vals) / len(vals))} (n={len(vals)})" if vals else "")
@@ -488,7 +544,7 @@ def cmd_report(args, config):
             rows = []
             for m in models:
                 v = list(item_scores(m, j, "strict").values())
-                rows.append([m, pct(sum(v) / len(v))])
+                rows.append([model_label(m), pct(sum(v) / len(v))])
             lines += [f"Accuracy as graded by {j}:", "", table(["model", "accuracy %"], rows), ""]
 
     if warnings:
@@ -519,16 +575,32 @@ def cmd_preview(args, config):
     return 0
 
 
+def cmd_check(args, config):
+    """Check credentials without sending prompts or displaying secrets."""
+    names = list(dict.fromkeys(
+        pick(config, args.models, "models") + pick(config, args.judges, "judges")
+    ))
+    failed = 0
+    for name in names:
+        cfg = config[name]
+        env = cfg.get("api_key_env")
+        present = not env or bool(os.environ.get(env))
+        print(f"{name}: {cfg['model']} via {cfg['provider']} — "
+              + (f"{env} {'set' if present else 'MISSING'}" if env else "no key required"))
+        failed += not present
+    return int(bool(failed))
+
+
 # ---------------------------------------------------------------- main
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("command", choices=["solve", "judge", "report", "all", "preview"])
+    ap.add_argument("command", choices=["solve", "judge", "report", "all", "preview", "check"])
     ap.add_argument("--models", default="", help="comma-separated models to evaluate (names from models.toml)")
-    ap.add_argument("--judges", default="opus-5.5", help="comma-separated judge models (default: opus-5.5)")
+    ap.add_argument("--judges", default="sol-6.1", help="comma-separated judge models (default: sol-6.1)")
     ap.add_argument("--judge", default="", help="report: which judge's grades to headline (default: first)")
-    ap.add_argument("--run-dir", default=str(BENCH / "results" / "main"))
-    ap.add_argument("--data", default=str(BENCH / "data" / "ykt_sample.jsonl"))
+    ap.add_argument("--run-dir", default=str(DEFAULT_RUN_DIR))
+    ap.add_argument("--data", default=str(DEFAULT_DATA))
     ap.add_argument("--config", default=str(BENCH / "models.toml"))
     ap.add_argument("--samples", type=int, default=1, help="answers per item per model (default 1)")
     ap.add_argument("--workers", type=int, default=8, help="parallel API calls (default 8)")
@@ -537,12 +609,19 @@ def main():
     ap.add_argument("--id", default="", help="preview: item id")
     args = ap.parse_args()
 
+    from dotenv import load_dotenv
+
+    # Existing environment wins; bench/.env takes priority over the repo .env.
+    load_dotenv(BENCH / ".env")
+    load_dotenv(BENCH.parent / ".env")
     config = load_config(args.config)
     if args.command in ("solve", "all") and not args.models:
         ap.error("--models is required, e.g. --models fable-5.2,glm-5.3,astra")
 
     if args.command == "preview":
         return cmd_preview(args, config)
+    if args.command == "check":
+        return cmd_check(args, config)
     if args.command == "solve":
         return 1 if cmd_solve(args, config) else 0
     if args.command == "judge":

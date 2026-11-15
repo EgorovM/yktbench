@@ -12,6 +12,15 @@ python3 scripts/map_answers.py       # -> data/ykt_language_assignments_mapped.c
 All CSVs are UTF-8 with a BOM, so Excel opens them correctly with a double-click.
 If you save them from Excel, use **CSV UTF-8**. Plain "CSV" turns every Sakha letter into `_`.
 
+## Benchmark workbooks
+
+- `clean_60_primary_school.xlsx`: curated v1 source, 60 question/answer pairs for
+  grades 1–4 on the `clean` sheet. The `wip` sheet is excluded from the benchmark.
+  Build with `python3 bench/build_dataset.py`; see [dataset notes](../bench/data/README.md).
+- `sample.xlsx`: source of the original 61-item v0 proof of concept. Build with
+  `python3 bench/build_dataset.py --version v0`.
+- `test.xlsx`: working workbook, not a benchmark input.
+
 ## `ykt_language_assignments.csv` — every numbered assignment (4,397 rows)
 
 | column | meaning |

@@ -5,6 +5,21 @@ Sakha (Yakut) language textbook assignments and an LLM eval built from them.
 - `data/` — assignments parsed from the textbooks (see `data/README.md`)
 - `bench/` — eval: ask frontier models the questions, grade with an LLM judge (see `bench/README.md`)
 
+## Current benchmark: v1
+
+**v1 supersedes v0 as the current benchmark.** The v1 leaderboard is pending;
+the v0 results below are retained for historical reference.
+
+The default benchmark now uses the 60 exercises on the `clean` sheet of
+[`clean_60_primary_school.xlsx`](data/clean_60_primary_school.xlsx): grade 1 (10),
+grade 2 (20), grade 3 (25), and grade 4 (5). Required clues are supplied as text,
+including Unicode sound tokens; no external pictures are needed.
+
+The frozen UTF-8 dataset is [`bench/data/ykt_primary_v1.jsonl`](bench/data/ykt_primary_v1.jsonl).
+Rebuild it with `python3 bench/build_dataset.py`; run it with `bash bench/run.sh`.
+New results go to `bench/results/v1/`, with a separate smoke run in
+`bench/results/v1-smoke/`. v1 evaluation is in progress; the table below records v0.
+
 ## v0 — proof of concept
 
 Results from the original 61-question sample (grades 1–4 and 10–11), with one
