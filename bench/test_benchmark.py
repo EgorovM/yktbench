@@ -9,6 +9,8 @@ import tempfile
 import unittest
 import xml.etree.ElementTree as ET
 import zipfile
+from types import SimpleNamespace
+from unittest.mock import patch
 from collections import Counter
 from pathlib import Path
 
@@ -100,6 +102,19 @@ class DatasetTests(unittest.TestCase):
 
 
 class RunIsolationTests(unittest.TestCase):
+    def test_changed_model_instructions_reject_cached_run(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            run = Path(tmp)
+            data = run / "data.jsonl"
+            data.write_text('{"answer":"Үүт"}\n', encoding="utf-8")
+            args = SimpleNamespace(data=str(data))
+            evaluator.write_meta(run, "solve", args, {"mock": {"model": "mock"}}, ["mock"])
+            saved = (run / "meta.jsonl").read_bytes()
+            with patch.object(evaluator, "SOLVER_SYSTEM", "Different instructions"):
+                with self.assertRaisesRegex(SystemExit, "solver_prompt_sha differs"):
+                    evaluator.write_meta(run, "solve", args, {"mock": {"model": "mock"}}, ["mock"])
+            self.assertEqual(saved, (run / "meta.jsonl").read_bytes())
+
     def test_dataset_change_rejected_before_meta_append(self):
         with tempfile.TemporaryDirectory() as tmp:
             run = Path(tmp)

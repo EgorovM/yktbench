@@ -1,0 +1,93 @@
+# Yakut benchmark on Valkyrie
+
+This adapter publishes a frozen text-only dataset as individually graded Valkyrie
+tasks. It packages the existing API model configurations as a single-call agent.
+
+The supplied solver instructions are preserved separately from each exercise.
+The agent reads them from the task's instruction prefix, so a published agent
+can evaluate new dataset versions without silently keeping an older prompt.
+The agent receives no reference answers, browser, search tools, or shell tool.
+Only model API endpoints are allowed during the agent phase. Grading uses the
+existing GPT 6.1 Sol rubric and 16,000-token request budget, with full-question
+accuracy and partial credit recorded separately. Sol's own row is self-judged.
+
+## Build
+
+Freeze the supplied workbook, CSV, or JSONL and bind it to the actual model
+instructions. XLSX files with several sheets require `--sheet` unless one is
+named `vals_90`.
+
+```bash
+.venv/bin/python bench/build_vals90.py \
+  --input data/vals_90.xlsx --sheet vals_90 \
+  --solver-instructions bench/prompts/solver_system.md
+```
+
+Then export the normalized questions:
+
+```bash
+.venv/bin/python bench/valkyrie/build.py \
+  --data bench/data/vals_90.jsonl \
+  --solver-instructions bench/prompts/solver_system.md \
+  --judge-instructions bench/prompts/vals_90_judge.md \
+  --out bench/valkyrie/submission
+```
+
+The builder refuses to overwrite an existing output folder. Its output includes
+`tasks/dataset.toml` with exact task digests, 90 task folders
+when the input has 90 questions, an agent contract, and a provenance manifest.
+Answer keys reside only under each task's `tests/`, which Valkyrie injects during
+grading after the agent has finished. API credentials are never bundled.
+The `eval_instruction` field is supplied only to the judge. Valkyrie's built-in
+mean aggregation computes the strict reward and partial credit without requiring
+custom scoring support in the hosted deployment.
+
+## Re-evaluate locally
+
+```bash
+.venv/bin/python bench/run_parallel.py \
+  --data bench/data/vals_90.jsonl \
+  --solver-system bench/prompts/solver_system.md \
+  --judge-system bench/prompts/vals_90_judge.md \
+  --run-dir bench/results/vals_90 \
+  --workers-per-model 16 --grok-workers 90
+```
+
+Each model has its own queue, and grading overlaps generation. `progress.json`
+records completed answers, graded counts, token maxima, and over-limit answers.
+The runner retains over-limit responses and never reruns successful answers
+because they are wrong. Re-running the command resumes missing/API-failed items.
+Dataset and prompt hashes prevent accidental reuse of results from another run.
+
+## Publish and run on Valkyrie
+
+Install `valkyrie-cli` with `uv tool install valkyrie-cli`, then sign in using
+`valkyrie login`. Hosted execution also requires a configured sandbox provider
+for the organization, such as Modal or Daytona.
+
+```bash
+.venv/bin/python bench/valkyrie/publish.py bench/valkyrie/submission
+# Also launch all 15 models after the provider is configured:
+.venv/bin/python bench/valkyrie/publish.py bench/valkyrie/submission \
+  --start-runs --provider modal --concurrency 90
+```
+
+The publisher reads the existing credential environment with `bench/.env` as a
+fallback and sends values to Valkyrie's secret store over its authenticated CLI.
+It keeps tokens off the command line and out of the published files. Native and
+hosted evaluation share the model configurations and grading rules; results must
+still be labeled with the platform on which they were collected.
+
+## Validation
+
+```bash
+.venv/bin/python -m unittest discover -s bench/valkyrie -p 'test_*.py'
+.venv/bin/python -m unittest discover -s bench -p 'test_*.py'
+```
+
+The adapter is validated against Valkyrie's task and agent schemas and dataset
+digest implementation. The exporter is generic: validation fixtures and the
+previous 60-question set are not a substitute for the supplied `vals_90` data.
+
+Official references: [dataset publishing](https://docs.valkyrie.vals.ai/benchmarks/datasets)
+and [agent contracts](https://docs.valkyrie.vals.ai/agents/agent-contract).

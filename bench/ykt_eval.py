@@ -13,6 +13,7 @@ stopped: re-run the same command and only missing or failed calls are made again
 
 import argparse
 import csv
+import fcntl
 import hashlib
 import json
 import os
@@ -74,9 +75,12 @@ def solver_prompt(item):
 
 
 def judge_prompt(item, candidate):
+    guidance = (f"## Exercise-specific grading instructions (eval_instruction)\n"
+                f"{item['eval_instruction']}\n\n") if item.get("eval_instruction") else ""
     return (
         f"## Exercise instruction\n{item['instruction']}\n\n"
         f"## Material\n{item['content'] or '(none)'}\n\n"
+        + guidance +
         f"## Reference answer (textbook answer key)\n{item['answer']}\n\n"
         f"## Candidate answer\n{candidate}"
     )
@@ -104,10 +108,12 @@ class Log:
         self.lock = threading.Lock()
         self.latest = {}
         if path.exists():
-            for line in path.open(encoding="utf-8"):
-                if line.strip():
-                    rec = json.loads(line)
-                    self.latest[self.key(rec)] = rec
+            with path.open(encoding="utf-8") as f:
+                fcntl.flock(f, fcntl.LOCK_SH)
+                for line in f:
+                    if line.strip():
+                        rec = json.loads(line)
+                        self.latest[self.key(rec)] = rec
 
     def key(self, rec):
         return tuple(rec[k] for k in self.key_fields)
@@ -119,7 +125,9 @@ class Log:
     def append(self, rec):
         with self.lock:
             with self.path.open("a", encoding="utf-8") as f:
+                fcntl.flock(f, fcntl.LOCK_EX)
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                f.flush()
             self.latest[self.key(rec)] = rec
 
 
@@ -151,19 +159,33 @@ def validate_run_dataset(run_dir, data):
     if not path.exists():
         return
     expected = sha(Path(data).read_text(encoding="utf-8"))
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if not line.strip():
-            continue
-        previous = json.loads(line).get("dataset_sha")
-        if previous and previous != expected:
-            sys.exit(
-                f"dataset differs from the one recorded in {path}; use a new --run-dir "
-                "for this dataset, or select the original dataset with --data"
-            )
+    with path.open(encoding="utf-8") as f:
+        fcntl.flock(f, fcntl.LOCK_SH)
+        for line in f:
+            if not line.strip():
+                continue
+            previous = json.loads(line).get("dataset_sha")
+            if previous and previous != expected:
+                sys.exit(
+                    f"dataset differs from the one recorded in {path}; use a new --run-dir "
+                    "for this dataset, or select the original dataset with --data"
+                )
 
 
 def write_meta(run_dir, command, args, config, names):
     validate_run_dataset(run_dir, args.data)
+    meta_path = Path(run_dir) / "meta.jsonl"
+    if meta_path.exists():
+        with meta_path.open(encoding="utf-8") as f:
+            fcntl.flock(f, fcntl.LOCK_SH)
+            for line in f:
+                if not line.strip():
+                    continue
+                previous = json.loads(line)
+                for field, value in (("solver_prompt_sha", sha(SOLVER_SYSTEM)),
+                                     ("judge_prompt_sha", sha(JUDGE_SYSTEM))):
+                    if previous.get(field) and previous[field] != value:
+                        sys.exit(f"{field} differs from the saved run; use a new --run-dir or the original instruction files")
     rec = {
         "ts": now(),
         "command": command,
@@ -175,7 +197,9 @@ def write_meta(run_dir, command, args, config, names):
         "models": {n: config[n] for n in names},
     }
     with (run_dir / "meta.jsonl").open("a", encoding="utf-8") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        f.flush()
 
 
 def pick(config, names, what):
@@ -594,6 +618,7 @@ def cmd_check(args, config):
 # ---------------------------------------------------------------- main
 
 def main():
+    global SOLVER_SYSTEM, JUDGE_SYSTEM
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("command", choices=["solve", "judge", "report", "all", "preview", "check"])
     ap.add_argument("--models", default="", help="comma-separated models to evaluate (names from models.toml)")
@@ -602,12 +627,22 @@ def main():
     ap.add_argument("--run-dir", default=str(DEFAULT_RUN_DIR))
     ap.add_argument("--data", default=str(DEFAULT_DATA))
     ap.add_argument("--config", default=str(BENCH / "models.toml"))
+    ap.add_argument("--solver-system", type=Path, help="model instructions for this run; recorded and checked on resume")
+    ap.add_argument("--judge-system", type=Path, help="judge instructions for this run; recorded and checked on resume")
     ap.add_argument("--samples", type=int, default=1, help="answers per item per model (default 1)")
     ap.add_argument("--workers", type=int, default=8, help="parallel API calls (default 8)")
     ap.add_argument("--ids", default="", help="only these item ids (comma-separated)")
     ap.add_argument("--limit", type=int, default=0, help="only the first N items")
     ap.add_argument("--id", default="", help="preview: item id")
     args = ap.parse_args()
+    if args.solver_system:
+        SOLVER_SYSTEM = args.solver_system.read_text(encoding="utf-8").strip()
+        if not SOLVER_SYSTEM:
+            ap.error("--solver-system must not be empty")
+    if args.judge_system:
+        JUDGE_SYSTEM = args.judge_system.read_text(encoding="utf-8").strip()
+        if not JUDGE_SYSTEM:
+            ap.error("--judge-system must not be empty")
 
     from dotenv import load_dotenv
 

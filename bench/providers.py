@@ -129,7 +129,15 @@ class OpenAIResponsesProvider:
         if schema:
             kwargs["text"] = {"format": {"type": "json_schema", "name": "grade", "schema": schema, "strict": True}}
         t0 = time.monotonic()
-        r = self.client.responses.create(**kwargs)
+        # Streaming prevents long reasoning turns from silently timing out before
+        # response headers arrive. It leaves the generation payload unchanged.
+        r = None
+        with self.client.responses.create(**kwargs, stream=True) as stream:
+            for event in stream:
+                if event.type in ("response.completed", "response.incomplete", "response.failed"):
+                    r = event.response
+        if r is None:
+            raise RuntimeError("Response stream ended without a terminal response")
         latency = time.monotonic() - t0
         stop = r.status or ""
         if r.status == "incomplete" and r.incomplete_details:

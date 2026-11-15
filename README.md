@@ -1,8 +1,13 @@
 # Yakut bench
 
-This benchmark evaluates models' capability speak and reason in Yakut.
+This benchmark evaluates models' capability speak and reason in Yakut. The public benchmark questions are created from text-only test questions given in the primary school textbooks (grades 1-4).
 
-The public benchmark questions are created from text-only test questions given in the primary school textbooks (grades 1-4).
+## Valkyrie submission
+
+The [Valkyrie adapter](bench/valkyrie/README.md) exports Harbor-format tasks and a
+text-only model agent, with commands for publishing and running the dataset.
+Exercise-specific `eval_instruction` text is shown only to the judge. Model
+instructions, source data, and task files are versioned and hashed separately.
 
 ## Current benchmark: v1
 
@@ -13,6 +18,8 @@ Solvers received no browsing or external tools. The ten original v0 model settin
 were kept unchanged. Accuracy requires every reference part to be correct; partial
 credit is the mean share of parts correct. Confidence intervals are 95% bootstrap
 intervals over questions.
+
+![V1 accuracy and partial-credit results](bench/figures/v1_leaderboard.svg)
 
 | Model | Model ID | Accuracy % | 95% CI | Partial % | Requested output limit | Max reported output tokens | Over-limit answers |
 |---|---|---:|---|---:|---:|---:|---:|
@@ -48,6 +55,14 @@ The UTF-8 dataset is [`bench/data/ykt_primary_v1.jsonl`](bench/data/ykt_primary_
 Rebuild with `python3 bench/build_dataset.py`; run with `bash bench/run.sh`.
 Detailed local results are in `bench/results/v1/`. One supplied instruction/key
 alignment concern remains documented in the [dataset notes](bench/data/README.md).
+
+### Example failure in v1
+
+On five grade-4 word riddles, Grok took 33 minutes 55 seconds and reported 99,878
+output tokens, against a requested limit of 32,000. It got two of the five parts
+correct. The [UTF-8 question, reference answers, final response, and grading](bench/examples/v1_grok_word_riddles.json)
+show a concrete failure despite a long response. The time is API latency, not a
+separate measurement of thinking time.
 
 ## v0 — proof of concept
 

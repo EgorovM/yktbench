@@ -129,9 +129,11 @@ def build(rows, version="v1"):
             "pdf_page_start": clean(r.get("pdf_page_start")),
             "sheet_row": i,
         }
+        if guidance := clean(r.get("eval_instruction")):
+            item["eval_instruction"] = guidance
         if version == "v0":
             item.update(OVERRIDES.get(rid, {}))
-        elif item["grade"] not in {"1", "2", "3", "4"} or item["needs_visual"]:
+        elif version == "v1" and (item["grade"] not in {"1", "2", "3", "4"} or item["needs_visual"]):
             sys.exit(f"row {i} ({rid}): v1 requires grades 1–4 and no external picture dependency")
         if not item["instruction"] or not item["answer"]:
             sys.exit(f"row {i} ({rid}): empty instruction or answer")
