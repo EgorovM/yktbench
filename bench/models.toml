@@ -118,6 +118,14 @@ api_key_env = "OPENROUTER_API_KEY"
 max_tokens = 32000
 extra_body = { reasoning = { effort = "high" } }
 
+[models."gigachat-3.5"]
+provider = "openai_chat"
+model = "ai-sage/GigaChat3.5-432B-A28B"
+base_url = "https://foundation-models.api.cloud.ru/v1"
+api_key_env = "YANDEX_GIGACHAT_API_KEY"
+max_tokens = 32000
+# Use the served model's default mode; no unsupported reasoning-effort setting.
+
 # Evaluate the judge as a solver with the same budget as other main solvers.
 # Keep its grading configuration below unchanged.
 [models."sol-6.1-eval"]
@@ -126,6 +134,9 @@ model = "gpt-6.1-sol"
 api_key_env = "OPENAI_API_KEY"
 effort = "high"
 max_tokens = 32000
+# The last word-reconstruction item exceeded the default HTTP read timeout.
+# This changes transport waiting only, not the generation/token settings.
+timeout = 3600
 
 # ---- judges ----
 

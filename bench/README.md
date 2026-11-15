@@ -13,7 +13,7 @@ the answer with the textbook's answer key.
   is the v0 proof of concept, not a v1 score.
 - **Models under test:** Claude Fable 5.2, GPT-6 Astra, DeepSeek V4 Pro, Gemini 4 Argon,
   GLM-5.3, Grok 4.7, Gemma 4 31B, DeepSeek V4.1 Flash, Inkling Flagship, Inkling 2 Small,
-  Qwen3.8 Max (0902), Qwen3.8 Flash, Qwen3.8 27B, and GPT 6.1 Sol (judge model).
+  Qwen3.8 Max (0902), Qwen3.8 Flash, Qwen3.8 27B, GPT 6.1 Sol (judge model), and GigaChat 3.5.
 - **Judge:** GPT 6.1 Sol (`gpt-6.1-sol`), reasoning effort `high`, by default. You can add more judges and compare them.
 
 ## 1. Set up on the VM
@@ -43,7 +43,8 @@ Set one API key per provider:
 ```bash
 export ANTHROPIC_API_KEY=...   # Fable 5.2
 export OPENAI_API_KEY=...      # GPT-6 Astra, and GPT 6.1 Sol as judge
-export OPENROUTER_API_KEY=...  # DeepSeek, Gemini, GLM, Grok, Gemma, Inkling
+export OPENROUTER_API_KEY=...  # DeepSeek, Gemini, GLM, Grok, Gemma, Inkling, Qwen
+export YANDEX_GIGACHAT_API_KEY=...  # GigaChat through Cloud.ru
 ```
 
 Alternatively, copy `bench/.env.example` to `bench/.env` and fill in the values there.
@@ -54,10 +55,10 @@ Never commit credentials.
 Check which keys are present without making API calls or printing secrets:
 
 ```bash
-python bench/ykt_eval.py check --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval
+python bench/ykt_eval.py check --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5
 ```
 
-Run the smoke test and then the full fourteen-model benchmark with one command:
+Run the smoke test and then the full fifteen-model benchmark with one command:
 
 ```bash
 bash bench/run.sh
@@ -70,7 +71,7 @@ such as `--workers 4` are forwarded to both runs.
 ## 2. Smoke test (2 items per model)
 
 ```bash
-python bench/ykt_eval.py all --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval --judges sol-6.1 --limit 2 --run-dir bench/results/v1-smoke
+python bench/ykt_eval.py all --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5 --judges sol-6.1 --limit 2 --run-dir bench/results/v1-smoke
 ```
 
 Look at `bench/results/v1-smoke/responses.jsonl`. Every line should have a `response` and a
@@ -79,7 +80,7 @@ Look at `bench/results/v1-smoke/responses.jsonl`. Every line should have a `resp
 ## 3. Full run
 
 ```bash
-python bench/ykt_eval.py all --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval --judges sol-6.1
+python bench/ykt_eval.py all --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5 --judges sol-6.1
 ```
 
 This writes to `bench/results/v1/`:
@@ -155,7 +156,9 @@ its provider with Astra; compare a second judge when auditing scores.
 GPT 6.1 Sol is also evaluated as `sol-6.1-eval`, marked **(judge model)** in
 the leaderboard. Its solver budget is 32,000 tokens; the separate `sol-6.1`
 grading configuration remains at 16,000 tokens. Its score under Sol grading is
-self-judged and should be interpreted with that in mind.
+self-judged and should be interpreted with that in mind. The solver alias uses a
+3,600-second HTTP read timeout because one word-reconstruction item repeatedly
+exceeded the default network timeout; generation settings are unchanged.
 
 
 Models request reasoning effort `high` where supported. These settings do not imply
@@ -202,6 +205,11 @@ requested limit, as observed for Grok.
 - **qwen-3.8-27b** (`qwen/qwen3.8-27b`): high reasoning effort and 32,000 requested
   output tokens. All three Qwen endpoints use OpenRouter and were checked against
   its [model catalog](https://openrouter.ai/api/v1/models) on 2026-11-15.
+
+- **gigachat-3.5** (`ai-sage/GigaChat3.5-432B-A28B`): Cloud.ru Foundation Models,
+  32,000 requested output tokens, using its served default mode. Credentials are
+  read from `YANDEX_GIGACHAT_API_KEY`; the name is user-selected, while the endpoint
+  is Cloud.ru. No external tools or browser access are enabled.
 
 Add another model by copying a block. The table name is what you pass to `--models`.
 
@@ -259,6 +267,6 @@ measuring models today, but future models may have trained on them.
 
 ## Cost
 
-One full pass is 60 items × 14 models (840 solver calls), plus up to 840 judge calls. Reasoning tokens make up most of
+One full pass is 60 items × 15 models (900 solver calls), plus up to 900 judge calls. Reasoning tokens make up most of
 the cost. Run the smoke test first and multiply: `responses.jsonl` records input and output
 tokens for every call.

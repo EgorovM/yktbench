@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Resumable v1 fourteen-model run. Pass benchmark options, e.g. --workers 4.
+# Resumable v1 fifteen-model run. Pass benchmark options, e.g. --workers 4.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-models=fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval
+models=fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5
 .venv/bin/python bench/ykt_eval.py check --models "$models" --judges sol-6.1
 .venv/bin/python bench/ykt_eval.py all --models "$models" --judges sol-6.1 \
   --run-dir bench/results/v1-smoke --limit 2 "$@"
