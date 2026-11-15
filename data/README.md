@@ -9,6 +9,9 @@ python3 scripts/parse_assignments.py # -> data/ykt_language_assignments.csv
 python3 scripts/map_answers.py       # -> data/ykt_language_assignments_mapped.csv
 ```
 
+All CSVs are UTF-8 with a BOM, so Excel opens them correctly with a double-click.
+If you save them from Excel, use **CSV UTF-8**. Plain "CSV" turns every Sakha letter into `_`.
+
 ## `ykt_language_assignments.csv` — every numbered assignment (4,397 rows)
 
 | column | meaning |
