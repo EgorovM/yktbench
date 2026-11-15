@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15T21:49:02+00:00",
+  "updated_utc": "2026-11-15T21:50:59+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -50,85 +50,22 @@
       }
     },
     {
-      "graded": 6,
-      "questions": 90,
-      "correct": 4.0,
-      "accuracy": 66.66666666666667,
-      "partial": 66.66666666666667,
-      "model": "qwen-3.8-flash",
-      "run_id": "cc31a145-a908-4c92-985c-381ede148b0c",
-      "run_ids": [
-        "cc31a145-a908-4c92-985c-381ede148b0c"
-      ],
-      "status": "IN_PROGRESS",
-      "task_rewards": {
-        "g2p1-L10-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L05-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g4p1-L17-012": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L17-007": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L14-006": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L14-006d": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        }
-      },
-      "model_name": "Qwen3.8 Flash",
-      "company": "Alibaba",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
-      "judge_model": false,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 0,
-          "accuracy": null
-        },
-        "2": {
-          "total": 25,
-          "graded": 4,
-          "accuracy": 75.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 1,
-          "accuracy": 100.0
-        },
-        "4": {
-          "total": 24,
-          "graded": 1,
-          "accuracy": 0.0
-        }
-      }
-    },
-    {
-      "graded": 89,
+      "graded": 90,
       "questions": 90,
       "correct": 58.0,
-      "accuracy": 65.1685393258427,
-      "partial": 78.697164258962,
+      "accuracy": 64.44444444444444,
+      "partial": 78.65608465608464,
       "model": "fable-5.2",
       "run_id": "fea1bf47-69ec-41d4-867d-60734be402aa",
       "run_ids": [
         "fea1bf47-69ec-41d4-867d-60734be402aa"
       ],
-      "status": "IN_PROGRESS",
+      "status": "FINISHED",
       "task_rewards": {
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
         "g3p2-L23-010": {
           "reward": 0.0,
           "partial_credit": 0.9166666666666666
@@ -488,10 +425,12 @@
       },
       "model_name": "Claude Fable 5.2",
       "company": "Anthropic",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
+      "complete": true,
+      "max_output_tokens": 14149,
+      "over_limit": 0,
       "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 90,
       "grades": {
         "1": {
           "total": 11,
@@ -505,8 +444,8 @@
         },
         "3": {
           "total": 28,
-          "graded": 27,
-          "accuracy": 74.07407407407408
+          "graded": 28,
+          "accuracy": 71.42857142857143
         },
         "4": {
           "total": 24,
@@ -516,11 +455,98 @@
       }
     },
     {
-      "graded": 19,
+      "graded": 11,
       "questions": 90,
-      "correct": 12.0,
-      "accuracy": 63.1578947368421,
-      "partial": 63.1578947368421,
+      "correct": 7.0,
+      "accuracy": 63.63636363636363,
+      "partial": 72.27272727272727,
+      "model": "qwen-3.8-flash",
+      "run_id": "cc31a145-a908-4c92-985c-381ede148b0c",
+      "run_ids": [
+        "cc31a145-a908-4c92-985c-381ede148b0c"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g2p1-L14-006b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "Qwen3.8 Flash",
+      "company": "Alibaba",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 1,
+          "accuracy": 100.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 5,
+          "accuracy": 80.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 3,
+          "accuracy": 33.333333333333336
+        },
+        "4": {
+          "total": 24,
+          "graded": 2,
+          "accuracy": 50.0
+        }
+      }
+    },
+    {
+      "graded": 22,
+      "questions": 90,
+      "correct": 13.0,
+      "accuracy": 59.09090909090909,
+      "partial": 61.36363636363637,
       "model": "grok-4.7",
       "run_id": "35066cb0-074c-43c1-8942-743618bea169",
       "run_ids": [
@@ -528,6 +554,18 @@
       ],
       "status": "IN_PROGRESS",
       "task_rewards": {
+        "g4p2-L32-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
         "g3p1-L17-001": {
           "reward": 1.0,
           "partial_credit": 1.0
@@ -608,6 +646,79 @@
       "model_name": "Grok 4.7",
       "company": "SpaceX (xAI)",
       "complete": false,
+      "max_output_tokens": 11734,
+      "over_limit": 0,
+      "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 19,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 2,
+          "accuracy": 0.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 8,
+          "accuracy": 37.5
+        },
+        "3": {
+          "total": 28,
+          "graded": 9,
+          "accuracy": 88.88888888888889
+        },
+        "4": {
+          "total": 24,
+          "graded": 3,
+          "accuracy": 66.66666666666667
+        }
+      }
+    },
+    {
+      "graded": 7,
+      "questions": 90,
+      "correct": 3.0,
+      "accuracy": 42.857142857142854,
+      "partial": 68.57142857142857,
+      "model": "inkling-flagship",
+      "run_id": "747d869c-d2db-4809-9431-23728b19c25e",
+      "run_ids": [
+        "747d869c-d2db-4809-9431-23728b19c25e"
+      ],
+      "status": "ERROR",
+      "task_rewards": {
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "Inkling",
+      "company": "Thinking Machines Lab",
+      "complete": false,
       "max_output_tokens": null,
       "over_limit": null,
       "judge_model": false,
@@ -619,27 +730,27 @@
         },
         "2": {
           "total": 25,
-          "graded": 8,
-          "accuracy": 37.5
+          "graded": 2,
+          "accuracy": 100.0
         },
         "3": {
           "total": 28,
-          "graded": 8,
-          "accuracy": 87.5
+          "graded": 3,
+          "accuracy": 33.333333333333336
         },
         "4": {
           "total": 24,
-          "graded": 2,
-          "accuracy": 100.0
+          "graded": 1,
+          "accuracy": 0.0
         }
       }
     },
     {
-      "graded": 85,
+      "graded": 88,
       "questions": 90,
       "correct": 37.0,
-      "accuracy": 43.529411764705884,
-      "partial": 63.55368814192344,
+      "accuracy": 42.04545454545455,
+      "partial": 61.67117604617604,
       "model": "astra",
       "run_id": "392e635e-43cb-4d96-91f5-b5f728bb4830",
       "run_ids": [
@@ -647,6 +758,18 @@
       ],
       "status": "IN_PROGRESS",
       "task_rewards": {
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
         "g4p1-L04-011": {
           "reward": 0.0,
           "partial_credit": 0.6
@@ -1002,89 +1125,18 @@
         },
         "2": {
           "total": 25,
-          "graded": 24,
-          "accuracy": 45.833333333333336
+          "graded": 25,
+          "accuracy": 44.0
         },
         "3": {
           "total": 28,
-          "graded": 26,
-          "accuracy": 42.30769230769231
+          "graded": 27,
+          "accuracy": 40.74074074074074
         },
         "4": {
           "total": 24,
-          "graded": 22,
-          "accuracy": 40.90909090909091
-        }
-      }
-    },
-    {
-      "graded": 7,
-      "questions": 90,
-      "correct": 3.0,
-      "accuracy": 42.857142857142854,
-      "partial": 68.57142857142857,
-      "model": "inkling-flagship",
-      "run_id": "747d869c-d2db-4809-9431-23728b19c25e",
-      "run_ids": [
-        "747d869c-d2db-4809-9431-23728b19c25e"
-      ],
-      "status": "ERROR",
-      "task_rewards": {
-        "g3p2-L26-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L15-010": {
-          "reward": 0.0,
-          "partial_credit": 0.3333333333333333
-        },
-        "g1-L02-004": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g2p1-L14-006c": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p2-L11-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L02-001": {
-          "reward": 0.0,
-          "partial_credit": 0.8
-        },
-        "g2p1-L03-004": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        }
-      },
-      "model_name": "Inkling",
-      "company": "Thinking Machines Lab",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
-      "judge_model": false,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 1,
-          "accuracy": 0.0
-        },
-        "2": {
-          "total": 25,
-          "graded": 2,
-          "accuracy": 100.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 3,
-          "accuracy": 33.333333333333336
-        },
-        "4": {
-          "total": 24,
-          "graded": 1,
-          "accuracy": 0.0
+          "graded": 23,
+          "accuracy": 39.130434782608695
         }
       }
     },
@@ -1488,11 +1540,95 @@
       }
     },
     {
-      "graded": 17,
+      "graded": 10,
+      "questions": 90,
+      "correct": 3.0,
+      "accuracy": 30.0,
+      "partial": 53.722222222222214,
+      "model": "deepseek-v4.1-flash",
+      "run_id": "f7c85dc8-c344-4a9e-be91-7bf445c4a8da",
+      "run_ids": [
+        "f7c85dc8-c344-4a9e-be91-7bf445c4a8da",
+        "d056dfe2-98a5-41ec-baac-db1368e32ae7"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5555555555555556
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L08-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "DeepSeek V4.1 Flash",
+      "company": "DeepSeek",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 1,
+          "accuracy": 0.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 1,
+          "accuracy": 100.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 4,
+          "accuracy": 25.0
+        },
+        "4": {
+          "total": 24,
+          "graded": 4,
+          "accuracy": 25.0
+        }
+      }
+    },
+    {
+      "graded": 19,
       "questions": 90,
       "correct": 5.0,
-      "accuracy": 29.41176470588235,
-      "partial": 41.470588235294116,
+      "accuracy": 26.31578947368421,
+      "partial": 39.73684210526316,
       "model": "deepseek-v4",
       "run_id": "1428ce18-270f-4702-aa74-9e7d8eda37f0",
       "run_ids": [
@@ -1500,6 +1636,14 @@
       ],
       "status": "IN_PROGRESS",
       "task_rewards": {
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
         "g4p1-L08-010": {
           "reward": 1.0,
           "partial_credit": 1.0
@@ -1583,13 +1727,13 @@
         },
         "2": {
           "total": 25,
-          "graded": 8,
-          "accuracy": 12.5
+          "graded": 9,
+          "accuracy": 11.11111111111111
         },
         "3": {
           "total": 28,
-          "graded": 4,
-          "accuracy": 50.0
+          "graded": 5,
+          "accuracy": 40.0
         },
         "4": {
           "total": 24,
@@ -1599,83 +1743,11 @@
       }
     },
     {
-      "graded": 7,
-      "questions": 90,
-      "correct": 2.0,
-      "accuracy": 28.571428571428573,
-      "partial": 62.460317460317455,
-      "model": "deepseek-v4.1-flash",
-      "run_id": "f7c85dc8-c344-4a9e-be91-7bf445c4a8da",
-      "run_ids": [
-        "f7c85dc8-c344-4a9e-be91-7bf445c4a8da",
-        "d056dfe2-98a5-41ec-baac-db1368e32ae7"
-      ],
-      "status": "IN_PROGRESS",
-      "task_rewards": {
-        "g4p2-L12-011": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g2p1-L14-006c": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L19-002": {
-          "reward": 0.0,
-          "partial_credit": 0.5555555555555556
-        },
-        "g3p2-L17-003": {
-          "reward": 0.0,
-          "partial_credit": 0.4
-        },
-        "g3p2-L08-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g4p2-L27-010": {
-          "reward": 0.0,
-          "partial_credit": 0.25
-        },
-        "g1-L21-008": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        }
-      },
-      "model_name": "DeepSeek V4.1 Flash",
-      "company": "DeepSeek",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
-      "judge_model": false,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 1,
-          "accuracy": 0.0
-        },
-        "2": {
-          "total": 25,
-          "graded": 1,
-          "accuracy": 100.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 3,
-          "accuracy": 33.333333333333336
-        },
-        "4": {
-          "total": 24,
-          "graded": 2,
-          "accuracy": 0.0
-        }
-      }
-    },
-    {
-      "graded": 82,
+      "graded": 86,
       "questions": 90,
       "correct": 19.0,
-      "accuracy": 23.170731707317074,
-      "partial": 36.073848238482384,
+      "accuracy": 22.093023255813954,
+      "partial": 34.97739018087855,
       "model": "inkling-2-small",
       "run_id": "0b505d8b-b6eb-47c5-b229-200e381b0115",
       "run_ids": [
@@ -1684,6 +1756,18 @@
       ],
       "status": "IN_PROGRESS",
       "task_rewards": {
+        "g4p1-L31-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
         "g3p1-L05-010": {
           "reward": 0.0,
           "partial_credit": 0.0
@@ -2011,6 +2095,10 @@
         "g4p2-L32-013": {
           "reward": 1.0,
           "partial_credit": 1.0
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
         }
       },
       "model_name": "Inkling 2 Small",
@@ -2027,27 +2115,27 @@
         },
         "2": {
           "total": 25,
-          "graded": 22,
-          "accuracy": 18.181818181818183
+          "graded": 24,
+          "accuracy": 16.666666666666668
         },
         "3": {
           "total": 28,
-          "graded": 26,
-          "accuracy": 30.76923076923077
+          "graded": 27,
+          "accuracy": 29.62962962962963
         },
         "4": {
           "total": 24,
-          "graded": 21,
-          "accuracy": 19.047619047619047
+          "graded": 22,
+          "accuracy": 18.181818181818183
         }
       }
     },
     {
-      "graded": 71,
+      "graded": 81,
       "questions": 90,
-      "correct": 11.0,
-      "accuracy": 15.492957746478874,
-      "partial": 24.88262910798122,
+      "correct": 13.0,
+      "accuracy": 16.049382716049383,
+      "partial": 24.279835390946502,
       "model": "glm-5.3",
       "run_id": "ac59a29b-ee79-4750-bac2-ec6caf01a34f",
       "run_ids": [
@@ -2055,6 +2143,46 @@
       ],
       "status": "IN_PROGRESS",
       "task_rewards": {
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L05-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L04-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L02-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
         "g1-L26-009": {
           "reward": 0.0,
           "partial_credit": 0.0
@@ -2354,18 +2482,18 @@
         },
         "2": {
           "total": 25,
-          "graded": 23,
-          "accuracy": 13.043478260869565
+          "graded": 24,
+          "accuracy": 12.5
         },
         "3": {
           "total": 28,
-          "graded": 21,
-          "accuracy": 23.80952380952381
+          "graded": 26,
+          "accuracy": 23.076923076923077
         },
         "4": {
           "total": 24,
-          "graded": 15,
-          "accuracy": 6.666666666666667
+          "graded": 19,
+          "accuracy": 10.526315789473685
         }
       }
     },
@@ -3082,18 +3210,22 @@
       }
     },
     {
-      "graded": 3,
+      "graded": 4,
       "questions": 90,
       "correct": 0.0,
       "accuracy": 0.0,
-      "partial": 4.166666666666667,
+      "partial": 3.125,
       "model": "qwen-3.8-27b",
       "run_id": "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
       "run_ids": [
         "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e"
       ],
-      "status": "IN_PROGRESS",
+      "status": "ERROR",
       "task_rewards": {
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
         "g2p2-L05-004": {
           "reward": 0.0,
           "partial_credit": 0.125
@@ -3126,7 +3258,7 @@
         },
         "3": {
           "total": 28,
-          "graded": 2,
+          "graded": 3,
           "accuracy": 0.0
         },
         "4": {

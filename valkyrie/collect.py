@@ -86,6 +86,15 @@ def main():
     if args.artifacts:
         for row in rows:
             if not row.get("complete"):
+                partial_output = args.out.parent / "partial_usage" / row["model"]
+                observed = {}
+                for path in sorted(partial_output.rglob("response.json")):
+                    observed[path.relative_to(partial_output).parts[0]] = json.loads(path.read_text())
+                if observed:
+                    row["max_output_tokens"] = max(r.get("output_tokens") or 0 for r in observed.values())
+                    row["over_limit"] = sum(bool(r.get("over_limit")) for r in observed.values())
+                    row["timed_out"] = sum(bool(r.get("timed_out")) for r in observed.values())
+                    row["responses_with_usage"] = len(observed)
                 continue
             output = args.out / "artifacts" / row["model"]
             responses = {}

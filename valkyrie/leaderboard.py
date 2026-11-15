@@ -15,8 +15,8 @@ def render(snapshot):
              "**Evaluation is in progress.** Partial scores use graded questions only;",
              "their denominators differ and they are not final rankings. API failures",
              "remain ungraded. Grade cells show accuracy followed by graded/total questions.", "",
-             "| Model Name | Company | All | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Partial credit | Max reported output tokens | Status |",
-             "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
+             "| Model Name | Company | All | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Partial credit | Max reported output tokens | Over limit | Status |",
+             "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     def score(value):
         return f"{value:.1f}" if value is not None else "—"
     rows = sorted(snapshot["rows"], key=lambda row: (not row.get("complete"), row.get("accuracy") is None, -(row.get("accuracy") or 0)))
@@ -29,13 +29,15 @@ def render(snapshot):
         status = "Complete" if row.get("complete") else ("API errors" if row["status"] == "ERROR" else "Running")
         lines.append(f"| {name} | {model_company(row['model'])} | {score(row.get('accuracy'))} | "
                      + " | ".join(grades) + f" | {row.get('graded', 0)}/90 | {score(row.get('partial'))} | "
-                     + f"{row['max_output_tokens'] if row.get('max_output_tokens') is not None else '—'} | {status} |")
+                     + f"{row['max_output_tokens'] if row.get('max_output_tokens') is not None else '—'} | "
+                     + f"{row['over_limit'] if row.get('over_limit') is not None else '—'} | {status} |")
     lines += ["", "Two questions have unspecified grades; they count in All, but not in grade columns.",
               "Twelve source rows carry picture flags; solvers receive text only. All 90 supplied rows are retained.", "",
               "Solvers have no browsing or tools, a 900-second answer deadline, and a requested",
               "33,000-token output limit (Gemma: 16,384). GPT-6.1 Sol grades with a 16,000-token",
               "budget and receives each question's `eval_instruction`; solvers do not.",
-              "Max reported output tokens includes provider-reported reasoning tokens where available.",
+              "Max reported output tokens is the largest downloaded usage report, including reasoning tokens where reported.",
+              "Usage for unfinished runs may cover only a subset of graded answers.",
               "A dash means usage has not yet been collected. Over-limit answers are retained and flagged.", "",
               "[Run IDs](valkyrie/RUNS.md) · [Dataset](data/vals_90.jsonl) · [Settings](models_vals.toml)", ""]
     return "\n".join(lines)
