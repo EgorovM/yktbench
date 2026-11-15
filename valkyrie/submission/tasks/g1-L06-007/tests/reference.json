@@ -1,0 +1,20 @@
+{
+  "id": "g1-L06-007",
+  "grade": "1",
+  "part": "",
+  "lesson": "6.0",
+  "section": "",
+  "block": "",
+  "icon": "дьарык",
+  "needs_visual": false,
+  "mapping": "instruction",
+  "instruction": "Таабырыннары таай. Бүтэй дорҕоон буу кубаларын ааттаталаа.",
+  "content": "1. Тыала суохха тыаһыы турар баар үһү.\n2. Оттон урут тахсар, хагдарыйыан иннинэ хатан хаалар баар үһү.",
+  "answer": "1. Тэтиҥ. 2. Ньургуһун.",
+  "answer_key": "Оонньуулар таайыылара, 22 с.",
+  "pdf_page_start": "22.0",
+  "sheet_row": 31,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

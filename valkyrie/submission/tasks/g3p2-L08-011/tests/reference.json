@@ -1,0 +1,20 @@
+{
+  "id": "g3p2-L08-011",
+  "grade": "3",
+  "part": "2.0",
+  "lesson": "8.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Таайбараҥ.",
+  "content": "1. Оҕоҕо саамай чугас киһитэ.\n2. Убайдыы-бырааттыы, атыннык.\n3. Ийэм убайа миэхэ ...\n4. Төрөппүт киһи.",
+  "answer": "1. Ийэ. 2. Ини, ини-бии. 3. Таай. 4. Аҕа.",
+  "answer_key": "Оонньуулар таайыылара, 33 с.",
+  "pdf_page_start": "33.0",
+  "sheet_row": 70,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

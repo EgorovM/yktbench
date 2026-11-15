@@ -1,0 +1,20 @@
+{
+  "id": "g1-L17-010",
+  "grade": "1",
+  "part": "",
+  "lesson": "17.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Тыллары арааран таабырыны тэтэрээккэр уһул. Таайыытын суруй.",
+  "content": "Сонунусонугарилдьэсылдьарбаарүһү.",
+  "answer": "Сонун сонугар илдьэ сылдьар баар үһү. (Таайыыта: хаһыат.)",
+  "answer_key": "Оонньуулар таайыылара, 61 с.",
+  "pdf_page_start": "61.0",
+  "sheet_row": 6,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

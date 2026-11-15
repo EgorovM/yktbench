@@ -33,6 +33,7 @@ except ImportError:  # Python < 3.11
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from providers import make_provider  # noqa: E402
+from model_names import model_company, model_name  # noqa: E402
 
 BENCH = Path(__file__).resolve().parent
 DEFAULT_DATA = BENCH / "data" / "ykt_primary_v1.jsonl"
@@ -420,9 +421,10 @@ def cmd_report(args, config):
     judge_model_ids = {config.get(j, {}).get("model") for j in judges}
 
     def model_label(model):
+        name = model_name(model)
         if config.get(model, {}).get("model") in judge_model_ids:
-            return f"{model} (judge model)"
-        return model
+            return f"{name} (judge model)"
+        return name
 
     lines = [
         "# YKT textbook QA: results",
@@ -487,7 +489,7 @@ def cmd_report(args, config):
         lat = [r["latency_s"] for r in ok if r.get("latency_s")]
         summary_rows.append([
             model_label(m),
-            config.get(m, {}).get("model", ""),
+            model_company(m),
             pct(sum(vals) / len(vals)),
             f"{pct(lo)}–{pct(hi)}",
             pct(sum(partial.values()) / len(partial)),
@@ -495,6 +497,7 @@ def cmd_report(args, config):
             sum(1 for r in ok if not r.get("has_marker")),
             sum(1 for r in ok if r.get("fallback_ran")),
             sum(1 for r in ok if r.get("stop_reason") in ("refusal", "max_tokens", "length") or str(r.get("stop_reason", "")).startswith("incomplete")),
+            sum(1 for r in ok if r.get("timed_out")),
             requested_limit if requested_limit is not None else "",
             max(out_tok) if out_tok else "",
             len(over_limit),
@@ -508,6 +511,9 @@ def cmd_report(args, config):
                 r = responses.get((m, it["id"], s)) or {}
                 row = {
                     "model": m, "item_id": it["id"], "grade": it["grade"],
+                    "model_name": model_name(m), "company": model_company(m),
+                    "model_id": config.get(m, {}).get("model", ""),
+                    "timed_out": int(bool(r.get("timed_out"))),
                     "needs_visual": int(it["needs_visual"]), "sample": s,
                     "reference": it["answer"], "final_answer": r.get("final_answer", ""),
                     "error": r.get("error", ""),
@@ -526,8 +532,8 @@ def cmd_report(args, config):
 
     summary_rows.sort(key=lambda r: -float(r[2]))
     lines += ["## Summary", "", table(
-        ["model", "model id", "accuracy %", "95% CI", "partial %", "missing", "no ХОРУЙ line",
-         "fallback-served", "refused/truncated", "requested token limit", "max reported output tok",
+        ["Model Name", "Company", "accuracy %", "95% CI", "partial %", "missing", "no ХОРУЙ line",
+         "fallback-served", "refused/truncated", "timed out", "requested token limit", "max reported output tok",
          "over-limit answers", "avg output tok", "avg latency s"],
         summary_rows,
     ), ""]
@@ -541,9 +547,10 @@ def cmd_report(args, config):
                 vals = [strict[it["id"]] for it in items if key_fn(it) == k]
                 row.append(f"{pct(sum(vals) / len(vals))} (n={len(vals)})" if vals else "")
             rows.append(row)
-        return ["## " + title, "", table(["model"] + [str(k) for k in keys], rows), ""]
+        return ["## " + title, "", table(["Model Name"] + [str(k) for k in keys], rows), ""]
 
-    grades = sorted({it["grade"] for it in items}, key=lambda g: [int(x) for x in g.split("-")])
+    grades = sorted({it["grade"] for it in items},
+                    key=lambda g: (0, [int(x) for x in g.split("-")]) if re.fullmatch(r"\d+(?:-\d+)*", g) else (1, g))
     lines += breakdown("Accuracy by grade", lambda it: it["grade"], grades)
     lines += breakdown(
         "Accuracy by picture dependence",

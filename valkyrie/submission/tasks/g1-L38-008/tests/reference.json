@@ -1,0 +1,21 @@
+{
+  "id": "g1-L38-008",
+  "grade": "1",
+  "part": "",
+  "lesson": "38.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Таабырыннар таайыыларын суруй.",
+  "content": "1. Манна саҥардахха, онно иһиллэр баар\nүһү.\n2. Кыһын тыаттан кэлэбин, араас симэх\nкэтэбин.\n3. Куосумаска куһуурабын, олус-олус түргэммин.",
+  "answer": "1. Төлөпүөн.\n2. Дьуолка.\n3. Аракыата.",
+  "answer_key": "Оонньуулар таайыылара, 132 с.",
+  "pdf_page_start": "132.0",
+  "sheet_row": 37,
+  "eval_instruction": "The Russian spelling is also a valid answer for (\"төлөпүөн\"=\"телефон\", \"елка\"=\"дьуолка\", \"аракыата\"=\"ракета\").",
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

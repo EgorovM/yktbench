@@ -1,0 +1,20 @@
+{
+  "id": "g3p1-L34-011",
+  "grade": "3",
+  "part": "1.0",
+  "lesson": "34.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Грамматика арифметиката.",
+  "content": "Кыһыл - һыл + тар + хаас - ас + й = ?",
+  "answer": "Кытархай.",
+  "answer_key": "Оонньуулар таайыылара, 124 с.",
+  "pdf_page_start": "124.0",
+  "sheet_row": 67,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

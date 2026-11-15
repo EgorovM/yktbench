@@ -32,12 +32,12 @@ def read_rows(path, sheet=None):
     raise ValueError("Input must be XLSX, CSV, or UTF-8 JSONL")
 
 
-def freeze(source, instructions, output, sheet=None, expected_count=90):
+def freeze(source, instructions, output, sheet=None, expected_count=90, allow_visual_text=False):
     rows, selected = read_rows(source, sheet)
     items = build_dataset.build(rows, version="vals_90")
     if len(items) != expected_count:
         raise ValueError(f"Expected {expected_count} questions, found {len(items)}")
-    if any(item["needs_visual"] for item in items):
+    if not allow_visual_text and any(item["needs_visual"] for item in items):
         raise ValueError("vals_90 must contain text-only questions")
     if not instructions.read_text(encoding="utf-8").strip():
         raise ValueError("Model instructions must not be empty")
@@ -52,7 +52,8 @@ def freeze(source, instructions, output, sheet=None, expected_count=90):
         "solver_instructions_file": str(instructions),
         "solver_instructions_sha256": hashlib.sha256(instructions.read_bytes()).hexdigest(),
         "questions": len(items), "by_grade": dict(Counter(it["grade"] for it in items)),
-        "needs_visual": 0,
+        "needs_visual": sum(it["needs_visual"] for it in items),
+        "evaluation_mode": "text-only; original picture flags retained",
         "eval_instruction_count": sum(bool(it.get("eval_instruction")) for it in items),
     }
     output.with_suffix(".manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
@@ -66,8 +67,10 @@ def main():
     parser.add_argument("--solver-instructions", type=Path, required=True)
     parser.add_argument("--out", type=Path, default=Path(__file__).parent / "data/vals_90.jsonl")
     parser.add_argument("--expected-count", type=int, default=90)
+    parser.add_argument("--allow-visual-text", action="store_true", help="retain source picture flags while evaluating text only")
     args = parser.parse_args()
-    print(json.dumps(freeze(args.input, args.solver_instructions, args.out, args.sheet, args.expected_count), indent=2))
+    print(json.dumps(freeze(args.input, args.solver_instructions, args.out, args.sheet,
+                            args.expected_count, args.allow_visual_text), indent=2))
 
 
 if __name__ == "__main__":

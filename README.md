@@ -9,7 +9,31 @@ text-only model agent, with commands for publishing and running the dataset.
 Exercise-specific `eval_instruction` text is shown only to the judge. Model
 instructions, source data, and task files are versioned and hashed separately.
 
-## Current benchmark: v1
+New evaluations use [`models_vals.toml`](models_vals.toml): a 15-minute answer
+deadline and a 33,000-token requested output limit. Gemma 4 31B is limited by
+its API to 16,384 output tokens. The historical results below retain their
+original budgets.
+
+## Current evaluation: vals_90
+
+The [90-question dataset](data/vals_90.jsonl) comes from the `vals sub` sheet of
+[`vals_90.xlsx`](data/sources/vals_90.xlsx). All 15 model runs have been launched
+on Valkyrie and Modal; results are in progress. [Run IDs and monitoring commands](valkyrie/RUNS.md)
+are available for the team.
+
+Each solver receives the exercise instruction and material. The judge receives
+the answer key and any exercise-specific `eval_instruction`; those instructions
+are never shown to the solver. The five supplied grading instructions override
+the generic rubric where specified, including accepted Russian spellings.
+
+All 90 supplied questions are retained. Twelve rows still carry picture flags
+from the source workbook; models receive text only. Two new items have no grade
+metadata, and six missing IDs were generated deterministically. These details
+are recorded in the [dataset manifest](data/vals_90.manifest.json).
+
+The tables below remain the completed historical runs, not vals_90 results.
+
+## v1 — completed baseline
 
 Results from 60 questions on the `clean` sheet of
 [`clean_60_primary_school.xlsx`](data/sources/clean_60_primary_school.xlsx), grades 1–4.
@@ -21,23 +45,25 @@ intervals over questions.
 
 ![V1 accuracy and partial-credit results](figures/v1_leaderboard.svg)
 
-| Model | Model ID | Accuracy % | 95% CI | Partial % | Requested output limit | Max reported output tokens | Over-limit answers |
+| Model Name | Company | Accuracy % | 95% CI | Partial % | Requested output limit | Max reported output tokens | Over-limit answers |
 |---|---|---:|---|---:|---:|---:|---:|
-| fable-5.2 | claude-fable-5-2 | 65.0 | 51.7–76.7 | 81.2 | 32000 | 13940 | 0 |
-| gemini-4-argon | google/gemini-4-argon | 60.0 | 48.3–71.7 | 72.1 | 32000 | 32000 | 0 |
-| astra | gpt-6-astra | 45.0 | 33.3–58.3 | 62.7 | 32000 | 11750 | 0 |
-| sol-6.1-eval **(judge model)** | gpt-6.1-sol | 45.0 | 33.3–58.3 | 65.1 | 32000 | 32000 | 0 |
-| grok-4.7 | x-ai/grok-4.7 | 36.7 | 25.0–48.3 | 55.4 | 32000 | 99878 | 36 |
-| deepseek-v4.1-flash | deepseek/deepseek-v4.1-flash | 31.7 | 20.0–43.3 | 46.9 | 32000 | 32000 | 0 |
-| deepseek-v4 | deepseek/deepseek-v4-pro | 28.3 | 18.3–40.0 | 47.5 | 32000 | 32000 | 0 |
-| qwen-3.8-max | qwen/qwen3.8-max-0902 | 25.0 | 15.0–36.7 | 43.3 | 32000 | 32000 | 0 |
-| inkling-flagship | thinkingmachines/inkling | 21.7 | 11.7–33.3 | 43.9 | 32000 | 32000 | 0 |
-| inkling-2-small | thinkingmachines/inkling-2-small | 21.7 | 11.7–33.3 | 33.7 | 32000 | 32000 | 0 |
-| qwen-3.8-flash | qwen/qwen3.8-flash | 13.3 | 6.7–21.7 | 15.3 | 32000 | 32000 | 0 |
-| glm-5.3 | z-ai/glm-5.3 | 10.0 | 3.3–18.3 | 18.3 | 32000 | 32000 | 0 |
-| qwen-3.8-27b | qwen/qwen3.8-27b | 8.3 | 1.7–15.0 | 11.8 | 32000 | 27411 | 0 |
-| gemma-4-31b | google/gemma-4-31b-it | 6.7 | 1.7–13.3 | 11.2 | 16384 | 16384 | 0 |
-| gigachat-3.5 | ai-sage/GigaChat3.5-432B-A28B | 6.7 | 1.7–13.3 | 21.5 | 32000 | 596 | 0 |
+| Claude Fable 5.2 | Anthropic | 65.0 | 51.7–76.7 | 81.2 | 32000 | 13940 | 0 |
+| Gemini 4 Argon | Google | 60.0 | 48.3–71.7 | 72.1 | 32000 | 32000 | 0 |
+| GPT-6 Astra | OpenAI | 45.0 | 33.3–58.3 | 62.7 | 32000 | 11750 | 0 |
+| GPT-6.1 Sol **(judge model)** | OpenAI | 45.0 | 33.3–58.3 | 65.1 | 32000 | 32000 | 0 |
+| Grok 4.7 | SpaceX (xAI) | 36.7 | 25.0–48.3 | 55.4 | 32000 | 99878 | 36 |
+| DeepSeek V4.1 Flash | DeepSeek | 31.7 | 20.0–43.3 | 46.9 | 32000 | 32000 | 0 |
+| DeepSeek V4 Pro | DeepSeek | 28.3 | 18.3–40.0 | 47.5 | 32000 | 32000 | 0 |
+| Qwen3.8 Max | Alibaba | 25.0 | 15.0–36.7 | 43.3 | 32000 | 32000 | 0 |
+| Inkling | Thinking Machines Lab | 21.7 | 11.7–33.3 | 43.9 | 32000 | 32000 | 0 |
+| Inkling 2 Small | Thinking Machines Lab | 21.7 | 11.7–33.3 | 33.7 | 32000 | 32000 | 0 |
+| Qwen3.8 Flash | Alibaba | 13.3 | 6.7–21.7 | 15.3 | 32000 | 32000 | 0 |
+| GLM 5.3 | Z.ai | 10.0 | 3.3–18.3 | 18.3 | 32000 | 32000 | 0 |
+| Qwen3.8 27B | Alibaba | 8.3 | 1.7–15.0 | 11.8 | 32000 | 27411 | 0 |
+| Gemma 4 31B | Google | 6.7 | 1.7–13.3 | 11.2 | 16384 | 16384 | 0 |
+| GigaChat 3.5 Ultra | Sber | 6.7 | 1.7–13.3 | 21.5 | 32000 | 596 | 0 |
+
+Exact API identifiers and generation settings are recorded in [`models.toml`](models.toml).
 
 GPT 6.1 Sol is marked **(judge model)** because it also grades the benchmark.
 Its solver answers receive the same 32,000-token requested budget as other main
@@ -72,18 +98,18 @@ effort. Accuracy requires every reference part to be correct; partial credit is
 the mean share of parts correct. Confidence intervals are 95% bootstrap intervals
 over questions. Missing, refused, and truncated answers count as wrong.
 
-| Model | Model ID | Accuracy % | 95% CI | Partial % | Avg output tokens | Avg latency (s) |
+| Model Name | Company | Accuracy % | 95% CI | Partial % | Avg output tokens | Avg latency (s) |
 |---|---|---:|---|---:|---:|---:|
-| fable-5.2 | claude-fable-5-2 | 49.2 | 36.1–62.3 | 63.0 | 772 | 9 |
-| gemini-4-argon | google/gemini-4-argon | 45.9 | 32.8–59.0 | 61.5 | 3769 | 67 |
-| astra | gpt-6-astra | 34.4 | 23.0–45.9 | 49.8 | 1516 | 43 |
-| grok-4.7 | x-ai/grok-4.7 | 26.2 | 14.8–37.7 | 40.7 | 27180 | 535 |
-| inkling-flagship | thinkingmachines/inkling | 26.2 | 16.4–37.7 | 40.5 | 8154 | 92 |
-| deepseek-v4 | deepseek/deepseek-v4-pro | 23.0 | 13.1–34.4 | 35.4 | 7061 | 93 |
-| deepseek-v4.1-flash | deepseek/deepseek-v4.1-flash | 23.0 | 13.1–34.4 | 39.0 | 10322 | 53 |
-| inkling-2-small | thinkingmachines/inkling-2-small | 19.7 | 9.8–31.1 | 33.0 | 11282 | 60 |
-| glm-5.3 | z-ai/glm-5.3 | 16.4 | 6.6–26.2 | 20.9 | 17072 | 129 |
-| gemma-4-31b | google/gemma-4-31b-it | 8.2 | 1.6–14.8 | 10.1 | 1756 | 14 |
+| Claude Fable 5.2 | Anthropic | 49.2 | 36.1–62.3 | 63.0 | 772 | 9 |
+| Gemini 4 Argon | Google | 45.9 | 32.8–59.0 | 61.5 | 3769 | 67 |
+| GPT-6 Astra | OpenAI | 34.4 | 23.0–45.9 | 49.8 | 1516 | 43 |
+| Grok 4.7 | SpaceX (xAI) | 26.2 | 14.8–37.7 | 40.7 | 27180 | 535 |
+| Inkling | Thinking Machines Lab | 26.2 | 16.4–37.7 | 40.5 | 8154 | 92 |
+| DeepSeek V4 Pro | DeepSeek | 23.0 | 13.1–34.4 | 35.4 | 7061 | 93 |
+| DeepSeek V4.1 Flash | DeepSeek | 23.0 | 13.1–34.4 | 39.0 | 10322 | 53 |
+| Inkling 2 Small | Thinking Machines Lab | 19.7 | 9.8–31.1 | 33.0 | 11282 | 60 |
+| GLM 5.3 | Z.ai | 16.4 | 6.6–26.2 | 20.9 | 17072 | 129 |
+| Gemma 4 31B | Google | 8.2 | 1.6–14.8 | 10.1 | 1756 | 14 |
 
 This initial sample includes 13 picture-flagged questions, although solvers
 received text only, and some prompt/answer-key alignment issues. These scores

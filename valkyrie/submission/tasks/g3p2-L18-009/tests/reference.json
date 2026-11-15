@@ -1,0 +1,20 @@
+{
+  "id": "g3p2-L18-009",
+  "grade": "3",
+  "part": "2.0",
+  "lesson": "18.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Кистэлэҥ сурук. Буукубалары сааһылаан өс хоһоонун таһаар.",
+  "content": "Үгсэ ыкайбаатҕын үсэб ыкайра.",
+  "answer": "Сүгэ кыайбатаҕын сүбэ кыайар.",
+  "answer_key": "Оонньуулар таайыылара, 64 с.",
+  "pdf_page_start": "64.0",
+  "sheet_row": 73,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "g2p2-L10-009",
+  "grade": "2",
+  "part": "2.0",
+  "lesson": "10.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Таабырыны таай.",
+  "content": "«С» буукубаттан саҕаланар, «Т» буукубанан бүтэр, остуолга кыргыһар бухатыырдар бааллар үһү.",
+  "answer": "Саахымат.",
+  "answer_key": "Оонньуулар таайыылара, 30 с.",
+  "pdf_page_start": "30.0",
+  "sheet_row": 48,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

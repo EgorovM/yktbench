@@ -4,9 +4,13 @@ import argparse
 import asyncio
 import json
 import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from uuid import UUID
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from model_names import model_company, model_name
 
 
 def summarize(results, total):
@@ -50,6 +54,7 @@ def main():
                         raise
                     row = summarize({}, state.total_tasks)
                 row.update(model=run["model"], run_id=str(rid), status=state.status.value,
+                           model_name=model_name(run["model"]), company=model_company(run["model"]),
                            complete=row["graded"] == state.total_tasks,
                            max_output_tokens=None, over_limit=None,
                            judge_model=run["model"] == "sol-6.1-eval")
@@ -72,19 +77,20 @@ def main():
                 responses[key] = json.loads(path.read_text())
             row["max_output_tokens"] = max((r.get("output_tokens") or 0 for r in responses.values()), default=0)
             row["over_limit"] = sum(bool(r.get("over_limit")) for r in responses.values())
+            row["timed_out"] = sum(bool(r.get("timed_out")) for r in responses.values())
             row["responses_with_usage"] = len(responses)
     rows.sort(key=lambda r: (r.get("accuracy") is None, -(r.get("accuracy") or 0)))
     report = {"updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
               "platform": "Valkyrie", "rows": rows}
     (args.out / "leaderboard.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     lines = ["# Valkyrie leaderboard", "", "Unfinished rows use graded questions only and are provisional.", "",
-             "| Model | Graded | Accuracy % | Partial % | Max output tokens | Over limit | Status |",
-             "|---|---:|---:|---:|---:|---:|---|"]
+             "| Model Name | Company | Graded | Accuracy % | Partial % | Max output tokens | Over limit | Status |",
+             "|---|---|---:|---:|---:|---:|---:|---|"]
     for row in rows:
-        model = row["model"] + (" (judge model)" if row.get("judge_model") else "")
+        model = model_name(row["model"]) + (" (judge model)" if row.get("judge_model") else "")
         acc = f"{row['accuracy']:.1f}" if row.get("accuracy") is not None else "—"
         part = f"{row['partial']:.1f}" if row.get("partial") is not None else "—"
-        lines.append(f"| {model} | {row.get('graded', 0)}/{row.get('questions', 90)} | {acc} | {part} | "
+        lines.append(f"| {model} | {model_company(row['model'])} | {row.get('graded', 0)}/{row.get('questions', 90)} | {acc} | {part} | "
                      f"{row.get('max_output_tokens') if row.get('max_output_tokens') is not None else '—'} | "
                      f"{row.get('over_limit') if row.get('over_limit') is not None else '—'} | {row['status']} |")
     text = "\n".join(lines) + "\n"

@@ -1,0 +1,20 @@
+{
+  "id": "g3p1-L17-001",
+  "grade": "3",
+  "part": "1.0",
+  "lesson": "17.0",
+  "section": "",
+  "block": "",
+  "icon": "",
+  "needs_visual": true,
+  "mapping": "instruction",
+  "instruction": "Таабырыны таай. Дорҕооннору фишканан бэлиэтээ.",
+  "content": "Маҥан да, хаар буолбатах,\nКүөх да, хонуу буолбатах,\nКуударалаах да, баттаҕа суох баар үһү.\n• Биридимиэт бэлиэтин көрдөрөр тыллары бул уонна бэйэҥ таабырынна ай.",
+  "answer": "Хатыҥ.",
+  "answer_key": "Оонньуулар таайыылара, 61 с.",
+  "pdf_page_start": "61.0",
+  "sheet_row": 59,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

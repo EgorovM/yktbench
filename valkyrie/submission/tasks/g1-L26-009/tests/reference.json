@@ -1,0 +1,21 @@
+{
+  "id": "g1-L26-009",
+  "grade": "1",
+  "part": "",
+  "lesson": "26.0",
+  "section": "",
+  "block": "",
+  "icon": "",
+  "needs_visual": false,
+  "mapping": "instruction",
+  "instruction": "Таабырыннары таай.",
+  "content": "1. [б] дорҕоонтон саҕаланар [н] дорҕоонунан бүтэр сүүс биэс тимэхтээх тойон баар үһү.\n2. [м] дорҕоонтон саҕаланар [к] дорҕоонунан бүтэр кыната суох көтөр, атаҕа суох сүүрэр баар үһү.\n3. \"К\" буукубаттан саҕаланар \"Х\" буукубанан бүтэр чыычаахтар көтөөрү өндөҥнөһөллөр үһү.",
+  "answer": "1. Байаан.\n2. Мээчик.\n3. Кулгаах.",
+  "answer_key": "Оонньуулар таайыылара, 94 с.",
+  "pdf_page_start": "94.0",
+  "sheet_row": 5,
+  "eval_instruction": "The Russian spelling is also a valid answer for (\"байаан\"=\"баян\").",
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

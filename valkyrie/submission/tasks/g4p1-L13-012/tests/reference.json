@@ -1,0 +1,21 @@
+{
+  "id": "g4p1-L13-012",
+  "grade": "4",
+  "part": "1.0",
+  "lesson": "13.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "«5 иис» оонньуу.",
+  "content": "Күндү түүлээх. (□иис)\nДьахтар аата. (□□□□□иис)\nАйах иһигэр толору … (□иис)\nТэтэрээт, кинигэ. (□иис)\nТаҥас тигээччи. (иис□□□□□□)",
+  "answer": "Киис, Кэтириис, тиис, лиис, иистэнньэҥ.",
+  "answer_key": "ООННЬУУЛАР ТААЙЫЫЛАРА, 57 с.",
+  "pdf_page_start": "57.0",
+  "sheet_row": 27,
+  "eval_instruction": "Note that the model should be able to answer with common Russian name converted to Yakut, and \"Кэтириис\" is the only correct answer.",
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

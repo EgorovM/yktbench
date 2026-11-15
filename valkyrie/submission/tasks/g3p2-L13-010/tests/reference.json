@@ -1,0 +1,20 @@
+{
+  "id": "g3p2-L13-010",
+  "grade": "3",
+  "part": "2.0",
+  "lesson": "13.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "«5 нас» оонньуу.",
+  "content": "I нас — үүнээйигэ барытыгар баар. (**нас)\nII нас — атахха кэтиллэр. (нас**)\nIII нас — үлэлээн ылаҕын. (***нас)\nIV нас — от-мас тыалтан ...-нуоҕай (нас***)\nV нас — Хаар күн уотуттан ... (*******нас)",
+  "answer": "1. Умнас.\n2. Наскы.\n3. Хамнас.\n4. Наскый.\n5. Чаҕылыҥнас.",
+  "answer_key": "Оонньуулар таайыылара, 50 с.",
+  "pdf_page_start": "50.0",
+  "sheet_row": 26,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

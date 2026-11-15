@@ -1,0 +1,20 @@
+{
+  "id": "g3p1-L16-010",
+  "grade": "3",
+  "part": "1.0",
+  "lesson": "16.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": true,
+  "mapping": "icon",
+  "instruction": "Бастакы эрээт ойууларын кэнники дорҕооннорунан, иккис эрээт ойууларын бастакы дорҕооннорунан тыл ситимин таһаар.",
+  "content": "86.0",
+  "answer": "Саҥа чаастара.",
+  "answer_key": "Оонньуулар таайыылара, 60 с.",
+  "pdf_page_start": "60.0",
+  "sheet_row": 58,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

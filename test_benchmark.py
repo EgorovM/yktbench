@@ -6,6 +6,7 @@ Run with: .venv/bin/python -m unittest discover -s . -p 'test_*.py'
 import copy
 import json
 import tempfile
+import time
 import unittest
 import xml.etree.ElementTree as ET
 import zipfile
@@ -16,6 +17,7 @@ from pathlib import Path
 
 import build_dataset as dataset
 import ykt_eval as evaluator
+from providers import make_provider
 
 
 ROOT = Path(__file__).resolve().parent
@@ -109,6 +111,21 @@ class DatasetTests(unittest.TestCase):
 
 
 class RunIsolationTests(unittest.TestCase):
+    def test_answer_deadline_returns_a_terminal_empty_result(self):
+        provider = make_provider("mock", {"provider": "mock", "model": "mock", "deadline_seconds": 0.001})
+        start = time.monotonic()
+        result = provider.complete("system", "question")
+        self.assertLess(time.monotonic() - start, 3)
+        self.assertEqual(result.stop_reason, "timeout")
+        self.assertTrue(result.extra["timed_out"])
+        self.assertEqual(result.text, "")
+
+    def test_answer_before_deadline_is_preserved(self):
+        provider = make_provider("mock", {"provider": "mock", "model": "mock", "deadline_seconds": 5})
+        result = provider.complete("system", "question")
+        self.assertIn("ХОРУЙ:", result.text)
+        self.assertNotEqual(result.stop_reason, "timeout")
+
     def test_changed_model_instructions_reject_cached_run(self):
         with tempfile.TemporaryDirectory() as tmp:
             run = Path(tmp)

@@ -11,6 +11,12 @@ Only model API endpoints are allowed during the agent phase. Grading uses the
 existing GPT 6.1 Sol rubric and 16,000-token request budget, with full-question
 accuracy and partial credit recorded separately. Sol's own row is self-judged.
 
+New runs use `models_vals.toml`: each answer has a 900-second wall-clock
+deadline and requests at most 33,000 output tokens. Gemma 4 31B is limited by
+its API to 16,384 tokens and is marked as an exception. Timed-out answers are
+saved as empty, flagged, and scored zero without retrying them. The sandbox
+allows another ten seconds to save the timeout result before it is stopped.
+
 ## Build
 
 Freeze the supplied workbook, CSV, or JSONL and bind it to the actual model
@@ -30,6 +36,7 @@ Then export the normalized questions:
   --data data/vals_90.jsonl \
   --solver-instructions prompts/solver_system.md \
   --judge-instructions prompts/vals_90_judge.md \
+  --models-config models_vals.toml \
   --out valkyrie/submission
 ```
 
@@ -49,6 +56,7 @@ custom scoring support in the hosted deployment.
   --data data/vals_90.jsonl \
   --solver-system prompts/solver_system.md \
   --judge-system prompts/vals_90_judge.md \
+  --config models_vals.toml \
   --run-dir results/vals_90 \
   --workers-per-model 16 --grok-workers 90
 ```

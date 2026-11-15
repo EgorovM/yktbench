@@ -1,0 +1,20 @@
+{
+  "id": "g1-L11-009",
+  "grade": "1",
+  "part": "",
+  "lesson": "11.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Тыллары арааран уһул. [х]-[ҕ] дорҕооннор буукубаларын аннынан тарт.",
+  "content": "буурҕаалҕассахсырҕаарҕаххалҕан",
+  "answer": "Буурҕа, алҕас, сахсырҕа, арҕах, халҕан.",
+  "answer_key": "Оонньуулар таайыылара, 39 с.",
+  "pdf_page_start": "39.0",
+  "sheet_row": 32,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

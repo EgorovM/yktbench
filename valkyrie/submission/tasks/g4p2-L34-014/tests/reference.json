@@ -1,0 +1,21 @@
+{
+  "id": "g4p2-L34-014",
+  "grade": "4",
+  "part": "2.0",
+  "lesson": "34.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "«Саха сирин хамсыыр харамайа» таайбараҥы таай. Солбуйар аат тыллары туруор.",
+  "content": "***с*\n***о***\n**л****\n**б***\n*у*****\n**й**\n**а***\n**р*\n*а**\n*а***\n***т**",
+  "answer": "Кырса, моҕотой, солоҥдо, чубуку, буобура, тайах, саарба, бөрө, таба, саһыл, туртас.",
+  "answer_key": "ООННЬУУЛАР ТААЙЫЫЛАРА, 125 с.",
+  "pdf_page_start": "125.0",
+  "sheet_row": 91,
+  "eval_instruction": "Count as correct if you fill in any valid word in Yakut that mathces the given template.",
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

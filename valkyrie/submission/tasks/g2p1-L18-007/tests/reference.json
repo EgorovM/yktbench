@@ -1,0 +1,20 @@
+{
+  "id": "g2p1-L18-007",
+  "grade": "2",
+  "part": "1.0",
+  "lesson": "18.0",
+  "section": "",
+  "block": "test",
+  "icon": "тыл баайа",
+  "needs_visual": true,
+  "mapping": "only_exercise_on_page",
+  "instruction": "Ыркый диэн тыл суолтатын бул. а) Титирик мастаах хойуу ойуур. б) Киһиэхэ көһүүнэ суох, олус сайаҕас сыһыаннаах, олус эйэҕэс.",
+  "content": "",
+  "answer": "Куобах.",
+  "answer_key": "Оонньуулар таайыылара, 58 с.",
+  "pdf_page_start": "57.0",
+  "sheet_row": 43,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

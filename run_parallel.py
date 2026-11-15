@@ -29,6 +29,7 @@ def main():
     ap.add_argument("--run-dir", type=Path, required=True)
     ap.add_argument("--models", default=",".join(MODELS))
     ap.add_argument("--judge", default="sol-6.1")
+    ap.add_argument("--config", type=Path, default=Path(__file__).with_name("models_vals.toml"))
     ap.add_argument("--workers-per-model", type=int, default=16)
     ap.add_argument("--grok-workers", type=int, default=90)
     ap.add_argument("--retries", type=int, default=2)
@@ -41,6 +42,7 @@ def main():
     base = [sys.executable, str(Path(__file__).with_name("ykt_eval.py")),
             "--data", str(args.data.resolve()), "--solver-system", str(args.solver_system.resolve()),
             "--run-dir", str(run_dir), "--judges", args.judge]
+    base += ["--config", str(args.config.resolve())]
     if args.judge_system:
         base += ["--judge-system", str(args.judge_system.resolve())]
     subprocess.run([base[0], base[1], "check", *base[2:], "--models", args.models], check=True)
@@ -87,7 +89,7 @@ def main():
                 keys = [k for k in judged if k[0] == model]
                 rs = [responses[k] for k in good if k[0] == model]
                 js = [grades[(args.judge,) + k] for k in keys]
-                limit = ykt_eval.load_config(Path(__file__).with_name("models.toml"))[model].get("max_tokens", 32000)
+                limit = ykt_eval.load_config(args.config)[model].get("max_tokens", 33000)
                 snapshot["rows"].append({
                     "model": model, "answers": len(rs), "graded": len(js), "total": len(items),
                     "correct": sum(j["strict"] for j in js),

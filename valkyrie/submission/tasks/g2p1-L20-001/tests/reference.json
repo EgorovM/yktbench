@@ -1,0 +1,20 @@
+{
+  "id": "g2p1-L20-001",
+  "grade": "2",
+  "part": "1.0",
+  "lesson": "20.0",
+  "section": "",
+  "block": "",
+  "icon": "",
+  "needs_visual": true,
+  "mapping": "page_only",
+  "instruction": "Исхиэмэлэргэ сөп түбэһэр кыыллар ааттарын суруй.",
+  "content": "",
+  "answer": "Саа, илим, сохсо, күөгү.",
+  "answer_key": "Оонньуулар таайыылара, 63 с.",
+  "pdf_page_start": "63.0",
+  "sheet_row": 44,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

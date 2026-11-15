@@ -3,6 +3,7 @@
 import argparse
 import json
 from pathlib import Path
+from model_names import model_name
 
 
 def main():
@@ -26,7 +27,7 @@ def main():
     ax.barh([v - 0.17 for v in y], accuracy, height=0.3, color="#2864a0", label="Full-question accuracy")
     for pos, row in enumerate(rows):
         ax.text(row["accuracy"] + 1, pos - 0.17, f"{row['accuracy']:.1f}%", va="center", fontsize=9)
-    labels = [r["model"] + (" (judge)" if r.get("judge_model") or r["model"] == "sol-6.1-eval" else "") for r in rows]
+    labels = [model_name(r["model"]) + (" (judge)" if r.get("judge_model") or r["model"] == "sol-6.1-eval" else "") for r in rows]
     ax.set_yticks(y, labels)
     ax.set_xlim(0, 100)
     ax.set_xlabel("Score (%)")
@@ -40,6 +41,8 @@ def main():
     fig.tight_layout(rect=(0, 0.045, 1, 1))
     args.out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(args.out.with_suffix(".svg"), metadata={"Date": None})
+    svg = args.out.with_suffix(".svg")
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
     fig.savefig(args.out.with_suffix(".png"), dpi=180)
     plt.close(fig)
 

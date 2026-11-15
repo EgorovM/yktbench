@@ -1,0 +1,20 @@
+{
+  "id": "g3p2-L05-011",
+  "grade": "3",
+  "part": "2.0",
+  "lesson": "5.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Ыһыллыбыт буукубалары наардаан, тылла таһаар.",
+  "content": "ӨМКӨ ЫЛТ",
+  "answer": "Көмө тыл.",
+  "answer_key": "Оонньуулар таайыылара, 24 с.",
+  "pdf_page_start": "24.0",
+  "sheet_row": 69,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

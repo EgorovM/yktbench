@@ -1,0 +1,7 @@
+{
+  "provider": "openai_responses",
+  "model": "gpt-6.1-sol",
+  "api_key_env": "OPENAI_API_KEY",
+  "effort": "high",
+  "max_tokens": 16000
+}

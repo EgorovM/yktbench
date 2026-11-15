@@ -1,0 +1,20 @@
+{
+  "id": "g2p2-L16-001",
+  "grade": "2",
+  "part": "2.0",
+  "lesson": "16.0",
+  "section": "",
+  "block": "",
+  "icon": "дьарык",
+  "needs_visual": false,
+  "mapping": "instruction",
+  "instruction": "Таабырыннары таай.",
+  "content": "1. Кирээдэҕэ сытар күөх төгүрүк, минньигэс баар үһү.\n2. Эрэһиинэ, төгүрүк, эриэн, кыра, оҕустахха үөрэр баар үһү.\n3. Маҥан, кылабачыгас, бытархай, тымныы кыһын эрэ көстөр баар үһү.",
+  "answer": "The Russian spelling is also a valid answer for (\"орбуус\"=\"арбуз\").",
+  "answer_key": "Оонньуулар таайыылара, 43 с.",
+  "pdf_page_start": "43.0",
+  "sheet_row": 49,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

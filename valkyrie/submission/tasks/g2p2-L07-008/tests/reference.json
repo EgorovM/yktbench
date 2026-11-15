@@ -1,0 +1,21 @@
+{
+  "id": "g2p2-L07-008",
+  "grade": "2",
+  "part": "2.0",
+  "lesson": "7.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Таабырыннары таай.",
+  "content": "1. Уокка умайбат, ууга тимирбэт баар үһү.\n2. Илиитэ, атаҕа суох эрээри ойууһут баар үһү.\n3. Уһун кутуруктаах, уот харахтаах иилэҕэс тиэрбэс ынчыктыыынчыктыы барар үһү.\n4. Отоннооҕор оччугуй, оҕустааҕар күүстээх баар үһү.",
+  "answer": "1. Муус. 2. Тымныы. 3. Пуойас. 4. Буулдьа.",
+  "answer_key": "Оонньуулар таайыылара, 21 с.",
+  "pdf_page_start": "21.0",
+  "sheet_row": 46,
+  "eval_instruction": "The Russian spelling is also a valid answer for (\"поезд\"=\"пуойас\").",
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

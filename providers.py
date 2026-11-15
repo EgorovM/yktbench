@@ -6,6 +6,7 @@ left to the vendor SDKs (max_retries below).
 """
 
 import json
+import multiprocessing
 import os
 import re
 import time
@@ -24,6 +25,8 @@ class Completion:
 
 
 def make_provider(name, cfg):
+    if cfg.get("deadline_seconds"):
+        return DeadlineProvider(name, cfg)
     kind = cfg.get("provider")
     if kind == "anthropic":
         return AnthropicProvider(name, cfg)
@@ -34,6 +37,57 @@ def make_provider(name, cfg):
     if kind == "mock":
         return MockProvider(name, cfg)
     raise ValueError(f"model {name!r}: unknown provider {kind!r}")
+
+
+def _complete_in_process(connection, name, cfg, system, user, schema):
+    try:
+        inner = dict(cfg)
+        inner.pop("deadline_seconds", None)
+        result = make_provider(name, inner).complete(system, user, schema)
+        connection.send(("ok", result))
+    except Exception as error:
+        try:
+            connection.send(("error", f"{type(error).__name__}: {error}"))
+        except (BrokenPipeError, EOFError, OSError):
+            pass
+    finally:
+        connection.close()
+
+
+class DeadlineProvider:
+    """A per-answer process boundary enforces a total wall-clock deadline."""
+
+    def __init__(self, name, cfg):
+        self.name, self.cfg = name, cfg
+
+    def complete(self, system, user, schema=None):
+        context = multiprocessing.get_context("spawn")
+        receive, send = context.Pipe(duplex=False)
+        process = context.Process(target=_complete_in_process,
+                                  args=(send, self.name, self.cfg, system, user, schema), daemon=True)
+        started = time.monotonic()
+        process.start()
+        send.close()
+        try:
+            remaining = max(0, self.cfg["deadline_seconds"] - (time.monotonic() - started))
+            if not receive.poll(remaining):
+                return Completion(text="", served_by=self.cfg["model"], stop_reason="timeout",
+                                  latency_s=time.monotonic() - started,
+                                  extra={"timed_out": True, "deadline_seconds": self.cfg["deadline_seconds"]})
+            kind, value = receive.recv()
+            if kind == "error":
+                raise RuntimeError(value)
+            value.latency_s = time.monotonic() - started
+            return value
+        finally:
+            receive.close()
+            if process.is_alive():
+                process.terminate()
+            process.join(timeout=1)
+            if process.is_alive():
+                process.kill()
+                process.join(timeout=1)
+            process.close()
 
 
 def _api_key(cfg, name):

@@ -1,0 +1,20 @@
+{
+  "id": "g3p1-L17-011",
+  "grade": "3",
+  "part": "1.0",
+  "lesson": "17.0",
+  "section": "",
+  "block": "",
+  "icon": "",
+  "needs_visual": false,
+  "mapping": "instruction",
+  "instruction": "Хоһоонунан таабырыны таай.",
+  "content": "Тэһии, сэргэх, сүрдээх мэник\nТойторуйа көтүөлүүр,\nОйор оонньуута итинник,\nОйуоккалыыркөрүлүүр,\nКини кыра, кини мэник,\nАт да, биэ да буолбатах,\nТаайыҥ эрэ, доҕоттор,\nКини ким эбитий?",
+  "answer": "Кулунчук.",
+  "answer_key": "Оонньуулар таайыылара, 63 с.",
+  "pdf_page_start": "63.0",
+  "sheet_row": 60,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

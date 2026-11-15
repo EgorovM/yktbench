@@ -100,21 +100,24 @@ def build(rows, version="v1"):
             last, suffix = r, 0
         else:
             if last is None:
-                sys.exit(f"row {i}: no id and no item above it to attach to")
-            suffix += 1
-            rid = f"{clean(last['id'])}{chr(ord('a') + suffix)}"  # 2nd row -> b
-            for k in INHERIT:
-                if not clean(r.get(k)):
-                    r[k] = last.get(k)
+                if version != "vals_90":
+                    sys.exit(f"row {i}: no id and no item above it to attach to")
+                rid = f"vals90-row-{i:03d}"
+            else:
+                suffix += 1
+                rid = f"{clean(last['id'])}{chr(ord('a') + suffix)}"  # 2nd row -> b
+                for k in INHERIT:
+                    if not clean(r.get(k)):
+                        r[k] = last.get(k)
         m = re.match(r"g(\d+(?:-\d+)?)", rid)
-        if m is None:
+        if m is None and version != "vals_90":
             sys.exit(f"row {i}: invalid exercise id {rid!r}")
         visual = clean(r.get("needs_visual")).lower()
         if visual not in ("", "0", "0.0", "false", "no", "1", "1.0", "true", "yes"):
             sys.exit(f"row {i} ({rid}): invalid needs_visual value {visual!r}")
         item = {
             "id": rid,
-            "grade": m.group(1),
+            "grade": m.group(1) if m else clean(r.get("grade")).removesuffix(".0") or "unspecified",
             "part": clean(r.get("part")),
             "lesson": clean(r.get("lesson")),
             "section": clean(r.get("section")),

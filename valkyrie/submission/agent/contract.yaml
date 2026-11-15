@@ -1,0 +1,23 @@
+name: yakut-text-model
+install_cmd: python -m pip install -r requirements.txt
+run_cmd: >-
+  python /bundle/yakut-text-model/agent.py "{problem_statement_path}"
+  --model "{model}" --output-dir /workspace
+final_output: /workspace/response.json
+allow_provider_tools: false
+install_egress:
+  - pypi.org
+  - files.pythonhosted.org
+defaults:
+  model:
+    type: str
+    required: true
+    description: Model alias from models.toml
+secrets:
+  OPENAI_API_KEY: ykt-openai-api-key
+  ANTHROPIC_API_KEY: ykt-anthropic-api-key
+  OPENROUTER_API_KEY: ykt-openrouter-api-key
+  YANDEX_GIGACHAT_API_KEY: ykt-gigachat-api-key
+output_artifacts:
+  - path: artifacts/response.json
+    source: /workspace/response.json

@@ -1,0 +1,20 @@
+{
+  "id": "g4p2-L20-012",
+  "grade": "4",
+  "part": "2.0",
+  "lesson": "20.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Шарада.",
+  "content": "Бастакы аҥаарым — үүрэр тыл,\nИккис аҥаарым — дьиэ аайы баар.\nБүтүн бэйэм сылаас сиргэ үөскүүр\nХойуу түүлээх,\nМинньигэс үүттээх, эттээх\nДьиэ кыыла буолабын.",
+  "answer": "Бар + аан.",
+  "answer_key": "ООННЬУУЛАР ТААЙЫЫЛАРА, 73 с.",
+  "pdf_page_start": "73.0",
+  "sheet_row": 88,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

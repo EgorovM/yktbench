@@ -25,8 +25,9 @@ def write(path, text):
     path.write_text(text, encoding="utf-8")
 
 
-def build(data, system_path, destination, dataset_name="yakut/vals-90", expected_count=None, judge_path=None):
+def build(data, system_path, destination, dataset_name="yakut/vals-90", expected_count=None, judge_path=None, models_path=None, allow_visual_text=False):
     judge_path = judge_path or BENCH / "prompts/judge_system.md"
+    models_path = models_path or BENCH / "models_vals.toml"
     items = [json.loads(line) for line in data.read_text(encoding="utf-8").splitlines() if line.strip()]
     if expected_count is not None and len(items) != expected_count:
         raise ValueError(f"Expected {expected_count} questions, found {len(items)}")
@@ -39,11 +40,11 @@ def build(data, system_path, destination, dataset_name="yakut/vals-90", expected
         raise ValueError("Model instructions are empty")
     if destination.exists() and any(destination.iterdir()):
         raise ValueError(f"Output directory is not empty: {destination}")
-    cfg = tomllib.loads((BENCH / "models.toml").read_text())["models"]
+    cfg = tomllib.loads(models_path.read_text())["models"]
     judge = cfg["sol-6.1"]
     tasks = destination / "tasks"
     for item in items:
-        if item.get("needs_visual"):
+        if item.get("needs_visual") and not allow_visual_text:
             raise ValueError(f"Task {item['id']} needs an external picture")
         folder = tasks / item["id"]
         write(folder / "instruction.md", system + "\n\n<!-- YKT_MODEL_INPUT -->\n"
@@ -59,6 +60,7 @@ description = "Text-only Sakha school exercise"
 [metadata]
 dataset = "{dataset_name}"
 grade = "{item.get('grade', '')}"
+source_needs_visual = {str(bool(item.get('needs_visual'))).lower()}
 
 [environment]
 docker_image = "python:3.12-slim"
@@ -67,7 +69,7 @@ cpus = 1
 memory_mb = 1024
 
 [agent]
-timeout_sec = 7200
+timeout_sec = 910
 network_mode = "allowlist"
 allowed_hosts = ["api.openai.com", "api.anthropic.com", "openrouter.ai", "foundation-models.api.cloud.ru"]
 
@@ -109,7 +111,7 @@ destination = "judgment.json"
     agent = destination / "agent"
     agent.mkdir(parents=True, exist_ok=True)
     for source, name in [(HERE / "agent.py", "agent.py"), (BENCH / "providers.py", "providers.py"),
-                         (BENCH / "models.toml", "models.toml"), (system_path, "solver_system.md")]:
+                         (models_path, "models.toml"), (system_path, "solver_system.md")]:
         shutil.copyfile(source, agent / name)
     write(agent / "requirements.txt", (BENCH / "requirements.txt").read_text())
     write(agent / "contract.yaml", '''name: yakut-text-model
@@ -143,7 +145,7 @@ output_artifacts:
         "dataset_sha256": digest(data),
         "solver_instructions_sha256": digest(system_path),
         "judge_instructions_sha256": digest(judge_path),
-        "models_sha256": digest(BENCH / "models.toml"),
+        "models_sha256": digest(models_path),
         "task_ids": [item["id"] for item in items],
         "reference_visibility": "tests injected during grading, never included in agent bundle",
     }
@@ -156,12 +158,15 @@ def main():
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--solver-instructions", type=Path, required=True)
     parser.add_argument("--judge-instructions", type=Path)
+    parser.add_argument("--models-config", type=Path)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--dataset-name", default="yakut/vals-90")
     parser.add_argument("--expected-count", type=int, default=90)
+    parser.add_argument("--allow-visual-text", action="store_true")
     args = parser.parse_args()
     print(json.dumps(build(args.data, args.solver_instructions, args.out, args.dataset_name,
-                           args.expected_count, args.judge_instructions), indent=2))
+                           args.expected_count, args.judge_instructions, args.models_config,
+                           args.allow_visual_text), indent=2))
 
 
 if __name__ == "__main__":

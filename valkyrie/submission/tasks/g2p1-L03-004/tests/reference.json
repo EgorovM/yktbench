@@ -1,0 +1,20 @@
+{
+  "id": "g2p1-L03-004",
+  "grade": "2",
+  "part": "1.0",
+  "lesson": "3.0",
+  "section": "",
+  "block": "",
+  "icon": "",
+  "needs_visual": false,
+  "mapping": "instruction",
+  "instruction": "Таабырыны аах, алҕаһа суох уһул уонна таай.",
+  "content": "Бир киһи түөрт атаахтах үһү.",
+  "answer": "Остуол.",
+  "answer_key": "Оонньуулар таайыылара, 13 с.",
+  "pdf_page_start": "13.0",
+  "sheet_row": 39,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

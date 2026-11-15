@@ -1,0 +1,20 @@
+{
+  "id": "g4p1-L04-011",
+  "grade": "4",
+  "part": "1.0",
+  "lesson": "4.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "«5 тал» оонньуу.",
+  "content": "1. Ийэҕэ, аҕаҕа … (***тал.)\n2. Мааны — ... быһыылаах. (тал**.)\n3. Эн маҥнайгы … (****тал**.)\n4. Элбэхтэн биири … (тал**.)\n5. ... саһыл саҕалаах. (**тал****.)",
+  "answer": "1. Таптал.\n2. Талба.\n3. Учууталыҥ.\n4. Талар.\n5. Саталлаах.",
+  "answer_key": "ООННЬУУЛАР ТААЙЫЫЛАРА, 19 с.",
+  "pdf_page_start": "19.0",
+  "sheet_row": 24,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}

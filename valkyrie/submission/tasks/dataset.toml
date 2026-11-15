@@ -1,0 +1,370 @@
+[dataset]
+name = "yakut/vals-90"
+version = "v-1bfbfdb0441b"
+description = "Text-only Yakut language and reasoning exercises"
+authors = [{name = "Sardaana Eginova"}]
+keywords = ["yakut", "sakha", "language", "reasoning"]
+
+[metadata]
+dataset_sha256 = "eca5fd5e00393d61db89751f1e068a33e3b36dde403fc697247346cd28c90e85"
+solver_instructions_sha256 = "48cd29c59d668286e46b7dbb39fa830ec69925927ad336c2cc340f58950d6bb0"
+
+[[tasks]]
+name = "daanaea/vals90-row-002"
+digest = "sha256:042343dded80555cd21f5e385fca8da0ce29df61a57188ade0b22d3aaa06d148"
+
+[[tasks]]
+name = "daanaea/vals90-row-003"
+digest = "sha256:904860ad512b1cebc4f7b068350dccd37b19512430f844e42a9f3b998f12e806"
+
+[[tasks]]
+name = "daanaea/g2p2-L08-007"
+digest = "sha256:e8859a8c92aee18c7aacb7c7631c5780c0341a1e6a5257a9db94a5f1ce89ec79"
+
+[[tasks]]
+name = "daanaea/g1-L26-009"
+digest = "sha256:e155804a54c8ac343f03a747594b0b7b68b14b1610db1d23d38d3f7e47c8dd42"
+
+[[tasks]]
+name = "daanaea/g1-L17-010"
+digest = "sha256:c3af7a5f32f0951fd8a622e500f22bd4168f3130eddef1421654f51bedbf4740"
+
+[[tasks]]
+name = "daanaea/g1-L09-009"
+digest = "sha256:e9c6fb1b588b9af4413a8ff7e669499626ff7400ab792f9ae088aca1c57b9f9c"
+
+[[tasks]]
+name = "daanaea/g4p2-L06-002"
+digest = "sha256:7d26279952c6632a8d4ad106f191632485c6502a02446e0d958a88dde113a0ff"
+
+[[tasks]]
+name = "daanaea/g4p1-L34-001"
+digest = "sha256:7d14e649d541ff76362c1d7671efcb8a527e2211383eacceff88deefc1c6cfd8"
+
+[[tasks]]
+name = "daanaea/g3p1-L34-001"
+digest = "sha256:35ee01ebc6d4d37c8e683564c2031b34a1eb6edf4591fe55945a515ed9fc1e2e"
+
+[[tasks]]
+name = "daanaea/g4p1-L25-001"
+digest = "sha256:085d8aa40885fbde9af5b07b19a62d0db42e3e5322deecce174fd95b06f79646"
+
+[[tasks]]
+name = "daanaea/g4p2-L27-010"
+digest = "sha256:606c16db8b89634795b1e4222749f7bda3db506f504f9cba067358d897c3187c"
+
+[[tasks]]
+name = "daanaea/g2p2-L32-011"
+digest = "sha256:3a0241e80274113977bfa6e20ee8dd16b11ea63ba6b7c9825cb6836d9c1d4608"
+
+[[tasks]]
+name = "daanaea/g3p2-L23-010"
+digest = "sha256:ec908fc3b6d1ecbb364d84a0e9bbcb22335e2f0725029c87f07101244688f2f9"
+
+[[tasks]]
+name = "daanaea/g3p2-L10-012"
+digest = "sha256:a7c076408c1f708a848e2739db5ae347d5384eb78dc76d59c13a7cf90821f17a"
+
+[[tasks]]
+name = "daanaea/g3p2-L19-010"
+digest = "sha256:df060d20a8b621d0dfd06040984813a312b3804a8d7fac647ad36b691c08cbc9"
+
+[[tasks]]
+name = "daanaea/g2p2-L35-011"
+digest = "sha256:20c7aca9c84d84508ffc14608e31748809e32414b268af76b38f0e751e6c356e"
+
+[[tasks]]
+name = "daanaea/g2p1-L14-006"
+digest = "sha256:beb311924a4ed28b7d00422b1a89c6e91a75e69b7fbac0f0b9d2f8f0e3958504"
+
+[[tasks]]
+name = "daanaea/g2p1-L14-006b"
+digest = "sha256:cdbc1a32db0b58e1f4a1e1c924ad21cd5c19edc6a2744925dd19fe588f1fe0a1"
+
+[[tasks]]
+name = "daanaea/g2p1-L14-006c"
+digest = "sha256:15ab47e0cad3db7529f231552c72877c5f33b2650bce1345676bdc5cb1699a7f"
+
+[[tasks]]
+name = "daanaea/g2p1-L14-006d"
+digest = "sha256:206fd68dd62c399046a5fac4727974e5ab08a2d81f06d7e5ef28d067241b2c1d"
+
+[[tasks]]
+name = "daanaea/g3p1-L36-011"
+digest = "sha256:74ca66bf249ee961f36699083591f5565fd3169a1a5a850a874acee5725021fb"
+
+[[tasks]]
+name = "daanaea/g3p1-L32-008"
+digest = "sha256:583562ee1845162eaff6e26a41bdcab351098c9a1ef56f0531b6b8094fe3cd25"
+
+[[tasks]]
+name = "daanaea/g4p1-L04-011"
+digest = "sha256:0b3f7571f6706e5dd75f90b9c600fa59a7091af4fbc84839219046349a0228a8"
+
+[[tasks]]
+name = "daanaea/g3p2-L12-009"
+digest = "sha256:bb882a3fa7537fc45e0370f53d066e4bf1c4770ebe63fa80e2d67408fd50ee93"
+
+[[tasks]]
+name = "daanaea/g3p2-L13-010"
+digest = "sha256:344a99ced37fc6c06420c8ea551c6814224fb4f5f903978899d1ce892f1a8ef9"
+
+[[tasks]]
+name = "daanaea/g4p1-L13-012"
+digest = "sha256:e0a17665f32c920cf431297636a3e61c06d9283ea35315590840798045d5e950"
+
+[[tasks]]
+name = "daanaea/g4p1-L26-011"
+digest = "sha256:a3f3d3f15f0e91ef7931d3fd8fc5ebc64f3b50649508d6f76b47ddbe6bb4b4c7"
+
+[[tasks]]
+name = "daanaea/g1-L02-004"
+digest = "sha256:cf3bee9bc7d21bd424e3738e92c4406e550aab28ddbea51090a1c486f5dcf5ae"
+
+[[tasks]]
+name = "daanaea/g1-L02-005"
+digest = "sha256:4dfd2c13dd077368c5e32242647044acce5938be4186d388a17f6ec575975ec4"
+
+[[tasks]]
+name = "daanaea/g1-L06-007"
+digest = "sha256:560899011de1aa0b7208ffe107ec58923a6f63d578108b57292441d2e7216795"
+
+[[tasks]]
+name = "daanaea/g1-L11-009"
+digest = "sha256:7688c509b3ec41446bfe10460f7b0bddbbcf03f2b26eaeee6db8655c8c8460c0"
+
+[[tasks]]
+name = "daanaea/g1-L16-005"
+digest = "sha256:d34da9baf27fe27f0c94007ea3496aa0374ba969aad598bb5469150dc1e1f1cf"
+
+[[tasks]]
+name = "daanaea/g1-L21-008"
+digest = "sha256:28f5496d6214064e6afaf62e3d9a348cb2592baca02b616d9698f2f142bc77dd"
+
+[[tasks]]
+name = "daanaea/g1-L31-009"
+digest = "sha256:946d5e10b396f76b38e1f67e64294f10e3b80bc609561623d042bfdebc696842"
+
+[[tasks]]
+name = "daanaea/g4p1-L25-013"
+digest = "sha256:1edc8c992c90b2b4c6e4724f9345a8de41823d5c29d23cd0cc9f56749c58afac"
+
+[[tasks]]
+name = "daanaea/g1-L38-008"
+digest = "sha256:9e938e0b7e7ab61350f5ebe263fd9f59a432ae882b867ed8ae260333e802594b"
+
+[[tasks]]
+name = "daanaea/g2p1-L02-006"
+digest = "sha256:86f14282a771ccb8282b7083d4e3ff3e9b2ece372fd9eae2c0b95b4e7ed20015"
+
+[[tasks]]
+name = "daanaea/g2p1-L03-004"
+digest = "sha256:456ceed805506c377da25081512082289a0a7a2ae24e411fbfb1011f88ccf332"
+
+[[tasks]]
+name = "daanaea/g2p1-L06-008"
+digest = "sha256:0675e902d40f434a3c0f82e8a7fc32d96f2e0c14727d9e3671c4761969a51308"
+
+[[tasks]]
+name = "daanaea/g2p1-L10-001"
+digest = "sha256:0c8f0d93abf501378c659c54d20eb60c4489be1f49c895fa1f4b9db3572d1814"
+
+[[tasks]]
+name = "daanaea/g2p1-L13-001"
+digest = "sha256:76c8f1eb6460a178084f3027eae02f2d814f577715aa319c41d0a1ced8505190"
+
+[[tasks]]
+name = "daanaea/g2p1-L18-007"
+digest = "sha256:d6b9d880bd03594a7cea85d39b9c50a626f87baa52e87953db01489ba9d71774"
+
+[[tasks]]
+name = "daanaea/g2p1-L20-001"
+digest = "sha256:e8b355ce9ff45ceb7c3b7d90aad9248c10c152bb6b62390a0ee8deccd60611e4"
+
+[[tasks]]
+name = "daanaea/g2p2-L05-004"
+digest = "sha256:572e71b1b39bdaabf1ba620639486087fe82ff37ef7dc8fdf7f8519251f79502"
+
+[[tasks]]
+name = "daanaea/g2p2-L07-008"
+digest = "sha256:a9e24bd540cc8389ee7f36fbd157537f08594d4e0cd79b8fe7019132858e6829"
+
+[[tasks]]
+name = "daanaea/g2p2-L09-007"
+digest = "sha256:0d42830e23c93daf4c461e6469590f8e1583aeace810eabb5f3c2b8d0a337c3f"
+
+[[tasks]]
+name = "daanaea/g2p2-L10-009"
+digest = "sha256:81145c2b1a4017ff68ff59c6a3fcd3bca05c7ff98e0dd4525c8c3a7c8d03d6fe"
+
+[[tasks]]
+name = "daanaea/g2p2-L16-001"
+digest = "sha256:c247340179731826a20a2032089fd68caaabdae6349f0b463e59ab1f03c6cfd8"
+
+[[tasks]]
+name = "daanaea/g2p2-L17-007"
+digest = "sha256:5b1f28376f82227eeebd8a722938e1357ade391b8049cf4a9956b338ba88d929"
+
+[[tasks]]
+name = "daanaea/g2p2-L22-011"
+digest = "sha256:265c1bd946d9097c7d2f96c0d8c3fbad04bcc89c03a1c091f4bbd1a1a34357a3"
+
+[[tasks]]
+name = "daanaea/g2p2-L26-011"
+digest = "sha256:58733b7df08c209e816bb18a9ad58554e22ca4e7d588e904e966d97f94ed5415"
+
+[[tasks]]
+name = "daanaea/g2p2-L29-011"
+digest = "sha256:01fc716d281d1cc3addbfa6b6d09a279f568d9b44ee9a253c27a312fc1d68c43"
+
+[[tasks]]
+name = "daanaea/g2p2-L30-011"
+digest = "sha256:49a6842f1282ae26f0eedfe6289f66b997a009184b0d09a70a559f30a344fd1d"
+
+[[tasks]]
+name = "daanaea/g2p2-L33-005"
+digest = "sha256:8d143d8ea05d7ace2e6c9300b247fc90f608b8eeea72aeb08528ab1aef834664"
+
+[[tasks]]
+name = "daanaea/g3p1-L02-001"
+digest = "sha256:ca0e79422054c5d5765db4c9a40b8a428a43dad4ae6ac9b9a69c88f4201c6abd"
+
+[[tasks]]
+name = "daanaea/g3p1-L05-010"
+digest = "sha256:d1b736957878e6b3a4d448361f0808d10d8c01f8b93c5fe76f798c0e9ba6048b"
+
+[[tasks]]
+name = "daanaea/g3p1-L16-010"
+digest = "sha256:e68b9166611c8a3e33f5f05c99093fe90cc4c7748c2ed10d47a9f08e19085560"
+
+[[tasks]]
+name = "daanaea/g3p1-L17-001"
+digest = "sha256:2e51e8739cbfc3356fbfccc5587d39906f83467ac0f8c26bf1d50371a81b0d0e"
+
+[[tasks]]
+name = "daanaea/g3p1-L17-011"
+digest = "sha256:d4504e0bf90cbc411481aeb0c8752f6f2cd26a1b9a6a0265ebb6f89b8604ddb2"
+
+[[tasks]]
+name = "daanaea/g3p1-L19-002"
+digest = "sha256:ffb8c38d173bd704c981a5c5127277fff28f08ad6706827174585fe4b22ada40"
+
+[[tasks]]
+name = "daanaea/g3p1-L27-010"
+digest = "sha256:175686424385951b912ff7ecee858799b0f49a07fbd1e4fc6617c32c0d1ac19c"
+
+[[tasks]]
+name = "daanaea/g3p1-L27-011"
+digest = "sha256:039c8bf738fba1d8ce90c50c99ddc4f7d45d02337edcdb824c2b8d3ddaf0d574"
+
+[[tasks]]
+name = "daanaea/g3p1-L29-011"
+digest = "sha256:18ff19ce72efc3a3814c180ec4486756b5a1442ae04e3fb128df7d2379d72a89"
+
+[[tasks]]
+name = "daanaea/g3p1-L33-011"
+digest = "sha256:e53e80db40210e9e1f9ad8c063901c060383abb71610d2147fd1022e7ddbf252"
+
+[[tasks]]
+name = "daanaea/g3p1-L33-011b"
+digest = "sha256:a444ca0c78668cabe34194d89666bbdcbdba2a6b221fac5ec5fa5b03474e75a4"
+
+[[tasks]]
+name = "daanaea/g3p1-L34-011"
+digest = "sha256:c9db96cfc3533d0e243cf0f2b6bf6235860ba5c49e6abd40306b10b0a6386082"
+
+[[tasks]]
+name = "daanaea/g3p2-L04-011"
+digest = "sha256:5371522c749b6faad952572d54631d4698d9be10ee8352b75306e826ae3f0b2b"
+
+[[tasks]]
+name = "daanaea/g3p2-L05-011"
+digest = "sha256:a53ea7809fdfe17c4267a9c3fc340e10d7990ce0707e07e753800d57da20beff"
+
+[[tasks]]
+name = "daanaea/g3p2-L08-011"
+digest = "sha256:cdd002f06dcb97b134ba515ba5cc3c89016a4803de3eba6bf1c186d29e64e7b7"
+
+[[tasks]]
+name = "daanaea/g3p2-L11-011"
+digest = "sha256:50d42773a7912fd3fb1d4d2f1a3380dea707ba820c85a4bbaed8c381e1aee3da"
+
+[[tasks]]
+name = "daanaea/g3p2-L17-003"
+digest = "sha256:ef13998f62462a0b7accd67ed47a39e086cef7559354f85193a66ca6028e3770"
+
+[[tasks]]
+name = "daanaea/g3p2-L18-009"
+digest = "sha256:52ca17c6f553b0b894020e64941bf21eb510bf2238997bbdb27bce53bfb0d917"
+
+[[tasks]]
+name = "daanaea/g3p2-L21-010"
+digest = "sha256:53a7a6e8a1a11cf497c17ad0a6fa63280cb63f63fe92d7025605feb80ea22736"
+
+[[tasks]]
+name = "daanaea/g3p2-L26-010"
+digest = "sha256:63f700dc9d79d68b1f666953cf265b33f1ca63b0d8d4ee2460f5923e0a966f7b"
+
+[[tasks]]
+name = "daanaea/g4p1-L01-001"
+digest = "sha256:7588e56185b746197a4b95841a2be2f48e4fcb56c3b5be76c52487647e161b10"
+
+[[tasks]]
+name = "daanaea/g4p1-L08-010"
+digest = "sha256:74e110510bf2844786e342b1a7d7aa7b6635a73e61e35784b7d88458aba15921"
+
+[[tasks]]
+name = "daanaea/g4p1-L14-012"
+digest = "sha256:95456a62bdb9d7b4d59a3a629a5508dee5a2140af24249a092a2a5ef9e639301"
+
+[[tasks]]
+name = "daanaea/g4p1-L15-010"
+digest = "sha256:0fc4821d0d154f63eaa91fa0c24c0fce8f2d17cd4866959d35ea9a7c2aad43e6"
+
+[[tasks]]
+name = "daanaea/g4p1-L17-012"
+digest = "sha256:291cec6146a2fee6bce7a609acb795220adab3cfafdd15000d846ffe08963359"
+
+[[tasks]]
+name = "daanaea/g4p1-L16-003"
+digest = "sha256:932dff24aa39662c02c3a8ca19538e6937f78bc6dd2340ed082159799577060d"
+
+[[tasks]]
+name = "daanaea/g4p1-L31-012"
+digest = "sha256:e2474dcd49acf2895249b7024077ce6efa860dbabdcd286f2f0659b00389fc9d"
+
+[[tasks]]
+name = "daanaea/g4p1-L32-001"
+digest = "sha256:c9b6862e407b4591e737608c8896aa898862e6a50de131bfd0590215bf506124"
+
+[[tasks]]
+name = "daanaea/g4p2-L05-012"
+digest = "sha256:d6c0b680f7ffb53d936af06bf8b49910992539ea4acfcdfceff0bfd8cf5ade00"
+
+[[tasks]]
+name = "daanaea/g4p2-L09-013"
+digest = "sha256:b1a6172a4cd01c3df71b22da7a15f1cf0f2c11afe63f00877ba9de449afb828e"
+
+[[tasks]]
+name = "daanaea/g4p2-L11-002"
+digest = "sha256:758a842172f20a077e681f6b7570dacfb57533692f9392206db5d15fce5227ee"
+
+[[tasks]]
+name = "daanaea/g4p2-L12-011"
+digest = "sha256:0e1c5a59d50404df3d595548669bc836bc487de2773538d2ae18c610f69d5cd9"
+
+[[tasks]]
+name = "daanaea/g4p2-L20-012"
+digest = "sha256:ca7ade31a02dcdf486d168c8d878e796c1450b7249fa390c9214805f179b9367"
+
+[[tasks]]
+name = "daanaea/g4p2-L26-012"
+digest = "sha256:914714760daea6dafb77084e3fe9ca95345d74d7460f4cf2356a0f959d21a16d"
+
+[[tasks]]
+name = "daanaea/g4p2-L32-013"
+digest = "sha256:93bcb53ce020c88c60374a48b3dcfa24f5bb06e101b8be6c70299301f0509004"
+
+[[tasks]]
+name = "daanaea/g4p2-L34-014"
+digest = "sha256:30e85a1e954400654905f57c87aec3983cf07ce8c353337d4b9f748b75ddc53a"

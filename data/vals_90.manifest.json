@@ -1,0 +1,70 @@
+{
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub",
+  "source_sha256": "ef197410271d872bab6ad137ad937f066fba925a9df4cd07a1f20da6084bd567",
+  "dataset_sha256": "eca5fd5e00393d61db89751f1e068a33e3b36dde403fc697247346cd28c90e85",
+  "solver_instructions_file": "prompts/solver_system.md",
+  "solver_instructions_sha256": "48cd29c59d668286e46b7dbb39fa830ec69925927ad336c2cc340f58950d6bb0",
+  "questions": 90,
+  "by_grade": {
+    "unspecified": 2,
+    "2": 25,
+    "1": 11,
+    "4": 24,
+    "3": 28
+  },
+  "needs_visual": 12,
+  "evaluation_mode": "text-only; original picture flags retained",
+  "eval_instruction_count": 5,
+  "source_git_commit": "35d54a8ab3711c4cc2ca111f25b1ed2e2397eded",
+  "source_git_path": "data/vals_90.xlsx",
+  "source_storage_path": "data/sources/vals_90.xlsx",
+  "generated_ids": [
+    {
+      "sheet_row": 2,
+      "id": "vals90-row-002"
+    },
+    {
+      "sheet_row": 3,
+      "id": "vals90-row-003"
+    },
+    {
+      "sheet_row": 19,
+      "id": "g2p1-L14-006b"
+    },
+    {
+      "sheet_row": 20,
+      "id": "g2p1-L14-006c"
+    },
+    {
+      "sheet_row": 21,
+      "id": "g2p1-L14-006d"
+    },
+    {
+      "sheet_row": 66,
+      "id": "g3p1-L33-011b"
+    }
+  ],
+  "eval_instruction_rows": [
+    "g1-L26-009",
+    "g4p1-L13-012",
+    "g1-L38-008",
+    "g2p2-L07-008",
+    "g4p2-L34-014"
+  ],
+  "source_picture_flagged_ids": [
+    "g1-L02-005",
+    "g2p1-L10-001",
+    "g2p1-L13-001",
+    "g2p1-L18-007",
+    "g2p1-L20-001",
+    "g2p2-L09-007",
+    "g3p1-L16-010",
+    "g3p1-L17-001",
+    "g3p2-L17-003",
+    "g4p1-L01-001",
+    "g4p1-L32-001",
+    "g4p2-L11-002"
+  ]
+}

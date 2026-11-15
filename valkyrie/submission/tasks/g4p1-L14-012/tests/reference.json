@@ -1,0 +1,20 @@
+{
+  "id": "g4p1-L14-012",
+  "grade": "4",
+  "part": "1.0",
+  "lesson": "14.0",
+  "section": "",
+  "block": "",
+  "icon": "оонньуу",
+  "needs_visual": false,
+  "mapping": "icon",
+  "instruction": "Таайбараҥы таай.",
+  "content": "1. Балыктыыр тэрил. (т**)\n2. Дьиэ үрдүн сүгэн турар мас. (**ү*)\n3. Эт ас. (**һ*)\n4. Киһи, дьон былыргы төрүтэ. (**ү**)\n5. Үүт ас. (к****)",
+  "answer": "1. Туу. 2. Өһүө. 3. Хаһа. 4. Өбүгэ. 5. Кымыс.",
+  "answer_key": "ООННЬУУЛАР ТААЙЫЫЛАРА, 61 с.",
+  "pdf_page_start": "61.0",
+  "sheet_row": 78,
+  "dataset_version": "vals_90",
+  "source_file": "vals_90.xlsx",
+  "source_sheet": "vals sub"
+}
