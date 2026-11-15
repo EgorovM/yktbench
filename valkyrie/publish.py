@@ -30,7 +30,7 @@ def main():
     parser.add_argument("--provider", help="use the organization's default when omitted")
     parser.add_argument("--concurrency", type=int, default=90)
     parser.add_argument("--skip-secrets", action="store_true", help="use the organization's existing configured secrets")
-    parser.add_argument("--run-record", type=Path, default=Path("bench/results/vals_90/valkyrie_runs.json"))
+    parser.add_argument("--run-record", type=Path, default=Path("results/vals_90/valkyrie_runs.json"))
     args = parser.parse_args()
     manifest = json.loads((args.bundle / "manifest.json").read_text())
     subprocess.run(["valkyrie", "whoami"], check=True)

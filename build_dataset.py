@@ -1,7 +1,7 @@
 """Freeze the curated primary-school workbook as the v1 benchmark.
 
-    python3 bench/build_dataset.py
-    python3 bench/build_dataset.py --version v0  # reproduce the original sample
+    python3 build_dataset.py
+    python3 build_dataset.py --version v0  # reproduce the original sample
 
 Uses only the standard library. The v1 source is the `clean` sheet, never `wip`.
 Blank IDs receive b/c/d... suffixes under the preceding explicit ID. Grades are
@@ -20,7 +20,7 @@ import zipfile
 from collections import Counter
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
 NS = {
     "m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
     "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
@@ -153,9 +153,9 @@ def main():
     args = ap.parse_args()
     legacy = args.version == "v0"
     source_name = "sample.xlsx" if legacy else "clean_60_primary_school.xlsx"
-    archived_source = ROOT / "bench" / "data" / "sources" / source_name
+    archived_source = ROOT / "data" / "sources" / source_name
     args.xlsx = args.xlsx or archived_source
-    args.out = args.out or ROOT / "bench" / "data" / ("ykt_sample.jsonl" if legacy else "ykt_primary_v1.jsonl")
+    args.out = args.out or ROOT / "data" / ("ykt_sample.jsonl" if legacy else "ykt_primary_v1.jsonl")
     sheet_name = args.sheet or (None if legacy else "clean")
 
     try:

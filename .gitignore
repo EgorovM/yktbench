@@ -6,7 +6,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
-bench/results/
+/results/
 
 /ocr/
 /scripts/

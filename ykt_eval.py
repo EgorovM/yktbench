@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Sakha textbook QA eval: ask models the questions, grade answers with an LLM judge, report accuracy.
 
-  python bench/ykt_eval.py all     --models fable-5.2,glm-5.3,astra --judges sol-6.1
-  python bench/ykt_eval.py solve   --models fable-5.2,glm-5.3,astra   # ask the models
-  python bench/ykt_eval.py judge   --judges sol-6.1                   # grade the answers
-  python bench/ykt_eval.py report                                     # tables -> report.md, scores.csv
-  python bench/ykt_eval.py preview --id g1-L02-004                    # print the prompts for one item
+  python ykt_eval.py all     --models fable-5.2,glm-5.3,astra --judges sol-6.1
+  python ykt_eval.py solve   --models fable-5.2,glm-5.3,astra   # ask the models
+  python ykt_eval.py judge   --judges sol-6.1                   # grade the answers
+  python ykt_eval.py report                                     # tables -> report.md, scores.csv
+  python ykt_eval.py preview --id g1-L02-004                    # print the prompts for one item
 
 Everything is appended to <run-dir>/*.jsonl, so an interrupted run picks up where it
 stopped: re-run the same command and only missing or failed calls are made again.
@@ -646,9 +646,8 @@ def main():
 
     from dotenv import load_dotenv
 
-    # Existing environment wins; bench/.env takes priority over the repo .env.
+    # Existing environment wins over the repository .env.
     load_dotenv(BENCH / ".env")
-    load_dotenv(BENCH.parent / ".env")
     config = load_config(args.config)
     if args.command in ("solve", "all") and not args.models:
         ap.error("--models is required, e.g. --models fable-5.2,glm-5.3,astra")

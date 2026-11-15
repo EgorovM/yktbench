@@ -4,7 +4,7 @@ This benchmark evaluates models' capability speak and reason in Yakut. The publi
 
 ## Valkyrie submission
 
-The [Valkyrie adapter](bench/valkyrie/README.md) exports Harbor-format tasks and a
+The [Valkyrie adapter](valkyrie/README.md) exports Harbor-format tasks and a
 text-only model agent, with commands for publishing and running the dataset.
 Exercise-specific `eval_instruction` text is shown only to the judge. Model
 instructions, source data, and task files are versioned and hashed separately.
@@ -12,14 +12,14 @@ instructions, source data, and task files are versioned and hashed separately.
 ## Current benchmark: v1
 
 Results from 60 questions on the `clean` sheet of
-[`clean_60_primary_school.xlsx`](bench/data/sources/clean_60_primary_school.xlsx), grades 1–4.
+[`clean_60_primary_school.xlsx`](data/sources/clean_60_primary_school.xlsx), grades 1–4.
 All 15 models answered each question once. Judge: GPT 6.1 Sol, high reasoning effort.
 Solvers received no browsing or external tools. The ten original v0 model settings
 were kept unchanged. Accuracy requires every reference part to be correct; partial
 credit is the mean share of parts correct. Confidence intervals are 95% bootstrap
 intervals over questions.
 
-![V1 accuracy and partial-credit results](bench/figures/v1_leaderboard.svg)
+![V1 accuracy and partial-credit results](figures/v1_leaderboard.svg)
 
 | Model | Model ID | Accuracy % | 95% CI | Partial % | Requested output limit | Max reported output tokens | Over-limit answers |
 |---|---|---:|---|---:|---:|---:|---:|
@@ -51,16 +51,16 @@ Responses above their requested token limits were retained and flagged. API-repo
 output usage can include reasoning tokens. The table counts main-run overages;
 smoke-run overages are recorded separately in local results.
 
-The UTF-8 dataset is [`bench/data/ykt_primary_v1.jsonl`](bench/data/ykt_primary_v1.jsonl).
-Rebuild with `python3 bench/build_dataset.py`; run with `bash bench/run.sh`.
-Detailed local results are in `bench/results/v1/`. One supplied instruction/key
-alignment concern remains documented in the [dataset notes](bench/data/README.md).
+The UTF-8 dataset is [`data/ykt_primary_v1.jsonl`](data/ykt_primary_v1.jsonl).
+Rebuild with `python3 build_dataset.py`; run with `bash run.sh`.
+Detailed local results are in `results/v1/`. One supplied instruction/key
+alignment concern remains documented in the [dataset notes](data/README.md).
 
 ### Example failure in v1
 
 On five grade-4 word riddles, Grok took 33 minutes 55 seconds and reported 99,878
 output tokens, against a requested limit of 32,000. It got two of the five parts
-correct. The [UTF-8 question, reference answers, final response, and grading](bench/examples/v1_grok_word_riddles.json)
+correct. The [UTF-8 question, reference answers, final response, and grading](examples/v1_grok_word_riddles.json)
 show a concrete failure despite a long response. The time is API latency, not a
 separate measurement of thinking time.
 
@@ -89,5 +89,5 @@ This initial sample includes 13 picture-flagged questions, although solvers
 received text only, and some prompt/answer-key alignment issues. These scores
 are a proof of concept; later dataset versions should be evaluated separately.
 Reasoning settings and effective token budgets differ across providers; Grok
-reported output usage above its requested limit. See [benchmark documentation](bench/README.md)
+reported output usage above its requested limit. See [benchmark documentation](USAGE.md)
 for model settings and grading rules.

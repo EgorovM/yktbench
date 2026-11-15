@@ -18,19 +18,19 @@ instructions. XLSX files with several sheets require `--sheet` unless one is
 named `vals_90`.
 
 ```bash
-.venv/bin/python bench/build_vals90.py \
-  --input bench/data/sources/vals_90.xlsx --sheet vals_90 \
-  --solver-instructions bench/prompts/solver_system.md
+.venv/bin/python build_vals90.py \
+  --input data/sources/vals_90.xlsx --sheet vals_90 \
+  --solver-instructions prompts/solver_system.md
 ```
 
 Then export the normalized questions:
 
 ```bash
-.venv/bin/python bench/valkyrie/build.py \
-  --data bench/data/vals_90.jsonl \
-  --solver-instructions bench/prompts/solver_system.md \
-  --judge-instructions bench/prompts/vals_90_judge.md \
-  --out bench/valkyrie/submission
+.venv/bin/python valkyrie/build.py \
+  --data data/vals_90.jsonl \
+  --solver-instructions prompts/solver_system.md \
+  --judge-instructions prompts/vals_90_judge.md \
+  --out valkyrie/submission
 ```
 
 The builder refuses to overwrite an existing output folder. Its output includes
@@ -45,11 +45,11 @@ custom scoring support in the hosted deployment.
 ## Re-evaluate locally
 
 ```bash
-.venv/bin/python bench/run_parallel.py \
-  --data bench/data/vals_90.jsonl \
-  --solver-system bench/prompts/solver_system.md \
-  --judge-system bench/prompts/vals_90_judge.md \
-  --run-dir bench/results/vals_90 \
+.venv/bin/python run_parallel.py \
+  --data data/vals_90.jsonl \
+  --solver-system prompts/solver_system.md \
+  --judge-system prompts/vals_90_judge.md \
+  --run-dir results/vals_90 \
   --workers-per-model 16 --grok-workers 90
 ```
 
@@ -66,13 +66,13 @@ Install `valkyrie-cli` with `uv tool install valkyrie-cli`, then sign in using
 for the organization, such as Modal or Daytona.
 
 ```bash
-.venv/bin/python bench/valkyrie/publish.py bench/valkyrie/submission
+.venv/bin/python valkyrie/publish.py valkyrie/submission
 # Also launch all 15 models after the provider is configured:
-.venv/bin/python bench/valkyrie/publish.py bench/valkyrie/submission \
+.venv/bin/python valkyrie/publish.py valkyrie/submission \
   --start-runs --provider modal --concurrency 90
 ```
 
-The publisher reads the existing credential environment with `bench/.env` as a
+The publisher reads the existing credential environment with `.env` as a
 fallback and sends values to Valkyrie's secret store over its authenticated CLI.
 It keeps tokens off the command line and out of the published files. Native and
 hosted evaluation share the model configurations and grading rules; results must
@@ -81,12 +81,12 @@ still be labeled with the platform on which they were collected.
 ## Collect results
 
 The publisher writes model aliases and run IDs to
-`bench/results/vals_90/valkyrie_runs.json`. Collect scores and token usage with:
+`results/vals_90/valkyrie_runs.json`. Collect scores and token usage with:
 
 ```bash
-uv run --python 3.12 --with valkyrie-cli python bench/valkyrie/collect.py \
-  --runs bench/results/vals_90/valkyrie_runs.json \
-  --out bench/results/vals_90/hosted --artifacts
+uv run --python 3.12 --with valkyrie-cli python valkyrie/collect.py \
+  --runs results/vals_90/valkyrie_runs.json \
+  --out results/vals_90/hosted --artifacts
 ```
 
 Unfinished rows are provisional and show the number of graded questions. Full
@@ -107,8 +107,8 @@ valkyrie run fetch 91fc4b38-ceff-4765-b23e-e9dc3f0b7225
 ## Validation
 
 ```bash
-.venv/bin/python -m unittest discover -s bench/valkyrie -p 'test_*.py'
-.venv/bin/python -m unittest discover -s bench -p 'test_*.py'
+.venv/bin/python -m unittest discover -s valkyrie -p 'test_*.py'
+.venv/bin/python -m unittest discover -s . -p 'test_*.py'
 ```
 
 The adapter is validated against Valkyrie's task and agent schemas and dataset

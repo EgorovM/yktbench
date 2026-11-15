@@ -1,6 +1,6 @@
 """Offline checks for dataset provenance, version isolation, and XLSX ingestion.
 
-Run with: .venv/bin/python -m unittest discover -s bench -p 'test_*.py'
+Run with: .venv/bin/python -m unittest discover -s . -p 'test_*.py'
 """
 
 import copy
@@ -18,8 +18,8 @@ import build_dataset as dataset
 import ykt_eval as evaluator
 
 
-ROOT = Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "bench" / "data" / "sources" / "clean_60_primary_school.xlsx"
+ROOT = Path(__file__).resolve().parent
+SOURCE = ROOT / "data" / "sources" / "clean_60_primary_school.xlsx"
 
 
 class DatasetTests(unittest.TestCase):
@@ -60,8 +60,8 @@ class DatasetTests(unittest.TestCase):
         self.assertNotIn(item["eval_instruction"], evaluator.solver_prompt(item))
 
     def test_legacy_build_reproduces_frozen_v0(self):
-        rebuilt = dataset.build(dataset.read_xlsx(ROOT / "bench" / "data" / "sources" / "sample.xlsx"), version="v0")
-        frozen = [json.loads(line) for line in (ROOT / "bench" / "data" / "ykt_sample.jsonl").read_text(encoding="utf-8").splitlines()]
+        rebuilt = dataset.build(dataset.read_xlsx(ROOT / "data" / "sources" / "sample.xlsx"), version="v0")
+        frozen = [json.loads(line) for line in (ROOT / "data" / "ykt_sample.jsonl").read_text(encoding="utf-8").splitlines()]
         self.assertEqual(rebuilt, frozen)
 
     def test_reject_duplicate_ids_and_missing_required_text(self):

@@ -9,7 +9,7 @@ the answer with the textbook's answer key.
   [`data/sources/clean_60_primary_school.xlsx`](data/sources/clean_60_primary_school.xlsx).
   All necessary clues are text, including Unicode sound tokens; no external pictures are needed.
 - **Previous version:** the original 61-item `data/ykt_sample.jsonl` and its results in
-  `results/main/` are retained. The [root README leaderboard](../README.md#v0--proof-of-concept)
+  `results/main/` are retained. The [root README leaderboard](README.md#v0--proof-of-concept)
   is the v0 proof of concept, not a v1 score.
 - **Models under test:** Claude Fable 5.2, GPT-6 Astra, DeepSeek V4 Pro, Gemini 4 Argon,
   GLM-5.3, Grok 4.7, Gemma 4 31B, DeepSeek V4.1 Flash, Inkling Flagship, Inkling 2 Small,
@@ -35,7 +35,7 @@ source .venv/bin/activate
 ```
 
 ```bash
-uv pip install --python .venv/bin/python -r bench/requirements.txt
+uv pip install --python .venv/bin/python -r requirements.txt
 ```
 
 Set one API key per provider:
@@ -47,21 +47,21 @@ export OPENROUTER_API_KEY=...  # DeepSeek, Gemini, GLM, Grok, Gemma, Inkling, Qw
 export YANDEX_GIGACHAT_API_KEY=...  # GigaChat through Cloud.ru
 ```
 
-Alternatively, copy `bench/.env.example` to `bench/.env` and fill in the values there.
-The runner loads `bench/.env`, then the repo `.env`; existing environment variables take
-precedence. Both files, the virtual environment, and `bench/results/` are ignored by git.
+Alternatively, copy `.env.example` to `.env` and fill in the values there.
+The runner loads the repository `.env`; existing environment variables take
+precedence. Both files, the virtual environment, and `results/` are ignored by git.
 Never commit credentials.
 
 Check which keys are present without making API calls or printing secrets:
 
 ```bash
-python bench/ykt_eval.py check --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5
+python ykt_eval.py check --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5
 ```
 
 Run the smoke test and then the full fifteen-model benchmark with one command:
 
 ```bash
-bash bench/run.sh
+bash run.sh
 ```
 
 The launcher stops if credentials are missing or a smoke API call fails. Empty, refused,
@@ -71,19 +71,19 @@ such as `--workers 4` are forwarded to both runs.
 ## 2. Smoke test (2 items per model)
 
 ```bash
-python bench/ykt_eval.py all --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5 --judges sol-6.1 --limit 2 --run-dir bench/results/v1-smoke
+python ykt_eval.py all --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5 --judges sol-6.1 --limit 2 --run-dir results/v1-smoke
 ```
 
-Look at `bench/results/v1-smoke/responses.jsonl`. Every line should have a `response` and a
+Look at `results/v1-smoke/responses.jsonl`. Every line should have a `response` and a
 `final_answer`, and no `error`.
 
 ## 3. Full run
 
 ```bash
-python bench/ykt_eval.py all --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5 --judges sol-6.1
+python ykt_eval.py all --models fable-5.2,astra,deepseek-v4,gemini-4-argon,glm-5.3,grok-4.7,gemma-4-31b,deepseek-v4.1-flash,inkling-flagship,inkling-2-small,qwen-3.8-max,qwen-3.8-flash,qwen-3.8-27b,sol-6.1-eval,gigachat-3.5 --judges sol-6.1
 ```
 
-This writes to `bench/results/v1/`:
+This writes to `results/v1/`:
 
 | file | contents |
 |---|---|
@@ -97,23 +97,23 @@ This writes to `bench/results/v1/`:
 calls are repeated, and finished ones are kept. You can also run the steps separately:
 
 ```bash
-python bench/ykt_eval.py solve --models fable-5.2,glm-5.3,astra
+python ykt_eval.py solve --models fable-5.2,glm-5.3,astra
 ```
 
 ```bash
-python bench/ykt_eval.py judge --judges sol-6.1
+python ykt_eval.py judge --judges sol-6.1
 ```
 
 ```bash
-python bench/ykt_eval.py report
+python ykt_eval.py report
 ```
 
 Useful options:
 
 | option | what it does |
 |---|---|
-| `--run-dir DIR` | a separate folder per experiment (default `bench/results/v1`) |
-| `--data FILE` | a frozen dataset (default `bench/data/ykt_primary_v1.jsonl`) |
+| `--run-dir DIR` | a separate folder per experiment (default `results/v1`) |
+| `--data FILE` | a frozen dataset (default `data/ykt_primary_v1.jsonl`) |
 | `--samples 3` | ask each model 3 times per item. With only 60 items, this shows how much scores move between runs |
 | `--workers 8` | parallel API calls; lower it if a provider rate-limits you |
 | `--limit N`, `--ids a,b` | run a subset |
@@ -123,7 +123,7 @@ Useful options:
 To see exactly what a model and the judge receive for one item:
 
 ```bash
-python bench/ykt_eval.py preview --id g2p2-L30-011
+python ykt_eval.py preview --id g2p2-L30-011
 ```
 
 ## How grading works
@@ -220,17 +220,17 @@ Qwen3.8 Max, the hosted Qwen3.8 Flash counterpart of Flash-Next, and Qwen3.8 27B
 
 ## Dataset
 
-The v1 source is `bench/data/sources/clean_60_primary_school.xlsx`. Only its
+The v1 source is `data/sources/clean_60_primary_school.xlsx`. Only its
 `clean` worksheet is imported; the separate `wip` worksheet is excluded. The workbook
 and frozen JSONL are both included; evaluation only needs the JSONL.
 
 To rebuild v1:
 
 ```bash
-python3 bench/build_dataset.py
+python3 build_dataset.py
 ```
 
-The resulting `bench/data/ykt_primary_v1.jsonl` contains 60 questions: grade 1 (10),
+The resulting `data/ykt_primary_v1.jsonl` contains 60 questions: grade 1 (10),
 grade 2 (20), grade 3 (25), and grade 4 (5). A companion `.manifest.json` records the
 source sheet, source and dataset SHA-256 hashes, counts, and generated IDs.
 
@@ -249,17 +249,17 @@ One review issue remains in the supplied workbook: `g2p2-L35-011` asks for conso
 analysis but supplies riddle solutions as its answer key. It is retained as supplied.
 See the [dataset notes](data/README.md) for version changes and review details.
 
-New runs default to `bench/results/v1/`; v0 files remain in `bench/results/main/`.
+New runs default to `results/v1/`; v0 files remain in `results/main/`.
 The runner rejects an existing run directory whose recorded dataset hash differs,
 so changed question text or reference answers cannot silently reuse old results.
 
 To inspect or report the original v0 run, select both its dataset and run directory:
 
 ```bash
-python bench/ykt_eval.py report --data bench/data/ykt_sample.jsonl --run-dir bench/results/main
+python ykt_eval.py report --data data/ykt_sample.jsonl --run-dir results/main
 ```
 
-To reproduce the frozen v0 dataset, run `python3 bench/build_dataset.py --version v0`.
+To reproduce the frozen v0 dataset, run `python3 build_dataset.py --version v0`.
 Only that mode applies the original `g10-11-T3-009` content override.
 
 The `data/` files are in this public repo, so the answers are public. That's fine for
