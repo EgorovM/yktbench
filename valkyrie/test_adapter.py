@@ -91,6 +91,17 @@ class AdapterTests(unittest.TestCase):
         self.assertEqual(row["accuracy"], 50.0)
         self.assertEqual(row["partial"], 75.0)
 
+    def test_recovery_merges_only_graded_tasks_without_double_counting(self):
+        results = {"a": {"rewards": {"reward": 1, "partial_credit": 1}},
+                   "b": {"rewards": {"reward": 0, "partial_credit": 0.5}}}
+        collect.merge_graded(results, {"a": {"error": "API unavailable"},
+                                       "c": {"rewards": {"reward": 1, "partial_credit": 1}}})
+        summary = collect.summarize(results, 3)
+        self.assertEqual(summary["graded"], 3)
+        self.assertEqual(summary["correct"], 2)
+        collect.merge_graded(results, {"c": {"rewards": {"reward": 1, "partial_credit": 1}}})
+        self.assertEqual(collect.summarize(results, 3)["graded"], 3)
+
     def test_judgment_requires_all_parts_for_full_credit(self):
         result = {"parts": [{"correct": True}, {"correct": False}]}
         self.assertEqual(grade.scores(result), {"reward": 0.0, "partial_credit": 0.5})

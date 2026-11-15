@@ -8,6 +8,7 @@ import shutil
 import sys
 import tomllib
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 HERE = Path(__file__).resolve().parent
@@ -42,6 +43,8 @@ def build(data, system_path, destination, dataset_name="yakut/vals-90", expected
         raise ValueError(f"Output directory is not empty: {destination}")
     cfg = tomllib.loads(models_path.read_text())["models"]
     judge = cfg["sol-6.1"]
+    hosts = sorted({"api.openai.com", "api.anthropic.com", "openrouter.ai", "foundation-models.api.cloud.ru"}
+                   | {urlparse(model["base_url"]).hostname for model in cfg.values() if model.get("base_url")})
     tasks = destination / "tasks"
     for item in items:
         if item.get("needs_visual") and not allow_visual_text:
@@ -71,7 +74,7 @@ memory_mb = 1024
 [agent]
 timeout_sec = 910
 network_mode = "allowlist"
-allowed_hosts = ["api.openai.com", "api.anthropic.com", "openrouter.ai", "foundation-models.api.cloud.ru"]
+allowed_hosts = {json.dumps(hosts)}
 
 [verifier]
 timeout_sec = 900
@@ -114,6 +117,7 @@ destination = "judgment.json"
                          (models_path, "models.toml"), (system_path, "solver_system.md")]:
         shutil.copyfile(source, agent / name)
     write(agent / "requirements.txt", (BENCH / "requirements.txt").read_text())
+    modal_secret = "  MODAL_INFERENCE_API_KEY: ykt-modal-inference-api-key\n" if any(model.get("api_key_env") == "MODAL_INFERENCE_API_KEY" for model in cfg.values()) else ""
     write(agent / "contract.yaml", '''name: yakut-text-model
 install_cmd: python -m pip install -r requirements.txt
 run_cmd: >-
@@ -134,7 +138,7 @@ secrets:
   ANTHROPIC_API_KEY: ykt-anthropic-api-key
   OPENROUTER_API_KEY: ykt-openrouter-api-key
   YANDEX_GIGACHAT_API_KEY: ykt-gigachat-api-key
-output_artifacts:
+''' + modal_secret + '''output_artifacts:
   - path: artifacts/response.json
     source: /workspace/response.json
 ''')

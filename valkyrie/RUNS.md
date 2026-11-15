@@ -34,3 +34,16 @@ valkyrie tui
 The input preserves all 90 selected rows, including 12 original picture flags.
 Models receive text only. Five exercise-specific `eval_instruction` values are
 provided to the judge, and excluded from solver input.
+
+## Direct Modal inference recovery
+
+The following runs retry only API-error tasks from the original runs.
+The frozen question data and prompts are unchanged; task network allowlists
+add the direct Modal endpoints. Dataset: `yakut/vals-90@2`, immutable tag
+`v-e5b42b1c83d9`. Settings: [`models_vals_modal.toml`](../models_vals_modal.toml).
+Completed answers from the original runs are preserved.
+
+| Model Name | Questions retried | Run ID |
+|---|---:|---|
+| Inkling 2 Small | 2 | `328f7e27-a17f-4282-aac8-833e01177130` |
+| DeepSeek V4.1 Flash | 81 | `d056dfe2-98a5-41ec-baac-db1368e32ae7` |

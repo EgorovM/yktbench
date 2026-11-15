@@ -7,6 +7,7 @@ import os
 import re
 import subprocess
 import sys
+import tomllib
 from pathlib import Path
 
 from dotenv import dotenv_values
@@ -20,6 +21,7 @@ KEYS = {
     "ANTHROPIC_API_KEY": "ykt-anthropic-api-key",
     "OPENROUTER_API_KEY": "ykt-openrouter-api-key",
     "YANDEX_GIGACHAT_API_KEY": "ykt-gigachat-api-key",
+    "MODAL_INFERENCE_API_KEY": "ykt-modal-inference-api-key",
 }
 
 
@@ -36,12 +38,15 @@ def main():
     subprocess.run(["valkyrie", "whoami"], check=True)
     env = dict(dotenv_values(Path(__file__).resolve().parent.parent / ".env"))
     env.update(os.environ)
-    missing = [key for key in KEYS if not env.get(key)]
+    configs = tomllib.loads((args.bundle / "agent/models.toml").read_text())["models"]
+    required = {cfg["api_key_env"] for cfg in configs.values() if cfg.get("api_key_env")}
+    missing = [key for key in required if not env.get(key)]
     if missing:
         raise SystemExit("Missing credential variable names: " + ", ".join(missing))
     if not args.skip_secrets:
         for key, name in KEYS.items():
-            subprocess.run(["valkyrie", "secret", "set", name], input=env[key], text=True, check=True)
+            if key in required:
+                subprocess.run(["valkyrie", "secret", "set", name], input=env[key], text=True, check=True)
     subprocess.run(["valkyrie", "agent", "push", str(args.bundle / "agent")], check=True)
     subprocess.run(["valkyrie", "dataset", "push", manifest["dataset_name"], str(args.bundle / "tasks"),
                     "--tag", "vals-90", "--concurrency", "16"], check=True)

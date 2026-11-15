@@ -1,0 +1,3182 @@
+{
+  "updated_utc": "2026-11-15T21:49:02+00:00",
+  "platform": "Valkyrie",
+  "rows": [
+    {
+      "graded": 1,
+      "questions": 90,
+      "correct": 1.0,
+      "accuracy": 100.0,
+      "partial": 100.0,
+      "model": "qwen-3.8-max",
+      "run_id": "8768945e-709f-447b-a486-15a0dba17a51",
+      "run_ids": [
+        "8768945e-709f-447b-a486-15a0dba17a51"
+      ],
+      "status": "ERROR",
+      "task_rewards": {
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "Qwen3.8 Max",
+      "company": "Alibaba",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 0,
+          "accuracy": null
+        },
+        "2": {
+          "total": 25,
+          "graded": 1,
+          "accuracy": 100.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 0,
+          "accuracy": null
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
+        }
+      }
+    },
+    {
+      "graded": 6,
+      "questions": 90,
+      "correct": 4.0,
+      "accuracy": 66.66666666666667,
+      "partial": 66.66666666666667,
+      "model": "qwen-3.8-flash",
+      "run_id": "cc31a145-a908-4c92-985c-381ede148b0c",
+      "run_ids": [
+        "cc31a145-a908-4c92-985c-381ede148b0c"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "Qwen3.8 Flash",
+      "company": "Alibaba",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 0,
+          "accuracy": null
+        },
+        "2": {
+          "total": 25,
+          "graded": 4,
+          "accuracy": 75.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 1,
+          "accuracy": 100.0
+        },
+        "4": {
+          "total": 24,
+          "graded": 1,
+          "accuracy": 0.0
+        }
+      }
+    },
+    {
+      "graded": 89,
+      "questions": 90,
+      "correct": 58.0,
+      "accuracy": 65.1685393258427,
+      "partial": 78.697164258962,
+      "model": "fable-5.2",
+      "run_id": "fea1bf47-69ec-41d4-867d-60734be402aa",
+      "run_ids": [
+        "fea1bf47-69ec-41d4-867d-60734be402aa"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.9166666666666666
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.875
+        },
+        "g3p2-L26-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g4p2-L34-014": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g4p1-L31-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p1-L36-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.875
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g3p1-L27-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.8333333333333334
+        },
+        "g3p2-L13-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L09-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p2-L33-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L19-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L34-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.8571428571428571
+        },
+        "g3p2-L12-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L06-008": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L05-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "vals90-row-002": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L05-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L20-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L22-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L17-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L26-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L21-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L34-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "vals90-row-003": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L30-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L17-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g3p1-L19-002": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g1-L31-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L26-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L14-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L09-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L16-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L21-008": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L02-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L29-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L38-008": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L07-008": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L06-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L04-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L17-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L11-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "Claude Fable 5.2",
+      "company": "Anthropic",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 90.9090909090909
+        },
+        "2": {
+          "total": 25,
+          "graded": 25,
+          "accuracy": 56.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 27,
+          "accuracy": 74.07407407407408
+        },
+        "4": {
+          "total": 24,
+          "graded": 24,
+          "accuracy": 50.0
+        }
+      }
+    },
+    {
+      "graded": 19,
+      "questions": 90,
+      "correct": 12.0,
+      "accuracy": 63.1578947368421,
+      "partial": 63.1578947368421,
+      "model": "grok-4.7",
+      "run_id": "35066cb0-074c-43c1-8942-743618bea169",
+      "run_ids": [
+        "35066cb0-074c-43c1-8942-743618bea169"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g3p1-L17-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L17-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L04-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "Grok 4.7",
+      "company": "SpaceX (xAI)",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 1,
+          "accuracy": 0.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 8,
+          "accuracy": 37.5
+        },
+        "3": {
+          "total": 28,
+          "graded": 8,
+          "accuracy": 87.5
+        },
+        "4": {
+          "total": 24,
+          "graded": 2,
+          "accuracy": 100.0
+        }
+      }
+    },
+    {
+      "graded": 85,
+      "questions": 90,
+      "correct": 37.0,
+      "accuracy": 43.529411764705884,
+      "partial": 63.55368814192344,
+      "model": "astra",
+      "run_id": "392e635e-43cb-4d96-91f5-b5f728bb4830",
+      "run_ids": [
+        "392e635e-43cb-4d96-91f5-b5f728bb4830"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g4p1-L31-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.42857142857142855
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.625
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.8571428571428571
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g4p2-L12-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g4p1-L17-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.8571428571428571
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L26-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8333333333333334
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.7777777777777778
+        },
+        "g3p2-L18-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L20-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L17-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L02-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L30-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L17-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L22-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-003": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L19-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.875
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L09-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L16-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L26-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L11-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L08-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L17-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L26-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L21-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L04-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "GPT-6 Astra",
+      "company": "OpenAI",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 45.45454545454545
+        },
+        "2": {
+          "total": 25,
+          "graded": 24,
+          "accuracy": 45.833333333333336
+        },
+        "3": {
+          "total": 28,
+          "graded": 26,
+          "accuracy": 42.30769230769231
+        },
+        "4": {
+          "total": 24,
+          "graded": 22,
+          "accuracy": 40.90909090909091
+        }
+      }
+    },
+    {
+      "graded": 7,
+      "questions": 90,
+      "correct": 3.0,
+      "accuracy": 42.857142857142854,
+      "partial": 68.57142857142857,
+      "model": "inkling-flagship",
+      "run_id": "747d869c-d2db-4809-9431-23728b19c25e",
+      "run_ids": [
+        "747d869c-d2db-4809-9431-23728b19c25e"
+      ],
+      "status": "ERROR",
+      "task_rewards": {
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "Inkling",
+      "company": "Thinking Machines Lab",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 1,
+          "accuracy": 0.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 2,
+          "accuracy": 100.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 3,
+          "accuracy": 33.333333333333336
+        },
+        "4": {
+          "total": 24,
+          "graded": 1,
+          "accuracy": 0.0
+        }
+      }
+    },
+    {
+      "graded": 89,
+      "questions": 90,
+      "correct": 35.0,
+      "accuracy": 39.325842696629216,
+      "partial": 59.43009549751124,
+      "model": "sol-6.1-eval",
+      "run_id": "42b7c992-7578-4dcc-84cf-bfc40a5d53d9",
+      "run_ids": [
+        "42b7c992-7578-4dcc-84cf-bfc40a5d53d9"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.8181818181818182
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L31-012": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.375
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8571428571428571
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.625
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.7142857142857143
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g3p1-L33-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.7142857142857143
+        },
+        "g1-L02-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L26-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8333333333333334
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L20-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L19-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L26-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p1-L05-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L26-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.8888888888888888
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g4p2-L09-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g3p2-L08-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "vals90-row-003": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L02-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L04-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L11-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L29-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L17-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L30-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L21-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L31-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "GPT-6.1 Sol",
+      "company": "OpenAI",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": true,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 45.45454545454545
+        },
+        "2": {
+          "total": 25,
+          "graded": 25,
+          "accuracy": 36.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 27,
+          "accuracy": 51.851851851851855
+        },
+        "4": {
+          "total": 24,
+          "graded": 24,
+          "accuracy": 25.0
+        }
+      }
+    },
+    {
+      "graded": 17,
+      "questions": 90,
+      "correct": 5.0,
+      "accuracy": 29.41176470588235,
+      "partial": 41.470588235294116,
+      "model": "deepseek-v4",
+      "run_id": "1428ce18-270f-4702-aa74-9e7d8eda37f0",
+      "run_ids": [
+        "1428ce18-270f-4702-aa74-9e7d8eda37f0"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "DeepSeek V4 Pro",
+      "company": "DeepSeek",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 1,
+          "accuracy": 0.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 8,
+          "accuracy": 12.5
+        },
+        "3": {
+          "total": 28,
+          "graded": 4,
+          "accuracy": 50.0
+        },
+        "4": {
+          "total": 24,
+          "graded": 3,
+          "accuracy": 66.66666666666667
+        }
+      }
+    },
+    {
+      "graded": 7,
+      "questions": 90,
+      "correct": 2.0,
+      "accuracy": 28.571428571428573,
+      "partial": 62.460317460317455,
+      "model": "deepseek-v4.1-flash",
+      "run_id": "f7c85dc8-c344-4a9e-be91-7bf445c4a8da",
+      "run_ids": [
+        "f7c85dc8-c344-4a9e-be91-7bf445c4a8da",
+        "d056dfe2-98a5-41ec-baac-db1368e32ae7"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5555555555555556
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L08-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        }
+      },
+      "model_name": "DeepSeek V4.1 Flash",
+      "company": "DeepSeek",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 1,
+          "accuracy": 0.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 1,
+          "accuracy": 100.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 3,
+          "accuracy": 33.333333333333336
+        },
+        "4": {
+          "total": 24,
+          "graded": 2,
+          "accuracy": 0.0
+        }
+      }
+    },
+    {
+      "graded": 82,
+      "questions": 90,
+      "correct": 19.0,
+      "accuracy": 23.170731707317074,
+      "partial": 36.073848238482384,
+      "model": "inkling-2-small",
+      "run_id": "0b505d8b-b6eb-47c5-b229-200e381b0115",
+      "run_ids": [
+        "0b505d8b-b6eb-47c5-b229-200e381b0115",
+        "328f7e27-a17f-4282-aac8-833e01177130"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L30-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.375
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p2-L20-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.625
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.875
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L26-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L27-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5555555555555556
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g2p1-L02-006": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g3p2-L04-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L09-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-003": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p1-L17-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p1-L17-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L11-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L17-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "Inkling 2 Small",
+      "company": "Thinking Machines Lab",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 27.272727272727273
+        },
+        "2": {
+          "total": 25,
+          "graded": 22,
+          "accuracy": 18.181818181818183
+        },
+        "3": {
+          "total": 28,
+          "graded": 26,
+          "accuracy": 30.76923076923077
+        },
+        "4": {
+          "total": 24,
+          "graded": 21,
+          "accuracy": 19.047619047619047
+        }
+      }
+    },
+    {
+      "graded": 71,
+      "questions": 90,
+      "correct": 11.0,
+      "accuracy": 15.492957746478874,
+      "partial": 24.88262910798122,
+      "model": "glm-5.3",
+      "run_id": "ac59a29b-ee79-4750-bac2-ec6caf01a34f",
+      "run_ids": [
+        "ac59a29b-ee79-4750-bac2-ec6caf01a34f"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L30-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L26-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.125
+        },
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L20-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.375
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "vals90-row-003": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g4p1-L31-012": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L10-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p1-L17-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L17-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L11-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        }
+      },
+      "model_name": "GLM 5.3",
+      "company": "Z.ai",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 10,
+          "accuracy": 20.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 23,
+          "accuracy": 13.043478260869565
+        },
+        "3": {
+          "total": 28,
+          "graded": 21,
+          "accuracy": 23.80952380952381
+        },
+        "4": {
+          "total": 24,
+          "graded": 15,
+          "accuracy": 6.666666666666667
+        }
+      }
+    },
+    {
+      "graded": 90,
+      "questions": 90,
+      "correct": 6.0,
+      "accuracy": 6.666666666666667,
+      "partial": 14.194003527336863,
+      "model": "gigachat-3.5",
+      "run_id": "ea9722af-0fc1-47e1-9c5e-aec72c891dd9",
+      "run_ids": [
+        "ea9722af-0fc1-47e1-9c5e-aec72c891dd9"
+      ],
+      "status": "FINISHED",
+      "task_rewards": {
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.2222222222222222
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L31-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L20-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L11-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L05-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L09-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.08333333333333333
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.375
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.125
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L26-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.375
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-003": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p1-L17-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.375
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.2857142857142857
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g4p1-L08-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L02-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L30-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L17-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L14-006c": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        }
+      },
+      "model_name": "GigaChat 3.5 Ultra",
+      "company": "Sber",
+      "complete": true,
+      "max_output_tokens": 900,
+      "over_limit": 0,
+      "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 90,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 9.090909090909092
+        },
+        "2": {
+          "total": 25,
+          "graded": 25,
+          "accuracy": 12.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 28,
+          "accuracy": 3.5714285714285716
+        },
+        "4": {
+          "total": 24,
+          "graded": 24,
+          "accuracy": 4.166666666666667
+        }
+      }
+    },
+    {
+      "graded": 66,
+      "questions": 90,
+      "correct": 3.0,
+      "accuracy": 4.545454545454546,
+      "partial": 6.038961038961038,
+      "model": "gemma-4-31b",
+      "run_id": "fc476ce6-16cc-4fe7-aac4-5509213e553a",
+      "run_ids": [
+        "fc476ce6-16cc-4fe7-aac4-5509213e553a"
+      ],
+      "status": "ERROR",
+      "task_rewards": {
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L30-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.125
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.2857142857142857
+        },
+        "g1-L11-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L17-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L26-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p1-L31-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L16-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "vals90-row-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.125
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        }
+      },
+      "model_name": "Gemma 4 31B",
+      "company": "Google",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 0.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 20,
+          "accuracy": 10.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 21,
+          "accuracy": 4.761904761904762
+        },
+        "4": {
+          "total": 24,
+          "graded": 13,
+          "accuracy": 0.0
+        }
+      }
+    },
+    {
+      "graded": 3,
+      "questions": 90,
+      "correct": 0.0,
+      "accuracy": 0.0,
+      "partial": 4.166666666666667,
+      "model": "qwen-3.8-27b",
+      "run_id": "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
+      "run_ids": [
+        "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.125
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        }
+      },
+      "model_name": "Qwen3.8 27B",
+      "company": "Alibaba",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 0,
+          "accuracy": null
+        },
+        "2": {
+          "total": 25,
+          "graded": 1,
+          "accuracy": 0.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 2,
+          "accuracy": 0.0
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
+        }
+      }
+    },
+    {
+      "graded": 0,
+      "questions": 90,
+      "correct": 0,
+      "accuracy": null,
+      "partial": null,
+      "model": "gemini-4-argon",
+      "run_id": "67d02148-9c8a-48d3-b8ca-49320ee76828",
+      "run_ids": [
+        "67d02148-9c8a-48d3-b8ca-49320ee76828"
+      ],
+      "status": "ERROR",
+      "task_rewards": {},
+      "model_name": "Gemini 4 Argon",
+      "company": "Google",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 0,
+          "accuracy": null
+        },
+        "2": {
+          "total": 25,
+          "graded": 0,
+          "accuracy": null
+        },
+        "3": {
+          "total": 28,
+          "graded": 0,
+          "accuracy": null
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
+        }
+      }
+    }
+  ]
+}

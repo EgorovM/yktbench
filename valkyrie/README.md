@@ -125,3 +125,35 @@ previous 60-question set are not a substitute for the supplied `vals_90` data.
 
 Official references: [dataset publishing](https://docs.valkyrie.vals.ai/benchmarks/datasets)
 and [agent contracts](https://docs.valkyrie.vals.ai/agents/agent-contract).
+
+## Direct Modal model inference
+
+`--provider modal` selects the sandbox provider. Direct model calls use a separate
+Modal inference endpoint and proxy token. The current recovery profile is
+[`models_vals_modal.toml`](../models_vals_modal.toml), covering GLM 5.3,
+DeepSeek V4.1 Flash, and Inkling 2 Small. Other model entries retain their original
+providers. These endpoints were verified with live model calls.
+
+Create a proxy token with `modal workspace proxy-tokens create`; combine its ID
+and secret as described in the [Modal endpoint documentation](https://modal.com/docs/guide/endpoints).
+Store it as `MODAL_INFERENCE_API_KEY` in the ignored `.env`, and as the Valkyrie
+secret `ykt-modal-inference-api-key`. Never commit either credential.
+
+```bash
+python valkyrie/build.py --data data/vals_90.jsonl \
+  --solver-instructions prompts/solver_system.md \
+  --judge-instructions prompts/vals_90_judge.md \
+  --models-config models_vals_modal.toml \
+  --out results/modal-submission --allow-visual-text
+python valkyrie/publish.py results/modal-submission --provider modal
+```
+
+The endpoint URLs are workspace-specific. Create or select your own endpoints
+and update the recovery profile before using it in another workspace.
+Recovery runs are listed in [RUNS.md](RUNS.md). The collector accepts multiple
+run records for the same model and merges graded tasks by question ID.
+To refresh the public leaderboard after collecting results:
+
+```bash
+python valkyrie/leaderboard.py
+```
