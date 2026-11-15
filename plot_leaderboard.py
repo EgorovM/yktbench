@@ -37,7 +37,10 @@ def main():
     ax.set_axisbelow(True)
     ax.tick_params(axis="y", length=0)
     ax.legend(loc="lower right", frameon=False)
-    fig.text(0.02, 0.015, "No browsing or external tools. Sol also grades the benchmark; its row is self-judged.", fontsize=9, color="#555555")
+    has_judge = any(r.get("judge_model") or r["model"] == "sol-6.1-eval" for r in rows)
+    footer = ("No browsing or external tools. Sol also grades the benchmark; its row is self-judged."
+              if has_judge else "No browsing or external tools. Judge: GPT-6.1 Sol.")
+    fig.text(0.02, 0.015, footer, fontsize=9, color="#555555")
     fig.tight_layout(rect=(0, 0.045, 1, 1))
     args.out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(args.out.with_suffix(".svg"), metadata={"Date": None})

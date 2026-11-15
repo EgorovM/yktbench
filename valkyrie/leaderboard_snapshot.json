@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15T21:54:10+00:00",
+  "updated_utc": "2026-11-15T21:54:53+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -455,11 +455,11 @@
       }
     },
     {
-      "graded": 34,
+      "graded": 35,
       "questions": 90,
-      "correct": 15.0,
-      "accuracy": 44.11764705882353,
-      "partial": 58.464052287581694,
+      "correct": 16.0,
+      "accuracy": 45.714285714285715,
+      "partial": 59.65079365079365,
       "model": "grok-4.7",
       "run_id": "35066cb0-074c-43c1-8942-743618bea169",
       "run_ids": [
@@ -467,6 +467,10 @@
       ],
       "status": "IN_PROGRESS",
       "task_rewards": {
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
         "g2p1-L03-004": {
           "reward": 0.0,
           "partial_credit": 0.0
@@ -620,8 +624,8 @@
         },
         "2": {
           "total": 25,
-          "graded": 12,
-          "accuracy": 41.666666666666664
+          "graded": 13,
+          "accuracy": 46.15384615384615
         },
         "3": {
           "total": 28,
@@ -707,18 +711,22 @@
       }
     },
     {
-      "graded": 89,
+      "graded": 90,
       "questions": 90,
       "correct": 37.0,
-      "accuracy": 41.57303370786517,
-      "partial": 61.8975468975469,
+      "accuracy": 41.111111111111114,
+      "partial": 61.209796376463046,
       "model": "astra",
       "run_id": "392e635e-43cb-4d96-91f5-b5f728bb4830",
       "run_ids": [
         "392e635e-43cb-4d96-91f5-b5f728bb4830"
       ],
-      "status": "IN_PROGRESS",
+      "status": "FINISHED",
       "task_rewards": {
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
         "g4p2-L34-014": {
           "reward": 0.0,
           "partial_credit": 0.8181818181818182
@@ -1078,10 +1086,12 @@
       },
       "model_name": "GPT-6 Astra",
       "company": "OpenAI",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
+      "complete": true,
+      "max_output_tokens": 21775,
+      "over_limit": 0,
       "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 90,
       "grades": {
         "1": {
           "total": 11,
@@ -1095,8 +1105,8 @@
         },
         "3": {
           "total": 28,
-          "graded": 27,
-          "accuracy": 40.74074074074074
+          "graded": 28,
+          "accuracy": 39.285714285714285
         },
         "4": {
           "total": 24,
@@ -1505,138 +1515,11 @@
       }
     },
     {
-      "graded": 21,
+      "graded": 51,
       "questions": 90,
-      "correct": 6.0,
-      "accuracy": 28.571428571428573,
-      "partial": 40.71428571428572,
-      "model": "deepseek-v4",
-      "run_id": "1428ce18-270f-4702-aa74-9e7d8eda37f0",
-      "run_ids": [
-        "1428ce18-270f-4702-aa74-9e7d8eda37f0"
-      ],
-      "status": "IN_PROGRESS",
-      "task_rewards": {
-        "g3p1-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L30-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L32-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L06-008": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g4p1-L08-010": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p2-L13-010": {
-          "reward": 0.0,
-          "partial_credit": 0.8
-        },
-        "g2p1-L14-006": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L25-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.75
-        },
-        "g2p2-L09-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "vals90-row-002": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g2p1-L10-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L05-012": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L20-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L38-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L03-004": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L17-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L34-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L33-011b": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L18-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L10-009": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        }
-      },
-      "model_name": "DeepSeek V4 Pro",
-      "company": "DeepSeek",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
-      "judge_model": false,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 1,
-          "accuracy": 0.0
-        },
-        "2": {
-          "total": 25,
-          "graded": 10,
-          "accuracy": 20.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 6,
-          "accuracy": 33.333333333333336
-        },
-        "4": {
-          "total": 24,
-          "graded": 3,
-          "accuracy": 66.66666666666667
-        }
-      }
-    },
-    {
-      "graded": 40,
-      "questions": 90,
-      "correct": 11.0,
-      "accuracy": 27.5,
-      "partial": 41.26388888888889,
+      "correct": 14.0,
+      "accuracy": 27.45098039215686,
+      "partial": 39.22657952069717,
       "model": "deepseek-v4.1-flash",
       "run_id": "f7c85dc8-c344-4a9e-be91-7bf445c4a8da",
       "run_ids": [
@@ -1680,6 +1563,50 @@
         "g1-L21-008": {
           "reward": 0.0,
           "partial_credit": 0.5
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L31-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L04-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
         },
         "g2p2-L35-011": {
           "reward": 0.0,
@@ -1815,23 +1742,158 @@
       "grades": {
         "1": {
           "total": 11,
-          "graded": 1,
-          "accuracy": 0.0
+          "graded": 3,
+          "accuracy": 66.66666666666667
         },
         "2": {
           "total": 25,
-          "graded": 6,
-          "accuracy": 50.0
+          "graded": 12,
+          "accuracy": 25.0
         },
         "3": {
           "total": 28,
-          "graded": 9,
-          "accuracy": 44.44444444444444
+          "graded": 12,
+          "accuracy": 41.666666666666664
         },
         "4": {
           "total": 24,
           "graded": 22,
           "accuracy": 18.181818181818183
+        }
+      }
+    },
+    {
+      "graded": 23,
+      "questions": 90,
+      "correct": 6.0,
+      "accuracy": 26.08695652173913,
+      "partial": 37.173913043478265,
+      "model": "deepseek-v4",
+      "run_id": "1428ce18-270f-4702-aa74-9e7d8eda37f0",
+      "run_ids": [
+        "1428ce18-270f-4702-aa74-9e7d8eda37f0"
+      ],
+      "status": "ERROR",
+      "task_rewards": {
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L30-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "DeepSeek V4 Pro",
+      "company": "DeepSeek",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 1,
+          "accuracy": 0.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 10,
+          "accuracy": 20.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 8,
+          "accuracy": 25.0
+        },
+        "4": {
+          "total": 24,
+          "graded": 3,
+          "accuracy": 66.66666666666667
         }
       }
     },
