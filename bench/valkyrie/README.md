@@ -19,7 +19,7 @@ named `vals_90`.
 
 ```bash
 .venv/bin/python bench/build_vals90.py \
-  --input data/vals_90.xlsx --sheet vals_90 \
+  --input bench/data/sources/vals_90.xlsx --sheet vals_90 \
   --solver-instructions bench/prompts/solver_system.md
 ```
 

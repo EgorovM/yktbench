@@ -19,7 +19,7 @@ import ykt_eval as evaluator
 
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "data" / "clean_60_primary_school.xlsx"
+SOURCE = ROOT / "bench" / "data" / "sources" / "clean_60_primary_school.xlsx"
 
 
 class DatasetTests(unittest.TestCase):
@@ -60,7 +60,7 @@ class DatasetTests(unittest.TestCase):
         self.assertNotIn(item["eval_instruction"], evaluator.solver_prompt(item))
 
     def test_legacy_build_reproduces_frozen_v0(self):
-        rebuilt = dataset.build(dataset.read_xlsx(ROOT / "data" / "sample.xlsx"), version="v0")
+        rebuilt = dataset.build(dataset.read_xlsx(ROOT / "bench" / "data" / "sources" / "sample.xlsx"), version="v0")
         frozen = [json.loads(line) for line in (ROOT / "bench" / "data" / "ykt_sample.jsonl").read_text(encoding="utf-8").splitlines()]
         self.assertEqual(rebuilt, frozen)
 

@@ -152,7 +152,9 @@ def main():
     ap.add_argument("--out", type=Path)
     args = ap.parse_args()
     legacy = args.version == "v0"
-    args.xlsx = args.xlsx or ROOT / "data" / ("sample.xlsx" if legacy else "clean_60_primary_school.xlsx")
+    source_name = "sample.xlsx" if legacy else "clean_60_primary_school.xlsx"
+    archived_source = ROOT / "bench" / "data" / "sources" / source_name
+    args.xlsx = args.xlsx or archived_source
     args.out = args.out or ROOT / "bench" / "data" / ("ykt_sample.jsonl" if legacy else "ykt_primary_v1.jsonl")
     sheet_name = args.sheet or (None if legacy else "clean")
 
@@ -164,6 +166,9 @@ def main():
     if not legacy and len(items) != 60:
         sys.exit(f"v1 requires exactly 60 items, found {len(items)}")
     source = str(args.xlsx.resolve().relative_to(ROOT)) if args.xlsx.resolve().is_relative_to(ROOT) else args.xlsx.name
+    # Preserve the original dataset identity after relocating its source workbook.
+    if args.xlsx.resolve() == archived_source.resolve():
+        source = "data/" + source_name
     if not legacy:
         for item in items:
             item.update(dataset_version="v1", source_file=source, source_sheet=sheet_name)

@@ -6,7 +6,7 @@ the answer with the textbook's answer key.
 
 - **Dataset v1:** `data/ykt_primary_v1.jsonl`, 60 exercises from grades 1–4 (riddles,
   word puzzles, vocabulary, multiple choice), frozen from the `clean` sheet of
-  [`../data/clean_60_primary_school.xlsx`](../data/clean_60_primary_school.xlsx).
+  [`data/sources/clean_60_primary_school.xlsx`](data/sources/clean_60_primary_school.xlsx).
   All necessary clues are text, including Unicode sound tokens; no external pictures are needed.
 - **Previous version:** the original 61-item `data/ykt_sample.jsonl` and its results in
   `results/main/` are retained. The [root README leaderboard](../README.md#v0--proof-of-concept)
@@ -220,7 +220,7 @@ Qwen3.8 Max, the hosted Qwen3.8 Flash counterpart of Flash-Next, and Qwen3.8 27B
 
 ## Dataset
 
-The v1 source is `data/clean_60_primary_school.xlsx` at the repository root. Only its
+The v1 source is `bench/data/sources/clean_60_primary_school.xlsx`. Only its
 `clean` worksheet is imported; the separate `wip` worksheet is excluded. The workbook
 and frozen JSONL are both included; evaluation only needs the JSONL.
 

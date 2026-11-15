@@ -2,12 +2,18 @@
 
 | Version | File | Questions | Grades | Source worksheet |
 |---|---|---:|---|---|
-| v1 (default) | `ykt_primary_v1.jsonl` | 60 | 1–4 | `data/clean_60_primary_school.xlsx`, `clean` |
-| v0 (proof of concept) | `ykt_sample.jsonl` | 61 | 1–4, 10–11 | `data/sample.xlsx`, first sheet |
+| v1 (default) | `ykt_primary_v1.jsonl` | 60 | 1–4 | `bench/data/sources/clean_60_primary_school.xlsx`, `clean` |
+| v0 (proof of concept) | `ykt_sample.jsonl` | 61 | 1–4, 10–11 | `bench/data/sources/sample.xlsx`, first sheet |
 
 Source paths are relative to the repository root. JSONL is UTF-8 with literal Sakha
 characters and Unicode sound tokens. Each line is one exercise. The solver sees
 only `instruction` and `content`; `answer` is provided only to the judge.
+
+The benchmark is self-contained under `bench/`. The two source workbooks needed
+to reproduce v0 and v1 live in `sources/`; the unused root corpus was removed.
+Frozen v1 provenance retains the original `data/` source identifiers so that
+moving the workbooks does not change the dataset hash or invalidate saved runs.
+Put new input workbooks, including `vals_90`, in `bench/data/sources/`.
 
 ## Rebuild
 

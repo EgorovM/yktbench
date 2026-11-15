@@ -12,7 +12,7 @@ instructions, source data, and task files are versioned and hashed separately.
 ## Current benchmark: v1
 
 Results from 60 questions on the `clean` sheet of
-[`clean_60_primary_school.xlsx`](data/clean_60_primary_school.xlsx), grades 1–4.
+[`clean_60_primary_school.xlsx`](bench/data/sources/clean_60_primary_school.xlsx), grades 1–4.
 All 15 models answered each question once. Judge: GPT 6.1 Sol, high reasoning effort.
 Solvers received no browsing or external tools. The ten original v0 model settings
 were kept unchanged. Accuracy requires every reference part to be correct; partial
