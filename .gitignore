@@ -7,3 +7,7 @@ __pycache__/
 .env.*
 !.env.example
 bench/results/
+
+/ocr/
+/scripts/
+/annotator/
