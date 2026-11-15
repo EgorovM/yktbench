@@ -19,7 +19,7 @@ def render(snapshot):
              f"Snapshot: {snapshot['updated_utc']}. Scores are percentages.", "",
              status + " Partial scores use graded questions only;",
              "their denominators differ and they are not final rankings. API failures",
-             "remain ungraded. Grade cells show accuracy followed by graded/total questions.",
+             "remain ungraded. Grade columns show accuracy percentages.",
              "Bold accuracy marks the best completed run; bold token usage marks the largest observed report.", "",
              "| Model Name | Company | All | Partial credit | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Max reported output tokens | Over limit | Status |",
              "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
@@ -33,7 +33,7 @@ def render(snapshot):
         grades = []
         for grade in ("1", "2", "3", "4"):
             cell = row["grades"][grade]
-            grades.append(f"{score(cell['accuracy'])} ({cell['graded']}/{cell['total']})")
+            grades.append(score(cell["accuracy"]))
         status = "Complete" if row.get("complete") else ("API errors" if row["status"] == "ERROR" else "Running")
         accuracy = score(row.get("accuracy"))
         if row.get("complete") and row.get("accuracy") == best_accuracy:

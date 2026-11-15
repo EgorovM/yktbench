@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15T22:44:55+00:00",
+  "updated_utc": "2026-11-15T22:59:26+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -3284,18 +3284,18 @@
       }
     },
     {
-      "graded": 70,
+      "graded": 90,
       "questions": 90,
-      "correct": 5.0,
-      "accuracy": 7.142857142857143,
-      "partial": 9.158163265306122,
+      "correct": 6.0,
+      "accuracy": 6.666666666666667,
+      "partial": 9.252645502645503,
       "model": "qwen-3.8-27b",
       "run_id": "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
       "run_ids": [
         "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
         "06783219-342e-4d8f-88cf-3ba050122b7a"
       ],
-      "status": "IN_PROGRESS",
+      "status": "FINISHED",
       "task_rewards": {
         "g3p2-L26-010": {
           "reward": 0.0,
@@ -3310,6 +3310,86 @@
           "partial_credit": 0.0
         },
         "g3p1-L17-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p1-L02-006": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g1-L16-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L11-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L22-011": {
           "reward": 0.0,
           "partial_credit": 0.0
         },
@@ -3580,19 +3660,21 @@
       },
       "model_name": "Qwen3.8 27B",
       "company": "Alibaba",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
+      "complete": true,
+      "max_output_tokens": 33000,
+      "over_limit": 0,
       "judge_model": false,
+      "timed_out": 3,
+      "responses_with_usage": 90,
       "grades": {
         "1": {
           "total": 11,
-          "graded": 0,
-          "accuracy": null
+          "graded": 11,
+          "accuracy": 9.090909090909092
         },
         "2": {
           "total": 25,
-          "graded": 16,
+          "graded": 25,
           "accuracy": 0.0
         },
         "3": {
