@@ -47,3 +47,10 @@ Completed answers from the original runs are preserved.
 |---|---:|---|
 | Inkling 2 Small | 2 | `328f7e27-a17f-4282-aac8-833e01177130` |
 | DeepSeek V4.1 Flash | 81 | `d056dfe2-98a5-41ec-baac-db1368e32ae7` |
+
+## Grok failed-request retry
+
+On 2026-11-15 at 22:18 UTC, retried only `g3p2-L10-012` within run
+`35066cb0-074c-43c1-8942-743618bea169`. The 89 graded answers were preserved.
+The frozen agent and original settings were retained: 33,000 requested output
+tokens, high reasoning, no tools, and a 900-second deadline. Retry concurrency: 1.

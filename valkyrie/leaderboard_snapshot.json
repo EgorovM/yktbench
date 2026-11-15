@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15T22:00:26+00:00",
+  "updated_utc": "2026-11-15T22:19:37+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -1887,7 +1887,7 @@
       "run_ids": [
         "35066cb0-074c-43c1-8942-743618bea169"
       ],
-      "status": "ERROR",
+      "status": "IN_PROGRESS",
       "task_rewards": {
         "g4p1-L04-011": {
           "reward": 0.0,
