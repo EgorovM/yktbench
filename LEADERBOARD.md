@@ -1,7 +1,7 @@
 # Yakut Benchmark Leaderboards
 
 - **[Valkyrie — 90 questions](LEADERBOARD_90.md):** current vals_90 evaluation, per-grade scores, token usage, and run status.
-- **[v1 — 60 questions](LEADERBOARD_60.md):** completed baseline, token usage, and chart.
+- **[v1 — 60 questions](LEADERBOARD_60.md):** completed baseline and token usage.
 
 ## v0 — proof of concept
 

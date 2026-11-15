@@ -41,14 +41,7 @@ and include their graded question counts. The completed
 **[v1 results — 60 questions](LEADERBOARD_60.md)** and
 [v0 history](LEADERBOARD.md#v0--proof-of-concept) are kept separately.
 
-![Completed vals_90 model results](figures/vals_90_leaderboard.svg)
-
-The vals_90 chart includes completed runs only; see the 90-question leaderboard
-for models still running or affected by API errors.
-
 The completed v1 baseline used 60 questions. Claude Fable 5.2 scored 65.0%,
 Gemini 4 Argon 60.0%, and GPT-6 Astra and GPT-6.1 Sol each scored 45.0%.
-
-![Completed v1 accuracy and partial-credit results](figures/v1_leaderboard.svg)
 
 [How to run](USAGE.md) · [Valkyrie submission](valkyrie/README.md)

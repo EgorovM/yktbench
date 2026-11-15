@@ -7,8 +7,6 @@ Solvers received no browsing or external tools. The ten original v0 model settin
 were kept unchanged. Accuracy requires every reference part to be correct; partial
 credit is the mean share of parts correct.
 
-![V1 accuracy and partial-credit results](figures/v1_leaderboard.svg)
-
 | Model Name | Company | Accuracy % | Partial % | Max reported output tokens | Over-limit answers |
 | --- | --- | ---: | ---: | ---: | ---: |
 | Claude Fable 5.2 | Anthropic | **65.0** | 81.2 | 13940 | 0 |
