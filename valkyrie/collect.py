@@ -2,6 +2,7 @@
 
 import argparse
 import asyncio
+import fcntl
 import json
 import subprocess
 import sys
@@ -45,6 +46,10 @@ def main():
     for run in runs:
         groups.setdefault(run["model"], []).append(run)
     args.out.mkdir(parents=True, exist_ok=True)
+    # Multiple recovery watchers may collect at once. Serialize artifact downloads
+    # and publication so they cannot overwrite one another's partial snapshots.
+    collection_lock = (args.out / ".collect.lock").open("a")
+    fcntl.flock(collection_lock, fcntl.LOCK_EX)
 
     async def collect(client):
         gate = asyncio.Semaphore(8)
@@ -128,6 +133,7 @@ def main():
     text = "\n".join(lines) + "\n"
     (args.out / "leaderboard.md").write_text(text)
     print(text)
+    collection_lock.close()
 
 
 if __name__ == "__main__":

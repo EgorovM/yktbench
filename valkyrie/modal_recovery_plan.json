@@ -1,0 +1,12 @@
+[
+  {
+    "model": "gemma-4-31b",
+    "original_run_id": "fc476ce6-16cc-4fe7-aac4-5509213e553a",
+    "server": "ykt-gemma-h200/Gemma"
+  },
+  {
+    "model": "qwen-3.8-flash",
+    "original_run_id": "cc31a145-a908-4c92-985c-381ede148b0c",
+    "server": "ykt-qwen-flash-h200/QwenFlash"
+  }
+]

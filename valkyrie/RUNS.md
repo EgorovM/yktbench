@@ -74,3 +74,14 @@ reject this workspace with a B200/Starter-plan access error. No substitute
 checkpoints are merged into the original scores. Gemini 4 Argon and Qwen3.8 Max
 0902 have no matching native Modal endpoint. The available Inkling NVFP4 variant
 is a distinct serving variant and has not been substituted.
+
+## Custom H200 recovery queue
+
+Gemma 4 31B (24 failed questions) and Qwen3.8 Flash (53 failed questions) have
+custom H200 servers and are queued for automatic readiness-checked recovery.
+The watcher is `valkyrie/retry_modal.py`, using
+`valkyrie/modal_recovery_plan.json`. It records run IDs when each server is ready.
+Model revisions are pinned in the corresponding server source files.
+Gemma retains non-thinking mode and 16,384 output tokens. Qwen Flash uses its
+native `xhigh` reasoning tier and 33,000 output tokens. Both retain the
+900-second answer deadline and original judge instructions.

@@ -1,4 +1,4 @@
-# Recovery profile: same model families and generation limits, four direct Modal endpoints.
+# Recovery profile: same model families and generation limits, six direct Modal endpoints.
 # New evaluation profile: 900-second answer deadline and 33,000 requested output tokens.
 # Gemma is capped by its provider at 16,384 tokens. Original v0/v1 settings remain in models.toml.
 # Models the eval can call, as solvers (--models) or judges (--judges).
@@ -94,15 +94,16 @@ deadline_seconds = 900
 extra_body = { reasoning = { effort = "high" } }
 
 [models."gemma-4-31b"]
+# Weights: google/gemma-4-31B-it@842da3794eaa0b77d5f08bae87a17459d91ff475
 provider = "openai_chat"
-model = "google/gemma-4-31b-it"
-base_url = "https://openrouter.ai/api/v1"
-api_key_env = "OPENROUTER_API_KEY"
+model = "ykt-gemma-31b"
+base_url = "https://eginovasardaana--ykt-gemma-h200-gemma.us-west.modal.direct/v1"
+api_key_env = "MODAL_INFERENCE_API_KEY"
 max_tokens = 16384
 timeout = 900
 max_retries = 0
 deadline_seconds = 900
-extra_body = { reasoning = { enabled = false } }
+extra_body = { chat_template_kwargs = { enable_thinking = false } }
 
 [models."inkling-flagship"]
 provider = "openai_chat"
@@ -151,16 +152,17 @@ deadline_seconds = 900
 extra_body = { reasoning_effort = "xhigh" }
 
 [models."qwen-3.8-flash"]
+# Weights: Qwen/Qwen3.8-Flash-Next@812d96e10a0dd82b69d749e68693698cf6c36daa; native highest reasoning tier xhigh
 provider = "openai_chat"
 # Official hosted model based on Qwen3.8-Flash-Next; label with the served name.
-model = "qwen/qwen3.8-flash"
-base_url = "https://openrouter.ai/api/v1"
-api_key_env = "OPENROUTER_API_KEY"
+model = "ykt-qwen-flash"
+base_url = "https://eginovasardaana--ykt-qwen-flash-h200-qwenflash.us-west.modal.direct/v1"
+api_key_env = "MODAL_INFERENCE_API_KEY"
 max_tokens = 33000
 timeout = 900
 max_retries = 0
 deadline_seconds = 900
-extra_body = { reasoning = { effort = "high" } }
+extra_body = { reasoning_effort = "xhigh" }
 
 [models."gigachat-3.5"]
 provider = "openai_chat"

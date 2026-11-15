@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15T22:25:03+00:00",
+  "updated_utc": "2026-11-15T22:29:29+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -3280,6 +3280,82 @@
       }
     },
     {
+      "graded": 8,
+      "questions": 90,
+      "correct": 1.0,
+      "accuracy": 12.5,
+      "partial": 14.0625,
+      "model": "qwen-3.8-27b",
+      "run_id": "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
+      "run_ids": [
+        "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
+        "06783219-342e-4d8f-88cf-3ba050122b7a"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.125
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L20-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L32-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        }
+      },
+      "model_name": "Qwen3.8 27B",
+      "company": "Alibaba",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 0,
+          "accuracy": null
+        },
+        "2": {
+          "total": 25,
+          "graded": 1,
+          "accuracy": 0.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 3,
+          "accuracy": 0.0
+        },
+        "4": {
+          "total": 24,
+          "graded": 4,
+          "accuracy": 25.0
+        }
+      }
+    },
+    {
       "graded": 90,
       "questions": 90,
       "correct": 6.0,
@@ -3988,66 +4064,6 @@
           "total": 24,
           "graded": 13,
           "accuracy": 0.0
-        }
-      }
-    },
-    {
-      "graded": 4,
-      "questions": 90,
-      "correct": 0.0,
-      "accuracy": 0.0,
-      "partial": 3.125,
-      "model": "qwen-3.8-27b",
-      "run_id": "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
-      "run_ids": [
-        "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
-        "06783219-342e-4d8f-88cf-3ba050122b7a"
-      ],
-      "status": "IN_PROGRESS",
-      "task_rewards": {
-        "g3p2-L26-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L05-004": {
-          "reward": 0.0,
-          "partial_credit": 0.125
-        },
-        "g3p1-L32-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L17-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        }
-      },
-      "model_name": "Qwen3.8 27B",
-      "company": "Alibaba",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
-      "judge_model": false,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 0,
-          "accuracy": null
-        },
-        "2": {
-          "total": 25,
-          "graded": 1,
-          "accuracy": 0.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 3,
-          "accuracy": 0.0
-        },
-        "4": {
-          "total": 24,
-          "graded": 0,
-          "accuracy": null
         }
       }
     },

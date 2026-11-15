@@ -131,8 +131,11 @@ and [agent contracts](https://docs.valkyrie.vals.ai/agents/agent-contract).
 `--provider modal` selects the sandbox provider. Direct model calls use a separate
 Modal inference endpoint and proxy token. The current recovery profile is
 [`models_vals_modal.toml`](../models_vals_modal.toml), covering GLM 5.3,
-DeepSeek V4.1 Flash, and Inkling 2 Small. Other model entries retain their original
-providers. These endpoints were verified with live model calls.
+DeepSeek V4.1 Flash, Inkling 2 Small, Qwen3.8 27B, Gemma 4 31B, and Qwen3.8
+Flash. Other entries retain their original providers. The first four have been
+verified with live model calls; the two custom servers are validated before
+their recovery runs start. Native Qwen reasoning uses `xhigh`, its highest/default
+tier, because its API rejects the previous provider's `high` label.
 
 Create a proxy token with `modal workspace proxy-tokens create`; combine its ID
 and secret as described in the [Modal endpoint documentation](https://modal.com/docs/guide/endpoints).
@@ -157,3 +160,31 @@ To refresh the public leaderboard after collecting results:
 ```bash
 python valkyrie/leaderboard.py
 ```
+
+For compute-credit recovery without the managed presets' B200 restriction,
+[`modal_gemma.py`](modal_gemma.py) uses one H200 and
+[`modal_qwen_flash.py`](modal_qwen_flash.py) uses four H200s with the original
+unquantized weights. Their 65,536-token server context exceeds these exercises'
+prompt and requested output sizes. Model revisions are pinned in source.
+
+```bash
+modal deploy valkyrie/modal_gemma.py
+modal deploy valkyrie/modal_qwen_flash.py
+```
+
+Build and publish the recovery bundle as above, then run the watcher with a Python
+environment containing `valkyrie-cli` and `python-dotenv`:
+
+```bash
+python valkyrie/retry_modal.py --bundle results/modal-submission \
+  --plan valkyrie/modal_recovery_plan.json --dry-run
+python valkyrie/retry_modal.py --bundle results/modal-submission \
+  --plan valkyrie/modal_recovery_plan.json
+```
+
+The plan is specific to the recorded vals_90 runs and this Modal workspace.
+The watcher verifies endpoint readiness, selects only failed questions,
+preserves completed answers, refreshes the leaderboard, and returns each server
+to zero minimum GPU containers after completion or failed startup. Shared
+Endpoints bill by token and do not consume included compute credits; these
+dedicated H200 deployments use Modal compute billing.
