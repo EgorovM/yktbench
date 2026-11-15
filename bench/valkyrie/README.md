@@ -78,6 +78,32 @@ It keeps tokens off the command line and out of the published files. Native and
 hosted evaluation share the model configurations and grading rules; results must
 still be labeled with the platform on which they were collected.
 
+## Collect results
+
+The publisher writes model aliases and run IDs to
+`bench/results/vals_90/valkyrie_runs.json`. Collect scores and token usage with:
+
+```bash
+uv run --python 3.12 --with valkyrie-cli python bench/valkyrie/collect.py \
+  --runs bench/results/vals_90/valkyrie_runs.json \
+  --out bench/results/vals_90/hosted --artifacts
+```
+
+Unfinished rows are provisional and show the number of graded questions. Full
+outputs, token usage, and over-limit flags are retained separately from grading.
+
+## Hosted pipeline validation
+
+Run `91fc4b38-ceff-4765-b23e-e9dc3f0b7225` completed on Modal with the
+`yakut-text-model` agent and one existing test question, using Fable 5.2.
+It received full credit, reported 627 output tokens, and included an
+`eval_instruction` in the judge's input. This is a pipeline smoke test, not a
+90-question result. See [the validation record](smoke_validation.json).
+
+```bash
+valkyrie run fetch 91fc4b38-ceff-4765-b23e-e9dc3f0b7225
+```
+
 ## Validation
 
 ```bash

@@ -75,6 +75,10 @@ allowed_hosts = ["api.openai.com", "api.anthropic.com", "openrouter.ai", "founda
 timeout_sec = 900
 network_mode = "allowlist"
 allowed_hosts = ["api.openai.com"]
+
+[[artifacts]]
+source = "/logs/verifier/judgment.json"
+destination = "judgment.json"
 ''')
         tests = folder / "tests"
         write(tests / "test.sh", "#!/bin/sh\nset -eu\npython /tests/grade.py\n")

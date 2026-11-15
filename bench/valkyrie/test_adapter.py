@@ -12,6 +12,7 @@ sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE))
 import agent
 import build
+import collect
 import grade
 import metric
 import providers
@@ -81,6 +82,14 @@ class AdapterTests(unittest.TestCase):
                                    {"reward": 0, "partial_credit": 0.5}])
         self.assertAlmostEqual(actual["reward"], 1 / 3)
         self.assertEqual(actual["partial_credit"], 0.5)
+
+    def test_provisional_collection_reports_graded_denominator(self):
+        row = collect.summarize({"a": {"rewards": {"reward": 1.0, "partial_credit": 1.0}},
+                                 "b": {"rewards": {"reward": 0.0, "partial_credit": 0.5}}}, 3)
+        self.assertEqual(row["graded"], 2)
+        self.assertEqual(row["questions"], 3)
+        self.assertEqual(row["accuracy"], 50.0)
+        self.assertEqual(row["partial"], 75.0)
 
     def test_judgment_requires_all_parts_for_full_credit(self):
         result = {"parts": [{"correct": True}, {"correct": False}]}
