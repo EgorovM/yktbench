@@ -7,57 +7,48 @@ Sakha (Yakut) language textbook assignments and an LLM eval built from them.
 
 ## Current benchmark: v1
 
-**v1 supersedes v0 as the current benchmark.** The v0 results below are retained
-for historical reference.
+Results from 60 questions on the `clean` sheet of
+[`clean_60_primary_school.xlsx`](data/clean_60_primary_school.xlsx), grades 1–4.
+All 15 models answered each question once. Judge: GPT 6.1 Sol, high reasoning effort.
+Solvers received no browsing or external tools. The ten original v0 model settings
+were kept unchanged. Accuracy requires every reference part to be correct; partial
+credit is the mean share of parts correct. Confidence intervals are 95% bootstrap
+intervals over questions.
 
-The benchmark uses the 60 exercises on the `clean` sheet of
-[`clean_60_primary_school.xlsx`](data/clean_60_primary_school.xlsx): grade 1 (10),
-grade 2 (20), grade 3 (25), and grade 4 (5). Required clues are supplied as text,
-including Unicode sound tokens; no external pictures are needed.
+| Model | Model ID | Accuracy % | 95% CI | Partial % | Requested output limit | Max reported output tokens | Over-limit answers |
+|---|---|---:|---|---:|---:|---:|---:|
+| fable-5.2 | claude-fable-5-2 | 65.0 | 51.7–76.7 | 81.2 | 32000 | 13940 | 0 |
+| gemini-4-argon | google/gemini-4-argon | 60.0 | 48.3–71.7 | 72.1 | 32000 | 32000 | 0 |
+| astra | gpt-6-astra | 45.0 | 33.3–58.3 | 62.7 | 32000 | 11750 | 0 |
+| sol-6.1-eval **(judge model)** | gpt-6.1-sol | 45.0 | 33.3–58.3 | 65.1 | 32000 | 32000 | 0 |
+| grok-4.7 | x-ai/grok-4.7 | 36.7 | 25.0–48.3 | 55.4 | 32000 | 99878 | 36 |
+| deepseek-v4.1-flash | deepseek/deepseek-v4.1-flash | 31.7 | 20.0–43.3 | 46.9 | 32000 | 32000 | 0 |
+| deepseek-v4 | deepseek/deepseek-v4-pro | 28.3 | 18.3–40.0 | 47.5 | 32000 | 32000 | 0 |
+| qwen-3.8-max | qwen/qwen3.8-max-0902 | 25.0 | 15.0–36.7 | 43.3 | 32000 | 32000 | 0 |
+| inkling-flagship | thinkingmachines/inkling | 21.7 | 11.7–33.3 | 43.9 | 32000 | 32000 | 0 |
+| inkling-2-small | thinkingmachines/inkling-2-small | 21.7 | 11.7–33.3 | 33.7 | 32000 | 32000 | 0 |
+| qwen-3.8-flash | qwen/qwen3.8-flash | 13.3 | 6.7–21.7 | 15.3 | 32000 | 32000 | 0 |
+| glm-5.3 | z-ai/glm-5.3 | 10.0 | 3.3–18.3 | 18.3 | 32000 | 32000 | 0 |
+| qwen-3.8-27b | qwen/qwen3.8-27b | 8.3 | 1.7–15.0 | 11.8 | 32000 | 27411 | 0 |
+| gemma-4-31b | google/gemma-4-31b-it | 6.7 | 1.7–13.3 | 11.2 | 16384 | 16384 | 0 |
+| gigachat-3.5 | ai-sage/GigaChat3.5-432B-A28B | 6.7 | 1.7–13.3 | 21.5 | 32000 | 596 | 0 |
 
-**Preliminary leaderboard — 2026-11-15T20:30:48+00:00**. 899/900 answers graded.
-Fourteen models have finished. Sol has one question pending; its provisional
-percentages use 59 graded questions. Every completed row uses all 60 questions.
+GPT 6.1 Sol is marked **(judge model)** because it also grades the benchmark.
+Its solver answers receive the same 32,000-token requested budget as other main
+solvers, while grading retains its 16,000-token budget. Its row is self-judged.
 
-Accuracy requires every reference part to be correct. Partial credit is the mean
-share of parts correct. Judge: GPT 6.1 Sol, high reasoning effort. Solvers received
-no browsing or external tools, and the ten original v0 solver settings are unchanged.
+Qwen3.8 Flash is the official hosted model based on Flash-Next, not a claim to run
+the exact downloadable Flash-Next weights. See the
+[Qwen model card](https://huggingface.co/Qwen/Qwen3.8-Flash-Next).
 
-| Model | Graded | Accuracy % | Partial % | Requested output limit | Max reported output tokens | Over-limit answers |
-|---|---:|---:|---:|---:|---:|---:|
-| fable-5.2 | 60/60 | 65.0 | 81.2 | 32,000 | 13,940 | 0 |
-| gemini-4-argon | 60/60 | 60.0 | 72.1 | 32,000 | 32,000 | 0 |
-| sol-6.1-eval **(judge model)** † | 59/60 | 45.8 | 66.2 | 32,000 | 9,657 | 0 |
-| astra | 60/60 | 45.0 | 62.7 | 32,000 | 11,750 | 0 |
-| grok-4.7 | 60/60 | 36.7 | 55.4 | 32,000 | 99,878 | 36 |
-| deepseek-v4.1-flash | 60/60 | 31.7 | 46.9 | 32,000 | 32,000 | 0 |
-| deepseek-v4 | 60/60 | 28.3 | 47.5 | 32,000 | 32,000 | 0 |
-| qwen-3.8-max | 60/60 | 25.0 | 43.3 | 32,000 | 32,000 | 0 |
-| inkling-flagship | 60/60 | 21.7 | 43.9 | 32,000 | 32,000 | 0 |
-| inkling-2-small | 60/60 | 21.7 | 33.7 | 32,000 | 32,000 | 0 |
-| qwen-3.8-flash | 60/60 | 13.3 | 15.3 | 32,000 | 32,000 | 0 |
-| glm-5.3 | 60/60 | 10.0 | 18.3 | 32,000 | 32,000 | 0 |
-| qwen-3.8-27b | 60/60 | 8.3 | 11.8 | 32,000 | 27,411 | 0 |
-| gigachat-3.5 | 60/60 | 6.7 | 21.5 | 32,000 | 596 | 0 |
-| gemma-4-31b | 60/60 | 6.7 | 11.2 | 16,384 | 16,384 | 0 |
+Responses above their requested token limits were retained and flagged. API-reported
+output usage can include reasoning tokens. The table counts main-run overages;
+smoke-run overages are recorded separately in local results.
 
-† Sol is still pending and its row is provisional. It also serves as the judge,
-so its answers are self-judged. Its solver budget is 32,000 tokens; the judge
-retains its 16,000-token grading budget.
-
-Max reported output usage can include reasoning tokens. Responses above their
-requested output limits were retained and flagged. The table counts main-run
-overages; smoke-run overages are recorded separately in local results.
-
-Qwen3.8 Flash is the official hosted counterpart based on Flash-Next; see the
-[Qwen model card](https://huggingface.co/Qwen/Qwen3.8-Flash-Next). Exact API model
-identifiers and settings are in [`bench/models.toml`](bench/models.toml).
-
-The frozen UTF-8 dataset is [`bench/data/ykt_primary_v1.jsonl`](bench/data/ykt_primary_v1.jsonl).
-Rebuild it with `python3 bench/build_dataset.py`; run it with `bash bench/run.sh`.
-Results go to `bench/results/v1/`, with a separate smoke run in
-`bench/results/v1-smoke/`. A supplied instruction/key alignment concern remains
-documented in the [dataset notes](bench/data/README.md).
+The UTF-8 dataset is [`bench/data/ykt_primary_v1.jsonl`](bench/data/ykt_primary_v1.jsonl).
+Rebuild with `python3 bench/build_dataset.py`; run with `bash bench/run.sh`.
+Detailed local results are in `bench/results/v1/`. One supplied instruction/key
+alignment concern remains documented in the [dataset notes](bench/data/README.md).
 
 ## v0 — proof of concept
 
