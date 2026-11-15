@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15T22:19:37+00:00",
+  "updated_utc": "2026-11-15T22:25:03+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -4000,9 +4000,10 @@
       "model": "qwen-3.8-27b",
       "run_id": "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
       "run_ids": [
-        "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e"
+        "7ba85ffb-bfb4-4e27-b260-3e9f6b4dd62e",
+        "06783219-342e-4d8f-88cf-3ba050122b7a"
       ],
-      "status": "ERROR",
+      "status": "IN_PROGRESS",
       "task_rewards": {
         "g3p2-L26-010": {
           "reward": 0.0,

@@ -1,4 +1,4 @@
-# Recovery profile: same model families and generation limits, three direct Modal endpoints.
+# Recovery profile: same model families and generation limits, four direct Modal endpoints.
 # New evaluation profile: 900-second answer deadline and 33,000 requested output tokens.
 # Gemma is capped by its provider at 16,384 tokens. Original v0/v1 settings remain in models.toml.
 # Models the eval can call, as solvers (--models) or judges (--judges).
@@ -138,15 +138,17 @@ deadline_seconds = 900
 extra_body = { reasoning = { effort = "high" } }
 
 [models."qwen-3.8-27b"]
+# Weights: Qwen/Qwen3.8-27B@1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
 provider = "openai_chat"
-model = "qwen/qwen3.8-27b"
-base_url = "https://openrouter.ai/api/v1"
-api_key_env = "OPENROUTER_API_KEY"
+model = "ykt-vals90-qwen-27b"
+base_url = "https://eginovasardaana--ep-ykt-vals90-qwen-27b-server.us-west.modal.direct/v1"
+api_key_env = "MODAL_INFERENCE_API_KEY"
 max_tokens = 33000
 timeout = 900
 max_retries = 0
 deadline_seconds = 900
-extra_body = { reasoning = { effort = "high" } }
+# Qwen names its highest native reasoning tier xhigh (the endpoint rejects high).
+extra_body = { reasoning_effort = "xhigh" }
 
 [models."qwen-3.8-flash"]
 provider = "openai_chat"

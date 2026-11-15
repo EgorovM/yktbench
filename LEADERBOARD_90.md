@@ -2,7 +2,7 @@
 
 ## vals_90
 
-Snapshot: 2026-11-15T22:19:37+00:00. Scores are percentages.
+Snapshot: 2026-11-15T22:25:03+00:00. Scores are percentages.
 
 **Evaluation is in progress.** Partial scores use graded questions only;
 their denominators differ and they are not final rankings. API failures
@@ -24,7 +24,7 @@ Bold accuracy marks the best completed run; bold token usage marks the largest o
 | Grok 4.7 | SpaceX (xAI) | 23.6 | 32.6 | 18.2 (11/11) | 32.0 (25/25) | 29.6 (27/28) | 12.5 (24/24) | 89/90 | **41172** | 3 | Running |
 | Qwen3.8 Flash | Alibaba | 18.9 | 22.6 | 25.0 (4/11) | 30.8 (13/25) | 9.1 (11/28) | 11.1 (9/24) | 37/90 | — | — | API errors |
 | Gemma 4 31B | Google | 4.5 | 6.0 | 0.0 (11/11) | 10.0 (20/25) | 4.8 (21/28) | 0.0 (13/24) | 66/90 | — | — | API errors |
-| Qwen3.8 27B | Alibaba | 0.0 | 3.1 | — (0/11) | 0.0 (1/25) | 0.0 (3/28) | — (0/24) | 4/90 | — | — | API errors |
+| Qwen3.8 27B | Alibaba | 0.0 | 3.1 | — (0/11) | 0.0 (1/25) | 0.0 (3/28) | — (0/24) | 4/90 | — | — | Running |
 | Gemini 4 Argon | Google | — | — | — (0/11) | — (0/25) | — (0/28) | — (0/24) | 0/90 | — | — | API errors |
 
 Two questions have unspecified grades; they count in All, but not in grade columns.

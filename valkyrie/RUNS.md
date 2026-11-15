@@ -54,3 +54,23 @@ On 2026-11-15 at 22:18 UTC, retried only `g3p2-L10-012` within run
 `35066cb0-074c-43c1-8942-743618bea169`. The 89 graded answers were preserved.
 The frozen agent and original settings were retained: 33,000 requested output
 tokens, high reasoning, no tools, and a 900-second deadline. Retry concurrency: 1.
+
+## Qwen3.8 27B direct Modal retry
+
+Retried the 86 API-error questions using the same `Qwen/Qwen3.8-27B` weights
+(revision `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0`) on a dedicated H200
+endpoint. The four graded original answers are retained.
+
+- Run ID: `06783219-342e-4d8f-88cf-3ba050122b7a`
+- Dataset: `yakut/vals-90@3`, immutable tag `v-260492c98b2d`
+- Concurrency: 16; requested output limit: 33,000; answer deadline: 900 seconds
+- Native reasoning: `xhigh`. Qwen's native API rejects `high`; `xhigh` is its
+  documented highest/default reasoning level. This provider translation is
+  recorded in `models_vals_modal.toml`.
+- The endpoint returns to zero minimum GPU containers after the retry ends.
+
+The managed presets for DeepSeek V4 Pro, Qwen3.8 Flash, and Gemma 4 31B currently
+reject this workspace with a B200/Starter-plan access error. No substitute
+checkpoints are merged into the original scores. Gemini 4 Argon and Qwen3.8 Max
+0902 have no matching native Modal endpoint. The available Inkling NVFP4 variant
+is a distinct serving variant and has not been substituted.
