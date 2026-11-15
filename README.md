@@ -1,9 +1,8 @@
-# ykt_bench
+# Yakut bench
 
-Sakha (Yakut) language textbook assignments and an LLM eval built from them.
+This benchmark evaluates models' capability speak and reason in Yakut.
 
-- `data/` — assignments parsed from the textbooks (see `data/README.md`)
-- `bench/` — eval: ask frontier models the questions, grade with an LLM judge (see `bench/README.md`)
+The public benchmark questions are created from text-only test questions given in the primary school textbooks (grades 1-4).
 
 ## Current benchmark: v1
 
