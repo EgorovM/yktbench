@@ -55,7 +55,7 @@ def main():
             if k % 250 == 0:
                 print(f"{k}/{len(tasks)} pages, {len(out)} icons", flush=True)
     OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
-    with OUT_CSV.open("w", newline="", encoding="utf-8") as f:
+    with OUT_CSV.open("w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=["book", "page", "label", "score", "x", "y", "side", "number"])
         w.writeheader()
         w.writerows(out)

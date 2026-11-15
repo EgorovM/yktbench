@@ -320,7 +320,7 @@ def load_icons():
     """(book, page, number) -> [icon labels] for icons that sit by a number."""
     icons = defaultdict(list)
     if ICONS_CSV.exists():
-        with ICONS_CSV.open(encoding="utf-8") as f:
+        with ICONS_CSV.open(encoding="utf-8-sig") as f:
             for r in csv.DictReader(f):
                 if r["number"]:
                     icons[(r["book"], int(r["page"]), int(r["number"]))].append(r["label"])
@@ -446,7 +446,7 @@ def main():
               + f"  with_icon={sum(1 for r in rows if r['icon'])}")
     all_rows.sort(key=lambda r: (GRADE_ORDER[r["grade"]], r["part"], r["pdf_page_start"]))
     OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
-    with OUT_CSV.open("w", newline="", encoding="utf-8") as f:
+    with OUT_CSV.open("w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=list(all_rows[0]))
         w.writeheader()
         w.writerows(all_rows)

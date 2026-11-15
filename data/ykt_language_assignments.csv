@@ -1,4 +1,4 @@
-id,grade,part,book,chain,lesson,number,printed_number,section,block,icon,pdf_page_start,pdf_page_end,instruction,content,needs_visual,truncated,source,raw_text
+﻿id,grade,part,book,chain,lesson,number,printed_number,section,block,icon,pdf_page_start,pdf_page_end,instruction,content,needs_visual,truncated,source,raw_text
 g1-L01-001,1,,Саха_тыла_1,lesson,1,1,1,,,дьарык,6,8,Ойуулары болҕойон көр. Ыйытыыларга хоруйдаа.,"1. Дорҕоон диэн тугуй? 2. Буукуба диэн тугуй?
 дорҕоон
 буукуба

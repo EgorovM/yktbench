@@ -100,7 +100,7 @@ def test_entries(text: str):
 
 
 def main():
-    with IN_CSV.open(encoding="utf-8") as f:
+    with IN_CSV.open(encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
     by_book = defaultdict(list)
     for r in rows:
@@ -170,7 +170,7 @@ def main():
         print(f"{book:28s} key '{heading}' p{key_page}: mapped {len(mapped) - n_before}")
 
     cols = list(rows[0]) + ["answer", "answer_key", "answer_key_page", "mapping"]
-    with OUT_CSV.open("w", newline="", encoding="utf-8") as f:
+    with OUT_CSV.open("w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
         w.writerows(mapped)
