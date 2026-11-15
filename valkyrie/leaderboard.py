@@ -10,13 +10,18 @@ from model_names import model_company, model_name
 
 
 def render(snapshot):
+    active = any(row["status"] not in ("FINISHED", "ERROR", "STOPPED", "launch_error") for row in snapshot["rows"])
+    complete = sum(bool(row.get("complete")) for row in snapshot["rows"])
+    status = ("**Evaluation is in progress.**" if active else
+              f"**Evaluation incomplete: {complete}/{len(snapshot['rows'])} models fully graded.**"
+              if complete < len(snapshot["rows"]) else "**Evaluation complete.**")
     lines = ["# Yakut Benchmark Leaderboard", "", "## vals_90", "",
              f"Snapshot: {snapshot['updated_utc']}. Scores are percentages.", "",
-             "**Evaluation is in progress.** Partial scores use graded questions only;",
+             status + " Partial scores use graded questions only;",
              "their denominators differ and they are not final rankings. API failures",
              "remain ungraded. Grade cells show accuracy followed by graded/total questions.",
              "Bold accuracy marks the best completed run; bold token usage marks the largest observed report.", "",
-             "| Model Name | Company | All | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Partial credit | Max reported output tokens | Over limit | Status |",
+             "| Model Name | Company | All | Partial credit | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Max reported output tokens | Over limit | Status |",
              "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     def score(value):
         return f"{value:.1f}" if value is not None else "—"
@@ -36,8 +41,8 @@ def render(snapshot):
         tokens = str(row["max_output_tokens"]) if row.get("max_output_tokens") is not None else "—"
         if row.get("max_output_tokens") is not None and row["max_output_tokens"] == max_tokens:
             tokens = f"**{tokens}**"
-        lines.append(f"| {name} | {model_company(row['model'])} | {accuracy} | "
-                     + " | ".join(grades) + f" | {row.get('graded', 0)}/90 | {score(row.get('partial'))} | "
+        lines.append(f"| {name} | {model_company(row['model'])} | {accuracy} | {score(row.get('partial'))} | "
+                     + " | ".join(grades) + f" | {row.get('graded', 0)}/90 | "
                      + f"{tokens} | "
                      + f"{row['over_limit'] if row.get('over_limit') is not None else '—'} | {status} |")
     lines += ["", "Two questions have unspecified grades; they count in All, but not in grade columns.",

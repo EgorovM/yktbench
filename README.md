@@ -18,7 +18,7 @@ original budgets.
 
 The [90-question dataset](data/vals_90.jsonl) comes from the `vals sub` sheet of
 [`vals_90.xlsx`](data/sources/vals_90.xlsx). All 15 model runs have been launched
-on Valkyrie and Modal; results are in progress. [Run IDs and monitoring commands](valkyrie/RUNS.md)
+on Valkyrie and Modal; results are incomplete. [Run IDs and monitoring commands](valkyrie/RUNS.md)
 are available for the team.
 
 Each solver receives the exercise instruction and material. The judge receives
