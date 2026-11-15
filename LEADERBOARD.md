@@ -2,7 +2,7 @@
 
 ## vals_90
 
-Snapshot: 2026-11-15T21:50:59+00:00. Scores are percentages.
+Snapshot: 2026-11-15T21:53:00+00:00. Scores are percentages.
 
 **Evaluation is in progress.** Partial scores use graded questions only;
 their denominators differ and they are not final rankings. API failures
@@ -11,17 +11,17 @@ remain ungraded. Grade cells show accuracy followed by graded/total questions.
 | Model Name | Company | All | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Partial credit | Max reported output tokens | Over limit | Status |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | Claude Fable 5.2 | Anthropic | 64.4 | 90.9 (11/11) | 56.0 (25/25) | 71.4 (28/28) | 50.0 (24/24) | 90/90 | 78.7 | 14149 | 0 | Complete |
+| Inkling 2 Small | Thinking Machines Lab | 22.2 | 27.3 (11/11) | 16.0 (25/25) | 32.1 (28/28) | 16.7 (24/24) | 90/90 | 34.5 | 33000 | 0 | Complete |
 | GigaChat 3.5 Ultra | Sber | 6.7 | 9.1 (11/11) | 12.0 (25/25) | 3.6 (28/28) | 4.2 (24/24) | 90/90 | 14.2 | 900 | 0 | Complete |
 | Qwen3.8 Max | Alibaba | 100.0 | — (0/11) | 100.0 (1/25) | — (0/28) | — (0/24) | 1/90 | 100.0 | — | — | API errors |
-| Qwen3.8 Flash | Alibaba | 63.6 | 100.0 (1/11) | 80.0 (5/25) | 33.3 (3/28) | 50.0 (2/24) | 11/90 | 72.3 | — | — | Running |
-| Grok 4.7 | SpaceX (xAI) | 59.1 | 0.0 (2/11) | 37.5 (8/25) | 88.9 (9/28) | 66.7 (3/24) | 22/90 | 61.4 | 11734 | 0 | Running |
+| Grok 4.7 | SpaceX (xAI) | 51.7 | 0.0 (3/11) | 45.5 (11/25) | 72.7 (11/28) | 50.0 (4/24) | 29/90 | 59.2 | 11734 | 0 | Running |
 | Inkling | Thinking Machines Lab | 42.9 | 0.0 (1/11) | 100.0 (2/25) | 33.3 (3/28) | 0.0 (1/24) | 7/90 | 68.6 | — | — | API errors |
-| GPT-6 Astra | OpenAI | 42.0 | 45.5 (11/11) | 44.0 (25/25) | 40.7 (27/28) | 39.1 (23/24) | 88/90 | 61.7 | — | — | Running |
+| GPT-6 Astra | OpenAI | 41.6 | 45.5 (11/11) | 44.0 (25/25) | 40.7 (27/28) | 37.5 (24/24) | 89/90 | 61.9 | — | — | Running |
 | GPT-6.1 Sol **(judge model)** | OpenAI | 39.3 | 45.5 (11/11) | 36.0 (25/25) | 51.9 (27/28) | 25.0 (24/24) | 89/90 | 59.4 | — | — | Running |
-| DeepSeek V4.1 Flash | DeepSeek | 30.0 | 0.0 (1/11) | 100.0 (1/25) | 25.0 (4/28) | 25.0 (4/24) | 10/90 | 53.7 | — | — | Running |
-| DeepSeek V4 Pro | DeepSeek | 26.3 | 0.0 (1/11) | 11.1 (9/25) | 40.0 (5/28) | 66.7 (3/24) | 19/90 | 39.7 | — | — | Running |
-| Inkling 2 Small | Thinking Machines Lab | 22.1 | 27.3 (11/11) | 16.7 (24/25) | 29.6 (27/28) | 18.2 (22/24) | 86/90 | 35.0 | — | — | Running |
-| GLM 5.3 | Z.ai | 16.0 | 20.0 (10/11) | 12.5 (24/25) | 23.1 (26/28) | 10.5 (19/24) | 81/90 | 24.3 | — | — | Running |
+| DeepSeek V4.1 Flash | DeepSeek | 36.4 | 0.0 (1/11) | 100.0 (1/25) | 50.0 (6/28) | 30.8 (13/24) | 22/90 | 53.8 | — | — | Running |
+| DeepSeek V4 Pro | DeepSeek | 28.6 | 0.0 (1/11) | 20.0 (10/25) | 33.3 (6/28) | 66.7 (3/24) | 21/90 | 40.7 | — | — | Running |
+| Qwen3.8 Flash | Alibaba | 25.9 | 25.0 (4/11) | 40.0 (10/25) | 12.5 (8/28) | 20.0 (5/24) | 27/90 | 30.9 | — | — | Running |
+| GLM 5.3 | Z.ai | 15.1 | 20.0 (10/11) | 12.5 (24/25) | 22.2 (27/28) | 8.7 (23/24) | 86/90 | 22.9 | — | — | Running |
 | Gemma 4 31B | Google | 4.5 | 0.0 (11/11) | 10.0 (20/25) | 4.8 (21/28) | 0.0 (13/24) | 66/90 | 6.0 | — | — | API errors |
 | Qwen3.8 27B | Alibaba | 0.0 | — (0/11) | 0.0 (1/25) | 0.0 (3/28) | — (0/24) | 4/90 | 3.1 | — | — | API errors |
 | Gemini 4 Argon | Google | — | — (0/11) | — (0/25) | — (0/28) | — (0/24) | 0/90 | — | — | — | API errors |
