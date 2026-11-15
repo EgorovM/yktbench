@@ -14,12 +14,15 @@ def render(snapshot):
              f"Snapshot: {snapshot['updated_utc']}. Scores are percentages.", "",
              "**Evaluation is in progress.** Partial scores use graded questions only;",
              "their denominators differ and they are not final rankings. API failures",
-             "remain ungraded. Grade cells show accuracy followed by graded/total questions.", "",
+             "remain ungraded. Grade cells show accuracy followed by graded/total questions.",
+             "Bold accuracy marks the best completed run; bold token usage marks the largest observed report.", "",
              "| Model Name | Company | All | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Partial credit | Max reported output tokens | Over limit | Status |",
              "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     def score(value):
         return f"{value:.1f}" if value is not None else "—"
     rows = sorted(snapshot["rows"], key=lambda row: (not row.get("complete"), row.get("accuracy") is None, -(row.get("accuracy") or 0)))
+    best_accuracy = max((row["accuracy"] for row in rows if row.get("complete") and row.get("accuracy") is not None), default=None)
+    max_tokens = max((row["max_output_tokens"] for row in rows if row.get("max_output_tokens") is not None), default=None)
     for row in rows:
         name = model_name(row["model"]) + (" **(judge model)**" if row.get("judge_model") else "")
         grades = []
@@ -27,9 +30,15 @@ def render(snapshot):
             cell = row["grades"][grade]
             grades.append(f"{score(cell['accuracy'])} ({cell['graded']}/{cell['total']})")
         status = "Complete" if row.get("complete") else ("API errors" if row["status"] == "ERROR" else "Running")
-        lines.append(f"| {name} | {model_company(row['model'])} | {score(row.get('accuracy'))} | "
+        accuracy = score(row.get("accuracy"))
+        if row.get("complete") and row.get("accuracy") == best_accuracy:
+            accuracy = f"**{accuracy}**"
+        tokens = str(row["max_output_tokens"]) if row.get("max_output_tokens") is not None else "—"
+        if row.get("max_output_tokens") is not None and row["max_output_tokens"] == max_tokens:
+            tokens = f"**{tokens}**"
+        lines.append(f"| {name} | {model_company(row['model'])} | {accuracy} | "
                      + " | ".join(grades) + f" | {row.get('graded', 0)}/90 | {score(row.get('partial'))} | "
-                     + f"{row['max_output_tokens'] if row.get('max_output_tokens') is not None else '—'} | "
+                     + f"{tokens} | "
                      + f"{row['over_limit'] if row.get('over_limit') is not None else '—'} | {status} |")
     lines += ["", "Two questions have unspecified grades; they count in All, but not in grade columns.",
               "Twelve source rows carry picture flags; solvers receive text only. All 90 supplied rows are retained.", "",
