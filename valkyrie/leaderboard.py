@@ -10,12 +10,20 @@ from model_names import model_company, model_name
 from leaderboard_metrics import render as render_metrics
 
 
+EXCLUDED_FROM_VALS_90 = {"deepseek-v4"}
+
+
+def included_rows(snapshot):
+    return [row for row in snapshot["rows"] if row["model"] not in EXCLUDED_FROM_VALS_90]
+
+
 def render(snapshot):
-    active = any(row["status"] not in ("FINISHED", "ERROR", "STOPPED", "launch_error") for row in snapshot["rows"])
-    complete = sum(bool(row.get("complete")) for row in snapshot["rows"])
+    source_rows = included_rows(snapshot)
+    active = any(row["status"] not in ("FINISHED", "ERROR", "STOPPED", "launch_error") for row in source_rows)
+    complete = sum(bool(row.get("complete")) for row in source_rows)
     status = ("**Evaluation is in progress.**" if active else
-              f"**Evaluation incomplete: {complete}/{len(snapshot['rows'])} models fully graded.**"
-              if complete < len(snapshot["rows"]) else "**Evaluation complete.**")
+              f"**Evaluation incomplete: {complete}/{len(source_rows)} models fully graded.**"
+              if complete < len(source_rows) else "**Evaluation complete.**")
     lines = ["# Yakut Benchmark Leaderboard", "", "## vals_90", "",
              f"Snapshot: {snapshot['updated_utc']}. Scores are percentages.", "",
              status + " Partial scores use graded questions only;",
@@ -26,7 +34,7 @@ def render(snapshot):
              "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     def score(value):
         return f"{value:.1f}" if value is not None else "—"
-    rows = sorted(snapshot["rows"], key=lambda row: (not row.get("complete"), row.get("accuracy") is None, -(row.get("accuracy") or 0)))
+    rows = sorted(source_rows, key=lambda row: (not row.get("complete"), row.get("accuracy") is None, -(row.get("accuracy") or 0)))
     best_accuracy = max((row["accuracy"] for row in rows if row.get("complete") and row.get("accuracy") is not None), default=None)
     max_tokens = max((row["max_output_tokens"] for row in rows if row.get("max_output_tokens") is not None), default=None)
     for row in rows:
@@ -77,6 +85,7 @@ def main():
     args = parser.parse_args()
     items = [json.loads(line) for line in args.dataset.read_text().splitlines() if line.strip()]
     snapshot = json.loads((args.collected / "leaderboard.json").read_text())
+    snapshot["rows"] = included_rows(snapshot)
     for row in snapshot["rows"]:
         task_rewards = row.get("task_rewards")
         if task_rewards is None:

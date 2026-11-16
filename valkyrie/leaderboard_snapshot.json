@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16T05:29:33+00:00",
+  "updated_utc": "2026-11-16T05:37:28+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -408,18 +408,30 @@
       }
     },
     {
-      "graded": 48,
+      "graded": 51,
       "questions": 90,
-      "correct": 24.0,
-      "accuracy": 50.0,
-      "partial": 59.84375,
+      "correct": 27.0,
+      "accuracy": 52.94117647058823,
+      "partial": 62.205882352941174,
       "model": "gemini-4-carbon",
       "run_id": "e4410ff4-0d45-4301-9ea5-3ba9c5009129",
       "run_ids": [
         "e4410ff4-0d45-4301-9ea5-3ba9c5009129"
       ],
-      "status": "ERROR",
+      "status": "IN_PROGRESS",
       "task_rewards": {
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L21-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L18-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
         "g3p1-L27-011": {
           "reward": 0.0,
           "partial_credit": 0.0
@@ -619,9 +631,8 @@
       "max_output_tokens": 33000,
       "over_limit": 0,
       "judge_model": false,
-      "blocked_reason": "insufficient_credits",
       "timed_out": 0,
-      "responses_with_usage": 48,
+      "responses_with_usage": 51,
       "grades": {
         "1": {
           "total": 11,
@@ -635,13 +646,13 @@
         },
         "3": {
           "total": 28,
-          "graded": 12,
-          "accuracy": 58.333333333333336
+          "graded": 14,
+          "accuracy": 64.28571428571429
         },
         "4": {
           "total": 24,
-          "graded": 0,
-          "accuracy": null
+          "graded": 1,
+          "accuracy": 100.0
         }
       }
     },
@@ -1861,143 +1872,6 @@
       }
     },
     {
-      "graded": 23,
-      "questions": 90,
-      "correct": 6.0,
-      "accuracy": 26.08695652173913,
-      "partial": 37.173913043478265,
-      "model": "deepseek-v4",
-      "run_id": "1428ce18-270f-4702-aa74-9e7d8eda37f0",
-      "run_ids": [
-        "1428ce18-270f-4702-aa74-9e7d8eda37f0"
-      ],
-      "status": "ERROR",
-      "task_rewards": {
-        "g3p2-L19-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L23-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L30-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L32-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L06-008": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g4p1-L08-010": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p2-L13-010": {
-          "reward": 0.0,
-          "partial_credit": 0.8
-        },
-        "g2p1-L14-006": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L25-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.75
-        },
-        "g2p2-L09-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "vals90-row-002": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g2p1-L10-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L05-012": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L20-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L38-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L03-004": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L17-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L34-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L33-011b": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L18-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L10-009": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        }
-      },
-      "model_name": "DeepSeek V4 Pro",
-      "company": "DeepSeek",
-      "complete": false,
-      "max_output_tokens": 33000,
-      "over_limit": 0,
-      "judge_model": false,
-      "timed_out": 0,
-      "responses_with_usage": 23,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 1,
-          "accuracy": 0.0
-        },
-        "2": {
-          "total": 25,
-          "graded": 10,
-          "accuracy": 20.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 8,
-          "accuracy": 25.0
-        },
-        "4": {
-          "total": 24,
-          "graded": 3,
-          "accuracy": 66.66666666666667
-        }
-      }
-    },
-    {
       "graded": 90,
       "questions": 90,
       "correct": 23.0,
@@ -2400,6 +2274,279 @@
           "total": 24,
           "graded": 24,
           "accuracy": 16.666666666666668
+        }
+      }
+    },
+    {
+      "graded": 57,
+      "questions": 90,
+      "correct": 14.0,
+      "accuracy": 24.56140350877193,
+      "partial": 44.351851851851855,
+      "model": "inkling-flagship",
+      "run_id": "1e31e4ec-5a7a-403b-a986-cb7c88cfbf9b",
+      "run_ids": [
+        "1e31e4ec-5a7a-403b-a986-cb7c88cfbf9b"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p1-L15-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p2-L30-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5555555555555556
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.375
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.8333333333333334
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L02-006": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g1-L31-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L11-009": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        }
+      },
+      "model_name": "Inkling",
+      "company": "Thinking Machines Lab",
+      "complete": false,
+      "max_output_tokens": 33000,
+      "over_limit": 0,
+      "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 57,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 27.272727272727273
+        },
+        "2": {
+          "total": 25,
+          "graded": 25,
+          "accuracy": 16.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 19,
+          "accuracy": 31.57894736842105
+        },
+        "4": {
+          "total": 24,
+          "graded": 2,
+          "accuracy": 50.0
         }
       }
     },
@@ -3210,272 +3357,6 @@
           "total": 24,
           "graded": 24,
           "accuracy": 20.833333333333332
-        }
-      }
-    },
-    {
-      "graded": 55,
-      "questions": 90,
-      "correct": 13.0,
-      "accuracy": 23.636363636363637,
-      "partial": 43.23737373737374,
-      "model": "inkling-flagship",
-      "run_id": "1e31e4ec-5a7a-403b-a986-cb7c88cfbf9b",
-      "run_ids": [
-        "1e31e4ec-5a7a-403b-a986-cb7c88cfbf9b"
-      ],
-      "status": "ERROR",
-      "task_rewards": {
-        "g3p1-L36-011": {
-          "reward": 0.0,
-          "partial_credit": 0.6
-        },
-        "g3p1-L34-001": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g3p1-L32-008": {
-          "reward": 0.0,
-          "partial_credit": 0.25
-        },
-        "g2p2-L33-005": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L22-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L04-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L08-011": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g3p1-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L17-003": {
-          "reward": 0.0,
-          "partial_credit": 0.4
-        },
-        "g2p2-L30-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L05-010": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g2p2-L08-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L11-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L27-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L33-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L19-002": {
-          "reward": 0.0,
-          "partial_credit": 0.5555555555555556
-        },
-        "g2p2-L35-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L05-004": {
-          "reward": 0.0,
-          "partial_credit": 0.375
-        },
-        "g3p1-L34-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L33-011b": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L27-010": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g2p2-L32-011": {
-          "reward": 0.0,
-          "partial_credit": 0.2
-        },
-        "g3p1-L16-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L17-001": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p2-L09-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L17-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p2-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g3p1-L02-001": {
-          "reward": 0.0,
-          "partial_credit": 0.6
-        },
-        "g2p2-L26-011": {
-          "reward": 0.0,
-          "partial_credit": 0.8333333333333334
-        },
-        "g2p1-L14-006c": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g1-L17-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L20-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L07-008": {
-          "reward": 0.0,
-          "partial_credit": 0.25
-        },
-        "g2p2-L16-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L14-006b": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L14-006": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L06-008": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g2p2-L10-009": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p2-L17-007": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L18-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L02-006": {
-          "reward": 0.0,
-          "partial_credit": 0.3333333333333333
-        },
-        "g2p1-L14-006d": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L10-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L06-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L13-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L26-009": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g2p1-L03-004": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L38-008": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g1-L02-004": {
-          "reward": 0.0,
-          "partial_credit": 0.3333333333333333
-        },
-        "g1-L09-009": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g1-L31-009": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g1-L11-009": {
-          "reward": 0.0,
-          "partial_credit": 0.8
-        },
-        "g1-L16-005": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g1-L02-005": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L21-008": {
-          "reward": 0.0,
-          "partial_credit": 0.75
-        }
-      },
-      "model_name": "Inkling",
-      "company": "Thinking Machines Lab",
-      "complete": false,
-      "max_output_tokens": 33000,
-      "over_limit": 0,
-      "judge_model": false,
-      "blocked_reason": "insufficient_credits",
-      "timed_out": 0,
-      "responses_with_usage": 55,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 11,
-          "accuracy": 27.272727272727273
-        },
-        "2": {
-          "total": 25,
-          "graded": 25,
-          "accuracy": 16.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 19,
-          "accuracy": 31.57894736842105
-        },
-        "4": {
-          "total": 24,
-          "graded": 0,
-          "accuracy": null
         }
       }
     },

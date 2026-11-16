@@ -7,8 +7,15 @@
   "credential_env": "SARA_OPENROUTER_API_KEY",
   "agent": "yakut-text-expanded-v7",
   "dataset_version": "v-166c93db5539",
-  "concurrency": 1,
+  "concurrency": 8,
   "fresh_full_set": true,
   "initial_concurrency": 8,
-  "blocked_reason": "insufficient_credits"
+  "resumptions": [
+    {
+      "utc": "2026-11-16T05:34:30+00:00",
+      "unfinished_questions": 42,
+      "concurrency": 6,
+      "reason": "User funded the separate OpenRouter account"
+    }
+  ]
 }

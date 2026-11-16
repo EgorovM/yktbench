@@ -2,9 +2,9 @@
 
 ## vals_90
 
-Snapshot: 2026-11-16T05:29:33+00:00. Scores are percentages.
+Snapshot: 2026-11-16T05:37:28+00:00. Scores are percentages.
 
-**Evaluation incomplete: 18/21 models fully graded.** Partial scores use graded questions only;
+**Evaluation is in progress.** Partial scores use graded questions only;
 their denominators differ and they are not final rankings. Failed tasks
 remain ungraded. Grade columns show accuracy percentages.
 Bold accuracy marks the best completed run; bold token usage marks the largest observed report.
@@ -29,15 +29,14 @@ Bold accuracy marks the best completed run; bold token usage marks the largest o
 | Gemma 4 31B | Google | 4.4 | 6.4 | 0.0 | 8.0 | 3.6 | 4.2 | 90/90 | 16384 | 0 | Complete |
 | Mistral Large 4 | Mistral AI | 3.3 | 3.9 | 0.0 | 8.0 | 3.6 | 0.0 | 90/90 | 33000 | 0 | Complete |
 | MiniMax M3.1 Flash | MiniMax | 2.2 | 2.7 | 0.0 | 4.0 | 0.0 | 4.2 | 90/90 | 33000 | 0 | Complete |
-| Gemini 4 Carbon | Google | 50.0 | 59.8 | 45.5 | 48.0 | 58.3 | — | 48/90 | 33000 | 0 | Needs credits |
-| DeepSeek V4 Pro | DeepSeek | 26.1 | 37.2 | 0.0 | 20.0 | 25.0 | 66.7 | 23/90 | 33000 | 0 | Run errors |
-| Inkling | Thinking Machines Lab | 23.6 | 43.2 | 27.3 | 16.0 | 31.6 | — | 55/90 | 33000 | 0 | Needs credits |
+| Gemini 4 Carbon | Google | 52.9 | 62.2 | 45.5 | 48.0 | 64.3 | 100.0 | 51/90 | 33000 | 0 | Running |
+| Inkling | Thinking Machines Lab | 24.6 | 44.4 | 27.3 | 16.0 | 31.6 | 50.0 | 57/90 | 33000 | 0 | Running |
 
 <!-- COST_LATENCY_START -->
 
 ### Cost and latency
 
-Metrics snapshot: 2026-11-16T05:29:33+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
+Metrics snapshot: 2026-11-16T05:37:54+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
 Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.
 Token totals contain reported usage only; † marks usage or estimates covering fewer than all questions. Coverage is out of the full question set.
 Pricing snapshot: 2026-11-16T05:04:34+00:00. Input and output prices are USD per 1M tokens.
@@ -62,9 +61,8 @@ Pricing snapshot: 2026-11-16T05:04:34+00:00. Input and output prices are USD per
 | Gemma 4 31B | Google | 90/90 | 18.5 | 8.1 | 62.8 | 329.6 | 0 | 29,739 | 130,015 | 90/90 | 0.2 | 0.4 | 0.0580* | 0.0366 | 66/90 |
 | Mistral Large 4 | Mistral AI | 90/90 | 207.9 | 241.1 | 334.4 | 371.0 | 0 | 26,891 | 2,086,691 | 90/90 | 0.7 | 2.1 | 4.4009* | 4.4081 | 89/90 |
 | MiniMax M3.1 Flash | MiniMax | 90/90 | 127.6 | 133.8 | 268.2 | 363.2 | 0 | 46,129 | 2,066,608 | 90/90 | 0.15 | 0.6 | 1.2469* | 1.2124 | 90/90 |
-| Gemini 4 Carbon | Google | 48/90 | 256.2 | 258.8 | 528.4 | 587.8 | 0 | 16,376† | 871,056† | 48/90 | 2 | 10 | 8.7433*† | 8.7162 | 47/90 |
-| DeepSeek V4 Pro | DeepSeek | 23/90 | 135.2 | 50.6 | 516.9 | 524.1 | 0 | 6,992† | 205,908† | 23/90 | 0.9 | 1.5 | 0.3152*† | 0.1033 | 23/90 |
-| Inkling | Thinking Machines Lab | 55/90 | 87.2 | 65.9 | 251.1 | 272.1 | 0 | 16,910† | 526,647† | 55/90 | 1 | 4.05 | 2.1498*† | 2.1448 | 55/90 |
+| Gemini 4 Carbon | Google | 51/90 | 244.0 | 213.3 | 528.4 | 587.8 | 0 | 17,236† | 875,059† | 51/90 | 2 | 10 | 8.7851*† | 8.7162 | 47/90 |
+| Inkling | Thinking Machines Lab | 57/90 | 88.0 | 67.7 | 251.1 | 272.1 | 0 | 17,547† | 557,060† | 57/90 | 1 | 4.05 | 2.2736*† | 2.1448 | 55/90 |
 
 \* Estimated cost = (reported input tokens × input price + reported output tokens × output price) / 1,000,000.
 Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.

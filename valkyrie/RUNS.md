@@ -210,7 +210,7 @@ It uses agent `yakut-text-expanded-v8`; each answer keeps the 900-second
 deadline. The server returns to zero minimum containers after the run ends.
 [Recovery settings and task IDs](dedicated_recovery.json).
 
-## Final expanded snapshot
+## Expanded snapshot before personal-account credit recovery
 
 The expanded leaderboard has 18 complete 90-question model results out of 21.
 Both dedicated recoveries finished: Gemma completed all 24 retry tasks and
@@ -223,3 +223,16 @@ run stopped after 55 when the separate OpenRouter account exhausted its credits.
 Their remaining queued tasks were stopped, and completed answers remain saved
 for resumption after funding. DeepSeek V4 Pro remains at its earlier 23 graded
 questions because this workspace cannot deploy its B200-based managed endpoint.
+
+## Personal-account credit recovery
+
+After the account was funded, the existing Gemini Carbon and Inkling flagship
+runs resumed only their unfinished tasks: 42 for Gemini and 35 for Inkling.
+The 48 Gemini answers and 55 Inkling answers already graded were preserved.
+Both continue using `SARA_OPENROUTER_API_KEY`, their frozen agents, high
+reasoning, a 33,000-token output limit, and a 900-second answer deadline.
+The model runs execute in parallel; request concurrency is adjusted to the
+available account balance to avoid the earlier credit-reservation errors.
+
+DeepSeek V4 Pro is excluded from the current 90-question leaderboard as
+requested. Its run history and historical v0/v1 leaderboard entries are retained.

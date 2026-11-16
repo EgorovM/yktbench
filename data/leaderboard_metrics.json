@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16T05:29:33+00:00",
+  "updated_utc": "2026-11-16T05:37:54+00:00",
   "cost_currency": "USD",
   "latency_unit": "seconds",
   "percentile_method": "nearest rank",
@@ -359,7 +359,7 @@
           "output_tokens": 229929,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 2.3408680000000013
+          "known_api_cost_usd": 2.340868
         },
         "astra": {
           "questions": 61,
@@ -391,7 +391,7 @@
           "output_tokens": 1657983,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 10.015106000000003
+          "known_api_cost_usd": 10.015106000000001
         },
         "inkling-flagship": {
           "questions": 61,
@@ -407,7 +407,7 @@
           "output_tokens": 497406,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 2.0277980600000003
+          "known_api_cost_usd": 2.02779806
         },
         "deepseek-v4": {
           "questions": 61,
@@ -423,7 +423,7 @@
           "output_tokens": 430719,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 0.3278633309999999
+          "known_api_cost_usd": 0.327863331
         },
         "deepseek-v4.1-flash": {
           "questions": 61,
@@ -439,7 +439,7 @@
           "output_tokens": 629619,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 0.36616059900000003
+          "known_api_cost_usd": 0.366160599
         },
         "inkling-2-small": {
           "questions": 61,
@@ -471,7 +471,7 @@
           "output_tokens": 1041369,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 1.8543128629999999
+          "known_api_cost_usd": 1.8543128630000008
         },
         "gemma-4-31b": {
           "questions": 61,
@@ -572,7 +572,7 @@
           "output_tokens": 2339249,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 14.108667999999996
+          "known_api_cost_usd": 14.108668000000002
         },
         "deepseek-v4.1-flash": {
           "questions": 60,
@@ -588,7 +588,7 @@
           "output_tokens": 753350,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.451607557
+          "known_api_cost_usd": 0.4516075569999999
         },
         "deepseek-v4": {
           "questions": 60,
@@ -604,7 +604,7 @@
           "output_tokens": 580190,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.6149442130000004
+          "known_api_cost_usd": 0.614944213
         },
         "qwen-3.8-max": {
           "questions": 60,
@@ -636,7 +636,7 @@
           "output_tokens": 717969,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 2.9207714900000012
+          "known_api_cost_usd": 2.9207714900000004
         },
         "inkling-2-small": {
           "questions": 60,
@@ -652,7 +652,7 @@
           "output_tokens": 981600,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.9331608079999999
+          "known_api_cost_usd": 0.9331608079999997
         },
         "qwen-3.8-flash": {
           "questions": 60,
@@ -668,7 +668,7 @@
           "output_tokens": 1512597,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.7134562440000001
+          "known_api_cost_usd": 0.7134562440000002
         },
         "glm-5.3": {
           "questions": 60,
@@ -684,7 +684,7 @@
           "output_tokens": 1125047,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 2.070394739
+          "known_api_cost_usd": 2.0703947390000006
         },
         "qwen-3.8-27b": {
           "questions": 60,
@@ -700,7 +700,7 @@
           "output_tokens": 353543,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.7694938710000001
+          "known_api_cost_usd": 0.7694938710000002
         },
         "gemma-4-31b": {
           "questions": 60,
@@ -716,7 +716,7 @@
           "output_tokens": 93707,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.037984920000000005
+          "known_api_cost_usd": 0.037984919999999985
         },
         "gigachat-3.5": {
           "questions": 60,
@@ -865,7 +865,7 @@
           "output_tokens": 1578639,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 9.534237999999998
+          "known_api_cost_usd": 9.534238000000002
         },
         "inkling-2-small": {
           "questions": 90,
@@ -881,7 +881,7 @@
           "output_tokens": 1423542,
           "costed_answers": 88,
           "costed_requests": 88,
-          "known_api_cost_usd": 1.3955667999999992
+          "known_api_cost_usd": 1.3955667999999999
         },
         "muse-spark-open": {
           "questions": 90,
@@ -929,7 +929,7 @@
           "output_tokens": 2298689,
           "costed_answers": 37,
           "costed_requests": 37,
-          "known_api_cost_usd": 0.4728862180000001
+          "known_api_cost_usd": 0.47288621800000014
         },
         "kimi-k3.1-pro": {
           "questions": 90,
@@ -1009,7 +1009,7 @@
           "output_tokens": 2086691,
           "costed_answers": 89,
           "costed_requests": 89,
-          "known_api_cost_usd": 4.408108376000001
+          "known_api_cost_usd": 4.408108375999999
         },
         "minimax-m3.1-flash": {
           "questions": 90,
@@ -1025,55 +1025,39 @@
           "output_tokens": 2066608,
           "costed_answers": 90,
           "costed_requests": 90,
-          "known_api_cost_usd": 1.2123948139999992
+          "known_api_cost_usd": 1.2123948139999996
         },
         "gemini-4-carbon": {
           "questions": 90,
-          "response_records": 48,
-          "latency_records": 48,
-          "mean_s": 256.22188723375,
-          "median_s": 258.8221698,
+          "response_records": 51,
+          "latency_records": 51,
+          "mean_s": 243.9847155965098,
+          "median_s": 213.349866024,
           "p95_s": 528.379925936,
           "max_s": 587.799717826,
           "timeouts": 0,
-          "usage_records": 48,
-          "input_tokens": 16376,
-          "output_tokens": 871056,
+          "usage_records": 51,
+          "input_tokens": 17236,
+          "output_tokens": 875059,
           "costed_answers": 47,
           "costed_requests": 47,
-          "known_api_cost_usd": 8.716164
-        },
-        "deepseek-v4": {
-          "questions": 90,
-          "response_records": 23,
-          "latency_records": 23,
-          "mean_s": 135.23530693843477,
-          "median_s": 50.574947722,
-          "p95_s": 516.926464739,
-          "max_s": 524.089361153,
-          "timeouts": 0,
-          "usage_records": 23,
-          "input_tokens": 6992,
-          "output_tokens": 205908,
-          "costed_answers": 23,
-          "costed_requests": 23,
-          "known_api_cost_usd": 0.10326471900000002
+          "known_api_cost_usd": 8.716164000000001
         },
         "inkling-flagship": {
           "questions": 90,
-          "response_records": 55,
-          "latency_records": 55,
-          "mean_s": 87.20112479161818,
-          "median_s": 65.86530158,
+          "response_records": 57,
+          "latency_records": 57,
+          "mean_s": 87.98509925454385,
+          "median_s": 67.725703051,
           "p95_s": 251.117057227,
           "max_s": 272.11292988099996,
           "timeouts": 0,
-          "usage_records": 55,
-          "input_tokens": 16910,
-          "output_tokens": 526647,
+          "usage_records": 57,
+          "input_tokens": 17547,
+          "output_tokens": 557060,
           "costed_answers": 55,
           "costed_requests": 55,
-          "known_api_cost_usd": 2.144837070000001
+          "known_api_cost_usd": 2.14483707
         }
       }
     }
