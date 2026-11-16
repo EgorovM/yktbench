@@ -2,13 +2,17 @@
 
 Last updated: Nov 15, 2026
 
+A set of 90 test questions from elementary school Sakha language textbooks from Grade 1 to Grade 4.
+
+Judge model: GPT-6.1 Sol. No internet access or tools. 900-second time limit, 33k token output limit.
+
 | Model Name | Company | All | Partial credit | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Max reported output tokens |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
 | Claude Fable 5.2 | Anthropic | **64.4** | 78.7 | 90.9 | 56.0 | 71.4 | 50.0 | 14149 |
 | Gemini 4 Carbon | Google | 51.1 | 59.3 | 45.5 | 48.0 | 67.9 | 41.7 | 33000 |
 | GPT-6 Astra | OpenAI | 41.1 | 61.2 | 45.5 | 44.0 | 39.3 | 37.5 | 21775 |
 | Claude Opus 5.5 | Anthropic | 41.1 | 63.2 | 27.3 | 40.0 | 42.9 | 45.8 | 15301 |
-| GPT-6.1 Sol *(judge model)* | OpenAI | 38.9 | 58.8 | 45.5 | 36.0 | 50.0 | 25.0 | 28446 |
+| GPT-6.1 Sol | OpenAI | 38.9 | 58.8 | 45.5 | 36.0 | 50.0 | 25.0 | 28446 |
 | DeepSeek V4.1 Flash | DeepSeek | 25.6 | 42.3 | 45.5 | 20.0 | 32.1 | 16.7 | 33000 |
 | Qwen3.8 2.4T A95B | Alibaba | 24.4 | 37.4 | 9.1 | 36.0 | 25.0 | 20.8 | 33000 |
 | Inkling NVFP4 | Thinking Machines Lab | 24.4 | 40.8 | 45.5 | 24.0 | 21.4 | 20.8 | 33000 |
@@ -62,12 +66,11 @@ Judging, discarded/failed attempts, Modal token or GPU hosting charges (includin
 Provider changes and native reasoning translations remain documented in the run notes; latency figures are not measurements of thinking time.
 [Metric and pricing snapshot](data/leaderboard_metrics.json) · [Current OpenRouter pricing catalog](https://openrouter.ai/api/v1/models) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)
 
-Solvers have no browsing or tools, a 900-second answer deadline, and a requested
-33,000-token output limit (Gemma: 16,384). GPT-6.1 Sol grades with a 16,000-token
+GPT-6.1 Sol grades with a 16,000-token
 budget and receives each question's `eval_instruction`; solvers do not.
+
 Max reported output tokens is the largest downloaded usage report, including reasoning tokens where reported.
 Usage for unfinished runs may cover only a subset of graded answers.
-A dash means usage has not yet been collected. Over-limit answers are retained.
 Full run status and token-limit flags remain in the [saved results](valkyrie/leaderboard_snapshot.json).
 
 [Run IDs](valkyrie/RUNS.md) · [Dataset](data/vals_90.jsonl) · [Settings](models_vals.toml)
