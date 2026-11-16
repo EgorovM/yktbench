@@ -60,13 +60,21 @@ Judge model: GPT-6.1 Sol. No internet access or tools. 900-second time limit, 33
 $\text{Estimated cost} = \frac{\text{reported input tokens × input price + reported output tokens × output price}}{1,000,000}$
 
 Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.
+
 These are API-equivalent estimates for logged usage, not historical bills or Modal GPU costs. Missing usage is not extrapolated to the full dataset.
+
 Caching, batch discounts, time-of-day offers, and context-tier adjustments are not applied; recorded charges can differ.
+
 Inkling NVFP4 uses standard Inkling API prices for its estimate; its Modal serving variant is recorded separately.
+
 Known API cost shows the sum of retrieved OpenRouter charges when available; otherwise it shows the token-based estimate marked with \*. It is not total benchmark spend.
+
 A dash means no reported token usage or charge is available, not free. Cost coverage counts only answers with a retrieved charge, including when a starred estimate is displayed; duplicate request IDs are charged once.
+
 Judging, discarded/failed attempts, Modal token or GPU hosting charges (including warmup), storage, and net credit adjustments are excluded.
+
 Provider changes and native reasoning translations remain documented in the run notes; latency figures are not measurements of thinking time.
+
 [Metric and pricing snapshot](data/leaderboard_metrics.json) · [Current OpenRouter pricing catalog](https://openrouter.ai/api/v1/models) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)
 
 GPT-6.1 Sol grades with a 16,000-token
@@ -75,5 +83,7 @@ budget and receives each question's `eval_instruction`; solvers do not.
 Max reported output tokens is the largest downloaded usage report, including reasoning tokens where reported.
 Usage for unfinished runs may cover only a subset of graded answers.
 Full run status and token-limit flags remain in the [saved results](valkyrie/leaderboard_snapshot.json).
+
+
 
 [Run IDs](valkyrie/RUNS.md) · [Dataset](data/vals_90.jsonl) · [Settings](models_vals.toml)
