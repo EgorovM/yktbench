@@ -209,3 +209,17 @@ questions at concurrency 16, preserving the original 37 graded answers.
 It uses agent `yakut-text-expanded-v8`; each answer keeps the 900-second
 deadline. The server returns to zero minimum containers after the run ends.
 [Recovery settings and task IDs](dedicated_recovery.json).
+
+## Final expanded snapshot
+
+The expanded leaderboard has 18 complete 90-question model results out of 21.
+Both dedicated recoveries finished: Gemma completed all 24 retry tasks and
+Qwen Flash completed all 53 retry tasks. Their earlier answers were retained.
+Both servers were returned to zero minimum containers after evaluation.
+No newly evaluated model reported output above its requested token limit.
+
+Gemini Carbon stopped after 48 graded questions and the fresh Inkling flagship
+run stopped after 55 when the separate OpenRouter account exhausted its credits.
+Their remaining queued tasks were stopped, and completed answers remain saved
+for resumption after funding. DeepSeek V4 Pro remains at its earlier 23 graded
+questions because this workspace cannot deploy its B200-based managed endpoint.

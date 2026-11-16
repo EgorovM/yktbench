@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16T05:26:49+00:00",
+  "updated_utc": "2026-11-16T05:29:33+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -4696,380 +4696,6 @@
       }
     },
     {
-      "graded": 82,
-      "questions": 90,
-      "correct": 13.0,
-      "accuracy": 15.853658536585366,
-      "partial": 20.328106852497093,
-      "model": "qwen-3.8-flash",
-      "run_id": "cc31a145-a908-4c92-985c-381ede148b0c",
-      "run_ids": [
-        "cc31a145-a908-4c92-985c-381ede148b0c",
-        "08199a4a-8a30-49a2-9cad-135cc9c680e6"
-      ],
-      "status": "IN_PROGRESS",
-      "task_rewards": {
-        "g4p1-L15-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L14-012": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L06-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L26-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L20-012": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L19-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L05-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L07-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L25-013": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L32-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L32-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L12-009": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L17-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L02-004": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L17-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L18-009": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L27-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L08-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L16-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L11-009": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L11-002": {
-          "reward": 0.0,
-          "partial_credit": 0.2
-        },
-        "g4p1-L16-003": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L30-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L17-003": {
-          "reward": 0.0,
-          "partial_credit": 0.2
-        },
-        "g2p2-L22-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L16-005": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p2-L08-011": {
-          "reward": 0.0,
-          "partial_credit": 0.75
-        },
-        "g2p1-L14-006b": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g4p1-L08-010": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L02-001": {
-          "reward": 0.0,
-          "partial_credit": 0.2
-        },
-        "g2p1-L10-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L05-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g4p1-L17-012": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L17-007": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L14-006": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L14-006d": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L14-006c": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L20-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L05-004": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L03-004": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L26-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L33-005": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L35-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L09-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L16-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L27-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L32-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L33-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L36-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L13-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L18-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L19-002": {
-          "reward": 0.0,
-          "partial_credit": 0.3333333333333333
-        },
-        "g3p1-L34-001": {
-          "reward": 0.0,
-          "partial_credit": 0.3333333333333333
-        },
-        "g3p1-L17-001": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p2-L13-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L04-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L10-009": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L21-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L10-012": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p2-L11-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L33-011b": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L34-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p2-L23-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L06-002": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L25-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L34-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L34-014": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "vals90-row-002": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L04-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L31-012": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L12-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L01-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "vals90-row-003": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g4p2-L32-013": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L05-012": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g4p2-L09-013": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L27-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p2-L26-012": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g4p1-L26-011": {
-          "reward": 0.0,
-          "partial_credit": 0.2857142857142857
-        },
-        "g4p1-L13-012": {
-          "reward": 0.0,
-          "partial_credit": 0.2
-        }
-      },
-      "model_name": "Qwen3.8 Flash",
-      "company": "Alibaba",
-      "complete": false,
-      "max_output_tokens": 33000,
-      "over_limit": 0,
-      "judge_model": false,
-      "timed_out": 0,
-      "responses_with_usage": 82,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 4,
-          "accuracy": 25.0
-        },
-        "2": {
-          "total": 25,
-          "graded": 24,
-          "accuracy": 20.833333333333332
-        },
-        "3": {
-          "total": 28,
-          "graded": 28,
-          "accuracy": 17.857142857142858
-        },
-        "4": {
-          "total": 24,
-          "graded": 24,
-          "accuracy": 8.333333333333334
-        }
-      }
-    },
-    {
       "graded": 90,
       "questions": 90,
       "correct": 13.0,
@@ -5466,6 +5092,412 @@
           "total": 28,
           "graded": 28,
           "accuracy": 21.428571428571427
+        },
+        "4": {
+          "total": 24,
+          "graded": 24,
+          "accuracy": 8.333333333333334
+        }
+      }
+    },
+    {
+      "graded": 90,
+      "questions": 90,
+      "correct": 13.0,
+      "accuracy": 14.444444444444445,
+      "partial": 18.798941798941797,
+      "model": "qwen-3.8-flash",
+      "run_id": "cc31a145-a908-4c92-985c-381ede148b0c",
+      "run_ids": [
+        "cc31a145-a908-4c92-985c-381ede148b0c",
+        "08199a4a-8a30-49a2-9cad-135cc9c680e6"
+      ],
+      "status": "FINISHED",
+      "task_rewards": {
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L20-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L11-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L30-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g2p1-L14-006b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L02-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p1-L17-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L31-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-003": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p2-L32-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L09-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L26-012": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.2857142857142857
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        }
+      },
+      "model_name": "Qwen3.8 Flash",
+      "company": "Alibaba",
+      "complete": true,
+      "max_output_tokens": 33000,
+      "over_limit": 0,
+      "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 90,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 9.090909090909092
+        },
+        "2": {
+          "total": 25,
+          "graded": 25,
+          "accuracy": 20.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 28,
+          "accuracy": 17.857142857142858
         },
         "4": {
           "total": 24,

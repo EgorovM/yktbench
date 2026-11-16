@@ -2,9 +2,9 @@
 
 ## vals_90
 
-Snapshot: 2026-11-16T05:26:49+00:00. Scores are percentages.
+Snapshot: 2026-11-16T05:29:33+00:00. Scores are percentages.
 
-**Evaluation is in progress.** Partial scores use graded questions only;
+**Evaluation incomplete: 18/21 models fully graded.** Partial scores use graded questions only;
 their denominators differ and they are not final rankings. Failed tasks
 remain ungraded. Grade columns show accuracy percentages.
 Bold accuracy marks the best completed run; bold token usage marks the largest observed report.
@@ -22,6 +22,7 @@ Bold accuracy marks the best completed run; bold token usage marks the largest o
 | Inkling 2 Small | Thinking Machines Lab | 22.2 | 34.5 | 27.3 | 16.0 | 32.1 | 16.7 | 90/90 | 33000 | 0 | Complete |
 | Muse Spark Open | Meta | 21.1 | 41.8 | 18.2 | 24.0 | 17.9 | 25.0 | 90/90 | 33000 | 0 | Complete |
 | GLM 5.3 | Z.ai | 14.4 | 21.9 | 18.2 | 12.0 | 21.4 | 8.3 | 90/90 | 33000 | 0 | Complete |
+| Qwen3.8 Flash | Alibaba | 14.4 | 18.8 | 9.1 | 20.0 | 17.9 | 8.3 | 90/90 | 33000 | 0 | Complete |
 | Kimi K3.1 Pro | Moonshot AI | 12.2 | 21.1 | 9.1 | 12.0 | 10.7 | 16.7 | 90/90 | 33000 | 0 | Complete |
 | Qwen3.8 27B | Alibaba | 6.7 | 9.3 | 9.1 | 0.0 | 10.7 | 8.3 | 90/90 | 33000 | 0 | Complete |
 | GigaChat 3.5 Ultra | Sber | 6.7 | 14.2 | 9.1 | 12.0 | 3.6 | 4.2 | 90/90 | 900 | 0 | Complete |
@@ -31,13 +32,12 @@ Bold accuracy marks the best completed run; bold token usage marks the largest o
 | Gemini 4 Carbon | Google | 50.0 | 59.8 | 45.5 | 48.0 | 58.3 | — | 48/90 | 33000 | 0 | Needs credits |
 | DeepSeek V4 Pro | DeepSeek | 26.1 | 37.2 | 0.0 | 20.0 | 25.0 | 66.7 | 23/90 | 33000 | 0 | Run errors |
 | Inkling | Thinking Machines Lab | 23.6 | 43.2 | 27.3 | 16.0 | 31.6 | — | 55/90 | 33000 | 0 | Needs credits |
-| Qwen3.8 Flash | Alibaba | 15.9 | 20.3 | 25.0 | 20.8 | 17.9 | 8.3 | 82/90 | 33000 | 0 | Running |
 
 <!-- COST_LATENCY_START -->
 
 ### Cost and latency
 
-Metrics snapshot: 2026-11-16T05:26:49+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
+Metrics snapshot: 2026-11-16T05:29:33+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
 Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.
 Token totals contain reported usage only; † marks usage or estimates covering fewer than all questions. Coverage is out of the full question set.
 Pricing snapshot: 2026-11-16T05:04:34+00:00. Input and output prices are USD per 1M tokens.
@@ -55,6 +55,7 @@ Pricing snapshot: 2026-11-16T05:04:34+00:00. Input and output prices are USD per
 | Inkling 2 Small | Thinking Machines Lab | 90/90 | 94.2 | 69.5 | 310.6 | 385.4 | 0 | 30,830 | 1,423,542 | 90/90 | 0.3 | 1 | 1.4328* | 1.3956 | 88/90 |
 | Muse Spark Open | Meta | 90/90 | 39.5 | 24.1 | 128.1 | 168.6 | 0 | 40,129 | 756,005 | 90/90 | 1.25 | 4.25 | 3.2632* | 3.2632* | 0/90 |
 | GLM 5.3 | Z.ai | 90/90 | 139.0 | 80.3 | 428.1 | 534.2 | 0 | 29,788 | 1,422,380 | 90/90 | 0.0699 | 1.4 | 1.9934* | 4.2059 | 90/90 |
+| Qwen3.8 Flash | Alibaba | 90/90 | 290.3 | 308.5 | 480.2 | 503.3 | 0 | 34,056 | 2,298,689 | 90/90 | 0.15 | 0.47 | 1.0855* | 0.4729 | 37/90 |
 | Kimi K3.1 Pro | Moonshot AI | 90/90 | 45.3 | 29.9 | 186.3 | 230.6 | 0 | 37,198 | 554,751 | 90/90 | 0.2403 | 8.4023 | 4.6701* | 4.6701* | 0/90 |
 | Qwen3.8 27B | Alibaba | 90/90 | 234.5 | 254.8 | 322.4 | 900.0 | 3 | 32,625† | 2,015,027† | 87/90 | 0.15 | 1.875 | 3.7831*† | 0.0941 | 4/90 |
 | GigaChat 3.5 Ultra | Sber | 90/90 | 3.5 | 2.8 | 9.9 | 19.0 | 0 | 33,650 | 8,263 | 90/90 | 1.07 | 3.21 | 0.0625* | 0.0625* | 0/90 |
@@ -64,7 +65,6 @@ Pricing snapshot: 2026-11-16T05:04:34+00:00. Input and output prices are USD per
 | Gemini 4 Carbon | Google | 48/90 | 256.2 | 258.8 | 528.4 | 587.8 | 0 | 16,376† | 871,056† | 48/90 | 2 | 10 | 8.7433*† | 8.7162 | 47/90 |
 | DeepSeek V4 Pro | DeepSeek | 23/90 | 135.2 | 50.6 | 516.9 | 524.1 | 0 | 6,992† | 205,908† | 23/90 | 0.9 | 1.5 | 0.3152*† | 0.1033 | 23/90 |
 | Inkling | Thinking Machines Lab | 55/90 | 87.2 | 65.9 | 251.1 | 272.1 | 0 | 16,910† | 526,647† | 55/90 | 1 | 4.05 | 2.1498*† | 2.1448 | 55/90 |
-| Qwen3.8 Flash | Alibaba | 82/90 | 294.9 | 318.5 | 480.2 | 503.3 | 0 | 31,034† | 2,073,144† | 82/90 | 0.15 | 0.47 | 0.9790*† | 0.4729 | 37/90 |
 
 \* Estimated cost = (reported input tokens × input price + reported output tokens × output price) / 1,000,000.
 Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.

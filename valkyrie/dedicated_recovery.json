@@ -38,7 +38,10 @@
       "agent": "yakut-text-expanded-v6",
       "dataset_version": "v-166c93db5539",
       "concurrency": 16,
-      "model_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475"
+      "model_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "result_status": "FINISHED",
+      "graded_retry_tasks": 24,
+      "post_run_min_containers": 0
     },
     {
       "model": "qwen-3.8-flash",
@@ -107,7 +110,10 @@
       "agent": "yakut-text-expanded-v8",
       "dataset_version": "v-166c93db5539",
       "concurrency": 16,
-      "model_revision": "812d96e10a0dd82b69d749e68693698cf6c36daa"
+      "model_revision": "812d96e10a0dd82b69d749e68693698cf6c36daa",
+      "result_status": "FINISHED",
+      "graded_retry_tasks": 53,
+      "post_run_min_containers": 0
     }
   ]
 }
