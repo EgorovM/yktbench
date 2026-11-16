@@ -1,36 +1,16 @@
-"""Freeze the curated primary-school workbook as the v1 benchmark.
+"""Shared XLSX reader and Unicode normalization for the 90-question benchmark."""
 
-    python3 build_dataset.py
-    python3 build_dataset.py --version v0  # reproduce the original sample
-
-Uses only the standard library. The v1 source is the `clean` sheet, never `wip`.
-Blank IDs receive b/c/d... suffixes under the preceding explicit ID. Grades are
-derived from IDs, avoiding Excel date/float conversions. Sakha text and Unicode
-sound tokens are preserved. Legacy content overrides apply only to v0.
-"""
-
-import argparse
-import hashlib
-import json
 import posixpath
 import re
 import sys
 import xml.etree.ElementTree as ET
 import zipfile
 from collections import Counter
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
 NS = {
     "m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
     "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
     "p": "http://schemas.openxmlformats.org/package/2006/relationships",
-}
-
-# `content` here is the theory text of the next chapter (the parser ran past the test's
-# end); the instruction already holds the whole question with its options.
-OVERRIDES = {
-    "g10-11-T3-009": {"content": ""},
 }
 
 INHERIT = ["grade", "part", "chain", "lesson", "section", "block", "pdf_page_start", "pdf_page_end"]
@@ -88,7 +68,7 @@ def clean(s):
     return "\n".join(line.rstrip() for line in s.strip().split("\n"))
 
 
-def build(rows, version="v1"):
+def build(rows):
     items, last, suffix = [], None, 0
     for i, original in enumerate(rows, start=2):
         r = dict(original)
@@ -100,8 +80,6 @@ def build(rows, version="v1"):
             last, suffix = r, 0
         else:
             if last is None:
-                if version != "vals_90":
-                    sys.exit(f"row {i}: no id and no item above it to attach to")
                 rid = f"vals90-row-{i:03d}"
             else:
                 suffix += 1
@@ -110,8 +88,6 @@ def build(rows, version="v1"):
                     if not clean(r.get(k)):
                         r[k] = last.get(k)
         m = re.match(r"g(\d+(?:-\d+)?)", rid)
-        if m is None and version != "vals_90":
-            sys.exit(f"row {i}: invalid exercise id {rid!r}")
         visual = clean(r.get("needs_visual")).lower()
         if visual not in ("", "0", "0.0", "false", "no", "1", "1.0", "true", "yes"):
             sys.exit(f"row {i} ({rid}): invalid needs_visual value {visual!r}")
@@ -134,10 +110,6 @@ def build(rows, version="v1"):
         }
         if guidance := clean(r.get("eval_instruction")):
             item["eval_instruction"] = guidance
-        if version == "v0":
-            item.update(OVERRIDES.get(rid, {}))
-        elif version == "v1" and (item["grade"] not in {"1", "2", "3", "4"} or item["needs_visual"]):
-            sys.exit(f"row {i} ({rid}): v1 requires grades 1–4 and no external picture dependency")
         if not item["instruction"] or not item["answer"]:
             sys.exit(f"row {i} ({rid}): empty instruction or answer")
         items.append(item)
@@ -145,63 +117,3 @@ def build(rows, version="v1"):
     if dupes:
         sys.exit(f"duplicate ids: {dupes}")
     return items
-
-
-def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--version", choices=["v0", "v1"], default="v1")
-    ap.add_argument("--xlsx", type=Path)
-    ap.add_argument("--sheet", help="worksheet name (v1 default: clean; v0 default: first sheet)")
-    ap.add_argument("--out", type=Path)
-    args = ap.parse_args()
-    legacy = args.version == "v0"
-    source_name = "sample.xlsx" if legacy else "clean_60_primary_school.xlsx"
-    archived_source = ROOT / "data" / "sources" / source_name
-    args.xlsx = args.xlsx or archived_source
-    args.out = args.out or ROOT / "data" / ("ykt_sample.jsonl" if legacy else "ykt_primary_v1.jsonl")
-    sheet_name = args.sheet or (None if legacy else "clean")
-
-    try:
-        rows = read_xlsx(args.xlsx, sheet_name)
-    except (ValueError, KeyError, zipfile.BadZipFile) as e:
-        sys.exit(str(e))
-    items = build(rows, version=args.version)
-    if not legacy and len(items) != 60:
-        sys.exit(f"v1 requires exactly 60 items, found {len(items)}")
-    source = str(args.xlsx.resolve().relative_to(ROOT)) if args.xlsx.resolve().is_relative_to(ROOT) else args.xlsx.name
-    # Preserve the original dataset identity after relocating its source workbook.
-    if args.xlsx.resolve() == archived_source.resolve():
-        source = "data/" + source_name
-    if not legacy:
-        for item in items:
-            item.update(dataset_version="v1", source_file=source, source_sheet=sheet_name)
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    with args.out.open("w", encoding="utf-8") as f:
-        for it in items:
-            f.write(json.dumps(it, ensure_ascii=False) + "\n")
-
-    if not legacy:
-        generated_rows = {r["_sheet_row"] for r in rows if not clean(r.get("id"))}
-        manifest = {
-            "dataset_version": "v1",
-            "source_file": source,
-            "source_sheet": sheet_name,
-            "source_sha256": hashlib.sha256(args.xlsx.read_bytes()).hexdigest(),
-            "dataset_sha256": hashlib.sha256(args.out.read_bytes()).hexdigest(),
-            "item_count": len(items),
-            "by_grade": dict(sorted(Counter(it["grade"] for it in items).items())),
-            "needs_visual": sum(it["needs_visual"] for it in items),
-            "generated_ids": [
-                {"sheet_row": it["sheet_row"], "id": it["id"]}
-                for it in items if it["sheet_row"] in generated_rows
-            ],
-        }
-        args.out.with_suffix(".manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-
-    print(f"{len(items)} items -> {args.out.relative_to(ROOT) if args.out.is_relative_to(ROOT) else args.out}")
-    print("by grade:", dict(sorted(Counter(it["grade"] for it in items).items(), key=lambda kv: [int(x) for x in kv[0].split("-")])))
-    print("needs_visual:", sum(it["needs_visual"] for it in items))
-
-
-if __name__ == "__main__":
-    main()

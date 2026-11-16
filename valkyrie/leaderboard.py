@@ -77,7 +77,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--collected", type=Path, default=Path("results/vals_90/hosted"))
     parser.add_argument("--dataset", type=Path, default=Path("data/vals_90.jsonl"))
-    parser.add_argument("--output", type=Path, default=Path("LEADERBOARD_90.md"))
+    parser.add_argument("--output", type=Path, default=Path("LEADERBOARD.md"))
     parser.add_argument("--snapshot", type=Path, default=Path("valkyrie/leaderboard_snapshot.json"))
     args = parser.parse_args()
     items = [json.loads(line) for line in args.dataset.read_text().splitlines() if line.strip()]

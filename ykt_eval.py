@@ -36,8 +36,8 @@ from providers import make_provider  # noqa: E402
 from model_names import model_company, model_name  # noqa: E402
 
 BENCH = Path(__file__).resolve().parent
-DEFAULT_DATA = BENCH / "data" / "ykt_primary_v1.jsonl"
-DEFAULT_RUN_DIR = BENCH / "results" / "v1"
+DEFAULT_DATA = BENCH / "data" / "vals_90.jsonl"
+DEFAULT_RUN_DIR = BENCH / "results" / "vals_90_local"
 SOLVER_SYSTEM = (BENCH / "prompts" / "solver_system.md").read_text(encoding="utf-8").strip()
 JUDGE_SYSTEM = (BENCH / "prompts" / "judge_system.md").read_text(encoding="utf-8").strip()
 
@@ -207,7 +207,7 @@ def pick(config, names, what):
     names = [n.strip() for n in names.split(",") if n.strip()]
     unknown = [n for n in names if n not in config]
     if unknown:
-        sys.exit(f"unknown {what}: {unknown}. Defined in models.toml: {sorted(config)}")
+        sys.exit(f"unknown {what}: {unknown}. Defined in models_vals_modal.toml: {sorted(config)}")
     return names
 
 
@@ -417,7 +417,7 @@ def cmd_report(args, config):
         sys.exit(f"no judgments by {primary!r}; available: {judges}")
     models = sorted({k[0] for k in responses})
     samples = sorted({k[2] for k in responses})
-    versions = ", ".join(sorted({it.get("dataset_version", "v0") for it in items}))
+    versions = ", ".join(sorted({it.get("dataset_version", "unspecified") for it in items}))
     judge_model_ids = {config.get(j, {}).get("model") for j in judges}
 
     def model_label(model):
@@ -628,12 +628,12 @@ def main():
     global SOLVER_SYSTEM, JUDGE_SYSTEM
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("command", choices=["solve", "judge", "report", "all", "preview", "check"])
-    ap.add_argument("--models", default="", help="comma-separated models to evaluate (names from models.toml)")
+    ap.add_argument("--models", default="", help="comma-separated models to evaluate (names from models_vals_modal.toml)")
     ap.add_argument("--judges", default="sol-6.1", help="comma-separated judge models (default: sol-6.1)")
     ap.add_argument("--judge", default="", help="report: which judge's grades to headline (default: first)")
     ap.add_argument("--run-dir", default=str(DEFAULT_RUN_DIR))
     ap.add_argument("--data", default=str(DEFAULT_DATA))
-    ap.add_argument("--config", default=str(BENCH / "models.toml"))
+    ap.add_argument("--config", default=str(BENCH / "models_vals_modal.toml"))
     ap.add_argument("--solver-system", type=Path, help="model instructions for this run; recorded and checked on resume")
     ap.add_argument("--judge-system", type=Path, help="judge instructions for this run; recorded and checked on resume")
     ap.add_argument("--samples", type=int, default=1, help="answers per item per model (default 1)")

@@ -1,5 +1,5 @@
 # New evaluation profile: 900-second answer deadline and 33,000 requested output tokens.
-# Gemma is capped by its provider at 16,384 tokens. Original v0/v1 settings remain in models.toml.
+# Gemma is capped by its provider at 16,384 tokens.
 # Models the eval can call, as solvers (--models) or judges (--judges).
 # The table name is what you pass on the command line.
 #

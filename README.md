@@ -9,16 +9,15 @@ text-only model agent, with commands for publishing and running the dataset.
 Exercise-specific `eval_instruction` text is shown only to the judge. Model
 instructions, source data, and task files are versioned and hashed separately.
 
-New evaluations use [`models_vals.toml`](models_vals.toml): a 15-minute answer
+New evaluations use [`models_vals_modal.toml`](models_vals_modal.toml): a 15-minute answer
 deadline and a 33,000-token requested output limit. Gemma 4 31B is limited by
-its API to 16,384 output tokens. The historical results below retain their
-original budgets.
+its API to 16,384 output tokens.
 
 ## Current evaluation: vals_90
 
 The [90-question dataset](data/vals_90.jsonl) comes from the `vals sub` sheet of
-[`vals_90.xlsx`](data/sources/vals_90.xlsx). All 15 model runs have been launched
-on Valkyrie and Modal; results are incomplete. [Run IDs and monitoring commands](valkyrie/RUNS.md)
+[`vals_90.xlsx`](data/vals_90.xlsx). The current leaderboard covers 20 models evaluated
+on Valkyrie and Modal; unfinished runs show their graded question counts. [Run IDs and monitoring commands](valkyrie/RUNS.md)
 are available for the team.
 
 Each solver receives the exercise instruction and material. The judge receives
@@ -31,17 +30,10 @@ from the source workbook; models receive text only. Two new items have no grade
 metadata, and six missing IDs were generated deterministically. These details
 are recorded in the [dataset manifest](data/vals_90.manifest.json).
 
-Current vals_90 scores and the completed historical runs are reported separately.
-
 ## Results
 
-See **[Valkyrie results — 90 questions](LEADERBOARD_90.md)** for current scores
-by model and school grade, token usage, and run status. Partial runs are labelled
-and include their graded question counts. The completed
-**[v1 results — 60 questions](LEADERBOARD_60.md)** and
-[v0 history](LEADERBOARD.md#v0--proof-of-concept) are kept separately.
-
-The completed v1 baseline used 60 questions. Claude Fable 5.2 scored 65.0%,
-Gemini 4 Argon 60.0%, and GPT-6 Astra and GPT-6.1 Sol each scored 45.0%.
+See **[Leaderboard](LEADERBOARD.md)** for accuracy by model and school grade,
+partial credit, token usage, and an extended cost and latency table. Scores are
+sorted by All accuracy. Partial runs include their graded question counts.
 
 [How to run](USAGE.md) · [Valkyrie submission](valkyrie/README.md)

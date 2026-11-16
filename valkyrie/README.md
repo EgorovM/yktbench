@@ -11,7 +11,7 @@ Only model API endpoints are allowed during the agent phase. Grading uses the
 existing GPT 6.1 Sol rubric and 16,000-token request budget, with full-question
 accuracy and partial credit recorded separately. Sol's own row is self-judged.
 
-New runs use `models_vals.toml`: each answer has a 900-second wall-clock
+New runs use `models_vals_modal.toml`: each answer has a 900-second wall-clock
 deadline and requests at most 33,000 output tokens. Gemma 4 31B is limited by
 its API to 16,384 tokens and is marked as an exception. Timed-out answers are
 saved as empty, flagged, and scored zero without retrying them. The sandbox
@@ -25,8 +25,8 @@ named `vals_90`.
 
 ```bash
 .venv/bin/python build_vals90.py \
-  --input data/sources/vals_90.xlsx --sheet vals_90 \
-  --solver-instructions prompts/solver_system.md
+  --input data/vals_90.xlsx --sheet 'vals sub' \
+  --solver-instructions prompts/solver_system.md --allow-visual-text
 ```
 
 Then export the normalized questions:
@@ -36,8 +36,8 @@ Then export the normalized questions:
   --data data/vals_90.jsonl \
   --solver-instructions prompts/solver_system.md \
   --judge-instructions prompts/vals_90_judge.md \
-  --models-config models_vals.toml \
-  --out valkyrie/submission
+  --models-config models_vals_modal.toml \
+  --out valkyrie/export --allow-visual-text
 ```
 
 The builder refuses to overwrite an existing output folder. Its output includes
@@ -56,8 +56,8 @@ custom scoring support in the hosted deployment.
   --data data/vals_90.jsonl \
   --solver-system prompts/solver_system.md \
   --judge-system prompts/vals_90_judge.md \
-  --config models_vals.toml \
-  --run-dir results/vals_90 \
+  --config models_vals_modal.toml \
+  --run-dir results/vals_90_local \
   --workers-per-model 16 --grok-workers 90
 ```
 
@@ -74,9 +74,9 @@ Install `valkyrie-cli` with `uv tool install valkyrie-cli`, then sign in using
 for the organization, such as Modal or Daytona.
 
 ```bash
-.venv/bin/python valkyrie/publish.py valkyrie/submission
-# Also launch all 15 models after the provider is configured:
-.venv/bin/python valkyrie/publish.py valkyrie/submission \
+.venv/bin/python valkyrie/publish.py valkyrie/export
+# Also launch the current 20 models after the provider is configured:
+.venv/bin/python valkyrie/publish.py valkyrie/export \
   --start-runs --provider modal --concurrency 90
 ```
 
@@ -99,29 +99,6 @@ uv run --python 3.12 --with valkyrie-cli python valkyrie/collect.py \
 
 Unfinished rows are provisional and show the number of graded questions. Full
 outputs, token usage, and over-limit flags are retained separately from grading.
-
-## Hosted pipeline validation
-
-Run `91fc4b38-ceff-4765-b23e-e9dc3f0b7225` completed on Modal with the
-`yakut-text-model` agent and one existing test question, using Fable 5.2.
-It received full credit, reported 627 output tokens, and included an
-`eval_instruction` in the judge's input. This is a pipeline smoke test, not a
-90-question result. See [the validation record](smoke_validation.json).
-
-```bash
-valkyrie run fetch 91fc4b38-ceff-4765-b23e-e9dc3f0b7225
-```
-
-## Validation
-
-```bash
-.venv/bin/python -m unittest discover -s valkyrie -p 'test_*.py'
-.venv/bin/python -m unittest discover -s . -p 'test_*.py'
-```
-
-The adapter is validated against Valkyrie's task and agent schemas and dataset
-digest implementation. The exporter is generic: validation fixtures and the
-previous 60-question set are not a substitute for the supplied `vals_90` data.
 
 Official references: [dataset publishing](https://docs.valkyrie.vals.ai/benchmarks/datasets)
 and [agent contracts](https://docs.valkyrie.vals.ai/agents/agent-contract).

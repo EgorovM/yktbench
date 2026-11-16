@@ -1,4 +1,4 @@
-"""Presentation names for models; API identifiers remain in models.toml."""
+"""Presentation names for models; API identifiers remain in the model configuration files."""
 
 
 MODEL_NAMES = {

@@ -104,7 +104,7 @@ with eight concurrent tasks per model, 33,000 requested output tokens and a
 Qwen3.8 2.4T A95B replaces the original Max-0902 row, and Inkling NVFP4
 replaces the original Inkling row, as requested. Both run all 90 questions;
 previous variant answers are archived and never merged into these scores.
-The historical v0 and v1 leaderboards keep their original model identities.
+Earlier model variants remain in the run records above.
 Native reasoning is `xhigh` for Qwen and `high` for the other three models.
 Question text, solver instructions, and judge instructions have the same
 hashes as the preceding round. The judge still receives `eval_instruction`;
@@ -174,7 +174,7 @@ Only secret names are committed; the key value stays in the ignored `.env`
 and Valkyrie's secret store.
 
 Carbon replaces the empty Argon row in the current 90-question leaderboard.
-The original Argon run is archived, and historical v0/v1 results are unchanged.
+The original Argon run is archived in the run records.
 [Run metadata](gemini_carbon_run.json).
 Concurrency was subsequently raised from 8 to 24, then reduced when OpenRouter
 reported insufficient available credits for concurrent in-flight requests.
@@ -235,4 +235,4 @@ The model runs execute in parallel; request concurrency is adjusted to the
 available account balance to avoid the earlier credit-reservation errors.
 
 DeepSeek V4 Pro is excluded from the current 90-question leaderboard as
-requested. Its run history and historical v0/v1 leaderboard entries are retained.
+requested. Its run history is retained for provenance.

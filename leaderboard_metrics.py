@@ -24,19 +24,15 @@ SNAPSHOT = ROOT / "data/leaderboard_metrics.json"
 START = "<!-- COST_LATENCY_START -->"
 END = "<!-- COST_LATENCY_END -->"
 BOARDS = {
-    "v0": ("LEADERBOARD.md", "data/ykt_sample.jsonl", "results/main"),
-    "v1": ("LEADERBOARD_60.md", "data/ykt_primary_v1.jsonl", "results/v1"),
-    "vals_90": ("LEADERBOARD_90.md", "data/vals_90.jsonl", "results/vals_90"),
+    "vals_90": ("LEADERBOARD.md", "data/vals_90.jsonl", "results/vals_90"),
 }
 PRICING_URL = "https://openrouter.ai/api/v1/models"
 PRICING_MODELS = {
     "fable-5.2": "anthropic/claude-fable-5.2",
     "astra": "openai/gpt-6-astra",
     "sol-6.1-eval": "openai/gpt-6.1-sol",
-    "gemini-4-argon": "google/gemini-4-argon",
     "gemini-4-carbon": "google/gemini-4-carbon",
     "grok-4.7": "x-ai/grok-4.7",
-    "deepseek-v4": "deepseek/deepseek-v4-pro",
     "deepseek-v4.1-flash": "deepseek/deepseek-v4.1-flash",
     "glm-5.3": "z-ai/glm-5.3",
     "inkling-flagship": "thinkingmachines/inkling",
@@ -48,7 +44,6 @@ PRICING_MODELS = {
     "opus-5.5-eval": "anthropic/claude-opus-5.5",
     "mistral-large-4": "mistralai/mistral-large-4-0",
     "minimax-m3.1-flash": "minimax/minimax-m3.1-flash",
-    "qwen-3.8-max": "qwen/qwen3.8-max-0902",
     "qwen-3.8-flash": "qwen/qwen3.8-flash",
     "qwen-3.8-27b": "qwen/qwen3.8-27b",
     "gemma-4-31b": "google/gemma-4-31b-it",
@@ -308,8 +303,7 @@ def main():
     for dataset, (board, data, base) in BOARDS.items():
         models = published_models(ROOT / board)
         ids = {row["id"] for row in read_jsonl(ROOT / data)}
-        records = (hosted_records(ROOT / base, models, ids, args.download_outputs) if dataset == "vals_90"
-                   else select_local(ROOT / base / "responses.jsonl", models, ids))
+        records = hosted_records(ROOT / base, models, ids, args.download_outputs)
         selected[dataset] = (len(ids), records)
         model_orders[dataset] = models
     cache = ROOT / "results/leaderboard_metrics/openrouter_costs.jsonl"

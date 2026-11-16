@@ -19,7 +19,7 @@
   "eval_instruction_count": 5,
   "source_git_commit": "35d54a8ab3711c4cc2ca111f25b1ed2e2397eded",
   "source_git_path": "data/vals_90.xlsx",
-  "source_storage_path": "data/sources/vals_90.xlsx",
+  "source_storage_path": "data/vals_90.xlsx",
   "generated_ids": [
     {
       "sheet_row": 2,

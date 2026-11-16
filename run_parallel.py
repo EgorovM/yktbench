@@ -11,9 +11,28 @@ from pathlib import Path
 import ykt_eval
 
 
-MODELS = ["fable-5.2", "astra", "deepseek-v4", "gemini-4-argon", "glm-5.3", "grok-4.7",
-          "gemma-4-31b", "deepseek-v4.1-flash", "inkling-flagship", "inkling-2-small",
-          "qwen-3.8-max", "qwen-3.8-flash", "qwen-3.8-27b", "sol-6.1-eval", "gigachat-3.5"]
+MODELS = [
+    'fable-5.2',
+    'gemini-4-carbon',
+    'astra',
+    'opus-5.5-eval',
+    'sol-6.1-eval',
+    'deepseek-v4.1-flash',
+    'qwen-3.8-2.4t-a95b',
+    'inkling-nvfp4',
+    'grok-4.7',
+    'inkling-2-small',
+    'inkling-flagship',
+    'muse-spark-open',
+    'glm-5.3',
+    'qwen-3.8-flash',
+    'kimi-k3.1-pro',
+    'qwen-3.8-27b',
+    'gigachat-3.5',
+    'gemma-4-31b',
+    'mistral-large-4',
+    'minimax-m3.1-flash',
+]
 
 
 def read_log(run_dir, name, fields):
@@ -29,7 +48,7 @@ def main():
     ap.add_argument("--run-dir", type=Path, required=True)
     ap.add_argument("--models", default=",".join(MODELS))
     ap.add_argument("--judge", default="sol-6.1")
-    ap.add_argument("--config", type=Path, default=Path(__file__).with_name("models_vals.toml"))
+    ap.add_argument("--config", type=Path, default=Path(__file__).with_name("models_vals_modal.toml"))
     ap.add_argument("--workers-per-model", type=int, default=16)
     ap.add_argument("--grok-workers", type=int, default=90)
     ap.add_argument("--retries", type=int, default=2)

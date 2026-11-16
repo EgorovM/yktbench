@@ -7,7 +7,7 @@
   "credential_env": "SARA_OPENROUTER_API_KEY",
   "agent": "yakut-text-expanded-v8",
   "dataset_version": "v-166c93db5539",
-  "concurrency": 4,
+  "concurrency": 3,
   "fresh_full_set": true,
   "initial_concurrency": 8,
   "resumptions": [

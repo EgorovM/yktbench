@@ -256,7 +256,7 @@ class MockProvider:
         self.name, self.cfg = name, cfg
         from pathlib import Path
 
-        path = Path(cfg.get("data", Path(__file__).parent / "data" / "ykt_primary_v1.jsonl"))
+        path = Path(cfg.get("data", Path(__file__).parent / "data" / "vals_90.jsonl"))
         self.items = [json.loads(line) for line in path.open(encoding="utf-8")]
 
     @staticmethod

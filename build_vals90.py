@@ -34,7 +34,7 @@ def read_rows(path, sheet=None):
 
 def freeze(source, instructions, output, sheet=None, expected_count=90, allow_visual_text=False):
     rows, selected = read_rows(source, sheet)
-    items = build_dataset.build(rows, version="vals_90")
+    items = build_dataset.build(rows)
     if len(items) != expected_count:
         raise ValueError(f"Expected {expected_count} questions, found {len(items)}")
     if not allow_visual_text and any(item["needs_visual"] for item in items):
