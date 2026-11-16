@@ -34,7 +34,7 @@ def render(snapshot):
              "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     def score(value):
         return f"{value:.1f}" if value is not None else "—"
-    rows = sorted(source_rows, key=lambda row: (not row.get("complete"), row.get("accuracy") is None, -(row.get("accuracy") or 0)))
+    rows = sorted(source_rows, key=lambda row: (row.get("accuracy") is None, -(row.get("accuracy") or 0)))
     best_accuracy = max((row["accuracy"] for row in rows if row.get("complete") and row.get("accuracy") is not None), default=None)
     max_tokens = max((row["max_output_tokens"] for row in rows if row.get("max_output_tokens") is not None), default=None)
     for row in rows:
