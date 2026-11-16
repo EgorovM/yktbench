@@ -1,47 +1,33 @@
-# Yakut Benchmark Leaderboard
+# Sakha Benchmark Leaderboard
 
-## vals_90
+Last updated: Nov 15, 2026
 
-Snapshot: 2026-11-16T06:17:41+00:00. Scores are percentages.
-
-**Evaluation complete.** Partial scores use graded questions only;
-their denominators differ and they are not final rankings. Failed tasks
-remain ungraded. Grade columns show accuracy percentages.
-Bold accuracy marks the best completed run; bold token usage marks the largest observed report.
-
-| Model Name | Company | All | Partial credit | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Max reported output tokens |
+| Model Name | Company | All | Partial credit | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Max reported output tokens |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Claude Fable 5.2 | Anthropic | **64.4** | 78.7 | 90.9 | 56.0 | 71.4 | 50.0 | 90/90 | 14149 |
-| Gemini 4 Carbon | Google | 51.1 | 59.3 | 45.5 | 48.0 | 67.9 | 41.7 | 90/90 | 33000 |
-| GPT-6 Astra | OpenAI | 41.1 | 61.2 | 45.5 | 44.0 | 39.3 | 37.5 | 90/90 | 21775 |
-| Claude Opus 5.5 | Anthropic | 41.1 | 63.2 | 27.3 | 40.0 | 42.9 | 45.8 | 90/90 | 15301 |
-| GPT-6.1 Sol **(judge model)** | OpenAI | 38.9 | 58.8 | 45.5 | 36.0 | 50.0 | 25.0 | 90/90 | 28446 |
-| DeepSeek V4.1 Flash | DeepSeek | 25.6 | 42.3 | 45.5 | 20.0 | 32.1 | 16.7 | 90/90 | 33000 |
-| Qwen3.8 2.4T A95B | Alibaba | 24.4 | 37.4 | 9.1 | 36.0 | 25.0 | 20.8 | 90/90 | 33000 |
-| Inkling NVFP4 | Thinking Machines Lab | 24.4 | 40.8 | 45.5 | 24.0 | 21.4 | 20.8 | 90/90 | 33000 |
-| Grok 4.7 | SpaceX (xAI) | 23.3 | 32.3 | 18.2 | 32.0 | 28.6 | 12.5 | 90/90 | **51390** |
-| Inkling 2 Small | Thinking Machines Lab | 22.2 | 34.5 | 27.3 | 16.0 | 32.1 | 16.7 | 90/90 | 33000 |
-| Inkling | Thinking Machines Lab | 22.2 | 41.9 | 27.3 | 16.0 | 25.0 | 25.0 | 90/90 | 33000 |
-| Muse Spark Open | Meta | 21.1 | 41.8 | 18.2 | 24.0 | 17.9 | 25.0 | 90/90 | 33000 |
-| GLM 5.3 | Z.ai | 14.4 | 21.9 | 18.2 | 12.0 | 21.4 | 8.3 | 90/90 | 33000 |
-| Qwen3.8 Flash | Alibaba | 14.4 | 18.8 | 9.1 | 20.0 | 17.9 | 8.3 | 90/90 | 33000 |
-| Kimi K3.1 Pro | Moonshot AI | 12.2 | 21.1 | 9.1 | 12.0 | 10.7 | 16.7 | 90/90 | 33000 |
-| Qwen3.8 27B | Alibaba | 6.7 | 9.3 | 9.1 | 0.0 | 10.7 | 8.3 | 90/90 | 33000 |
-| GigaChat 3.5 Ultra | Sber | 6.7 | 14.2 | 9.1 | 12.0 | 3.6 | 4.2 | 90/90 | 900 |
-| Gemma 4 31B | Google | 4.4 | 6.4 | 0.0 | 8.0 | 3.6 | 4.2 | 90/90 | 16384 |
-| Mistral Large 4 | Mistral AI | 3.3 | 3.9 | 0.0 | 8.0 | 3.6 | 0.0 | 90/90 | 33000 |
-| MiniMax M3.1 Flash | MiniMax | 2.2 | 2.7 | 0.0 | 4.0 | 0.0 | 4.2 | 90/90 | 33000 |
-
-<!-- COST_LATENCY_START -->
+| Claude Fable 5.2 | Anthropic | **64.4** | 78.7 | 90.9 | 56.0 | 71.4 | 50.0 | 14149 |
+| Gemini 4 Carbon | Google | 51.1 | 59.3 | 45.5 | 48.0 | 67.9 | 41.7 | 33000 |
+| GPT-6 Astra | OpenAI | 41.1 | 61.2 | 45.5 | 44.0 | 39.3 | 37.5 | 21775 |
+| Claude Opus 5.5 | Anthropic | 41.1 | 63.2 | 27.3 | 40.0 | 42.9 | 45.8 | 15301 |
+| GPT-6.1 Sol **(judge model)** | OpenAI | 38.9 | 58.8 | 45.5 | 36.0 | 50.0 | 25.0 | 28446 |
+| DeepSeek V4.1 Flash | DeepSeek | 25.6 | 42.3 | 45.5 | 20.0 | 32.1 | 16.7 | 33000 |
+| Qwen3.8 2.4T A95B | Alibaba | 24.4 | 37.4 | 9.1 | 36.0 | 25.0 | 20.8 | 33000 |
+| Inkling NVFP4 | Thinking Machines Lab | 24.4 | 40.8 | 45.5 | 24.0 | 21.4 | 20.8 | 33000 |
+| Grok 4.7 | SpaceX (xAI) | 23.3 | 32.3 | 18.2 | 32.0 | 28.6 | 12.5 | **51390** |
+| Inkling 2 Small | Thinking Machines Lab | 22.2 | 34.5 | 27.3 | 16.0 | 32.1 | 16.7 | 33000 |
+| Inkling | Thinking Machines Lab | 22.2 | 41.9 | 27.3 | 16.0 | 25.0 | 25.0 | 33000 |
+| Muse Spark Open | Meta | 21.1 | 41.8 | 18.2 | 24.0 | 17.9 | 25.0 | 33000 |
+| GLM 5.3 | Z.ai | 14.4 | 21.9 | 18.2 | 12.0 | 21.4 | 8.3 | 33000 |
+| Qwen3.8 Flash | Alibaba | 14.4 | 18.8 | 9.1 | 20.0 | 17.9 | 8.3 | 33000 |
+| Kimi K3.1 Pro | Moonshot AI | 12.2 | 21.1 | 9.1 | 12.0 | 10.7 | 16.7 | 33000 |
+| Qwen3.8 27B | Alibaba | 6.7 | 9.3 | 9.1 | 0.0 | 10.7 | 8.3 | 33000 |
+| GigaChat 3.5 Ultra | Sber | 6.7 | 14.2 | 9.1 | 12.0 | 3.6 | 4.2 | 900 |
+| Gemma 4 31B | Google | 4.4 | 6.4 | 0.0 | 8.0 | 3.6 | 4.2 | 16384 |
+| Mistral Large 4 | Mistral AI | 3.3 | 3.9 | 0.0 | 8.0 | 3.6 | 0.0 | 33000 |
+| MiniMax M3.1 Flash | MiniMax | 2.2 | 2.7 | 0.0 | 4.0 | 0.0 | 4.2 | 33000 |
 
 ### Cost and latency
 
-Metrics snapshot: 2026-11-16T06:18:53+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
-Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.
-Token totals contain reported usage only; † marks usage or estimates covering fewer than all questions. Coverage is out of the full question set.
-Pricing snapshot: 2026-11-16T06:17:47+00:00. Input and output prices are USD per 1M tokens.
-
-| Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Usage coverage | Input $/1M | Output $/1M | Estimated cost (USD) | Known API cost (USD) | Cost coverage |
+| Model Name | Company | Latency records | Avg in s | Median in s | p95 in s | Max in s | Timeouts # | Input token # | Output token # | Usage coverage | Input $/1M | Output $/1M | Estimated cost $ | Actual API cost $ | Cost coverage |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Claude Fable 5.2 | Anthropic | 90/90 | 16.7 | 8.4 | 48.7 | 195.6 | 0 | 38,014 | 111,826 | 90/90 | 8 | 40 | 4.7772* | 4.7772* | 0/90 |
 | Gemini 4 Carbon | Google | 90/90 | 288.3 | 283.0 | 619.1 | 720.3 | 0 | 31,429 | 1,668,456 | 90/90 | 2 | 10 | 16.7474* | 16.7474 | 90/90 |
@@ -65,6 +51,7 @@ Pricing snapshot: 2026-11-16T06:17:47+00:00. Input and output prices are USD per
 | MiniMax M3.1 Flash | MiniMax | 90/90 | 127.6 | 133.8 | 268.2 | 363.2 | 0 | 46,129 | 2,066,608 | 90/90 | 0.15 | 0.6 | 1.2469* | 1.2124 | 90/90 |
 
 \* Estimated cost = (reported input tokens × input price + reported output tokens × output price) / 1,000,000.
+
 Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.
 These are API-equivalent estimates for logged usage, not historical bills or Modal GPU costs. Missing usage is not extrapolated to the full dataset.
 Caching, batch discounts, time-of-day offers, and context-tier adjustments are not applied; recorded charges can differ.
@@ -74,16 +61,6 @@ A dash means no reported token usage or charge is available, not free. Cost cove
 Judging, discarded/failed attempts, Modal token or GPU hosting charges (including warmup), storage, and net credit adjustments are excluded.
 Provider changes and native reasoning translations remain documented in the run notes; latency figures are not measurements of thinking time.
 [Metric and pricing snapshot](data/leaderboard_metrics.json) · [Current OpenRouter pricing catalog](https://openrouter.ai/api/v1/models) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)
-
-<!-- COST_LATENCY_END -->
-
-The expanded Modal runs use Muse Spark Open, Kimi K3.1 Pro, Qwen3.8 2.4T A95B, and Inkling NVFP4.
-Qwen3.8 2.4T A95B replaces the Max-0902 row. Inkling NVFP4 and the fresh Inkling flagship evaluation have separate rows.
-Gemini 4 Carbon replaces the empty Argon row. Earlier variant scores remain archived in the run records and are not merged.
-[Modal run settings and IDs](valkyrie/modal_round4.json) · [Modal model configuration](models_vals_modal.toml)
-
-Two questions have unspecified grades; they count in All, but not in grade columns.
-Twelve source rows carry picture flags; solvers receive text only. All 90 supplied rows are retained.
 
 Solvers have no browsing or tools, a 900-second answer deadline, and a requested
 33,000-token output limit (Gemma: 16,384). GPT-6.1 Sol grades with a 16,000-token
