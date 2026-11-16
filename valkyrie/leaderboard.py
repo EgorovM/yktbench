@@ -30,8 +30,8 @@ def render(snapshot):
              "their denominators differ and they are not final rankings. Failed tasks",
              "remain ungraded. Grade columns show accuracy percentages.",
              "Bold accuracy marks the best completed run; bold token usage marks the largest observed report.", "",
-             "| Model Name | Company | All | Partial credit | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Max reported output tokens | Over limit | Status |",
-             "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
+             "| Model Name | Company | All | Partial credit | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Max reported output tokens |",
+             "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
     def score(value):
         return f"{value:.1f}" if value is not None else "—"
     rows = sorted(source_rows, key=lambda row: (row.get("accuracy") is None, -(row.get("accuracy") or 0)))
@@ -43,9 +43,6 @@ def render(snapshot):
         for grade in ("1", "2", "3", "4"):
             cell = row["grades"][grade]
             grades.append(score(cell["accuracy"]))
-        status = ("Complete" if row.get("complete") else
-                  "Needs credits" if row.get("blocked_reason") == "insufficient_credits" else
-                  "Run errors" if row["status"] in ("ERROR", "STOPPED") else "Running")
         accuracy = score(row.get("accuracy"))
         if row.get("complete") and row.get("accuracy") == best_accuracy:
             accuracy = f"**{accuracy}**"
@@ -54,8 +51,7 @@ def render(snapshot):
             tokens = f"**{tokens}**"
         lines.append(f"| {name} | {model_company(row['model'])} | {accuracy} | {score(row.get('partial'))} | "
                      + " | ".join(grades) + f" | {row.get('graded', 0)}/90 | "
-                     + f"{tokens} | "
-                     + f"{row['over_limit'] if row.get('over_limit') is not None else '—'} | {status} |")
+                     + f"{tokens} |")
     extended = render_metrics("vals_90", [row["model"] for row in rows])
     if extended:
         lines += ["", extended]
@@ -71,7 +67,8 @@ def render(snapshot):
               "budget and receives each question's `eval_instruction`; solvers do not.",
               "Max reported output tokens is the largest downloaded usage report, including reasoning tokens where reported.",
               "Usage for unfinished runs may cover only a subset of graded answers.",
-              "A dash means usage has not yet been collected. Over-limit answers are retained and flagged.", "",
+              "A dash means usage has not yet been collected. Over-limit answers are retained.",
+              "Full run status and token-limit flags remain in the [saved results](valkyrie/leaderboard_snapshot.json).", "",
               "[Run IDs](valkyrie/RUNS.md) · [Dataset](data/vals_90.jsonl) · [Settings](models_vals.toml)", ""]
     return "\n".join(lines)
 
