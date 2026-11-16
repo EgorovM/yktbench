@@ -7,6 +7,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from model_names import model_company, model_name
+from leaderboard_metrics import render as render_metrics
 
 
 def render(snapshot):
@@ -45,6 +46,9 @@ def render(snapshot):
                      + " | ".join(grades) + f" | {row.get('graded', 0)}/90 | "
                      + f"{tokens} | "
                      + f"{row['over_limit'] if row.get('over_limit') is not None else '—'} | {status} |")
+    extended = render_metrics("vals_90", [row["model"] for row in rows])
+    if extended:
+        lines += ["", extended]
     lines += ["", "Two questions have unspecified grades; they count in All, but not in grade columns.",
               "Twelve source rows carry picture flags; solvers receive text only. All 90 supplied rows are retained.", "",
               "Solvers have no browsing or tools, a 900-second answer deadline, and a requested",

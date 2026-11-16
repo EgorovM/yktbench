@@ -27,6 +27,41 @@ Bold accuracy marks the best completed run; bold token usage marks the largest o
 | Gemma 4 31B | Google | 4.5 | 6.0 | 0.0 | 10.0 | 4.8 | 0.0 | 66/90 | — | — | API errors |
 | Gemini 4 Argon | Google | — | — | — | — | — | — | 0/90 | — | — | API errors |
 
+<!-- COST_LATENCY_START -->
+
+### Cost and latency
+
+Metrics snapshot: 2026-11-16T01:54:52+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
+Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.
+Token totals contain reported usage only; † marks incomplete usage. Coverage is out of the full question set.
+
+| Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Known API cost (USD) | Cost coverage |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Claude Fable 5.2 | Anthropic | 90/90 | 16.7 | 8.4 | 48.7 | 195.6 | 0 | 38,014 | 111,826 | — | 0/90 |
+| GPT-6 Astra | OpenAI | 90/90 | 63.7 | 31.0 | 235.4 | 563.7 | 0 | 27,768 | 215,344 | — | 0/90 |
+| GPT-6.1 Sol **(judge model)** | OpenAI | 90/90 | 56.5 | 23.8 | 179.6 | 608.1 | 0 | 27,768 | 210,598 | — | 0/90 |
+| DeepSeek V4.1 Flash | DeepSeek | 90/90 | 66.2 | 46.7 | 186.6 | 253.3 | 0 | 31,010 | 1,096,750 | 0.0866 | 9/90 |
+| Grok 4.7 | SpaceX (xAI) | 90/90 | 601.3 | 696.2 | 900.0 | 900.0 | 29 | 93,698† | 1,578,639† | 9.5342 | 61/90 |
+| Inkling 2 Small | Thinking Machines Lab | 90/90 | 94.2 | 69.5 | 310.6 | 385.4 | 0 | 30,830 | 1,423,542 | 1.3956 | 88/90 |
+| GLM 5.3 | Z.ai | 90/90 | 139.0 | 80.3 | 428.1 | 534.2 | 0 | 29,788 | 1,422,380 | 4.2059 | 90/90 |
+| Qwen3.8 27B | Alibaba | 90/90 | 234.5 | 254.8 | 322.4 | 900.0 | 3 | 32,625† | 2,015,027† | 0.0941 | 4/90 |
+| GigaChat 3.5 Ultra | Sber | 90/90 | 3.5 | 2.8 | 9.9 | 19.0 | 0 | 33,650 | 8,263 | — | 0/90 |
+| Qwen3.8 Max | Alibaba | 1/90 | 153.7 | 153.7 | 153.7 | 153.7 | 0 | 305 | 6,082 | 0.0371 | 1/90 |
+| Inkling | Thinking Machines Lab | 7/90 | 73.8 | 37.1 | 222.8 | 222.8 | 0 | 2,115 | 72,655 | 0.2960 | 7/90 |
+| DeepSeek V4 Pro | DeepSeek | 23/90 | 135.2 | 50.6 | 516.9 | 524.1 | 0 | 6,992 | 205,908 | 0.1033 | 23/90 |
+| Qwen3.8 Flash | Alibaba | 37/90 | 374.2 | 440.4 | 497.0 | 503.3 | 0 | 13,861 | 1,002,666 | 0.4729 | 37/90 |
+| Gemma 4 31B | Google | 66/90 | 13.9 | 5.6 | 46.8 | 192.8 | 0 | 22,171 | 95,023 | 0.0366 | 66/90 |
+| Gemini 4 Argon | Google | 0/90 | — | — | — | — | 0 | — | — | — | 0/90 |
+
+Known API cost is the sum of retrieved OpenRouter charges for the selected answers, not total benchmark spend.
+A dash means unavailable, not free. Cost coverage counts answers with a retrieved charge; duplicate request IDs are charged once.
+Judging, discarded/failed attempts, Modal token or GPU hosting charges (including warmup), storage, and net credit adjustments are excluded.
+Provider changes and native reasoning translations remain documented in the run notes; latency figures are not measurements of thinking time.
+[Metric snapshot and definitions](data/leaderboard_metrics.json) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)
+
+<!-- COST_LATENCY_END -->
+
+
 Two questions have unspecified grades; they count in All, but not in grade columns.
 Twelve source rows carry picture flags; solvers receive text only. All 90 supplied rows are retained.
 

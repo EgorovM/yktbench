@@ -25,6 +25,41 @@ credit is the mean share of parts correct.
 | Gemma 4 31B | Google | 6.7 | 11.2 | 16384 | 0 |
 | GigaChat 3.5 Ultra | Sber | 6.7 | 21.5 | 596 | 0 |
 
+<!-- COST_LATENCY_START -->
+
+### Cost and latency
+
+Metrics snapshot: 2026-11-16T01:54:52+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
+Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.
+Token totals contain reported usage only; † marks incomplete usage. Coverage is out of the full question set.
+
+| Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Known API cost (USD) | Cost coverage |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Claude Fable 5.2 | Anthropic | 60/60 | 15.6 | 7.3 | 33.5 | 173.3 | 0 | 25,038 | 74,507 | — | 0/60 |
+| Gemini 4 Argon | Google | 60/60 | 58.0 | 20.3 | 317.9 | 543.4 | 0 | 20,758 | 223,681 | 2.2783 | 60/60 |
+| GPT-6 Astra | OpenAI | 60/60 | 90.7 | 26.6 | 180.8 | 1247.2 | 0 | 18,254 | 122,186 | — | 0/60 |
+| GPT-6.1 Sol **(judge model)** | OpenAI | 60/60 | 49.9 | 20.3 | 146.7 | 597.9 | 0 | 18,254 | 136,065 | — | 0/60 |
+| Grok 4.7 | SpaceX (xAI) | 60/60 | 720.9 | 763.2 | 1293.4 | 2034.8 | 0 | 92,555 | 2,339,249 | 14.1087 | 60/60 |
+| DeepSeek V4.1 Flash | DeepSeek | 60/60 | 69.0 | 47.6 | 219.4 | 290.4 | 0 | 20,391 | 753,350 | 0.4516 | 60/60 |
+| DeepSeek V4 Pro | DeepSeek | 60/60 | 111.7 | 63.8 | 462.6 | 528.7 | 0 | 18,989 | 580,190 | 0.6149 | 60/60 |
+| Qwen3.8 Max | Alibaba | 60/60 | 322.7 | 281.4 | 761.1 | 841.4 | 0 | 22,393 | 837,512 | 5.0699 | 60/60 |
+| Inkling | Thinking Machines Lab | 60/60 | 154.9 | 116.3 | 412.7 | 552.6 | 0 | 18,734 | 717,969 | 2.9208 | 60/60 |
+| Inkling 2 Small | Thinking Machines Lab | 60/60 | 108.9 | 69.1 | 265.6 | 308.7 | 0 | 20,268 | 981,600 | 0.9332 | 60/60 |
+| Qwen3.8 Flash | Alibaba | 60/60 | 365.1 | 430.0 | 573.5 | 665.6 | 0 | 22,393 | 1,512,597 | 0.7135 | 60/60 |
+| GLM 5.3 | Z.ai | 60/60 | 130.3 | 141.9 | 278.9 | 317.2 | 0 | 19,569 | 1,125,047 | 2.0704 | 60/60 |
+| Qwen3.8 27B | Alibaba | 60/60 | 36.3 | 18.7 | 129.9 | 178.6 | 0 | 20,113 | 353,543 | 0.7695 | 60/60 |
+| Gemma 4 31B | Google | 60/60 | 15.3 | 7.9 | 47.1 | 142.7 | 0 | 19,653 | 93,707 | 0.0380 | 60/60 |
+| GigaChat 3.5 Ultra | Sber | 60/60 | 2.7 | 2.2 | 6.5 | 14.2 | 0 | 22,171 | 5,520 | — | 0/60 |
+
+Known API cost is the sum of retrieved OpenRouter charges for the selected answers, not total benchmark spend.
+A dash means unavailable, not free. Cost coverage counts answers with a retrieved charge; duplicate request IDs are charged once.
+Judging, discarded/failed attempts, Modal token or GPU hosting charges (including warmup), storage, and net credit adjustments are excluded.
+Provider changes and native reasoning translations remain documented in the run notes; latency figures are not measurements of thinking time.
+[Metric snapshot and definitions](data/leaderboard_metrics.json) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)
+
+<!-- COST_LATENCY_END -->
+
+
 Exact API identifiers and generation settings are recorded in [`models.toml`](models.toml).
 
 GPT 6.1 Sol is marked **(judge model)** because it also grades the benchmark.
