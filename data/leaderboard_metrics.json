@@ -1,11 +1,11 @@
 {
-  "updated_utc": "2026-11-16T05:59:34+00:00",
+  "updated_utc": "2026-11-16T06:18:53+00:00",
   "cost_currency": "USD",
   "latency_unit": "seconds",
   "percentile_method": "nearest rank",
   "scope": "Final selected solver responses; no judge, discarded attempts, Modal hosting, or credits",
   "pricing": {
-    "retrieved_utc": "2026-11-16T05:55:10+00:00",
+    "retrieved_utc": "2026-11-16T06:17:47+00:00",
     "currency": "USD",
     "unit": "per 1,000,000 tokens",
     "source": "https://openrouter.ai/api/v1/models",
@@ -308,19 +308,19 @@
         },
         "gemini-4-carbon": {
           "questions": 90,
-          "response_records": 75,
-          "latency_records": 75,
-          "mean_s": 286.5610615620267,
-          "median_s": 281.454238804,
-          "p95_s": 587.799717826,
-          "max_s": 673.0148230440001,
+          "response_records": 90,
+          "latency_records": 90,
+          "mean_s": 288.2568381529667,
+          "median_s": 282.9765624855,
+          "p95_s": 619.116159274,
+          "max_s": 720.3074177919999,
           "timeouts": 0,
-          "usage_records": 75,
-          "input_tokens": 26470,
-          "output_tokens": 1423843,
-          "costed_answers": 71,
-          "costed_requests": 71,
-          "known_api_cost_usd": 13.271638
+          "usage_records": 90,
+          "input_tokens": 31429,
+          "output_tokens": 1668456,
+          "costed_answers": 90,
+          "costed_requests": 90,
+          "known_api_cost_usd": 16.747418
         },
         "astra": {
           "questions": 90,
@@ -352,7 +352,7 @@
           "output_tokens": 140984,
           "costed_answers": 90,
           "costed_requests": 90,
-          "known_api_cost_usd": 2.971736
+          "known_api_cost_usd": 2.971736000000001
         },
         "sol-6.1-eval": {
           "questions": 90,
@@ -432,7 +432,7 @@
           "output_tokens": 1578639,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 9.534238
+          "known_api_cost_usd": 9.534237999999998
         },
         "inkling-2-small": {
           "questions": 90,
@@ -448,7 +448,7 @@
           "output_tokens": 1423542,
           "costed_answers": 88,
           "costed_requests": 88,
-          "known_api_cost_usd": 1.3955668
+          "known_api_cost_usd": 1.3955667999999999
         },
         "inkling-flagship": {
           "questions": 90,
@@ -464,7 +464,7 @@
           "output_tokens": 1096215,
           "costed_answers": 90,
           "costed_requests": 90,
-          "known_api_cost_usd": 4.46008451
+          "known_api_cost_usd": 4.4600845100000015
         },
         "muse-spark-open": {
           "questions": 90,
@@ -496,7 +496,7 @@
           "output_tokens": 1422380,
           "costed_answers": 90,
           "costed_requests": 90,
-          "known_api_cost_usd": 4.205864957
+          "known_api_cost_usd": 4.205864956999999
         },
         "qwen-3.8-flash": {
           "questions": 90,
@@ -512,7 +512,7 @@
           "output_tokens": 2298689,
           "costed_answers": 37,
           "costed_requests": 37,
-          "known_api_cost_usd": 0.472886218
+          "known_api_cost_usd": 0.4728862180000002
         },
         "kimi-k3.1-pro": {
           "questions": 90,
@@ -544,7 +544,7 @@
           "output_tokens": 2015027,
           "costed_answers": 4,
           "costed_requests": 4,
-          "known_api_cost_usd": 0.09407465
+          "known_api_cost_usd": 0.09407465000000001
         },
         "gigachat-3.5": {
           "questions": 90,
@@ -576,7 +576,7 @@
           "output_tokens": 130015,
           "costed_answers": 66,
           "costed_requests": 66,
-          "known_api_cost_usd": 0.03656408
+          "known_api_cost_usd": 0.03656407999999999
         },
         "mistral-large-4": {
           "questions": 90,
@@ -592,7 +592,7 @@
           "output_tokens": 2086691,
           "costed_answers": 89,
           "costed_requests": 89,
-          "known_api_cost_usd": 4.408108376
+          "known_api_cost_usd": 4.4081083759999995
         },
         "minimax-m3.1-flash": {
           "questions": 90,
@@ -608,7 +608,7 @@
           "output_tokens": 2066608,
           "costed_answers": 90,
           "costed_requests": 90,
-          "known_api_cost_usd": 1.212394814
+          "known_api_cost_usd": 1.2123948140000003
         }
       }
     }

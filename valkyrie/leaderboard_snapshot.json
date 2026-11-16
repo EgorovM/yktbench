@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16T05:59:34+00:00",
+  "updated_utc": "2026-11-16T06:17:41+00:00",
   "platform": "Valkyrie",
   "rows": [
     {
@@ -408,18 +408,78 @@
       }
     },
     {
-      "graded": 75,
+      "graded": 90,
       "questions": 90,
-      "correct": 37.0,
-      "accuracy": 49.333333333333336,
-      "partial": 57.442857142857136,
+      "correct": 46.0,
+      "accuracy": 51.111111111111114,
+      "partial": 59.28318903318904,
       "model": "gemini-4-carbon",
       "run_id": "e4410ff4-0d45-4301-9ea5-3ba9c5009129",
       "run_ids": [
         "e4410ff4-0d45-4301-9ea5-3ba9c5009129"
       ],
-      "status": "IN_PROGRESS",
+      "status": "FINISHED",
       "task_rewards": {
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p1-L34-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.2727272727272727
+        },
+        "g3p2-L13-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L08-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-003": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L04-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L36-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
         "g4p2-L06-002": {
           "reward": 0.0,
           "partial_credit": 0.0
@@ -723,12 +783,12 @@
       },
       "model_name": "Gemini 4 Carbon",
       "company": "Google",
-      "complete": false,
+      "complete": true,
       "max_output_tokens": 33000,
       "over_limit": 0,
       "judge_model": false,
       "timed_out": 0,
-      "responses_with_usage": 75,
+      "responses_with_usage": 90,
       "grades": {
         "1": {
           "total": 11,
@@ -742,13 +802,13 @@
         },
         "3": {
           "total": 28,
-          "graded": 18,
-          "accuracy": 61.111111111111114
+          "graded": 28,
+          "accuracy": 67.85714285714286
         },
         "4": {
           "total": 24,
-          "graded": 21,
-          "accuracy": 42.857142857142854
+          "graded": 24,
+          "accuracy": 41.666666666666664
         }
       }
     },

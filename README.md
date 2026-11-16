@@ -17,7 +17,7 @@ its API to 16,384 output tokens.
 
 The [90-question dataset](data/vals_90.jsonl) comes from the `vals sub` sheet of
 [`vals_90.xlsx`](data/vals_90.xlsx). The current leaderboard covers 20 models evaluated
-on Valkyrie and Modal; unfinished runs show their graded question counts. [Run IDs and monitoring commands](valkyrie/RUNS.md)
+on Valkyrie and Modal, with all 90 questions graded for each model. [Run IDs and monitoring commands](valkyrie/RUNS.md)
 are available for the team.
 
 Each solver receives the exercise instruction and material. The judge receives
@@ -34,6 +34,6 @@ are recorded in the [dataset manifest](data/vals_90.manifest.json).
 
 See **[Leaderboard](LEADERBOARD.md)** for accuracy by model and school grade,
 partial credit, token usage, and an extended cost and latency table. Scores are
-sorted by All accuracy. Partial runs include their graded question counts.
+sorted by All accuracy. All 20 models have completed the 90-question evaluation.
 
 [How to run](USAGE.md) · [Valkyrie submission](valkyrie/README.md)

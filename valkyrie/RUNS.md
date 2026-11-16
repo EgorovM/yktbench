@@ -236,3 +236,22 @@ available account balance to avoid the earlier credit-reservation errors.
 
 DeepSeek V4 Pro is excluded from the current 90-question leaderboard as
 requested. Its run history is retained for provenance.
+
+## Final funded results
+
+After the additional personal-account top-up, Gemini Carbon's concurrency was
+raised to 16. The existing run finished all 90 questions on 2026-11-16; Inkling
+flagship also finished all 90. Completed answers were preserved throughout;
+only unfinished/API-failed tasks were resumed, with frozen model settings.
+
+| Model Name | Correct | All | Partial credit | Max reported output tokens |
+|---|---:|---:|---:|---:|
+| Gemini 4 Carbon | 46/90 | 51.1% | 59.3% | 33,000 |
+| Inkling | 20/90 | 22.2% | 41.9% | 33,000 |
+
+Neither run reported output above the requested limit or a solver timeout.
+All 20 models included in [the leaderboard](../LEADERBOARD.md) now have 90 graded
+questions. Grok's earlier maximum report of 51,390 tokens and its limit flags
+remain preserved. Final selected-response cost and latency metadata are saved
+in [the metrics snapshot](../data/leaderboard_metrics.json); those costs exclude
+judging, failed/discarded attempts, and Modal hosting.

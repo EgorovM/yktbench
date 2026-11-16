@@ -2,9 +2,9 @@
 
 ## vals_90
 
-Snapshot: 2026-11-16T05:59:34+00:00. Scores are percentages.
+Snapshot: 2026-11-16T06:17:41+00:00. Scores are percentages.
 
-**Evaluation is in progress.** Partial scores use graded questions only;
+**Evaluation complete.** Partial scores use graded questions only;
 their denominators differ and they are not final rankings. Failed tasks
 remain ungraded. Grade columns show accuracy percentages.
 Bold accuracy marks the best completed run; bold token usage marks the largest observed report.
@@ -12,7 +12,7 @@ Bold accuracy marks the best completed run; bold token usage marks the largest o
 | Model Name | Company | All | Partial credit | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Max reported output tokens |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
 | Claude Fable 5.2 | Anthropic | **64.4** | 78.7 | 90.9 | 56.0 | 71.4 | 50.0 | 90/90 | 14149 |
-| Gemini 4 Carbon | Google | 49.3 | 57.4 | 45.5 | 48.0 | 61.1 | 42.9 | 75/90 | 33000 |
+| Gemini 4 Carbon | Google | 51.1 | 59.3 | 45.5 | 48.0 | 67.9 | 41.7 | 90/90 | 33000 |
 | GPT-6 Astra | OpenAI | 41.1 | 61.2 | 45.5 | 44.0 | 39.3 | 37.5 | 90/90 | 21775 |
 | Claude Opus 5.5 | Anthropic | 41.1 | 63.2 | 27.3 | 40.0 | 42.9 | 45.8 | 90/90 | 15301 |
 | GPT-6.1 Sol **(judge model)** | OpenAI | 38.9 | 58.8 | 45.5 | 36.0 | 50.0 | 25.0 | 90/90 | 28446 |
@@ -36,15 +36,15 @@ Bold accuracy marks the best completed run; bold token usage marks the largest o
 
 ### Cost and latency
 
-Metrics snapshot: 2026-11-16T05:59:34+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
+Metrics snapshot: 2026-11-16T06:18:53+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
 Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.
 Token totals contain reported usage only; † marks usage or estimates covering fewer than all questions. Coverage is out of the full question set.
-Pricing snapshot: 2026-11-16T05:55:10+00:00. Input and output prices are USD per 1M tokens.
+Pricing snapshot: 2026-11-16T06:17:47+00:00. Input and output prices are USD per 1M tokens.
 
 | Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Usage coverage | Input $/1M | Output $/1M | Estimated cost (USD) | Known API cost (USD) | Cost coverage |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Claude Fable 5.2 | Anthropic | 90/90 | 16.7 | 8.4 | 48.7 | 195.6 | 0 | 38,014 | 111,826 | 90/90 | 8 | 40 | 4.7772* | 4.7772* | 0/90 |
-| Gemini 4 Carbon | Google | 75/90 | 286.6 | 281.5 | 587.8 | 673.0 | 0 | 26,470† | 1,423,843† | 75/90 | 2 | 10 | 14.2914*† | 13.2716 | 71/90 |
+| Gemini 4 Carbon | Google | 90/90 | 288.3 | 283.0 | 619.1 | 720.3 | 0 | 31,429 | 1,668,456 | 90/90 | 2 | 10 | 16.7474* | 16.7474 | 90/90 |
 | GPT-6 Astra | OpenAI | 90/90 | 63.7 | 31.0 | 235.4 | 563.7 | 0 | 27,768 | 215,344 | 90/90 | 10 | 50 | 11.0449* | 11.0449* | 0/90 |
 | Claude Opus 5.5 | Anthropic | 90/90 | 21.4 | 13.5 | 63.5 | 182.9 | 0 | 38,014 | 140,984 | 90/90 | 4 | 20 | 2.9717* | 2.9717 | 90/90 |
 | GPT-6.1 Sol **(judge model)** | OpenAI | 90/90 | 56.5 | 23.8 | 179.6 | 608.1 | 0 | 27,768 | 210,598 | 90/90 | 2 | 10 | 2.1615* | 2.1615* | 0/90 |
