@@ -1,6 +1,6 @@
-# Yakut bench
+# SakhaBench: Sakha (Yakut) Language Primary School Knowledge Benchmark
 
-This benchmark evaluates models' capability speak and reason in Yakut. The public benchmark questions are created from text-only test questions given in the primary school textbooks (grades 1-4).
+This benchmark evaluates how well language models understand, write, and reason in Sakha (Yakut). Questions are drawn from text-only exercises in Sakha primary school textbooks (grades 1-4).
 
 ## Valkyrie submission
 
