@@ -143,3 +143,48 @@ Each requests high reasoning and 33,000 output tokens, with a 900-second
 answer deadline. The original Opus judge configuration is unchanged;
 `opus-5.5-eval` is a separate solver configuration using OpenRouter.
 [Settings and frozen hashes](openrouter_round5.json).
+
+## Dedicated Gemma recovery — November 16, 2026
+
+The managed Gemma endpoint still requires B200 access. Its original weights
+were instead served on a dedicated H200 Modal server, `ykt-gemma-h200/Gemma`.
+The endpoint passed a generation check with non-thinking mode and the original
+16,384-token output limit. At 05:01 UTC, run
+`f4fa983d-07d3-4886-909e-d866a6b48ea1` started the 24 previously failed tasks
+at concurrency 16, preserving all 66 completed original answers. The answer
+deadline remains 900 seconds. The server returns to zero minimum containers
+after the recovery run ends. [Recovery settings and task IDs](dedicated_recovery.json).
+
+At about 05:01 UTC, a batch across the expanded runs failed with Modal sandbox
+infrastructure errors (`sandbox_get` authorization/internal service errors).
+Only failed tasks were retried, with frozen agents and model settings retained.
+These infrastructure failures are distinct from incorrect model answers.
+
+## Gemini 4 Carbon — separate OpenRouter account
+
+Run `e4410ff4-0d45-4301-9ea5-3ba9c5009129` evaluates all 90 questions with
+`google/gemini-4-carbon`, high reasoning, 33,000 requested output tokens, and
+a 900-second answer deadline. It uses agent `yakut-text-expanded-v7` and
+the dedicated credential variable `SARA_OPENROUTER_API_KEY`, bound to the
+Valkyrie secret `ykt-sara-openrouter-api-key`. The fresh Inkling flagship run
+below uses the same separate key; other models retain their original keys.
+Only secret names are committed; the key value stays in the ignored `.env`
+and Valkyrie's secret store.
+
+Carbon replaces the empty Argon row in the current 90-question leaderboard.
+The original Argon run is archived, and historical v0/v1 results are unchanged.
+[Run metadata](gemini_carbon_run.json).
+
+## Inkling flagship — separate OpenRouter account
+
+Run `1e31e4ec-5a7a-403b-a986-cb7c88cfbf9b` evaluates the original
+`thinkingmachines/inkling` flagship on all 90 questions, using
+`SARA_OPENROUTER_API_KEY`, high reasoning, 33,000 requested output tokens,
+and a 900-second answer deadline. The agent is `yakut-text-expanded-v8`.
+This is a fresh run: the earlier seven answers from the original account
+remain archived and are not merged. The concurrent Inkling NVFP4 evaluation
+on Modal remains a separate row. [Run metadata](inkling_sara_run.json).
+
+The optional dedicated Inkling NVFP4 probe did not finish startup within
+its readiness window and was stopped to release its four B300 GPUs.
+The shared NVFP4 run continues; no answers from the probe enter the benchmark.

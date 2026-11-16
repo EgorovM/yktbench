@@ -11,6 +11,7 @@ MODEL_NAMES = {
     "mistral-large-4": ("Mistral Large 4", "Mistral AI"),
     "minimax-m3.1-flash": ("MiniMax M3.1 Flash", "MiniMax"),
     "gemini-4-argon": ("Gemini 4 Argon", "Google"),
+    "gemini-4-carbon": ("Gemini 4 Carbon", "Google"),
     "gemma-4-31b": ("Gemma 4 31B", "Google"),
     "grok-4.7": ("Grok 4.7", "SpaceX (xAI)"),
     "deepseek-v4": ("DeepSeek V4 Pro", "DeepSeek"),

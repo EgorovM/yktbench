@@ -1,0 +1,44 @@
+{
+  "runs": [
+    {
+      "model": "gemma-4-31b",
+      "run_id": "f4fa983d-07d3-4886-909e-d866a6b48ea1",
+      "returncode": 0,
+      "error": null,
+      "retry_of": "fc476ce6-16cc-4fe7-aac4-5509213e553a",
+      "task_ids": [
+        "vals90-row-002",
+        "g4p2-L32-013",
+        "g4p2-L27-010",
+        "g4p2-L20-012",
+        "g4p2-L09-013",
+        "g4p2-L05-012",
+        "g4p1-L34-001",
+        "g4p1-L16-003",
+        "g4p1-L15-010",
+        "g4p1-L13-012",
+        "g4p1-L08-010",
+        "g4p1-L04-011",
+        "g3p2-L17-003",
+        "g3p2-L10-012",
+        "g3p2-L08-011",
+        "g3p2-L04-011",
+        "g3p1-L36-011",
+        "g3p1-L34-011",
+        "g3p1-L29-011",
+        "g2p2-L32-011",
+        "g2p2-L10-009",
+        "g2p1-L18-007",
+        "g2p1-L03-004",
+        "g2p1-L02-006"
+      ],
+      "inference_provider": "modal",
+      "serving_mode": "dedicated",
+      "server": "ykt-gemma-h200/Gemma",
+      "agent": "yakut-text-expanded-v6",
+      "dataset_version": "v-166c93db5539",
+      "concurrency": 16,
+      "model_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475"
+    }
+  ]
+}

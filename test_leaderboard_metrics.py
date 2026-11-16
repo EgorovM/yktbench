@@ -9,6 +9,23 @@ import leaderboard_metrics as metrics
 
 
 class MetricsTests(unittest.TestCase):
+    def test_gemini_carbon_cost_lookup_uses_separate_account_key(self):
+        selected = {"vals_90": (90, {
+            "gemini-4-carbon": {"q1": {"response_id": "gen-sara"}},
+            "opus-5.5-eval": {"q1": {"response_id": "gen-main"}},
+            "muse-spark-open": {"q1": {"response_id": "cmpl-modal"}},
+        })}
+        self.assertEqual(metrics.generation_key_envs(selected), {
+            "gen-sara": "SARA_OPENROUTER_API_KEY", "gen-main": "OPENROUTER_API_KEY"})
+
+    def test_inkling_personal_key_does_not_change_historical_cost_accounts(self):
+        selected = {
+            "v1": (60, {"inkling-flagship": {"q": {"response_id": "gen-historical"}}}),
+            "vals_90": (90, {"inkling-flagship": {"q": {"response_id": "gen-personal"}}}),
+        }
+        self.assertEqual(metrics.generation_key_envs(selected), {
+            "gen-historical": "OPENROUTER_API_KEY", "gen-personal": "SARA_OPENROUTER_API_KEY"})
+
     def test_catalog_prices_are_per_million_and_gigachat_uses_supplied_rates(self):
         catalog = {"data": [{"id": model_id, "pricing": {"prompt": "0.000002", "completion": "0.00001"}}
                             for model_id in metrics.PRICING_MODELS.values()]}

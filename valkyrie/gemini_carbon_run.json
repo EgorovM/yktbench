@@ -1,0 +1,12 @@
+{
+  "model": "gemini-4-carbon",
+  "run_id": "e4410ff4-0d45-4301-9ea5-3ba9c5009129",
+  "returncode": 0,
+  "error": null,
+  "inference_provider": "openrouter",
+  "credential_env": "SARA_OPENROUTER_API_KEY",
+  "agent": "yakut-text-expanded-v7",
+  "dataset_version": "v-166c93db5539",
+  "concurrency": 8,
+  "fresh_full_set": true
+}

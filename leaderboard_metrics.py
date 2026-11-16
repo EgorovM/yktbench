@@ -34,6 +34,7 @@ PRICING_MODELS = {
     "astra": "openai/gpt-6-astra",
     "sol-6.1-eval": "openai/gpt-6.1-sol",
     "gemini-4-argon": "google/gemini-4-argon",
+    "gemini-4-carbon": "google/gemini-4-carbon",
     "grok-4.7": "x-ai/grok-4.7",
     "deepseek-v4": "deepseek/deepseek-v4-pro",
     "deepseek-v4.1-flash": "deepseek/deepseek-v4.1-flash",
@@ -52,6 +53,16 @@ PRICING_MODELS = {
     "qwen-3.8-27b": "qwen/qwen3.8-27b",
     "gemma-4-31b": "google/gemma-4-31b-it",
 }
+COST_KEY_ENVS = {
+    ("vals_90", "gemini-4-carbon"): "SARA_OPENROUTER_API_KEY",
+    ("vals_90", "inkling-flagship"): "SARA_OPENROUTER_API_KEY",
+}
+
+
+def generation_key_envs(selected):
+    return {row["response_id"]: COST_KEY_ENVS.get((dataset, model), "OPENROUTER_API_KEY")
+            for dataset, (_, models) in selected.items() for model, rows in models.items()
+            for row in rows.values() if str(row.get("response_id", "")).startswith("gen-")}
 
 
 def pricing_snapshot(catalog, retrieved_utc):
@@ -135,6 +146,8 @@ def hosted_records(base, models, item_ids, download=False):
     records = {model: {} for model in models}
     cache = ROOT / "results/leaderboard_metrics/outputs"
     for run in runs:
+        if run.get("superseded_by"):
+            continue
         model, run_id = run["model"], run.get("run_id")
         if model not in records or not run_id or not graded.get(model):
             continue
@@ -302,15 +315,15 @@ def main():
     cache = ROOT / "results/leaderboard_metrics/openrouter_costs.jsonl"
     cache.parent.mkdir(parents=True, exist_ok=True)
     costs = {row["response_id"]: row for row in read_jsonl(cache)} if cache.exists() else {}
-    ids = {row["response_id"] for _, models in selected.values() for rows in models.values()
-           for row in rows.values() if str(row.get("response_id", "")).startswith("gen-")}
+    key_envs = generation_key_envs(selected)
+    ids = set(key_envs)
     missing = sorted(ids - costs.keys())
     print("Cost metadata:", len(ids), "request IDs,", len(missing), "uncached", flush=True)
     if args.fetch_costs and missing:
         from dotenv import dotenv_values
-        key = {**dotenv_values(ROOT / ".env"), **os.environ}["OPENROUTER_API_KEY"]
+        env = {**dotenv_values(ROOT / ".env"), **os.environ}
         with ThreadPoolExecutor(max_workers=8) as pool, cache.open("a") as output:
-            futures = [pool.submit(fetch_cost, rid, key) for rid in missing]
+            futures = [pool.submit(fetch_cost, rid, env[key_envs[rid]]) for rid in missing]
             for index, future in enumerate(as_completed(futures), 1):
                 row = future.result()
                 costs[row["response_id"]] = row

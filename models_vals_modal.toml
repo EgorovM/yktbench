@@ -60,16 +60,6 @@ max_retries = 0
 deadline_seconds = 900
 extra_body = { reasoning = { effort = "high" } }
 
-[models."gemini-4-argon"]
-provider = "openai_chat"
-model = "google/gemini-4-argon"
-base_url = "https://openrouter.ai/api/v1"
-api_key_env = "OPENROUTER_API_KEY"
-max_tokens = 33000
-timeout = 900
-max_retries = 0
-deadline_seconds = 900
-extra_body = { reasoning = { effort = "high" } }
 
 [models."deepseek-v4.1-flash"]
 provider = "openai_chat"
@@ -227,11 +217,10 @@ deadline_seconds = 900
 extra_body = { reasoning_effort = "high" }
 
 # Fresh full-set run; preserves previous partial model results in the run archive.
-# Same NVFP4 weights, dedicated endpoint for remaining queued questions.
 [models."inkling-nvfp4"]
 provider = "openai_chat"
-model = "ykt-vals90-inkling-nvfp4-dedicated"
-base_url = "https://eginovasardaana--ep-ykt-vals90-inkling-nvfp4-dedicated-server.us-west.modal.direct/v1"
+model = "thinkingmachines/Inkling-NVFP4"
+base_url = "https://eginovasardaana--ep-ykt-vals90-inkling-nvfp4-server.us-west.modal.direct/v1"
 api_key_env = "MODAL_INFERENCE_API_KEY"
 max_tokens = 33000
 timeout = 900
@@ -266,6 +255,30 @@ provider = "openai_chat"
 model = "anthropic/claude-opus-5.5"
 base_url = "https://openrouter.ai/api/v1"
 api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 33000
+timeout = 900
+max_retries = 0
+deadline_seconds = 900
+extra_body = { reasoning = { effort = "high" } }
+
+# Uses Sara's separate OpenRouter account; other model credentials are unchanged.
+[models."gemini-4-carbon"]
+provider = "openai_chat"
+model = "google/gemini-4-carbon"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "SARA_OPENROUTER_API_KEY"
+max_tokens = 33000
+timeout = 900
+max_retries = 0
+deadline_seconds = 900
+extra_body = { reasoning = { effort = "high" } }
+
+# Fresh original flagship run using Sara's separate OpenRouter account.
+[models."inkling-flagship"]
+provider = "openai_chat"
+model = "thinkingmachines/inkling"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "SARA_OPENROUTER_API_KEY"
 max_tokens = 33000
 timeout = 900
 max_retries = 0

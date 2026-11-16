@@ -118,6 +118,7 @@ destination = "judgment.json"
         shutil.copyfile(source, agent / name)
     write(agent / "requirements.txt", (BENCH / "requirements.txt").read_text())
     modal_secret = "  MODAL_INFERENCE_API_KEY: ykt-modal-inference-api-key\n" if any(model.get("api_key_env") == "MODAL_INFERENCE_API_KEY" for model in cfg.values()) else ""
+    sara_secret = "  SARA_OPENROUTER_API_KEY: ykt-sara-openrouter-api-key\n" if any(model.get("api_key_env") == "SARA_OPENROUTER_API_KEY" for model in cfg.values()) else ""
     write(agent / "contract.yaml", '''name: yakut-text-model
 install_cmd: python -m pip install -r requirements.txt
 run_cmd: >-
@@ -138,7 +139,7 @@ secrets:
   ANTHROPIC_API_KEY: ykt-anthropic-api-key
   OPENROUTER_API_KEY: ykt-openrouter-api-key
   YANDEX_GIGACHAT_API_KEY: ykt-gigachat-api-key
-''' + modal_secret + '''output_artifacts:
+''' + modal_secret + sara_secret + '''output_artifacts:
   - path: artifacts/response.json
     source: /workspace/response.json
 ''')

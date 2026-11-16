@@ -19,7 +19,7 @@ def render(snapshot):
     lines = ["# Yakut Benchmark Leaderboard", "", "## vals_90", "",
              f"Snapshot: {snapshot['updated_utc']}. Scores are percentages.", "",
              status + " Partial scores use graded questions only;",
-             "their denominators differ and they are not final rankings. API failures",
+             "their denominators differ and they are not final rankings. Failed tasks",
              "remain ungraded. Grade columns show accuracy percentages.",
              "Bold accuracy marks the best completed run; bold token usage marks the largest observed report.", "",
              "| Model Name | Company | All | Partial credit | Grade 1 | Grade 2 | Grade 3 | Grade 4 | Graded | Max reported output tokens | Over limit | Status |",
@@ -35,7 +35,7 @@ def render(snapshot):
         for grade in ("1", "2", "3", "4"):
             cell = row["grades"][grade]
             grades.append(score(cell["accuracy"]))
-        status = "Complete" if row.get("complete") else ("API errors" if row["status"] == "ERROR" else "Running")
+        status = "Complete" if row.get("complete") else ("Run errors" if row["status"] == "ERROR" else "Running")
         accuracy = score(row.get("accuracy"))
         if row.get("complete") and row.get("accuracy") == best_accuracy:
             accuracy = f"**{accuracy}**"
@@ -51,8 +51,8 @@ def render(snapshot):
         lines += ["", extended]
     if any(row["model"] in ("qwen-3.8-2.4t-a95b", "inkling-nvfp4", "muse-spark-open", "kimi-k3.1-pro") for row in rows):
         lines += ["", "The expanded Modal runs use Muse Spark Open, Kimi K3.1 Pro, Qwen3.8 2.4T A95B, and Inkling NVFP4.",
-                  "Qwen3.8 2.4T A95B replaces the Max-0902 row; Inkling NVFP4 replaces the original Inkling row.",
-                  "Both replacements are fresh 90-question runs. Earlier variant scores remain archived in the run records and are not merged.",
+                  "Qwen3.8 2.4T A95B replaces the Max-0902 row. Inkling NVFP4 and the fresh Inkling flagship evaluation have separate rows.",
+                  "Gemini 4 Carbon replaces the empty Argon row. Earlier variant scores remain archived in the run records and are not merged.",
                   "[Modal run settings and IDs](valkyrie/modal_round4.json) · [Modal model configuration](models_vals_modal.toml)"]
     lines += ["", "Two questions have unspecified grades; they count in All, but not in grade columns.",
               "Twelve source rows carry picture flags; solvers receive text only. All 90 supplied rows are retained.", "",

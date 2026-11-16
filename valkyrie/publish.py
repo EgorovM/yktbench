@@ -20,6 +20,7 @@ KEYS = {
     "OPENAI_API_KEY": "ykt-openai-api-key",
     "ANTHROPIC_API_KEY": "ykt-anthropic-api-key",
     "OPENROUTER_API_KEY": "ykt-openrouter-api-key",
+    "SARA_OPENROUTER_API_KEY": "ykt-sara-openrouter-api-key",
     "YANDEX_GIGACHAT_API_KEY": "ykt-gigachat-api-key",
     "MODAL_INFERENCE_API_KEY": "ykt-modal-inference-api-key",
 }

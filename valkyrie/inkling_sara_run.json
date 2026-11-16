@@ -1,0 +1,12 @@
+{
+  "model": "inkling-flagship",
+  "run_id": "1e31e4ec-5a7a-403b-a986-cb7c88cfbf9b",
+  "returncode": 0,
+  "error": null,
+  "inference_provider": "openrouter",
+  "credential_env": "SARA_OPENROUTER_API_KEY",
+  "agent": "yakut-text-expanded-v8",
+  "dataset_version": "v-166c93db5539",
+  "concurrency": 8,
+  "fresh_full_set": true
+}

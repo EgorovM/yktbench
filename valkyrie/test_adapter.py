@@ -64,6 +64,26 @@ class AdapterTests(unittest.TestCase):
         self.assertIn(item["eval_instruction"], native)
         self.assertNotIn(item["eval_instruction"], build.ykt_eval.solver_prompt(item))
 
+    def test_gemini_carbon_gets_a_separate_secret_binding(self):
+        config = self.root / "models.toml"
+        config.write_text('''[models."sol-6.1"]
+provider = "openai_responses"
+model = "gpt-6.1-sol"
+api_key_env = "OPENAI_API_KEY"
+max_tokens = 16000
+[models."gemini-4-carbon"]
+provider = "openai_chat"
+model = "google/gemini-4-carbon"
+api_key_env = "SARA_OPENROUTER_API_KEY"
+base_url = "https://openrouter.ai/api/v1"
+max_tokens = 33000
+''')
+        out = self.root / "carbon"
+        build.build(self.data, self.system, out, models_path=config)
+        contract = (out / "agent/contract.yaml").read_text()
+        self.assertIn("SARA_OPENROUTER_API_KEY: ykt-sara-openrouter-api-key", contract)
+        self.assertIn("OPENROUTER_API_KEY: ykt-openrouter-api-key", contract)
+
     def test_agent_imports_bundle_modules_with_python_safe_path(self):
         out = self.root / "isolated"
         build.build(self.data, self.system, out)
