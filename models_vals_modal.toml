@@ -227,13 +227,47 @@ deadline_seconds = 900
 extra_body = { reasoning_effort = "high" }
 
 # Fresh full-set run; preserves previous partial model results in the run archive.
+# Same NVFP4 weights, dedicated endpoint for remaining queued questions.
 [models."inkling-nvfp4"]
 provider = "openai_chat"
-model = "thinkingmachines/Inkling-NVFP4"
-base_url = "https://eginovasardaana--ep-ykt-vals90-inkling-nvfp4-server.us-west.modal.direct/v1"
+model = "ykt-vals90-inkling-nvfp4-dedicated"
+base_url = "https://eginovasardaana--ep-ykt-vals90-inkling-nvfp4-dedicated-server.us-west.modal.direct/v1"
 api_key_env = "MODAL_INFERENCE_API_KEY"
 max_tokens = 33000
 timeout = 900
 max_retries = 0
 deadline_seconds = 900
 extra_body = { reasoning_effort = "high" }
+
+[models."mistral-large-4"]
+provider = "openai_chat"
+model = "mistralai/mistral-large-4-0"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 33000
+timeout = 900
+max_retries = 0
+deadline_seconds = 900
+extra_body = { reasoning = { effort = "high" } }
+
+[models."minimax-m3.1-flash"]
+provider = "openai_chat"
+model = "minimax/minimax-m3.1-flash"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 33000
+timeout = 900
+max_retries = 0
+deadline_seconds = 900
+extra_body = { reasoning = { effort = "high" } }
+
+[models."opus-5.5-eval"]
+provider = "openai_chat"
+model = "anthropic/claude-opus-5.5"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+max_tokens = 33000
+timeout = 900
+max_retries = 0
+deadline_seconds = 900
+extra_body = { reasoning = { effort = "high" } }

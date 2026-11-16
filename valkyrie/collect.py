@@ -12,6 +12,7 @@ from uuid import UUID
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from model_names import model_company, model_name
+from leaderboard_metrics import response_files
 
 
 def summarize(results, total):
@@ -99,9 +100,19 @@ def main():
         for row in rows:
             if not row.get("complete"):
                 partial_output = args.out.parent / "partial_usage" / row["model"]
-                observed = {}
-                for path in sorted(partial_output.rglob("response.json")):
-                    observed[path.relative_to(partial_output).parts[0]] = json.loads(path.read_text())
+                graded_ids = set(row.get("task_rewards", {}))
+                observed = response_files(partial_output, graded_ids)
+                for run_id in row["run_ids"]:
+                    cached = Path("results/leaderboard_metrics/outputs") / run_id
+                    observed.update(response_files(cached, graded_ids))
+                    missing = graded_ids - observed.keys()
+                    if missing:
+                        output = partial_output / run_id / f"graded-{len(graded_ids)}"
+                        result = subprocess.run(["valkyrie", "run", "outputs", run_id,
+                                                 "--task-ids", ",".join(sorted(missing)),
+                                                 "--output-dir", str(output)], capture_output=True, text=True)
+                        if result.returncode == 0:
+                            observed.update(response_files(output, graded_ids))
                 if observed:
                     row["max_output_tokens"] = max(r.get("output_tokens") or 0 for r in observed.values())
                     row["over_limit"] = sum(bool(r.get("over_limit")) for r in observed.values())

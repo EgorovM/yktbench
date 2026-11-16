@@ -125,3 +125,21 @@ DeepSeek V4 Pro, Qwen3.8 Flash-Next, and Gemma 4 31B still fail with
 `B200 GPUs are not available on the Starter plan`. No plan upgrade was made.
 Shared endpoints bill per token; included Modal plan credits do not cover
 shared endpoint usage. Dedicated endpoints bill for compute resources.
+
+## Additional OpenRouter models — November 16, 2026
+
+These independent 90-question runs use agent `yakut-text-expanded-v6` and
+dataset `yakut/vals-90@v-166c93db5539` (see the machine-readable record for
+the immutable version). Inference uses OpenRouter; Modal hosts the task
+sandboxes. The solver/judge prompts and answer deadlines are unchanged.
+
+| Model Name | Company | Concurrent questions | Run ID |
+|---|---|---:|---|
+| Mistral Large 4 | Mistral AI | 16 | `68907664-2ca6-4a51-8087-eba7f8329e5e` |
+| MiniMax M3.1 Flash | MiniMax | 16 | `0f3cfd53-5d8c-49fc-9514-931372f8ada2` |
+| Claude Opus 5.5 | Anthropic | 8 | `ee5e19ac-6533-4259-8957-ce3b0403a75d` |
+
+Each requests high reasoning and 33,000 output tokens, with a 900-second
+answer deadline. The original Opus judge configuration is unchanged;
+`opus-5.5-eval` is a separate solver configuration using OpenRouter.
+[Settings and frozen hashes](openrouter_round5.json).

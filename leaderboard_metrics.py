@@ -44,6 +44,9 @@ PRICING_MODELS = {
     "muse-spark-open": "meta/muse-spark-open",
     "kimi-k3.1-pro": "moonshotai/kimi-k3.1-pro",
     "qwen-3.8-2.4t-a95b": "qwen/qwen3.8-2.4t-a95b",
+    "opus-5.5-eval": "anthropic/claude-opus-5.5",
+    "mistral-large-4": "mistralai/mistral-large-4-0",
+    "minimax-m3.1-flash": "minimax/minimax-m3.1-flash",
     "qwen-3.8-max": "qwen/qwen3.8-max-0902",
     "qwen-3.8-flash": "qwen/qwen3.8-flash",
     "qwen-3.8-27b": "qwen/qwen3.8-27b",
@@ -137,10 +140,11 @@ def hosted_records(base, models, item_ids, download=False):
             continue
         archive = None
         for folder in (base / "hosted/artifacts" / model / run_id,
-                       base / "hosted/artifacts" / model, cache / run_id):
+                       base / "hosted/artifacts" / model,
+                       base / "partial_usage" / model / run_id, cache / run_id):
             # Filtered task archives omit yakut.json. This cache directory is
             # already keyed by run ID and is published atomically by the CLI.
-            if folder == cache / run_id and folder.is_dir():
+            if folder in (cache / run_id, base / "partial_usage" / model / run_id) and folder.is_dir():
                 archive = folder
                 break
             metadata = folder / "yakut.json"

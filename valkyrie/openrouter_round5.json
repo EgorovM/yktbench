@@ -1,0 +1,44 @@
+{
+  "dataset": "yakut/vals-90@v-166c93db5539",
+  "agent": "yakut-text-expanded-v6",
+  "dataset_sha256": "eca5fd5e00393d61db89751f1e068a33e3b36dde403fc697247346cd28c90e85",
+  "solver_instructions_sha256": "48cd29c59d668286e46b7dbb39fa830ec69925927ad336c2cc340f58950d6bb0",
+  "judge_instructions_sha256": "18cdebffb0ddaba085ebb4439acae5fa20d5146ac8f03bf2059c447bd6a6de7d",
+  "requested_output_tokens": 33000,
+  "answer_deadline_seconds": 900,
+  "runs": [
+    {
+      "model": "mistral-large-4",
+      "run_id": "68907664-2ca6-4a51-8087-eba7f8329e5e",
+      "returncode": 0,
+      "error": null,
+      "inference_provider": "openrouter",
+      "agent": "yakut-text-expanded-v6",
+      "dataset_version": "v-166c93db5539",
+      "concurrency": 16,
+      "fresh_full_set": true
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "run_id": "0f3cfd53-5d8c-49fc-9514-931372f8ada2",
+      "returncode": 0,
+      "error": null,
+      "inference_provider": "openrouter",
+      "agent": "yakut-text-expanded-v6",
+      "dataset_version": "v-166c93db5539",
+      "concurrency": 16,
+      "fresh_full_set": true
+    },
+    {
+      "model": "opus-5.5-eval",
+      "run_id": "ee5e19ac-6533-4259-8957-ce3b0403a75d",
+      "returncode": 0,
+      "error": null,
+      "inference_provider": "openrouter",
+      "agent": "yakut-text-expanded-v6",
+      "dataset_version": "v-166c93db5539",
+      "concurrency": 8,
+      "fresh_full_set": true
+    }
+  ]
+}
