@@ -1,4 +1,5 @@
 import json
+from decimal import Decimal
 from pathlib import Path
 import tempfile
 import unittest
@@ -8,6 +9,35 @@ import leaderboard_metrics as metrics
 
 
 class MetricsTests(unittest.TestCase):
+    def test_catalog_prices_are_per_million_and_gigachat_uses_supplied_rates(self):
+        catalog = {"data": [{"id": model_id, "pricing": {"prompt": "0.000002", "completion": "0.00001"}}
+                            for model_id in metrics.PRICING_MODELS.values()]}
+        snapshot = metrics.pricing_snapshot(catalog, "test")
+        self.assertEqual(snapshot["models"]["astra"]["input_usd_per_million"], 2)
+        self.assertEqual(snapshot["models"]["astra"]["output_usd_per_million"], 10)
+        giga = snapshot["models"]["gigachat-3.5"]
+        self.assertEqual(giga["input_usd_per_million"], 1.07)
+        self.assertEqual(giga["output_usd_per_million"], 3.21)
+        self.assertEqual(metrics.estimated_cost({"input_tokens": 33650, "output_tokens": 8263}, giga),
+                         Decimal("0.06252973"))
+
+    def test_estimates_require_usage_and_rates_but_zero_usage_is_valid(self):
+        price = {"input_usd_per_million": 8, "output_usd_per_million": 40}
+        self.assertEqual(metrics.estimated_cost({"input_tokens": 100, "output_tokens": 200}, price), Decimal("0.0088"))
+        self.assertEqual(metrics.estimated_cost({"input_tokens": 0, "output_tokens": 0}, price), 0)
+        self.assertIsNone(metrics.estimated_cost({"input_tokens": None, "output_tokens": 1}, price))
+        self.assertIsNone(metrics.estimated_cost({"input_tokens": 1, "output_tokens": 1}, {}))
+
+    def test_render_keeps_prices_next_to_estimate_and_actual_charges_separate(self):
+        row = metrics.summarize({"q1": {"input_tokens": 1000, "output_tokens": 2000,
+                                               "response_id": "gen-1"}}, 90, {"gen-1": {"total_cost": 0.01}})
+        snapshot = {"updated_utc": "test", "pricing": {"retrieved_utc": "test", "models": {
+            "astra": {"input_usd_per_million": 10, "output_usd_per_million": 50}}},
+            "datasets": {"vals_90": {"questions": 90, "models": {"astra": row}}}}
+        text = metrics.render("vals_90", ["astra"], snapshot)
+        self.assertIn("| Input $/1M | Output $/1M | Estimated cost (USD) | Known API cost (USD) |", text)
+        self.assertIn("| 1,000† | 2,000† | 1/90 | 10 | 50 | 0.1100*† | 0.0100 | 1/90 |", text)
+
     def test_zero_latency_timeout_and_partial_usage_are_counted(self):
         records = {
             "a": {"latency_s": 0.0, "input_tokens": 0, "output_tokens": 0},

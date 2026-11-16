@@ -1,8 +1,9 @@
-"""Collect final-response latency and recorded API charges for published boards."""
+"""Publish final-response latency, recorded charges, and token-price estimates."""
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
+from decimal import Decimal
 import json
 import math
 import os
@@ -27,6 +28,56 @@ BOARDS = {
     "v1": ("LEADERBOARD_60.md", "data/ykt_primary_v1.jsonl", "results/v1"),
     "vals_90": ("LEADERBOARD_90.md", "data/vals_90.jsonl", "results/vals_90"),
 }
+PRICING_URL = "https://openrouter.ai/api/v1/models"
+PRICING_MODELS = {
+    "fable-5.2": "anthropic/claude-fable-5.2",
+    "astra": "openai/gpt-6-astra",
+    "sol-6.1-eval": "openai/gpt-6.1-sol",
+    "gemini-4-argon": "google/gemini-4-argon",
+    "grok-4.7": "x-ai/grok-4.7",
+    "deepseek-v4": "deepseek/deepseek-v4-pro",
+    "deepseek-v4.1-flash": "deepseek/deepseek-v4.1-flash",
+    "glm-5.3": "z-ai/glm-5.3",
+    "inkling-flagship": "thinkingmachines/inkling",
+    "inkling-2-small": "thinkingmachines/inkling-2-small",
+    "qwen-3.8-max": "qwen/qwen3.8-max-0902",
+    "qwen-3.8-flash": "qwen/qwen3.8-flash",
+    "qwen-3.8-27b": "qwen/qwen3.8-27b",
+    "gemma-4-31b": "google/gemma-4-31b-it",
+}
+
+
+def pricing_snapshot(catalog, retrieved_utc):
+    """Convert exact paid model IDs' base USD/token rates to USD/million."""
+    by_id = {model["id"]: model for model in catalog["data"]}
+    models = {}
+    for alias, model_id in PRICING_MODELS.items():
+        price = by_id[model_id]["pricing"]
+        models[alias] = {
+            "model_id": model_id,
+            "input_usd_per_million": float(Decimal(price["prompt"]) * 1_000_000),
+            "output_usd_per_million": float(Decimal(price["completion"]) * 1_000_000),
+            "source": "https://openrouter.ai/" + model_id,
+            "catalog_pricing": price,
+        }
+    models["gigachat-3.5"] = {
+        "model_id": "ai-sage/GigaChat3.5-432B-A28B",
+        "input_usd_per_million": 1.07, "output_usd_per_million": 3.21,
+        "source": "User-supplied USD rates on 2026-11-16",
+    }
+    return {"retrieved_utc": retrieved_utc, "currency": "USD", "unit": "per 1,000,000 tokens",
+            "source": PRICING_URL, "basis": "Standard base input/output rates; no caching, batch, time-of-day, or context-tier adjustments",
+            "models": models}
+
+
+def estimated_cost(row, price):
+    """Price reported tokens only; missing usage/rates remain unknown."""
+    keys = ("input_tokens", "output_tokens")
+    rates = ("input_usd_per_million", "output_usd_per_million")
+    if any(row.get(key) is None for key in keys) or any(price.get(key) is None for key in rates):
+        return None
+    return sum(Decimal(str(row[key])) * Decimal(str(price[rate]))
+               for key, rate in zip(keys, rates)) / 1_000_000
 
 
 def read_jsonl(path):
@@ -164,30 +215,41 @@ def render(dataset, models, snapshot=None):
         snapshot = json.loads(SNAPSHOT.read_text()) if SNAPSHOT.exists() else {"datasets": {}}
     saved = snapshot.get("datasets", {}).get(dataset, {})
     rows = saved.get("models", {})
+    pricing = snapshot.get("pricing", {})
     if not rows:
         return ""
     lines = [START, "", "### Cost and latency", "",
              f"Metrics snapshot: {snapshot['updated_utc']}. Latencies are seconds per final selected response; p95 uses nearest rank.",
              "Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.",
-             "Token totals contain reported usage only; † marks incomplete usage. Coverage is out of the full question set.", "",
-             "| Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Known API cost (USD) | Cost coverage |",
-             "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
+             "Token totals contain reported usage only; † marks usage or estimates covering fewer than all questions. Coverage is out of the full question set.",
+             f"Pricing snapshot: {pricing.get('retrieved_utc', 'unavailable')}. Input and output prices are USD per 1M tokens.", "",
+             "| Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Usage coverage | Input $/1M | Output $/1M | Estimated cost (USD) | Known API cost (USD) | Cost coverage |",
+             "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for model in models:
         row = rows.get(model, {})
         n = row.get("questions", saved.get("questions", 0))
         number = lambda key: f"{row[key]:.1f}" if row.get(key) is not None else "—"
-        incomplete = row.get("usage_records", 0) < row.get("response_records", 0)
+        incomplete = row.get("usage_records", 0) < n
         tokens = lambda key: (f"{row[key]:,}" + ("†" if incomplete else "")) if row.get(key) is not None else "—"
         cost = f"{row['known_api_cost_usd']:.4f}" if row.get("known_api_cost_usd") is not None else "—"
+        price = pricing.get("models", {}).get(model, {})
+        rate = lambda key: f"{price[key]:g}" if price.get(key) is not None else "—"
+        estimate = estimated_cost(row, price)
+        estimate_text = f"{estimate:.4f}*" + ("†" if incomplete else "") if estimate is not None else "—"
         name = model_name(model) + (" **(judge model)**" if model == "sol-6.1-eval" else "")
         lines.append(f"| {name} | {model_company(model)} | {row.get('latency_records', 0)}/{n} | "
                      + " | ".join(number(key) for key in ("mean_s", "median_s", "p95_s", "max_s"))
-                     + f" | {row.get('timeouts', 0)} | {tokens('input_tokens')} | {tokens('output_tokens')} | {cost} | {row.get('costed_answers', 0)}/{n} |")
-    lines += ["", "Known API cost is the sum of retrieved OpenRouter charges for the selected answers, not total benchmark spend.",
+                     + f" | {row.get('timeouts', 0)} | {tokens('input_tokens')} | {tokens('output_tokens')} | {row.get('usage_records', 0)}/{n} | "
+                     + f"{rate('input_usd_per_million')} | {rate('output_usd_per_million')} | {estimate_text} | {cost} | {row.get('costed_answers', 0)}/{n} |")
+    lines += ["", "\\* Estimated cost = (reported input tokens × input price + reported output tokens × output price) / 1,000,000.",
+              "Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.",
+              "These are API-equivalent estimates for logged usage, not historical bills or Modal GPU costs. Missing usage is not extrapolated to the full dataset.",
+              "Caching, batch discounts, time-of-day offers, and context-tier adjustments are not applied; recorded charges can differ.",
+              "Known API cost is the sum of retrieved OpenRouter charges for the selected answers, not total benchmark spend.",
               "A dash means unavailable, not free. Cost coverage counts answers with a retrieved charge; duplicate request IDs are charged once.",
               "Judging, discarded/failed attempts, Modal token or GPU hosting charges (including warmup), storage, and net credit adjustments are excluded.",
               "Provider changes and native reasoning translations remain documented in the run notes; latency figures are not measurements of thinking time.",
-              "[Metric snapshot and definitions](data/leaderboard_metrics.json) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)",
+              "[Metric and pricing snapshot](data/leaderboard_metrics.json) · [Current OpenRouter pricing catalog](https://openrouter.ai/api/v1/models) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)",
               "", END]
     return "\n".join(lines)
 
@@ -213,7 +275,12 @@ def main():
     parser.add_argument("--fetch-costs", action="store_true")
     parser.add_argument("--download-outputs", action="store_true")
     parser.add_argument("--publish", action="store_true")
+    parser.add_argument("--refresh-pricing", action="store_true", help="Refresh public OpenRouter base token rates; retain user-supplied GigaChat rates")
     args = parser.parse_args()
+    pricing = json.loads(SNAPSHOT.read_text()).get("pricing", {}) if SNAPSHOT.exists() else {}
+    if args.refresh_pricing:
+        with urllib.request.urlopen(PRICING_URL, timeout=20) as response:
+            pricing = pricing_snapshot(json.load(response), datetime.now(timezone.utc).isoformat(timespec="seconds"))
     selected, model_orders = {}, {}
     for dataset, (board, data, base) in BOARDS.items():
         models = published_models(ROOT / board)
@@ -244,6 +311,7 @@ def main():
     snapshot = {"updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                 "cost_currency": "USD", "latency_unit": "seconds", "percentile_method": "nearest rank",
                 "scope": "Final selected solver responses; no judge, discarded attempts, Modal hosting, or credits",
+                "pricing": pricing,
                 "datasets": {}}
     for dataset, (expected, models) in selected.items():
         snapshot["datasets"][dataset] = {"questions": expected, "models": {

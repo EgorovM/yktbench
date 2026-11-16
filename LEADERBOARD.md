@@ -28,28 +28,33 @@ the mean share of parts correct.  Missing, refused, and truncated answers count 
 
 ### Cost and latency
 
-Metrics snapshot: 2026-11-16T01:54:52+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
+Metrics snapshot: 2026-11-16T02:22:54+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
 Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.
-Token totals contain reported usage only; † marks incomplete usage. Coverage is out of the full question set.
+Token totals contain reported usage only; † marks usage or estimates covering fewer than all questions. Coverage is out of the full question set.
+Pricing snapshot: 2026-11-16T02:22:54+00:00. Input and output prices are USD per 1M tokens.
 
-| Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Known API cost (USD) | Cost coverage |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Claude Fable 5.2 | Anthropic | 61/61 | 9.5 | 7.0 | 23.2 | 39.0 | 0 | 24,990 | 47,101 | — | 0/61 |
-| Gemini 4 Argon | Google | 61/61 | 66.9 | 24.3 | 229.0 | 686.0 | 0 | 20,789 | 229,929 | 2.3409 | 61/61 |
-| GPT-6 Astra | OpenAI | 61/61 | 42.9 | 20.9 | 145.0 | 230.5 | 0 | 18,234 | 92,489 | — | 0/61 |
-| Grok 4.7 | SpaceX (xAI) | 61/61 | 535.2 | 462.6 | 1308.4 | 1844.0 | 0 | 93,796 | 1,657,983 | 10.0151 | 61/61 |
-| Inkling | Thinking Machines Lab | 61/61 | 92.2 | 62.0 | 272.9 | 353.7 | 0 | 18,722 | 497,406 | 2.0278 | 61/61 |
-| DeepSeek V4 Pro | DeepSeek | 61/61 | 92.7 | 50.2 | 408.5 | 578.8 | 0 | 18,874 | 430,719 | 0.3279 | 61/61 |
-| DeepSeek V4.1 Flash | DeepSeek | 61/61 | 53.5 | 39.0 | 153.1 | 240.8 | 0 | 20,382 | 629,619 | 0.3662 | 61/61 |
-| Inkling 2 Small | Thinking Machines Lab | 61/61 | 59.7 | 39.5 | 209.8 | 254.1 | 0 | 20,183 | 688,224 | 0.6352 | 61/61 |
-| GLM 5.3 | Z.ai | 61/61 | 128.8 | 78.5 | 287.5 | 400.6 | 0 | 19,614 | 1,041,369 | 1.8543 | 61/61 |
-| Gemma 4 31B | Google | 61/61 | 14.3 | 5.2 | 81.7 | 215.2 | 0 | 19,666 | 107,087 | 0.0458 | 61/61 |
+| Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Usage coverage | Input $/1M | Output $/1M | Estimated cost (USD) | Known API cost (USD) | Cost coverage |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Claude Fable 5.2 | Anthropic | 61/61 | 9.5 | 7.0 | 23.2 | 39.0 | 0 | 24,990 | 47,101 | 61/61 | 8 | 40 | 2.0840* | — | 0/61 |
+| Gemini 4 Argon | Google | 61/61 | 66.9 | 24.3 | 229.0 | 686.0 | 0 | 20,789 | 229,929 | 61/61 | 2 | 10 | 2.3409* | 2.3409 | 61/61 |
+| GPT-6 Astra | OpenAI | 61/61 | 42.9 | 20.9 | 145.0 | 230.5 | 0 | 18,234 | 92,489 | 61/61 | 10 | 50 | 4.8068* | — | 0/61 |
+| Grok 4.7 | SpaceX (xAI) | 61/61 | 535.2 | 462.6 | 1308.4 | 1844.0 | 0 | 93,796 | 1,657,983 | 61/61 | 2 | 6 | 10.1355* | 10.0151 | 61/61 |
+| Inkling | Thinking Machines Lab | 61/61 | 92.2 | 62.0 | 272.9 | 353.7 | 0 | 18,722 | 497,406 | 61/61 | 1 | 4.05 | 2.0332* | 2.0278 | 61/61 |
+| DeepSeek V4 Pro | DeepSeek | 61/61 | 92.7 | 50.2 | 408.5 | 578.8 | 0 | 18,874 | 430,719 | 61/61 | 0.9 | 1.5 | 0.6631* | 0.3279 | 61/61 |
+| DeepSeek V4.1 Flash | DeepSeek | 61/61 | 53.5 | 39.0 | 153.1 | 240.8 | 0 | 20,382 | 629,619 | 61/61 | 0.14 | 0.42 | 0.2673* | 0.3662 | 61/61 |
+| Inkling 2 Small | Thinking Machines Lab | 61/61 | 59.7 | 39.5 | 209.8 | 254.1 | 0 | 20,183 | 688,224 | 61/61 | 0.3 | 1 | 0.6943* | 0.6352 | 61/61 |
+| GLM 5.3 | Z.ai | 61/61 | 128.8 | 78.5 | 287.5 | 400.6 | 0 | 19,614 | 1,041,369 | 61/61 | 0.0699 | 1.4 | 1.4593* | 1.8543 | 61/61 |
+| Gemma 4 31B | Google | 61/61 | 14.3 | 5.2 | 81.7 | 215.2 | 0 | 19,666 | 107,087 | 61/61 | 0.2 | 0.4 | 0.0468* | 0.0458 | 61/61 |
 
+\* Estimated cost = (reported input tokens × input price + reported output tokens × output price) / 1,000,000.
+Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.
+These are API-equivalent estimates for logged usage, not historical bills or Modal GPU costs. Missing usage is not extrapolated to the full dataset.
+Caching, batch discounts, time-of-day offers, and context-tier adjustments are not applied; recorded charges can differ.
 Known API cost is the sum of retrieved OpenRouter charges for the selected answers, not total benchmark spend.
 A dash means unavailable, not free. Cost coverage counts answers with a retrieved charge; duplicate request IDs are charged once.
 Judging, discarded/failed attempts, Modal token or GPU hosting charges (including warmup), storage, and net credit adjustments are excluded.
 Provider changes and native reasoning translations remain documented in the run notes; latency figures are not measurements of thinking time.
-[Metric snapshot and definitions](data/leaderboard_metrics.json) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)
+[Metric and pricing snapshot](data/leaderboard_metrics.json) · [Current OpenRouter pricing catalog](https://openrouter.ai/api/v1/models) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)
 
 <!-- COST_LATENCY_END -->
 

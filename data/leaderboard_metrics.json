@@ -1,9 +1,217 @@
 {
-  "updated_utc": "2026-11-16T01:54:52+00:00",
+  "updated_utc": "2026-11-16T02:22:54+00:00",
   "cost_currency": "USD",
   "latency_unit": "seconds",
   "percentile_method": "nearest rank",
   "scope": "Final selected solver responses; no judge, discarded attempts, Modal hosting, or credits",
+  "pricing": {
+    "retrieved_utc": "2026-11-16T02:22:54+00:00",
+    "currency": "USD",
+    "unit": "per 1,000,000 tokens",
+    "source": "https://openrouter.ai/api/v1/models",
+    "basis": "Standard base input/output rates; no caching, batch, time-of-day, or context-tier adjustments",
+    "models": {
+      "fable-5.2": {
+        "model_id": "anthropic/claude-fable-5.2",
+        "input_usd_per_million": 8.0,
+        "output_usd_per_million": 40.0,
+        "source": "https://openrouter.ai/anthropic/claude-fable-5.2",
+        "catalog_pricing": {
+          "prompt": "0.000008",
+          "completion": "0.00004",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000002",
+          "input_cache_write": "0.00001",
+          "input_cache_write_1h": "0.000016"
+        }
+      },
+      "astra": {
+        "model_id": "openai/gpt-6-astra",
+        "input_usd_per_million": 10.0,
+        "output_usd_per_million": 50.0,
+        "source": "https://openrouter.ai/openai/gpt-6-astra",
+        "catalog_pricing": {
+          "prompt": "0.00001",
+          "completion": "0.00005",
+          "web_search": "0.01",
+          "input_cache_read": "0.000001",
+          "input_cache_write": "0.0000125",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.00002",
+              "completion": "0.000075",
+              "input_cache_read": "0.000002",
+              "input_cache_write": "0.000025"
+            }
+          ]
+        }
+      },
+      "sol-6.1-eval": {
+        "model_id": "openai/gpt-6.1-sol",
+        "input_usd_per_million": 2.0,
+        "output_usd_per_million": 10.0,
+        "source": "https://openrouter.ai/openai/gpt-6.1-sol",
+        "catalog_pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000025",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000004",
+              "completion": "0.000015",
+              "input_cache_read": "0.0000002",
+              "input_cache_write": "0.000005"
+            }
+          ]
+        }
+      },
+      "gemini-4-argon": {
+        "model_id": "google/gemini-4-argon",
+        "input_usd_per_million": 2.0,
+        "output_usd_per_million": 10.0,
+        "source": "https://openrouter.ai/google/gemini-4-argon",
+        "catalog_pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "image": "0.000002",
+          "audio": "0.000002",
+          "input_audio_cache": "0.0000001",
+          "web_search": "0.014",
+          "internal_reasoning": "0.00001",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000001875"
+        }
+      },
+      "grok-4.7": {
+        "model_id": "x-ai/grok-4.7",
+        "input_usd_per_million": 2.0,
+        "output_usd_per_million": 6.0,
+        "source": "https://openrouter.ai/x-ai/grok-4.7",
+        "catalog_pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006",
+          "web_search": "0.005",
+          "input_cache_read": "0.0000005",
+          "overrides": [
+            {
+              "min_prompt_tokens": 200000,
+              "prompt": "0.000004",
+              "completion": "0.000012",
+              "input_cache_read": "0.000001"
+            }
+          ]
+        }
+      },
+      "deepseek-v4": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "input_usd_per_million": 0.9,
+        "output_usd_per_million": 1.5,
+        "source": "https://openrouter.ai/deepseek/deepseek-v4-pro",
+        "catalog_pricing": {
+          "prompt": "0.0000009",
+          "completion": "0.0000015",
+          "input_cache_read": "0.00000025"
+        }
+      },
+      "deepseek-v4.1-flash": {
+        "model_id": "deepseek/deepseek-v4.1-flash",
+        "input_usd_per_million": 0.14,
+        "output_usd_per_million": 0.42,
+        "source": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
+        "catalog_pricing": {
+          "prompt": "0.00000014",
+          "completion": "0.00000042",
+          "input_cache_read": "0.0000000042"
+        }
+      },
+      "glm-5.3": {
+        "model_id": "z-ai/glm-5.3",
+        "input_usd_per_million": 0.0699,
+        "output_usd_per_million": 1.4,
+        "source": "https://openrouter.ai/z-ai/glm-5.3",
+        "catalog_pricing": {
+          "prompt": "0.0000000699",
+          "completion": "0.0000014",
+          "input_cache_read": "0.0000000689"
+        }
+      },
+      "inkling-flagship": {
+        "model_id": "thinkingmachines/inkling",
+        "input_usd_per_million": 1.0,
+        "output_usd_per_million": 4.05,
+        "source": "https://openrouter.ai/thinkingmachines/inkling",
+        "catalog_pricing": {
+          "prompt": "0.000001",
+          "completion": "0.00000405",
+          "input_cache_read": "0.00000017"
+        }
+      },
+      "inkling-2-small": {
+        "model_id": "thinkingmachines/inkling-2-small",
+        "input_usd_per_million": 0.3,
+        "output_usd_per_million": 1.0,
+        "source": "https://openrouter.ai/thinkingmachines/inkling-2-small",
+        "catalog_pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.000001",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "qwen-3.8-max": {
+        "model_id": "qwen/qwen3.8-max-0902",
+        "input_usd_per_million": 2.0,
+        "output_usd_per_million": 6.0,
+        "source": "https://openrouter.ai/qwen/qwen3.8-max-0902",
+        "catalog_pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006",
+          "input_cache_read": "0.00000025"
+        }
+      },
+      "qwen-3.8-flash": {
+        "model_id": "qwen/qwen3.8-flash",
+        "input_usd_per_million": 0.15,
+        "output_usd_per_million": 0.47,
+        "source": "https://openrouter.ai/qwen/qwen3.8-flash",
+        "catalog_pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.00000047",
+          "input_cache_read": "0.000000016"
+        }
+      },
+      "qwen-3.8-27b": {
+        "model_id": "qwen/qwen3.8-27b",
+        "input_usd_per_million": 0.15,
+        "output_usd_per_million": 1.875,
+        "source": "https://openrouter.ai/qwen/qwen3.8-27b",
+        "catalog_pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.000001875",
+          "input_cache_read": "0.0000000375"
+        }
+      },
+      "gemma-4-31b": {
+        "model_id": "google/gemma-4-31b-it",
+        "input_usd_per_million": 0.2,
+        "output_usd_per_million": 0.4,
+        "source": "https://openrouter.ai/google/gemma-4-31b-it",
+        "catalog_pricing": {
+          "prompt": "0.0000002",
+          "completion": "0.0000004"
+        }
+      },
+      "gigachat-3.5": {
+        "model_id": "ai-sage/GigaChat3.5-432B-A28B",
+        "input_usd_per_million": 1.07,
+        "output_usd_per_million": 3.21,
+        "source": "User-supplied USD rates on 2026-11-16"
+      }
+    }
+  },
   "datasets": {
     "v0": {
       "questions": 61,
