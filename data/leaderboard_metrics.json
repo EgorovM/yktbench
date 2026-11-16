@@ -1,11 +1,11 @@
 {
-  "updated_utc": "2026-11-16T02:22:54+00:00",
+  "updated_utc": "2026-11-16T04:53:03+00:00",
   "cost_currency": "USD",
   "latency_unit": "seconds",
   "percentile_method": "nearest rank",
   "scope": "Final selected solver responses; no judge, discarded attempts, Modal hosting, or credits",
   "pricing": {
-    "retrieved_utc": "2026-11-16T02:22:54+00:00",
+    "retrieved_utc": "2026-11-16T04:53:03+00:00",
     "currency": "USD",
     "unit": "per 1,000,000 tokens",
     "source": "https://openrouter.ai/api/v1/models",
@@ -159,6 +159,50 @@
           "prompt": "0.0000003",
           "completion": "0.000001",
           "input_cache_read": "0.00000003"
+        }
+      },
+      "inkling-nvfp4": {
+        "model_id": "thinkingmachines/inkling",
+        "input_usd_per_million": 1.0,
+        "output_usd_per_million": 4.05,
+        "source": "https://openrouter.ai/thinkingmachines/inkling",
+        "catalog_pricing": {
+          "prompt": "0.000001",
+          "completion": "0.00000405",
+          "input_cache_read": "0.00000017"
+        }
+      },
+      "muse-spark-open": {
+        "model_id": "meta/muse-spark-open",
+        "input_usd_per_million": 1.25,
+        "output_usd_per_million": 4.25,
+        "source": "https://openrouter.ai/meta/muse-spark-open",
+        "catalog_pricing": {
+          "prompt": "0.00000125",
+          "completion": "0.00000425",
+          "input_cache_read": "0.00000015"
+        }
+      },
+      "kimi-k3.1-pro": {
+        "model_id": "moonshotai/kimi-k3.1-pro",
+        "input_usd_per_million": 0.2403,
+        "output_usd_per_million": 8.4023,
+        "source": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+        "catalog_pricing": {
+          "prompt": "0.0000002403",
+          "completion": "0.0000084023",
+          "input_cache_read": "0.0000002"
+        }
+      },
+      "qwen-3.8-2.4t-a95b": {
+        "model_id": "qwen/qwen3.8-2.4t-a95b",
+        "input_usd_per_million": 2.0,
+        "output_usd_per_million": 6.0,
+        "source": "https://openrouter.ai/qwen/qwen3.8-2.4t-a95b",
+        "catalog_pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006",
+          "input_cache_read": "0.00000025"
         }
       },
       "qwen-3.8-max": {
@@ -770,38 +814,6 @@
           "costed_requests": 0,
           "known_api_cost_usd": null
         },
-        "qwen-3.8-max": {
-          "questions": 90,
-          "response_records": 1,
-          "latency_records": 1,
-          "mean_s": 153.73705203,
-          "median_s": 153.73705203,
-          "p95_s": 153.73705203,
-          "max_s": 153.73705203,
-          "timeouts": 0,
-          "usage_records": 1,
-          "input_tokens": 305,
-          "output_tokens": 6082,
-          "costed_answers": 1,
-          "costed_requests": 1,
-          "known_api_cost_usd": 0.037102
-        },
-        "inkling-flagship": {
-          "questions": 90,
-          "response_records": 7,
-          "latency_records": 7,
-          "mean_s": 73.79101154971428,
-          "median_s": 37.092454950000004,
-          "p95_s": 222.821370706,
-          "max_s": 222.821370706,
-          "timeouts": 0,
-          "usage_records": 7,
-          "input_tokens": 2115,
-          "output_tokens": 72655,
-          "costed_answers": 7,
-          "costed_requests": 7,
-          "known_api_cost_usd": 0.29604902999999994
-        },
         "deepseek-v4": {
           "questions": 90,
           "response_records": 23,
@@ -851,6 +863,70 @@
           "known_api_cost_usd": 0.036564080000000006
         },
         "gemini-4-argon": {
+          "questions": 90,
+          "response_records": 0,
+          "latency_records": 0,
+          "mean_s": null,
+          "median_s": null,
+          "p95_s": null,
+          "max_s": null,
+          "timeouts": 0,
+          "usage_records": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "costed_answers": 0,
+          "costed_requests": 0,
+          "known_api_cost_usd": null
+        },
+        "muse-spark-open": {
+          "questions": 90,
+          "response_records": 0,
+          "latency_records": 0,
+          "mean_s": null,
+          "median_s": null,
+          "p95_s": null,
+          "max_s": null,
+          "timeouts": 0,
+          "usage_records": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "costed_answers": 0,
+          "costed_requests": 0,
+          "known_api_cost_usd": null
+        },
+        "qwen-3.8-2.4t-a95b": {
+          "questions": 90,
+          "response_records": 0,
+          "latency_records": 0,
+          "mean_s": null,
+          "median_s": null,
+          "p95_s": null,
+          "max_s": null,
+          "timeouts": 0,
+          "usage_records": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "costed_answers": 0,
+          "costed_requests": 0,
+          "known_api_cost_usd": null
+        },
+        "kimi-k3.1-pro": {
+          "questions": 90,
+          "response_records": 0,
+          "latency_records": 0,
+          "mean_s": null,
+          "median_s": null,
+          "p95_s": null,
+          "max_s": null,
+          "timeouts": 0,
+          "usage_records": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "costed_answers": 0,
+          "costed_requests": 0,
+          "known_api_cost_usd": null
+        },
+        "inkling-nvfp4": {
           "questions": 90,
           "response_records": 0,
           "latency_records": 0,

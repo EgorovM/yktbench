@@ -1,0 +1,54 @@
+{
+  "round": "modal-expanded",
+  "dataset": "yakut/vals-90@5",
+  "immutable_version": "v-0d2ba4f2b9e1",
+  "agent": "yakut-text-modal-v4",
+  "dataset_sha256": "eca5fd5e00393d61db89751f1e068a33e3b36dde403fc697247346cd28c90e85",
+  "solver_instructions_sha256": "48cd29c59d668286e46b7dbb39fa830ec69925927ad336c2cc340f58950d6bb0",
+  "judge_instructions_sha256": "18cdebffb0ddaba085ebb4439acae5fa20d5146ac8f03bf2059c447bd6a6de7d",
+  "requested_output_tokens": 33000,
+  "answer_deadline_seconds": 900,
+  "concurrency_per_model": 8,
+  "superseded_models": {
+    "qwen-3.8-max": "qwen-3.8-2.4t-a95b",
+    "inkling-flagship": "inkling-nvfp4"
+  },
+  "models": [
+    {
+      "model": "muse-spark-open",
+      "repo_id": "meta-models/Muse-Spark-Open-816B-A42B",
+      "endpoint_id": "ep-F7b7NF4uQrEZSF7rODhp68",
+      "endpoint_name": "ykt-vals90-muse-spark-open",
+      "serving_mode": "shared",
+      "base_url": "https://eginovasardaana--ep-ykt-vals90-muse-spark-open-server.us-west.modal.direct/v1",
+      "run_id": "8e70e46b-67bd-468b-b1b2-a06ff2a4db28"
+    },
+    {
+      "model": "qwen-3.8-2.4t-a95b",
+      "repo_id": "Qwen/Qwen3.8-2.4T-A95B",
+      "endpoint_id": "ep-FtjvMqC8ksvHyA0RaYcNCg",
+      "endpoint_name": "ykt-vals90-qwen-3.8-2.4t",
+      "serving_mode": "shared",
+      "base_url": "https://eginovasardaana--ep-ykt-vals90-qwen-3-8-2-4t-server.us-west.modal.direct/v1",
+      "run_id": "f3f61471-6fd1-4bb5-90d0-0bcbb47141f4"
+    },
+    {
+      "model": "kimi-k3.1-pro",
+      "repo_id": "moonshotai/Kimi-K3.1-Pro",
+      "endpoint_id": "ep-tqgdE6uok7rjJ4GuWWK4wr",
+      "endpoint_name": "ykt-vals90-kimi-k3.1-pro",
+      "serving_mode": "shared",
+      "base_url": "https://eginovasardaana--ep-ykt-vals90-kimi-k3-1-pro-server.us-west.modal.direct/v1",
+      "run_id": "aafbccc6-2ee5-469c-973e-5d5dd725cd21"
+    },
+    {
+      "model": "inkling-nvfp4",
+      "repo_id": "thinkingmachines/Inkling-NVFP4",
+      "endpoint_id": "ep-chjM3zjgN5HP9uPtHX4aW6",
+      "endpoint_name": "ykt-vals90-inkling-nvfp4",
+      "serving_mode": "shared",
+      "base_url": "https://eginovasardaana--ep-ykt-vals90-inkling-nvfp4-server.us-west.modal.direct/v1",
+      "run_id": "c739bc58-e018-4453-b0f6-8209eb90ea53"
+    }
+  ]
+}

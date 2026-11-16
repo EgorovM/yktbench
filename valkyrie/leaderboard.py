@@ -49,6 +49,11 @@ def render(snapshot):
     extended = render_metrics("vals_90", [row["model"] for row in rows])
     if extended:
         lines += ["", extended]
+    if any(row["model"] in ("qwen-3.8-2.4t-a95b", "inkling-nvfp4", "muse-spark-open", "kimi-k3.1-pro") for row in rows):
+        lines += ["", "The expanded Modal runs use Muse Spark Open, Kimi K3.1 Pro, Qwen3.8 2.4T A95B, and Inkling NVFP4.",
+                  "Qwen3.8 2.4T A95B replaces the Max-0902 row; Inkling NVFP4 replaces the original Inkling row.",
+                  "Both replacements are fresh 90-question runs. Earlier variant scores remain archived in the run records and are not merged.",
+                  "[Modal run settings and IDs](valkyrie/modal_round4.json) · [Modal model configuration](models_vals_modal.toml)"]
     lines += ["", "Two questions have unspecified grades; they count in All, but not in grade columns.",
               "Twelve source rows carry picture flags; solvers receive text only. All 90 supplied rows are retained.", "",
               "Solvers have no browsing or tools, a 900-second answer deadline, and a requested",

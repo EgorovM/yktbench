@@ -1,54 +1,7 @@
 {
-  "updated_utc": "2026-11-15T22:59:26+00:00",
+  "updated_utc": "2026-11-16T04:52:56+00:00",
   "platform": "Valkyrie",
   "rows": [
-    {
-      "graded": 1,
-      "questions": 90,
-      "correct": 1.0,
-      "accuracy": 100.0,
-      "partial": 100.0,
-      "model": "qwen-3.8-max",
-      "run_id": "8768945e-709f-447b-a486-15a0dba17a51",
-      "run_ids": [
-        "8768945e-709f-447b-a486-15a0dba17a51"
-      ],
-      "status": "ERROR",
-      "task_rewards": {
-        "g2p1-L03-004": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        }
-      },
-      "model_name": "Qwen3.8 Max",
-      "company": "Alibaba",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
-      "judge_model": false,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 0,
-          "accuracy": null
-        },
-        "2": {
-          "total": 25,
-          "graded": 1,
-          "accuracy": 100.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 0,
-          "accuracy": null
-        },
-        "4": {
-          "total": 24,
-          "graded": 0,
-          "accuracy": null
-        }
-      }
-    },
     {
       "graded": 90,
       "questions": 90,
@@ -451,77 +404,6 @@
           "total": 24,
           "graded": 24,
           "accuracy": 50.0
-        }
-      }
-    },
-    {
-      "graded": 7,
-      "questions": 90,
-      "correct": 3.0,
-      "accuracy": 42.857142857142854,
-      "partial": 68.57142857142857,
-      "model": "inkling-flagship",
-      "run_id": "747d869c-d2db-4809-9431-23728b19c25e",
-      "run_ids": [
-        "747d869c-d2db-4809-9431-23728b19c25e"
-      ],
-      "status": "ERROR",
-      "task_rewards": {
-        "g3p2-L26-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g4p1-L15-010": {
-          "reward": 0.0,
-          "partial_credit": 0.3333333333333333
-        },
-        "g1-L02-004": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g2p1-L14-006c": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p2-L11-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L02-001": {
-          "reward": 0.0,
-          "partial_credit": 0.8
-        },
-        "g2p1-L03-004": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        }
-      },
-      "model_name": "Inkling",
-      "company": "Thinking Machines Lab",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
-      "judge_model": false,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 1,
-          "accuracy": 0.0
-        },
-        "2": {
-          "total": 25,
-          "graded": 2,
-          "accuracy": 100.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 3,
-          "accuracy": 33.333333333333336
-        },
-        "4": {
-          "total": 24,
-          "graded": 1,
-          "accuracy": 0.0
         }
       }
     },
@@ -4416,6 +4298,174 @@
       "task_rewards": {},
       "model_name": "Gemini 4 Argon",
       "company": "Google",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 0,
+          "accuracy": null
+        },
+        "2": {
+          "total": 25,
+          "graded": 0,
+          "accuracy": null
+        },
+        "3": {
+          "total": 28,
+          "graded": 0,
+          "accuracy": null
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
+        }
+      }
+    },
+    {
+      "graded": 0,
+      "questions": 90,
+      "correct": 0,
+      "accuracy": null,
+      "partial": null,
+      "model": "muse-spark-open",
+      "run_id": "8e70e46b-67bd-468b-b1b2-a06ff2a4db28",
+      "run_ids": [
+        "8e70e46b-67bd-468b-b1b2-a06ff2a4db28"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {},
+      "model_name": "Muse Spark Open",
+      "company": "Meta",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 0,
+          "accuracy": null
+        },
+        "2": {
+          "total": 25,
+          "graded": 0,
+          "accuracy": null
+        },
+        "3": {
+          "total": 28,
+          "graded": 0,
+          "accuracy": null
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
+        }
+      }
+    },
+    {
+      "graded": 0,
+      "questions": 90,
+      "correct": 0,
+      "accuracy": null,
+      "partial": null,
+      "model": "qwen-3.8-2.4t-a95b",
+      "run_id": "f3f61471-6fd1-4bb5-90d0-0bcbb47141f4",
+      "run_ids": [
+        "f3f61471-6fd1-4bb5-90d0-0bcbb47141f4"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {},
+      "model_name": "Qwen3.8 2.4T A95B",
+      "company": "Alibaba",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 0,
+          "accuracy": null
+        },
+        "2": {
+          "total": 25,
+          "graded": 0,
+          "accuracy": null
+        },
+        "3": {
+          "total": 28,
+          "graded": 0,
+          "accuracy": null
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
+        }
+      }
+    },
+    {
+      "graded": 0,
+      "questions": 90,
+      "correct": 0,
+      "accuracy": null,
+      "partial": null,
+      "model": "kimi-k3.1-pro",
+      "run_id": "aafbccc6-2ee5-469c-973e-5d5dd725cd21",
+      "run_ids": [
+        "aafbccc6-2ee5-469c-973e-5d5dd725cd21"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {},
+      "model_name": "Kimi K3.1 Pro",
+      "company": "Moonshot AI",
+      "complete": false,
+      "max_output_tokens": null,
+      "over_limit": null,
+      "judge_model": false,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 0,
+          "accuracy": null
+        },
+        "2": {
+          "total": 25,
+          "graded": 0,
+          "accuracy": null
+        },
+        "3": {
+          "total": 28,
+          "graded": 0,
+          "accuracy": null
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
+        }
+      }
+    },
+    {
+      "graded": 0,
+      "questions": 90,
+      "correct": 0,
+      "accuracy": null,
+      "partial": null,
+      "model": "inkling-nvfp4",
+      "run_id": "c739bc58-e018-4453-b0f6-8209eb90ea53",
+      "run_ids": [
+        "c739bc58-e018-4453-b0f6-8209eb90ea53"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {},
+      "model_name": "Inkling NVFP4",
+      "company": "Thinking Machines Lab",
       "complete": false,
       "max_output_tokens": null,
       "over_limit": null,

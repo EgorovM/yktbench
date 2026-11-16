@@ -102,6 +102,13 @@ class AdapterTests(unittest.TestCase):
         collect.merge_graded(results, {"c": {"rewards": {"reward": 1, "partial_credit": 1}}})
         self.assertEqual(collect.summarize(results, 3)["graded"], 3)
 
+    def test_replaced_variants_are_archived_without_mixing_scores(self):
+        original = {"model": "qwen-3.8-max", "run_id": "old", "superseded_by": "qwen-3.8-2.4t-a95b"}
+        fresh = {"model": "qwen-3.8-2.4t-a95b", "run_id": "new"}
+        retry = {"model": "qwen-3.8-2.4t-a95b", "run_id": "retry"}
+        self.assertEqual(collect.group_runs([original, fresh, retry]),
+                         {"qwen-3.8-2.4t-a95b": [fresh, retry]})
+
     def test_judgment_requires_all_parts_for_full_credit(self):
         result = {"parts": [{"correct": True}, {"correct": False}]}
         self.assertEqual(grade.scores(result), {"reward": 0.0, "partial_credit": 0.5})

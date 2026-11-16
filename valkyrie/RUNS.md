@@ -72,8 +72,9 @@ endpoint. The four graded original answers are retained.
 The managed presets for DeepSeek V4 Pro, Qwen3.8 Flash, and Gemma 4 31B currently
 reject this workspace with a B200/Starter-plan access error. No substitute
 checkpoints are merged into the original scores. Gemini 4 Argon and Qwen3.8 Max
-0902 have no matching native Modal endpoint. The available Inkling NVFP4 variant
-is a distinct serving variant and has not been substituted.
+0902 have no matching native Modal endpoint. At that snapshot, the available
+Inkling NVFP4 variant had not been substituted. The expanded round below uses
+the subsequently approved Qwen and Inkling replacements as fresh runs.
 
 ## Custom H200 recovery queue
 
@@ -85,3 +86,42 @@ Model revisions are pinned in the corresponding server source files.
 Gemma retains non-thinking mode and 16,384 output tokens. Qwen Flash uses its
 native `xhigh` reasoning tier and 33,000 output tokens. Both retain the
 900-second answer deadline and original judge instructions.
+
+## Expanded Modal round — November 16, 2026
+
+Dataset: `yakut/vals-90@5`, immutable tag `v-0d2ba4f2b9e1`.
+Agent: `yakut-text-modal-v4`. All four runs started in parallel at 04:52 UTC,
+with eight concurrent tasks per model, 33,000 requested output tokens and a
+900-second answer deadline. Each endpoint passed a generation smoke check.
+
+| Model Name | Company | Modal serving mode | Run ID |
+|---|---|---|---|
+| Muse Spark Open | Meta | Shared | `8e70e46b-67bd-468b-b1b2-a06ff2a4db28` |
+| Qwen3.8 2.4T A95B | Alibaba | Shared | `f3f61471-6fd1-4bb5-90d0-0bcbb47141f4` |
+| Kimi K3.1 Pro | Moonshot AI | Shared | `aafbccc6-2ee5-469c-973e-5d5dd725cd21` |
+| Inkling NVFP4 | Thinking Machines Lab | Shared | `c739bc58-e018-4453-b0f6-8209eb90ea53` |
+
+Qwen3.8 2.4T A95B replaces the original Max-0902 row, and Inkling NVFP4
+replaces the original Inkling row, as requested. Both run all 90 questions;
+previous variant answers are archived and never merged into these scores.
+The historical v0 and v1 leaderboards keep their original model identities.
+Native reasoning is `xhigh` for Qwen and `high` for the other three models.
+Question text, solver instructions, and judge instructions have the same
+hashes as the preceding round. The judge still receives `eval_instruction`;
+the solver does not. Only endpoint network allowlists changed in the tasks.
+
+[Endpoint IDs, model IDs, and frozen hashes](modal_round4.json) ·
+[Model settings](../models_vals_modal.toml)
+
+To inspect these runs, use `valkyrie run fetch RUN_ID`. To reproduce the agent
+bundle, build with `valkyrie/build.py`, `data/vals_90.jsonl`,
+`prompts/solver_system.md`, `prompts/vals_90_judge.md`, and
+`--models-config models_vals_modal.toml --allow-visual-text`.
+Upload the resulting agent and task folders before starting a fresh run.
+
+Dedicated endpoints are supported by the evaluator: the earlier Qwen3.8 27B
+recovery used one successfully. Fresh managed dedicated deployments for
+DeepSeek V4 Pro, Qwen3.8 Flash-Next, and Gemma 4 31B still fail with
+`B200 GPUs are not available on the Starter plan`. No plan upgrade was made.
+Shared endpoints bill per token; included Modal plan credits do not cover
+shared endpoint usage. Dedicated endpoints bill for compute resources.

@@ -32,6 +32,15 @@ def merge_graded(results, latest):
             results[key] = value
 
 
+def group_runs(runs):
+    """Keep replaced model variants archived without merging their answers."""
+    groups = {}
+    for run in runs:
+        if not run.get("superseded_by"):
+            groups.setdefault(run["model"], []).append(run)
+    return groups
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs", type=Path, required=True)
@@ -42,9 +51,7 @@ def main():
     from valkyrie.sdk.errors import ValkyrieAPIError
 
     runs = json.loads(args.runs.read_text())
-    groups = {}
-    for run in runs:
-        groups.setdefault(run["model"], []).append(run)
+    groups = group_runs(runs)
     args.out.mkdir(parents=True, exist_ok=True)
     # Multiple recovery watchers may collect at once. Serialize artifact downloads
     # and publication so they cannot overwrite one another's partial snapshots.

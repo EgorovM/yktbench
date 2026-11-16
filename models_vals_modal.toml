@@ -1,4 +1,4 @@
-# Recovery profile: same model families and generation limits, six direct Modal endpoints.
+# Direct Modal profile: recovery endpoints and explicitly selected additional models.
 # New evaluation profile: 900-second answer deadline and 33,000 requested output tokens.
 # Gemma is capped by its provider at 16,384 tokens. Original v0/v1 settings remain in models.toml.
 # Models the eval can call, as solvers (--models) or judges (--judges).
@@ -105,16 +105,6 @@ max_retries = 0
 deadline_seconds = 900
 extra_body = { chat_template_kwargs = { enable_thinking = false } }
 
-[models."inkling-flagship"]
-provider = "openai_chat"
-model = "thinkingmachines/inkling"
-base_url = "https://openrouter.ai/api/v1"
-api_key_env = "OPENROUTER_API_KEY"
-max_tokens = 33000
-timeout = 900
-max_retries = 0
-deadline_seconds = 900
-extra_body = { reasoning = { effort = "high" } }
 
 [models."inkling-2-small"]
 provider = "openai_chat"
@@ -127,16 +117,6 @@ max_retries = 0
 deadline_seconds = 900
 extra_body = { reasoning_effort = "high" }
 
-[models."qwen-3.8-max"]
-provider = "openai_chat"
-model = "qwen/qwen3.8-max-0902"
-base_url = "https://openrouter.ai/api/v1"
-api_key_env = "OPENROUTER_API_KEY"
-max_tokens = 33000
-timeout = 900
-max_retries = 0
-deadline_seconds = 900
-extra_body = { reasoning = { effort = "high" } }
 
 [models."qwen-3.8-27b"]
 # Weights: Qwen/Qwen3.8-27B@1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
@@ -209,3 +189,51 @@ fallbacks = true
 [models."mock"]
 provider = "mock"
 model = "mock"
+
+# Fresh full-set run; preserves previous partial model results in the run archive.
+[models."muse-spark-open"]
+provider = "openai_chat"
+model = "meta-models/Muse-Spark-Open-816B-A42B"
+base_url = "https://eginovasardaana--ep-ykt-vals90-muse-spark-open-server.us-west.modal.direct/v1"
+api_key_env = "MODAL_INFERENCE_API_KEY"
+max_tokens = 33000
+timeout = 900
+max_retries = 0
+deadline_seconds = 900
+extra_body = { reasoning_effort = "high" }
+
+# Fresh full-set run; preserves previous partial model results in the run archive.
+[models."qwen-3.8-2.4t-a95b"]
+provider = "openai_chat"
+model = "Qwen/Qwen3.8-2.4T-A95B"
+base_url = "https://eginovasardaana--ep-ykt-vals90-qwen-3-8-2-4t-server.us-west.modal.direct/v1"
+api_key_env = "MODAL_INFERENCE_API_KEY"
+max_tokens = 33000
+timeout = 900
+max_retries = 0
+deadline_seconds = 900
+extra_body = { reasoning_effort = "xhigh" }
+
+# Fresh full-set run; preserves previous partial model results in the run archive.
+[models."kimi-k3.1-pro"]
+provider = "openai_chat"
+model = "moonshotai/Kimi-K3.1-Pro"
+base_url = "https://eginovasardaana--ep-ykt-vals90-kimi-k3-1-pro-server.us-west.modal.direct/v1"
+api_key_env = "MODAL_INFERENCE_API_KEY"
+max_tokens = 33000
+timeout = 900
+max_retries = 0
+deadline_seconds = 900
+extra_body = { reasoning_effort = "high" }
+
+# Fresh full-set run; preserves previous partial model results in the run archive.
+[models."inkling-nvfp4"]
+provider = "openai_chat"
+model = "thinkingmachines/Inkling-NVFP4"
+base_url = "https://eginovasardaana--ep-ykt-vals90-inkling-nvfp4-server.us-west.modal.direct/v1"
+api_key_env = "MODAL_INFERENCE_API_KEY"
+max_tokens = 33000
+timeout = 900
+max_retries = 0
+deadline_seconds = 900
+extra_body = { reasoning_effort = "high" }
