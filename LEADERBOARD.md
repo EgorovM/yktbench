@@ -1,4 +1,4 @@
-# Sakha Benchmark Leaderboard
+# Sakha (Yakut) Language Benchmark Leaderboard
 
 Last updated: Nov 15, 2026
 
