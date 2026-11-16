@@ -13,7 +13,7 @@ New evaluations use [`models_vals_modal.toml`](models_vals_modal.toml): a 15-min
 deadline and a 33,000-token requested output limit. Gemma 4 31B is limited by
 its API to 16,384 output tokens.
 
-## Current evaluation: vals_90
+## Public test dataset
 
 The [90-question dataset](data/vals_90.jsonl) comes from the `vals sub` sheet of
 [`vals_90.xlsx`](data/vals_90.xlsx). The current leaderboard covers 20 models evaluated
