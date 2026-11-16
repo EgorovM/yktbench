@@ -2,7 +2,7 @@
 
 ## vals_90
 
-Snapshot: 2026-11-16T05:10:03+00:00. Scores are percentages.
+Snapshot: 2026-11-16T05:18:05+00:00. Scores are percentages.
 
 **Evaluation is in progress.** Partial scores use graded questions only;
 their denominators differ and they are not final rankings. Failed tasks
@@ -20,24 +20,24 @@ Bold accuracy marks the best completed run; bold token usage marks the largest o
 | Inkling 2 Small | Thinking Machines Lab | 22.2 | 34.5 | 27.3 | 16.0 | 32.1 | 16.7 | 90/90 | 33000 | 0 | Complete |
 | Muse Spark Open | Meta | 21.1 | 41.8 | 18.2 | 24.0 | 17.9 | 25.0 | 90/90 | 33000 | 0 | Complete |
 | GLM 5.3 | Z.ai | 14.4 | 21.9 | 18.2 | 12.0 | 21.4 | 8.3 | 90/90 | 33000 | 0 | Complete |
+| Kimi K3.1 Pro | Moonshot AI | 12.2 | 21.1 | 9.1 | 12.0 | 10.7 | 16.7 | 90/90 | 33000 | 0 | Complete |
 | Qwen3.8 27B | Alibaba | 6.7 | 9.3 | 9.1 | 0.0 | 10.7 | 8.3 | 90/90 | 33000 | 0 | Complete |
 | GigaChat 3.5 Ultra | Sber | 6.7 | 14.2 | 9.1 | 12.0 | 3.6 | 4.2 | 90/90 | 900 | 0 | Complete |
 | Gemma 4 31B | Google | 4.4 | 6.4 | 0.0 | 8.0 | 3.6 | 4.2 | 90/90 | 16384 | 0 | Complete |
-| Gemini 4 Carbon | Google | 80.0 | 87.2 | 66.7 | 88.9 | — | — | 15/90 | 17820 | 0 | Running |
-| Qwen3.8 2.4T A95B | Alibaba | 28.1 | 41.5 | 9.1 | 37.5 | 23.8 | 100.0 | 57/90 | 33000 | 0 | Running |
-| Inkling NVFP4 | Thinking Machines Lab | 27.8 | 45.9 | 45.5 | 22.7 | 23.5 | 25.0 | 54/90 | 33000 | 0 | Running |
+| MiniMax M3.1 Flash | MiniMax | 2.2 | 2.7 | 0.0 | 4.0 | 0.0 | 4.2 | 90/90 | 33000 | 0 | Complete |
+| Gemini 4 Carbon | Google | 52.3 | 63.0 | 45.5 | 45.8 | 77.8 | — | 44/90 | 33000 | 0 | Running |
+| Inkling NVFP4 | Thinking Machines Lab | 27.2 | 43.2 | 45.5 | 24.0 | 23.1 | 26.3 | 81/90 | 33000 | 0 | Running |
+| Qwen3.8 2.4T A95B | Alibaba | 26.2 | 38.0 | 9.1 | 36.0 | 25.0 | 25.0 | 84/90 | 33000 | 0 | Running |
 | DeepSeek V4 Pro | DeepSeek | 26.1 | 37.2 | 0.0 | 20.0 | 25.0 | 66.7 | 23/90 | 33000 | 0 | Run errors |
-| Inkling | Thinking Machines Lab | 23.1 | 46.5 | 30.0 | 0.0 | — | — | 13/90 | 14633 | 0 | Running |
-| Qwen3.8 Flash | Alibaba | 18.9 | 22.6 | 25.0 | 30.8 | 9.1 | 11.1 | 37/90 | 33000 | 0 | Run errors |
-| Kimi K3.1 Pro | Moonshot AI | 12.4 | 21.2 | 9.1 | 12.0 | 10.7 | 17.4 | 89/90 | 33000 | 0 | Running |
-| Mistral Large 4 | Mistral AI | 6.1 | 7.6 | 0.0 | 14.3 | 4.8 | — | 33/90 | 33000 | 0 | Running |
-| MiniMax M3.1 Flash | MiniMax | 1.8 | 1.8 | 0.0 | 5.0 | 0.0 | 0.0 | 55/90 | 33000 | 0 | Running |
+| Inkling | Thinking Machines Lab | 23.6 | 43.2 | 27.3 | 16.0 | 31.6 | — | 55/90 | 33000 | 0 | Running |
+| Qwen3.8 Flash | Alibaba | 17.4 | 23.9 | 25.0 | 30.8 | 9.1 | 11.8 | 46/90 | 33000 | 0 | Running |
+| Mistral Large 4 | Mistral AI | 4.0 | 4.7 | 0.0 | 9.5 | 3.7 | 0.0 | 75/90 | 33000 | 0 | Running |
 
 <!-- COST_LATENCY_START -->
 
 ### Cost and latency
 
-Metrics snapshot: 2026-11-16T05:10:04+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
+Metrics snapshot: 2026-11-16T05:18:06+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
 Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.
 Token totals contain reported usage only; † marks usage or estimates covering fewer than all questions. Coverage is out of the full question set.
 Pricing snapshot: 2026-11-16T05:04:34+00:00. Input and output prices are USD per 1M tokens.
@@ -53,18 +53,18 @@ Pricing snapshot: 2026-11-16T05:04:34+00:00. Input and output prices are USD per
 | Inkling 2 Small | Thinking Machines Lab | 90/90 | 94.2 | 69.5 | 310.6 | 385.4 | 0 | 30,830 | 1,423,542 | 90/90 | 0.3 | 1 | 1.4328* | 1.3956 | 88/90 |
 | Muse Spark Open | Meta | 90/90 | 39.5 | 24.1 | 128.1 | 168.6 | 0 | 40,129 | 756,005 | 90/90 | 1.25 | 4.25 | 3.2632* | 3.2632* | 0/90 |
 | GLM 5.3 | Z.ai | 90/90 | 139.0 | 80.3 | 428.1 | 534.2 | 0 | 29,788 | 1,422,380 | 90/90 | 0.0699 | 1.4 | 1.9934* | 4.2059 | 90/90 |
+| Kimi K3.1 Pro | Moonshot AI | 90/90 | 45.3 | 29.9 | 186.3 | 230.6 | 0 | 37,198 | 554,751 | 90/90 | 0.2403 | 8.4023 | 4.6701* | 4.6701* | 0/90 |
 | Qwen3.8 27B | Alibaba | 90/90 | 234.5 | 254.8 | 322.4 | 900.0 | 3 | 32,625† | 2,015,027† | 87/90 | 0.15 | 1.875 | 3.7831*† | 0.0941 | 4/90 |
 | GigaChat 3.5 Ultra | Sber | 90/90 | 3.5 | 2.8 | 9.9 | 19.0 | 0 | 33,650 | 8,263 | 90/90 | 1.07 | 3.21 | 0.0625* | 0.0625* | 0/90 |
 | Gemma 4 31B | Google | 90/90 | 18.5 | 8.1 | 62.8 | 329.6 | 0 | 29,739 | 130,015 | 90/90 | 0.2 | 0.4 | 0.0580* | 0.0366 | 66/90 |
-| Gemini 4 Carbon | Google | 15/90 | 88.6 | 61.0 | 264.0 | 264.0 | 0 | 5,001† | 90,673† | 15/90 | 2 | 10 | 0.9167*† | 0.4935 | 9/90 |
-| Qwen3.8 2.4T A95B | Alibaba | 57/90 | 80.8 | 50.3 | 214.9 | 239.7 | 0 | 20,619† | 715,071† | 57/90 | 2 | 6 | 4.3317*† | 4.3317*† | 0/90 |
-| Inkling NVFP4 | Thinking Machines Lab | 54/90 | 84.0 | 57.9 | 236.3 | 270.0 | 0 | 16,495† | 516,525† | 54/90 | 1 | 4.05 | 2.1084*† | 2.1084*† | 0/90 |
+| MiniMax M3.1 Flash | MiniMax | 90/90 | 127.6 | 133.8 | 268.2 | 363.2 | 0 | 46,129 | 2,066,608 | 90/90 | 0.15 | 0.6 | 1.2469* | 1.2124 | 90/90 |
+| Gemini 4 Carbon | Google | 44/90 | 237.6 | 205.6 | 497.2 | 587.8 | 0 | 15,111† | 739,104† | 44/90 | 2 | 10 | 7.4213*† | 7.0634 | 42/90 |
+| Inkling NVFP4 | Thinking Machines Lab | 81/90 | 98.0 | 85.9 | 252.8 | 282.1 | 0 | 25,441† | 906,307† | 81/90 | 1 | 4.05 | 3.6960*† | 3.6960*† | 0/90 |
+| Qwen3.8 2.4T A95B | Alibaba | 84/90 | 94.1 | 58.0 | 220.7 | 239.7 | 0 | 31,728† | 1,235,967† | 84/90 | 2 | 6 | 7.4793*† | 7.4793*† | 0/90 |
 | DeepSeek V4 Pro | DeepSeek | 23/90 | 135.2 | 50.6 | 516.9 | 524.1 | 0 | 6,992† | 205,908† | 23/90 | 0.9 | 1.5 | 0.3152*† | 0.1033 | 23/90 |
-| Inkling | Thinking Machines Lab | 13/90 | 62.3 | 41.2 | 177.2 | 177.2 | 0 | 3,951† | 81,803† | 13/90 | 1 | 4.05 | 0.3353*† | 0.2309 | 10/90 |
-| Qwen3.8 Flash | Alibaba | 37/90 | 374.2 | 440.4 | 497.0 | 503.3 | 0 | 13,861† | 1,002,666† | 37/90 | 0.15 | 0.47 | 0.4733*† | 0.4729 | 37/90 |
-| Kimi K3.1 Pro | Moonshot AI | 89/90 | 44.1 | 29.2 | 186.3 | 230.6 | 0 | 36,804† | 536,270† | 89/90 | 0.2403 | 8.4023 | 4.5147*† | 4.5147*† | 0/90 |
-| Mistral Large 4 | Mistral AI | 33/90 | 157.9 | 152.2 | 333.0 | 333.6 | 0 | 9,514† | 572,734† | 33/90 | 0.7 | 2.1 | 1.2094*† | 0.9294 | 28/90 |
-| MiniMax M3.1 Flash | MiniMax | 55/90 | 117.9 | 124.0 | 215.2 | 307.1 | 0 | 27,420† | 1,220,118† | 55/90 | 0.15 | 0.6 | 0.7362*† | 0.6694 | 51/90 |
+| Inkling | Thinking Machines Lab | 55/90 | 87.2 | 65.9 | 251.1 | 272.1 | 0 | 16,910† | 526,647† | 55/90 | 1 | 4.05 | 2.1498*† | 2.1448 | 55/90 |
+| Qwen3.8 Flash | Alibaba | 46/90 | 335.6 | 395.0 | 486.2 | 503.3 | 0 | 17,240† | 1,167,313† | 46/90 | 0.15 | 0.47 | 0.5512*† | 0.4729 | 37/90 |
+| Mistral Large 4 | Mistral AI | 75/90 | 197.4 | 229.1 | 334.4 | 371.0 | 0 | 22,284† | 1,666,901† | 75/90 | 0.7 | 2.1 | 3.5161*† | 3.4264 | 73/90 |
 
 \* Estimated cost = (reported input tokens × input price + reported output tokens × output price) / 1,000,000.
 Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.

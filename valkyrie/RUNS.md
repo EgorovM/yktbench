@@ -176,7 +176,9 @@ and Valkyrie's secret store.
 Carbon replaces the empty Argon row in the current 90-question leaderboard.
 The original Argon run is archived, and historical v0/v1 results are unchanged.
 [Run metadata](gemini_carbon_run.json).
-Concurrency was subsequently raised from 8 to 24 without restarting completed tasks.
+Concurrency was subsequently raised from 8 to 24, then reduced when OpenRouter
+reported insufficient available credits for concurrent in-flight requests.
+Completed tasks were not restarted.
 
 ## Inkling flagship — separate OpenRouter account
 
@@ -187,8 +189,23 @@ and a 900-second answer deadline. The agent is `yakut-text-expanded-v8`.
 This is a fresh run: the earlier seven answers from the original account
 remain archived and are not merged. The concurrent Inkling NVFP4 evaluation
 on Modal remains a separate row. [Run metadata](inkling_sara_run.json).
-Concurrency was subsequently raised from 8 to 16 without restarting completed tasks.
+Concurrency was subsequently raised from 8 to 16, then reduced in response to
+the separate account's credit-reservation errors. Completed tasks were not restarted.
 
 The optional dedicated Inkling NVFP4 probe did not finish startup within
 its readiness window and was stopped to release its four B300 GPUs.
 The shared NVFP4 run continues; no answers from the probe enter the benchmark.
+
+## Dedicated Qwen Flash recovery
+
+The earlier H200 startup failure was traced to 33 missing weight shards.
+`valkyrie/preload_qwen_flash.py` completes the pinned checkpoint download on
+CPU and verifies every shard referenced by the index before GPU startup.
+The repaired four-H200 server passed a generation check using `xhigh`
+reasoning and a 33,000-token limit.
+
+Run `08199a4a-8a30-49a2-9cad-135cc9c680e6` retries the 53 failed Qwen Flash
+questions at concurrency 16, preserving the original 37 graded answers.
+It uses agent `yakut-text-expanded-v8`; each answer keeps the 900-second
+deadline. The server returns to zero minimum containers after the run ends.
+[Recovery settings and task IDs](dedicated_recovery.json).
