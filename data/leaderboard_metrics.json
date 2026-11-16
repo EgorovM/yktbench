@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16T05:18:06+00:00",
+  "updated_utc": "2026-11-16T05:26:49+00:00",
   "cost_currency": "USD",
   "latency_unit": "seconds",
   "percentile_method": "nearest rank",
@@ -391,7 +391,7 @@
           "output_tokens": 1657983,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 10.015106
+          "known_api_cost_usd": 10.015105999999998
         },
         "inkling-flagship": {
           "questions": 61,
@@ -407,7 +407,7 @@
           "output_tokens": 497406,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 2.02779806
+          "known_api_cost_usd": 2.0277980600000003
         },
         "deepseek-v4": {
           "questions": 61,
@@ -439,7 +439,7 @@
           "output_tokens": 629619,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 0.366160599
+          "known_api_cost_usd": 0.3661605990000001
         },
         "inkling-2-small": {
           "questions": 61,
@@ -455,7 +455,7 @@
           "output_tokens": 688224,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 0.635245496
+          "known_api_cost_usd": 0.6352454959999998
         },
         "glm-5.3": {
           "questions": 61,
@@ -471,7 +471,7 @@
           "output_tokens": 1041369,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 1.854312863
+          "known_api_cost_usd": 1.8543128630000005
         },
         "gemma-4-31b": {
           "questions": 61,
@@ -524,7 +524,7 @@
           "output_tokens": 223681,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 2.278326
+          "known_api_cost_usd": 2.2783260000000003
         },
         "astra": {
           "questions": 60,
@@ -572,7 +572,7 @@
           "output_tokens": 2339249,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 14.108668
+          "known_api_cost_usd": 14.108667999999998
         },
         "deepseek-v4.1-flash": {
           "questions": 60,
@@ -588,7 +588,7 @@
           "output_tokens": 753350,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.451607557
+          "known_api_cost_usd": 0.4516075569999998
         },
         "deepseek-v4": {
           "questions": 60,
@@ -604,7 +604,7 @@
           "output_tokens": 580190,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.614944213
+          "known_api_cost_usd": 0.6149442130000001
         },
         "qwen-3.8-max": {
           "questions": 60,
@@ -620,7 +620,7 @@
           "output_tokens": 837512,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 5.069858
+          "known_api_cost_usd": 5.069858000000001
         },
         "inkling-flagship": {
           "questions": 60,
@@ -636,7 +636,7 @@
           "output_tokens": 717969,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 2.92077149
+          "known_api_cost_usd": 2.9207714899999995
         },
         "inkling-2-small": {
           "questions": 60,
@@ -652,7 +652,7 @@
           "output_tokens": 981600,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.933160808
+          "known_api_cost_usd": 0.9331608079999999
         },
         "qwen-3.8-flash": {
           "questions": 60,
@@ -668,7 +668,7 @@
           "output_tokens": 1512597,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.713456244
+          "known_api_cost_usd": 0.7134562440000001
         },
         "glm-5.3": {
           "questions": 60,
@@ -684,7 +684,7 @@
           "output_tokens": 1125047,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 2.070394739
+          "known_api_cost_usd": 2.0703947390000006
         },
         "qwen-3.8-27b": {
           "questions": 60,
@@ -700,7 +700,7 @@
           "output_tokens": 353543,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.769493871
+          "known_api_cost_usd": 0.7694938709999999
         },
         "gemma-4-31b": {
           "questions": 60,
@@ -716,7 +716,7 @@
           "output_tokens": 93707,
           "costed_answers": 60,
           "costed_requests": 60,
-          "known_api_cost_usd": 0.03798492
+          "known_api_cost_usd": 0.037984920000000005
         },
         "gigachat-3.5": {
           "questions": 60,
@@ -785,7 +785,7 @@
           "output_tokens": 140984,
           "costed_answers": 90,
           "costed_requests": 90,
-          "known_api_cost_usd": 2.971736
+          "known_api_cost_usd": 2.9717360000000026
         },
         "sol-6.1-eval": {
           "questions": 90,
@@ -817,7 +817,39 @@
           "output_tokens": 1096750,
           "costed_answers": 9,
           "costed_requests": 9,
-          "known_api_cost_usd": 0.086645674
+          "known_api_cost_usd": 0.08664567399999999
+        },
+        "qwen-3.8-2.4t-a95b": {
+          "questions": 90,
+          "response_records": 90,
+          "latency_records": 90,
+          "mean_s": 97.52515083665556,
+          "median_s": 68.1078497645,
+          "p95_s": 220.676952459,
+          "max_s": 239.70982128000003,
+          "timeouts": 0,
+          "usage_records": 90,
+          "input_tokens": 34056,
+          "output_tokens": 1374978,
+          "costed_answers": 0,
+          "costed_requests": 0,
+          "known_api_cost_usd": null
+        },
+        "inkling-nvfp4": {
+          "questions": 90,
+          "response_records": 90,
+          "latency_records": 90,
+          "mean_s": 102.67338201974445,
+          "median_s": 89.89999070750001,
+          "p95_s": 252.772204983,
+          "max_s": 282.11648447700003,
+          "timeouts": 0,
+          "usage_records": 90,
+          "input_tokens": 28398,
+          "output_tokens": 1066946,
+          "costed_answers": 0,
+          "costed_requests": 0,
+          "known_api_cost_usd": null
         },
         "grok-4.7": {
           "questions": 90,
@@ -833,7 +865,7 @@
           "output_tokens": 1578639,
           "costed_answers": 61,
           "costed_requests": 61,
-          "known_api_cost_usd": 9.534238
+          "known_api_cost_usd": 9.534237999999997
         },
         "inkling-2-small": {
           "questions": 90,
@@ -849,7 +881,7 @@
           "output_tokens": 1423542,
           "costed_answers": 88,
           "costed_requests": 88,
-          "known_api_cost_usd": 1.3955668
+          "known_api_cost_usd": 1.3955667999999994
         },
         "muse-spark-open": {
           "questions": 90,
@@ -881,7 +913,7 @@
           "output_tokens": 1422380,
           "costed_answers": 90,
           "costed_requests": 90,
-          "known_api_cost_usd": 4.205864957
+          "known_api_cost_usd": 4.205864957000001
         },
         "kimi-k3.1-pro": {
           "questions": 90,
@@ -913,7 +945,7 @@
           "output_tokens": 2015027,
           "costed_answers": 4,
           "costed_requests": 4,
-          "known_api_cost_usd": 0.09407465
+          "known_api_cost_usd": 0.09407465000000001
         },
         "gigachat-3.5": {
           "questions": 90,
@@ -947,6 +979,22 @@
           "costed_requests": 66,
           "known_api_cost_usd": 0.03656408
         },
+        "mistral-large-4": {
+          "questions": 90,
+          "response_records": 90,
+          "latency_records": 90,
+          "mean_s": 207.88752157102223,
+          "median_s": 241.11878006900002,
+          "p95_s": 334.39147465800005,
+          "max_s": 371.005048202,
+          "timeouts": 0,
+          "usage_records": 90,
+          "input_tokens": 26891,
+          "output_tokens": 2086691,
+          "costed_answers": 89,
+          "costed_requests": 89,
+          "known_api_cost_usd": 4.4081083759999995
+        },
         "minimax-m3.1-flash": {
           "questions": 90,
           "response_records": 90,
@@ -965,51 +1013,19 @@
         },
         "gemini-4-carbon": {
           "questions": 90,
-          "response_records": 44,
-          "latency_records": 44,
-          "mean_s": 237.60600458354546,
-          "median_s": 205.58097404,
-          "p95_s": 497.217786214,
+          "response_records": 48,
+          "latency_records": 48,
+          "mean_s": 256.22188723375,
+          "median_s": 258.8221698,
+          "p95_s": 528.379925936,
           "max_s": 587.799717826,
           "timeouts": 0,
-          "usage_records": 44,
-          "input_tokens": 15111,
-          "output_tokens": 739104,
-          "costed_answers": 42,
-          "costed_requests": 42,
-          "known_api_cost_usd": 7.063404
-        },
-        "inkling-nvfp4": {
-          "questions": 90,
-          "response_records": 81,
-          "latency_records": 81,
-          "mean_s": 98.04334997413581,
-          "median_s": 85.939374762,
-          "p95_s": 252.772204983,
-          "max_s": 282.11648447700003,
-          "timeouts": 0,
-          "usage_records": 81,
-          "input_tokens": 25441,
-          "output_tokens": 906307,
-          "costed_answers": 0,
-          "costed_requests": 0,
-          "known_api_cost_usd": null
-        },
-        "qwen-3.8-2.4t-a95b": {
-          "questions": 90,
-          "response_records": 84,
-          "latency_records": 84,
-          "mean_s": 94.08402647645238,
-          "median_s": 57.979877274,
-          "p95_s": 220.676952459,
-          "max_s": 239.70982128000003,
-          "timeouts": 0,
-          "usage_records": 84,
-          "input_tokens": 31728,
-          "output_tokens": 1235967,
-          "costed_answers": 0,
-          "costed_requests": 0,
-          "known_api_cost_usd": null
+          "usage_records": 48,
+          "input_tokens": 16376,
+          "output_tokens": 871056,
+          "costed_answers": 47,
+          "costed_requests": 47,
+          "known_api_cost_usd": 8.716164
         },
         "deepseek-v4": {
           "questions": 90,
@@ -1025,7 +1041,7 @@
           "output_tokens": 205908,
           "costed_answers": 23,
           "costed_requests": 23,
-          "known_api_cost_usd": 0.103264719
+          "known_api_cost_usd": 0.10326471899999999
         },
         "inkling-flagship": {
           "questions": 90,
@@ -1041,39 +1057,23 @@
           "output_tokens": 526647,
           "costed_answers": 55,
           "costed_requests": 55,
-          "known_api_cost_usd": 2.14483707
+          "known_api_cost_usd": 2.1448370700000003
         },
         "qwen-3.8-flash": {
           "questions": 90,
-          "response_records": 46,
-          "latency_records": 46,
-          "mean_s": 335.61726344017393,
-          "median_s": 394.9997889235,
-          "p95_s": 486.2102491,
+          "response_records": 82,
+          "latency_records": 82,
+          "mean_s": 294.9367286065,
+          "median_s": 318.495949202,
+          "p95_s": 480.17499543599996,
           "max_s": 503.349431519,
           "timeouts": 0,
-          "usage_records": 46,
-          "input_tokens": 17240,
-          "output_tokens": 1167313,
+          "usage_records": 82,
+          "input_tokens": 31034,
+          "output_tokens": 2073144,
           "costed_answers": 37,
           "costed_requests": 37,
-          "known_api_cost_usd": 0.472886218
-        },
-        "mistral-large-4": {
-          "questions": 90,
-          "response_records": 75,
-          "latency_records": 75,
-          "mean_s": 197.43553951245335,
-          "median_s": 229.056047007,
-          "p95_s": 334.39147465800005,
-          "max_s": 371.005048202,
-          "timeouts": 0,
-          "usage_records": 75,
-          "input_tokens": 22284,
-          "output_tokens": 1666901,
-          "costed_answers": 73,
-          "costed_requests": 73,
-          "known_api_cost_usd": 3.4264007260000002
+          "known_api_cost_usd": 0.4728862180000002
         }
       }
     }

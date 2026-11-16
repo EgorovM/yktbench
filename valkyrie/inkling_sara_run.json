@@ -9,5 +9,6 @@
   "dataset_version": "v-166c93db5539",
   "concurrency": 1,
   "fresh_full_set": true,
-  "initial_concurrency": 8
+  "initial_concurrency": 8,
+  "blocked_reason": "insufficient_credits"
 }

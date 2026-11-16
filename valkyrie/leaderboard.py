@@ -35,7 +35,9 @@ def render(snapshot):
         for grade in ("1", "2", "3", "4"):
             cell = row["grades"][grade]
             grades.append(score(cell["accuracy"]))
-        status = "Complete" if row.get("complete") else ("Run errors" if row["status"] == "ERROR" else "Running")
+        status = ("Complete" if row.get("complete") else
+                  "Needs credits" if row.get("blocked_reason") == "insufficient_credits" else
+                  "Run errors" if row["status"] in ("ERROR", "STOPPED") else "Running")
         accuracy = score(row.get("accuracy"))
         if row.get("complete") and row.get("accuracy") == best_accuracy:
             accuracy = f"**{accuracy}**"

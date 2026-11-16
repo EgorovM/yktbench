@@ -92,6 +92,11 @@ def main():
                            complete=row["graded"] == total,
                            max_output_tokens=None, over_limit=None,
                            judge_model=run["model"] == "sol-6.1-eval")
+                if not row["complete"]:
+                    reason = next((attempt.get("blocked_reason") for attempt in reversed(group)
+                                   if attempt.get("blocked_reason")), None)
+                    if reason:
+                        row["blocked_reason"] = reason
                 return row
         return await asyncio.gather(*(one(group) for group in groups.values()))
 
