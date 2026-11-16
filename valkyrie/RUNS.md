@@ -133,7 +133,7 @@ dataset `yakut/vals-90@v-166c93db5539` (see the machine-readable record for
 the immutable version). Inference uses OpenRouter; Modal hosts the task
 sandboxes. The solver/judge prompts and answer deadlines are unchanged.
 
-| Model Name | Company | Concurrent questions | Run ID |
+| Model Name | Company | Initial concurrent questions | Run ID |
 |---|---|---:|---|
 | Mistral Large 4 | Mistral AI | 16 | `68907664-2ca6-4a51-8087-eba7f8329e5e` |
 | MiniMax M3.1 Flash | MiniMax | 16 | `0f3cfd53-5d8c-49fc-9514-931372f8ada2` |
@@ -143,6 +143,8 @@ Each requests high reasoning and 33,000 output tokens, with a 900-second
 answer deadline. The original Opus judge configuration is unchanged;
 `opus-5.5-eval` is a separate solver configuration using OpenRouter.
 [Settings and frozen hashes](openrouter_round5.json).
+Mistral's concurrency was subsequently raised from 16 to 24; model generation
+settings were unchanged.
 
 ## Dedicated Gemma recovery — November 16, 2026
 
@@ -174,6 +176,7 @@ and Valkyrie's secret store.
 Carbon replaces the empty Argon row in the current 90-question leaderboard.
 The original Argon run is archived, and historical v0/v1 results are unchanged.
 [Run metadata](gemini_carbon_run.json).
+Concurrency was subsequently raised from 8 to 24 without restarting completed tasks.
 
 ## Inkling flagship — separate OpenRouter account
 
@@ -184,6 +187,7 @@ and a 900-second answer deadline. The agent is `yakut-text-expanded-v8`.
 This is a fresh run: the earlier seven answers from the original account
 remain archived and are not merged. The concurrent Inkling NVFP4 evaluation
 on Modal remains a separate row. [Run metadata](inkling_sara_run.json).
+Concurrency was subsequently raised from 8 to 16 without restarting completed tasks.
 
 The optional dedicated Inkling NVFP4 probe did not finish startup within
 its readiness window and was stopped to release its four B300 GPUs.

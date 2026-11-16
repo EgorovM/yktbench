@@ -29,10 +29,10 @@ credit is the mean share of parts correct.
 
 ### Cost and latency
 
-Metrics snapshot: 2026-11-16T04:58:30+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
+Metrics snapshot: 2026-11-16T05:10:04+00:00. Latencies are seconds per final selected response; p95 uses nearest rank.
 Timeouts are included. Latency excludes grading and sandbox setup; it can include client startup and transport.
 Token totals contain reported usage only; † marks usage or estimates covering fewer than all questions. Coverage is out of the full question set.
-Pricing snapshot: 2026-11-16T04:57:21+00:00. Input and output prices are USD per 1M tokens.
+Pricing snapshot: 2026-11-16T05:04:34+00:00. Input and output prices are USD per 1M tokens.
 
 | Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Usage coverage | Input $/1M | Output $/1M | Estimated cost (USD) | Known API cost (USD) | Cost coverage |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|

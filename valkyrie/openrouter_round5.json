@@ -15,8 +15,9 @@
       "inference_provider": "openrouter",
       "agent": "yakut-text-expanded-v6",
       "dataset_version": "v-166c93db5539",
-      "concurrency": 16,
-      "fresh_full_set": true
+      "concurrency": 24,
+      "fresh_full_set": true,
+      "initial_concurrency": 16
     },
     {
       "model": "minimax-m3.1-flash",

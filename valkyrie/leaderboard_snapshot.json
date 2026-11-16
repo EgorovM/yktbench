@@ -1,7 +1,112 @@
 {
-  "updated_utc": "2026-11-16T04:58:30+00:00",
+  "updated_utc": "2026-11-16T05:10:03+00:00",
   "platform": "Valkyrie",
   "rows": [
+    {
+      "graded": 15,
+      "questions": 90,
+      "correct": 12.0,
+      "accuracy": 80.0,
+      "partial": 87.22222222222223,
+      "model": "gemini-4-carbon",
+      "run_id": "e4410ff4-0d45-4301-9ea5-3ba9c5009129",
+      "run_ids": [
+        "e4410ff4-0d45-4301-9ea5-3ba9c5009129"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g1-L02-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L22-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L05-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L30-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L16-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.8333333333333334
+        },
+        "g2p1-L02-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L31-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L11-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        }
+      },
+      "model_name": "Gemini 4 Carbon",
+      "company": "Google",
+      "complete": false,
+      "max_output_tokens": 17820,
+      "over_limit": 0,
+      "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 15,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 6,
+          "accuracy": 66.66666666666667
+        },
+        "2": {
+          "total": 25,
+          "graded": 9,
+          "accuracy": 88.88888888888889
+        },
+        "3": {
+          "total": 28,
+          "graded": 0,
+          "accuracy": null
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
+        }
+      }
+    },
     {
       "graded": 90,
       "questions": 90,
@@ -815,6 +920,411 @@
     {
       "graded": 90,
       "questions": 90,
+      "correct": 37.0,
+      "accuracy": 41.111111111111114,
+      "partial": 63.23721340388008,
+      "model": "opus-5.5-eval",
+      "run_id": "ee5e19ac-6533-4259-8957-ce3b0403a75d",
+      "run_ids": [
+        "ee5e19ac-6533-4259-8957-ce3b0403a75d"
+      ],
+      "status": "FINISHED",
+      "task_rewards": {
+        "g4p2-L34-014": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.7142857142857143
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g3p2-L18-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L21-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8571428571428571
+        },
+        "g3p2-L08-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "vals90-row-003": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L04-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L09-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L20-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L26-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8333333333333334
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.375
+        },
+        "g3p1-L33-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L31-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.7142857142857143
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g4p1-L14-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g4p1-L13-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L15-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.7777777777777778
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g3p1-L17-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p1-L17-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g2p2-L30-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L22-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p1-L14-006b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.875
+        },
+        "g1-L02-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L02-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g1-L11-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        }
+      },
+      "model_name": "Claude Opus 5.5",
+      "company": "Anthropic",
+      "complete": true,
+      "max_output_tokens": 15301,
+      "over_limit": 0,
+      "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 90,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 27.272727272727273
+        },
+        "2": {
+          "total": 25,
+          "graded": 25,
+          "accuracy": 40.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 28,
+          "accuracy": 42.857142857142854
+        },
+        "4": {
+          "total": 24,
+          "graded": 24,
+          "accuracy": 45.833333333333336
+        }
+      }
+    },
+    {
+      "graded": 90,
+      "questions": 90,
       "correct": 35.0,
       "accuracy": 38.888888888888886,
       "partial": 58.769761103094446,
@@ -1218,11 +1728,284 @@
       }
     },
     {
-      "graded": 27,
+      "graded": 57,
       "questions": 90,
-      "correct": 10.0,
-      "accuracy": 37.03703703703704,
-      "partial": 49.074074074074076,
+      "correct": 16.0,
+      "accuracy": 28.07017543859649,
+      "partial": 41.526037315511005,
+      "model": "qwen-3.8-2.4t-a95b",
+      "run_id": "f3f61471-6fd1-4bb5-90d0-0bcbb47141f4",
+      "run_ids": [
+        "f3f61471-6fd1-4bb5-90d0-0bcbb47141f4"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5555555555555556
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.7142857142857143
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L17-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.375
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p2-L30-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L16-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L11-009": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L02-006": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.875
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        }
+      },
+      "model_name": "Qwen3.8 2.4T A95B",
+      "company": "Alibaba",
+      "complete": false,
+      "max_output_tokens": 33000,
+      "over_limit": 0,
+      "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 57,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 11,
+          "accuracy": 9.090909090909092
+        },
+        "2": {
+          "total": 25,
+          "graded": 24,
+          "accuracy": 37.5
+        },
+        "3": {
+          "total": 28,
+          "graded": 21,
+          "accuracy": 23.80952380952381
+        },
+        "4": {
+          "total": 24,
+          "graded": 1,
+          "accuracy": 100.0
+        }
+      }
+    },
+    {
+      "graded": 54,
+      "questions": 90,
+      "correct": 15.0,
+      "accuracy": 27.77777777777778,
+      "partial": 45.85243974132863,
       "model": "inkling-nvfp4",
       "run_id": "c739bc58-e018-4453-b0f6-8209eb90ea53",
       "run_ids": [
@@ -1230,6 +2013,114 @@
       ],
       "status": "IN_PROGRESS",
       "task_rewards": {
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.4166666666666667
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.5714285714285714
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5555555555555556
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
         "g2p2-L17-007": {
           "reward": 0.0,
           "partial_credit": 0.0
@@ -1342,11 +2233,11 @@
       "model_name": "Inkling NVFP4",
       "company": "Thinking Machines Lab",
       "complete": false,
-      "max_output_tokens": 19653,
+      "max_output_tokens": 33000,
       "over_limit": 0,
       "judge_model": false,
       "timed_out": 0,
-      "responses_with_usage": 27,
+      "responses_with_usage": 54,
       "grades": {
         "1": {
           "total": 11,
@@ -1355,151 +2246,18 @@
         },
         "2": {
           "total": 25,
-          "graded": 16,
-          "accuracy": 31.25
+          "graded": 22,
+          "accuracy": 22.727272727272727
         },
         "3": {
           "total": 28,
-          "graded": 0,
-          "accuracy": null
+          "graded": 17,
+          "accuracy": 23.529411764705884
         },
         "4": {
           "total": 24,
-          "graded": 0,
-          "accuracy": null
-        }
-      }
-    },
-    {
-      "graded": 22,
-      "questions": 90,
-      "correct": 6.0,
-      "accuracy": 27.272727272727273,
-      "partial": 43.06818181818182,
-      "model": "qwen-3.8-2.4t-a95b",
-      "run_id": "f3f61471-6fd1-4bb5-90d0-0bcbb47141f4",
-      "run_ids": [
-        "f3f61471-6fd1-4bb5-90d0-0bcbb47141f4"
-      ],
-      "status": "IN_PROGRESS",
-      "task_rewards": {
-        "g2p2-L07-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L18-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L10-009": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L14-006b": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L06-008": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g2p1-L20-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L14-006c": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L14-006d": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L13-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L11-009": {
-          "reward": 0.0,
-          "partial_credit": 0.6
-        },
-        "g1-L17-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L21-008": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g2p1-L14-006": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L02-006": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g1-L38-008": {
-          "reward": 0.0,
-          "partial_credit": 0.3333333333333333
-        },
-        "g1-L31-009": {
-          "reward": 0.0,
-          "partial_credit": 0.875
-        },
-        "g1-L06-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L26-009": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g1-L02-005": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L16-005": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g1-L02-004": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L09-009": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        }
-      },
-      "model_name": "Qwen3.8 2.4T A95B",
-      "company": "Alibaba",
-      "complete": false,
-      "max_output_tokens": 29054,
-      "over_limit": 0,
-      "judge_model": false,
-      "timed_out": 0,
-      "responses_with_usage": 22,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 11,
-          "accuracy": 9.090909090909092
-        },
-        "2": {
-          "total": 25,
-          "graded": 11,
-          "accuracy": 45.45454545454545
-        },
-        "3": {
-          "total": 28,
-          "graded": 0,
-          "accuracy": null
-        },
-        "4": {
-          "total": 24,
-          "graded": 0,
-          "accuracy": null
+          "graded": 4,
+          "accuracy": 25.0
         }
       }
     },
@@ -2047,243 +2805,6 @@
       }
     },
     {
-      "graded": 48,
-      "questions": 90,
-      "correct": 12.0,
-      "accuracy": 25.0,
-      "partial": 43.55902777777777,
-      "model": "muse-spark-open",
-      "run_id": "8e70e46b-67bd-468b-b1b2-a06ff2a4db28",
-      "run_ids": [
-        "8e70e46b-67bd-468b-b1b2-a06ff2a4db28"
-      ],
-      "status": "IN_PROGRESS",
-      "task_rewards": {
-        "g3p1-L34-001": {
-          "reward": 0.0,
-          "partial_credit": 0.8333333333333334
-        },
-        "g3p1-L34-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L33-011b": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L27-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L22-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L19-002": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g3p1-L05-010": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g3p1-L27-010": {
-          "reward": 0.0,
-          "partial_credit": 0.25
-        },
-        "g3p1-L17-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L17-001": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g3p1-L16-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g3p1-L02-001": {
-          "reward": 0.0,
-          "partial_credit": 0.4
-        },
-        "g2p2-L35-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L29-011": {
-          "reward": 0.0,
-          "partial_credit": 0.25
-        },
-        "g2p2-L32-011": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L08-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L30-011": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p2-L33-005": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L26-011": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g2p2-L16-001": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p2-L05-004": {
-          "reward": 0.0,
-          "partial_credit": 0.625
-        },
-        "g2p2-L10-009": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p2-L17-007": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p2-L09-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p2-L07-008": {
-          "reward": 0.0,
-          "partial_credit": 0.75
-        },
-        "g2p1-L14-006b": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L18-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L20-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L14-006c": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L14-006": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L14-006d": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g2p1-L06-008": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g2p1-L13-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L31-009": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        },
-        "g1-L26-009": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L38-008": {
-          "reward": 0.0,
-          "partial_credit": 0.3333333333333333
-        },
-        "g2p1-L03-004": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g2p1-L02-006": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g2p1-L10-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L17-010": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L09-009": {
-          "reward": 0.0,
-          "partial_credit": 0.3333333333333333
-        },
-        "g1-L06-007": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L11-009": {
-          "reward": 0.0,
-          "partial_credit": 0.8
-        },
-        "g1-L02-004": {
-          "reward": 0.0,
-          "partial_credit": 0.6666666666666666
-        },
-        "g1-L02-005": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L21-008": {
-          "reward": 0.0,
-          "partial_credit": 0.5
-        },
-        "g1-L16-005": {
-          "reward": 1.0,
-          "partial_credit": 1.0
-        }
-      },
-      "model_name": "Muse Spark Open",
-      "company": "Meta",
-      "complete": false,
-      "max_output_tokens": 30768,
-      "over_limit": 0,
-      "judge_model": false,
-      "timed_out": 0,
-      "responses_with_usage": 48,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 11,
-          "accuracy": 18.181818181818183
-        },
-        "2": {
-          "total": 25,
-          "graded": 25,
-          "accuracy": 24.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 12,
-          "accuracy": 33.333333333333336
-        },
-        "4": {
-          "total": 24,
-          "graded": 0,
-          "accuracy": null
-        }
-      }
-    },
-    {
       "graded": 90,
       "questions": 90,
       "correct": 21.0,
@@ -2685,6 +3206,103 @@
           "total": 24,
           "graded": 24,
           "accuracy": 12.5
+        }
+      }
+    },
+    {
+      "graded": 13,
+      "questions": 90,
+      "correct": 3.0,
+      "accuracy": 23.076923076923077,
+      "partial": 46.53846153846154,
+      "model": "inkling-flagship",
+      "run_id": "1e31e4ec-5a7a-403b-a986-cb7c88cfbf9b",
+      "run_ids": [
+        "1e31e4ec-5a7a-403b-a986-cb7c88cfbf9b"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g1-L31-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L11-009": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g1-L16-005": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        }
+      },
+      "model_name": "Inkling",
+      "company": "Thinking Machines Lab",
+      "complete": false,
+      "max_output_tokens": 14633,
+      "over_limit": 0,
+      "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 13,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 10,
+          "accuracy": 30.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 3,
+          "accuracy": 0.0
+        },
+        "3": {
+          "total": 28,
+          "graded": 0,
+          "accuracy": null
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
         }
       }
     },
@@ -3095,19 +3713,343 @@
       }
     },
     {
-      "graded": 5,
+      "graded": 90,
       "questions": 90,
-      "correct": 1.0,
-      "accuracy": 20.0,
-      "partial": 45.0,
-      "model": "opus-5.5-eval",
-      "run_id": "ee5e19ac-6533-4259-8957-ce3b0403a75d",
+      "correct": 19.0,
+      "accuracy": 21.11111111111111,
+      "partial": 41.8476430976431,
+      "model": "muse-spark-open",
+      "run_id": "8e70e46b-67bd-468b-b1b2-a06ff2a4db28",
       "run_ids": [
-        "ee5e19ac-6533-4259-8957-ce3b0403a75d"
+        "8e70e46b-67bd-468b-b1b2-a06ff2a4db28"
       ],
-      "status": "IN_PROGRESS",
+      "status": "FINISHED",
       "task_rewards": {
-        "g1-L02-005": {
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.14285714285714285
+        },
+        "g4p2-L09-013": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.42857142857142855
+        },
+        "g4p1-L31-012": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "vals90-row-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L17-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L26-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.45454545454545453
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p2-L20-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.16666666666666666
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.42857142857142855
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6
+        },
+        "g3p1-L33-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L05-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.8333333333333334
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g3p1-L05-010": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g3p1-L17-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L17-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L16-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g2p2-L35-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L30-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L33-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p2-L16-001": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.625
+        },
+        "g2p2-L10-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L17-007": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L09-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.75
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L31-009": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L02-006": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g2p1-L10-001": {
           "reward": 0.0,
           "partial_credit": 0.0
         },
@@ -3115,47 +4057,63 @@
           "reward": 0.0,
           "partial_credit": 0.0
         },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
         "g1-L06-007": {
           "reward": 0.0,
-          "partial_credit": 0.5
+          "partial_credit": 0.0
+        },
+        "g1-L11-009": {
+          "reward": 0.0,
+          "partial_credit": 0.8
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.6666666666666666
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
         },
         "g1-L21-008": {
           "reward": 0.0,
-          "partial_credit": 0.75
+          "partial_credit": 0.5
         },
-        "g1-L11-009": {
+        "g1-L16-005": {
           "reward": 1.0,
           "partial_credit": 1.0
         }
       },
-      "model_name": "Claude Opus 5.5",
-      "company": "Anthropic",
-      "complete": false,
-      "max_output_tokens": 787,
+      "model_name": "Muse Spark Open",
+      "company": "Meta",
+      "complete": true,
+      "max_output_tokens": 33000,
       "over_limit": 0,
       "judge_model": false,
       "timed_out": 0,
-      "responses_with_usage": 5,
+      "responses_with_usage": 90,
       "grades": {
         "1": {
           "total": 11,
-          "graded": 5,
-          "accuracy": 20.0
+          "graded": 11,
+          "accuracy": 18.181818181818183
         },
         "2": {
           "total": 25,
-          "graded": 0,
-          "accuracy": null
+          "graded": 25,
+          "accuracy": 24.0
         },
         "3": {
           "total": 28,
-          "graded": 0,
-          "accuracy": null
+          "graded": 28,
+          "accuracy": 17.857142857142858
         },
         "4": {
           "total": 24,
-          "graded": 0,
-          "accuracy": null
+          "graded": 24,
+          "accuracy": 25.0
         }
       }
     },
@@ -3758,11 +4716,11 @@
       }
     },
     {
-      "graded": 43,
+      "graded": 89,
       "questions": 90,
-      "correct": 5.0,
-      "accuracy": 11.627906976744185,
-      "partial": 21.472868217054263,
+      "correct": 11.0,
+      "accuracy": 12.359550561797754,
+      "partial": 21.15910306921543,
       "model": "kimi-k3.1-pro",
       "run_id": "aafbccc6-2ee5-469c-973e-5d5dd725cd21",
       "run_ids": [
@@ -3770,6 +4728,190 @@
       ],
       "status": "IN_PROGRESS",
       "task_rewards": {
+        "g4p1-L31-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L26-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L25-001": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L34-014": {
+          "reward": 0.0,
+          "partial_credit": 0.6363636363636364
+        },
+        "vals90-row-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.4
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g4p1-L08-010": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L06-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L26-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L32-013": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L20-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p2-L09-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.42857142857142855
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L11-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p1-L34-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
         "g3p1-L33-011b": {
           "reward": 1.0,
           "partial_credit": 1.0
@@ -3946,11 +5088,11 @@
       "model_name": "Kimi K3.1 Pro",
       "company": "Moonshot AI",
       "complete": false,
-      "max_output_tokens": 12326,
+      "max_output_tokens": 33000,
       "over_limit": 0,
       "judge_model": false,
       "timed_out": 0,
-      "responses_with_usage": 43,
+      "responses_with_usage": 89,
       "grades": {
         "1": {
           "total": 11,
@@ -3959,18 +5101,18 @@
         },
         "2": {
           "total": 25,
-          "graded": 24,
-          "accuracy": 12.5
+          "graded": 25,
+          "accuracy": 12.0
         },
         "3": {
           "total": 28,
-          "graded": 8,
-          "accuracy": 12.5
+          "graded": 28,
+          "accuracy": 10.714285714285714
         },
         "4": {
           "total": 24,
-          "graded": 0,
-          "accuracy": null
+          "graded": 23,
+          "accuracy": 17.391304347826086
         }
       }
     },
@@ -4786,17 +5928,195 @@
       }
     },
     {
-      "graded": 66,
+      "graded": 33,
       "questions": 90,
-      "correct": 3.0,
-      "accuracy": 4.545454545454546,
-      "partial": 6.038961038961038,
+      "correct": 2.0,
+      "accuracy": 6.0606060606060606,
+      "partial": 7.575757575757576,
+      "model": "mistral-large-4",
+      "run_id": "68907664-2ca6-4a51-8087-eba7f8329e5e",
+      "run_ids": [
+        "68907664-2ca6-4a51-8087-eba7f8329e5e"
+      ],
+      "status": "IN_PROGRESS",
+      "task_rewards": {
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L17-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L33-011b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L32-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 0.0,
+          "partial_credit": 0.5
+        },
+        "g3p1-L33-011": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L17-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L19-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L03-004": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L38-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        }
+      },
+      "model_name": "Mistral Large 4",
+      "company": "Mistral AI",
+      "complete": false,
+      "max_output_tokens": 33000,
+      "over_limit": 0,
+      "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 33,
+      "grades": {
+        "1": {
+          "total": 11,
+          "graded": 5,
+          "accuracy": 0.0
+        },
+        "2": {
+          "total": 25,
+          "graded": 7,
+          "accuracy": 14.285714285714286
+        },
+        "3": {
+          "total": 28,
+          "graded": 21,
+          "accuracy": 4.761904761904762
+        },
+        "4": {
+          "total": 24,
+          "graded": 0,
+          "accuracy": null
+        }
+      }
+    },
+    {
+      "graded": 90,
+      "questions": 90,
+      "correct": 4.0,
+      "accuracy": 4.444444444444445,
+      "partial": 6.410052910052911,
       "model": "gemma-4-31b",
       "run_id": "fc476ce6-16cc-4fe7-aac4-5509213e553a",
       "run_ids": [
-        "fc476ce6-16cc-4fe7-aac4-5509213e553a"
+        "fc476ce6-16cc-4fe7-aac4-5509213e553a",
+        "f4fa983d-07d3-4886-909e-d866a6b48ea1"
       ],
-      "status": "ERROR",
+      "status": "FINISHED",
       "task_rewards": {
         "g4p1-L14-012": {
           "reward": 0.0,
@@ -5061,16 +6381,112 @@
         "g3p1-L33-011b": {
           "reward": 0.0,
           "partial_credit": 0.0
+        },
+        "g4p2-L32-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L34-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L02-006": {
+          "reward": 0.0,
+          "partial_credit": 0.3333333333333333
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L29-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.2
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L08-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L05-012": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L09-013": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L34-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L27-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L20-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.25
+        },
+        "vals90-row-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
         }
       },
       "model_name": "Gemma 4 31B",
       "company": "Google",
-      "complete": false,
+      "complete": true,
       "max_output_tokens": 16384,
       "over_limit": 0,
       "judge_model": false,
       "timed_out": 0,
-      "responses_with_usage": 66,
+      "responses_with_usage": 90,
       "grades": {
         "1": {
           "total": 11,
@@ -5079,155 +6495,283 @@
         },
         "2": {
           "total": 25,
-          "graded": 20,
-          "accuracy": 10.0
+          "graded": 25,
+          "accuracy": 8.0
         },
         "3": {
           "total": 28,
-          "graded": 21,
-          "accuracy": 4.761904761904762
+          "graded": 28,
+          "accuracy": 3.5714285714285716
         },
         "4": {
           "total": 24,
-          "graded": 13,
-          "accuracy": 0.0
+          "graded": 24,
+          "accuracy": 4.166666666666667
         }
       }
     },
     {
-      "graded": 2,
+      "graded": 55,
       "questions": 90,
-      "correct": 0.0,
-      "accuracy": 0.0,
-      "partial": 0.0,
-      "model": "mistral-large-4",
-      "run_id": "68907664-2ca6-4a51-8087-eba7f8329e5e",
-      "run_ids": [
-        "68907664-2ca6-4a51-8087-eba7f8329e5e"
-      ],
-      "status": "IN_PROGRESS",
-      "task_rewards": {
-        "g2p1-L10-001": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        },
-        "g1-L38-008": {
-          "reward": 0.0,
-          "partial_credit": 0.0
-        }
-      },
-      "model_name": "Mistral Large 4",
-      "company": "Mistral AI",
-      "complete": false,
-      "max_output_tokens": 1068,
-      "over_limit": 0,
-      "judge_model": false,
-      "timed_out": 0,
-      "responses_with_usage": 2,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 1,
-          "accuracy": 0.0
-        },
-        "2": {
-          "total": 25,
-          "graded": 1,
-          "accuracy": 0.0
-        },
-        "3": {
-          "total": 28,
-          "graded": 0,
-          "accuracy": null
-        },
-        "4": {
-          "total": 24,
-          "graded": 0,
-          "accuracy": null
-        }
-      }
-    },
-    {
-      "graded": 0,
-      "questions": 90,
-      "correct": 0,
-      "accuracy": null,
-      "partial": null,
-      "model": "gemini-4-argon",
-      "run_id": "67d02148-9c8a-48d3-b8ca-49320ee76828",
-      "run_ids": [
-        "67d02148-9c8a-48d3-b8ca-49320ee76828"
-      ],
-      "status": "ERROR",
-      "task_rewards": {},
-      "model_name": "Gemini 4 Argon",
-      "company": "Google",
-      "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
-      "judge_model": false,
-      "grades": {
-        "1": {
-          "total": 11,
-          "graded": 0,
-          "accuracy": null
-        },
-        "2": {
-          "total": 25,
-          "graded": 0,
-          "accuracy": null
-        },
-        "3": {
-          "total": 28,
-          "graded": 0,
-          "accuracy": null
-        },
-        "4": {
-          "total": 24,
-          "graded": 0,
-          "accuracy": null
-        }
-      }
-    },
-    {
-      "graded": 0,
-      "questions": 90,
-      "correct": 0,
-      "accuracy": null,
-      "partial": null,
+      "correct": 1.0,
+      "accuracy": 1.8181818181818181,
+      "partial": 1.8181818181818181,
       "model": "minimax-m3.1-flash",
       "run_id": "0f3cfd53-5d8c-49fc-9514-931372f8ada2",
       "run_ids": [
         "0f3cfd53-5d8c-49fc-9514-931372f8ada2"
       ],
       "status": "IN_PROGRESS",
-      "task_rewards": {},
+      "task_rewards": {
+        "g3p1-L02-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L27-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L32-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L12-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L07-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L22-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L17-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p2-L11-002": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L05-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L10-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L08-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L18-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L12-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L32-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L16-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L19-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L09-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L06-007": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L14-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L15-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L13-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L26-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L17-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p1-L36-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L10-012": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L18-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L08-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L11-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L30-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L01-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L23-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g4p1-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L21-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p2-L16-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L13-010": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L17-003": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L05-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g3p2-L04-011": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L06-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L16-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L26-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L31-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L20-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L03-004": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006b": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006c": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L21-008": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L14-006d": {
+          "reward": 1.0,
+          "partial_credit": 1.0
+        },
+        "g2p1-L10-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L11-009": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L02-006": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g2p1-L13-001": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        },
+        "g1-L02-005": {
+          "reward": 0.0,
+          "partial_credit": 0.0
+        }
+      },
       "model_name": "MiniMax M3.1 Flash",
       "company": "MiniMax",
       "complete": false,
-      "max_output_tokens": null,
-      "over_limit": null,
+      "max_output_tokens": 33000,
+      "over_limit": 0,
       "judge_model": false,
+      "timed_out": 0,
+      "responses_with_usage": 55,
       "grades": {
         "1": {
           "total": 11,
-          "graded": 0,
-          "accuracy": null
+          "graded": 9,
+          "accuracy": 0.0
         },
         "2": {
           "total": 25,
-          "graded": 0,
-          "accuracy": null
+          "graded": 20,
+          "accuracy": 5.0
         },
         "3": {
           "total": 28,
-          "graded": 0,
-          "accuracy": null
+          "graded": 16,
+          "accuracy": 0.0
         },
         "4": {
           "total": 24,
-          "graded": 0,
-          "accuracy": null
+          "graded": 10,
+          "accuracy": 0.0
         }
       }
     }
