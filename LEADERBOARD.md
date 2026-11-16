@@ -57,7 +57,7 @@ Judge model: GPT-6.1 Sol. No internet access or tools. 900-second time limit, 33
 | Mistral Large 4 | Mistral AI | 90/90 | 207.9 | 241.1 | 334.4 | 371.0 | 0 | 26,891 | 2,086,691 | 90/90 | 0.7 | 2.1 | 4.4009* | 4.4081 | 89/90 |
 | MiniMax M3.1 Flash | MiniMax | 90/90 | 127.6 | 133.8 | 268.2 | 363.2 | 0 | 46,129 | 2,066,608 | 90/90 | 0.15 | 0.6 | 1.2469* | 1.2124 | 90/90 |
 
-\* Estimated cost = (reported input tokens × input price + reported output tokens × output price) / 1,000,000.
+$\text{Estimated cost} = \frac{\text{reported input tokens × input price + reported output tokens × output price}}{1,000,000}$
 
 Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.
 These are API-equivalent estimates for logged usage, not historical bills or Modal GPU costs. Missing usage is not extrapolated to the full dataset.
