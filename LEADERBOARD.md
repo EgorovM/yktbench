@@ -2,7 +2,10 @@
 
 Last updated: Nov 15, 2026
 
-A set of 90 test questions from elementary school Sakha language textbooks from Grade 1 to Grade 4.
+> Are frontier models able to complete primary school students' assignments in Sakha (Yakut) language?
+
+A set of 90 test problems from elementary school Sakha language textbooks from Grade 1 to Grade 4.
+Consists of text-only problems, mainly consisting of grammar problems and riddles.
 
 Judge model: GPT-6.1 Sol. No internet access or tools. 900-second time limit, 33k token output limit.
 
