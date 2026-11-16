@@ -231,11 +231,11 @@ def render(dataset, models, snapshot=None):
         number = lambda key: f"{row[key]:.1f}" if row.get(key) is not None else "—"
         incomplete = row.get("usage_records", 0) < n
         tokens = lambda key: (f"{row[key]:,}" + ("†" if incomplete else "")) if row.get(key) is not None else "—"
-        cost = f"{row['known_api_cost_usd']:.4f}" if row.get("known_api_cost_usd") is not None else "—"
         price = pricing.get("models", {}).get(model, {})
         rate = lambda key: f"{price[key]:g}" if price.get(key) is not None else "—"
         estimate = estimated_cost(row, price)
         estimate_text = f"{estimate:.4f}*" + ("†" if incomplete else "") if estimate is not None else "—"
+        cost = f"{row['known_api_cost_usd']:.4f}" if row.get("known_api_cost_usd") is not None else estimate_text
         name = model_name(model) + (" **(judge model)**" if model == "sol-6.1-eval" else "")
         lines.append(f"| {name} | {model_company(model)} | {row.get('latency_records', 0)}/{n} | "
                      + " | ".join(number(key) for key in ("mean_s", "median_s", "p95_s", "max_s"))
@@ -245,8 +245,8 @@ def render(dataset, models, snapshot=None):
               "Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.",
               "These are API-equivalent estimates for logged usage, not historical bills or Modal GPU costs. Missing usage is not extrapolated to the full dataset.",
               "Caching, batch discounts, time-of-day offers, and context-tier adjustments are not applied; recorded charges can differ.",
-              "Known API cost is the sum of retrieved OpenRouter charges for the selected answers, not total benchmark spend.",
-              "A dash means unavailable, not free. Cost coverage counts answers with a retrieved charge; duplicate request IDs are charged once.",
+              "Known API cost shows the sum of retrieved OpenRouter charges when available; otherwise it shows the token-based estimate marked with \\*. It is not total benchmark spend.",
+              "A dash means no reported token usage or charge is available, not free. Cost coverage counts only answers with a retrieved charge, including when a starred estimate is displayed; duplicate request IDs are charged once.",
               "Judging, discarded/failed attempts, Modal token or GPU hosting charges (including warmup), storage, and net credit adjustments are excluded.",
               "Provider changes and native reasoning translations remain documented in the run notes; latency figures are not measurements of thinking time.",
               "[Metric and pricing snapshot](data/leaderboard_metrics.json) · [Current OpenRouter pricing catalog](https://openrouter.ai/api/v1/models) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)",

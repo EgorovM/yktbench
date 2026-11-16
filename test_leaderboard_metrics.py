@@ -53,6 +53,22 @@ class MetricsTests(unittest.TestCase):
         self.assertEqual(row["output_tokens"], 10)
         self.assertIsNone(row["known_api_cost_usd"])
 
+    def test_known_cost_falls_back_to_starred_estimate_without_replacing_zero_charge(self):
+        for expected, known, cost, suffix in [(1, None, "0.1100*", "0/1"),
+                                               (90, None, "0.1100*†", "0/90"),
+                                               (1, 0.0, "0.0000", "1/1")]:
+            with self.subTest(expected=expected, known=known):
+                charges = {} if known is None else {"gen-1": {"total_cost": known}}
+                row = metrics.summarize({"q1": {"input_tokens": 1000, "output_tokens": 2000,
+                                                       "response_id": "gen-1"}}, expected, charges)
+                snapshot = {"updated_utc": "test", "pricing": {"models": {
+                    "astra": {"input_usd_per_million": 10, "output_usd_per_million": 50}}},
+                    "datasets": {"test": {"questions": expected, "models": {"astra": row}}}}
+                text = metrics.render("test", ["astra"], snapshot)
+                entry = next(line for line in text.splitlines() if line.startswith("| GPT-6 Astra"))
+                self.assertTrue(entry.endswith(f"| {cost} | {suffix} |"))
+                self.assertEqual(row["known_api_cost_usd"], known)
+
     def test_reused_request_is_not_billed_twice_and_zero_charge_is_known(self):
         records = {"a": {"response_id": "gen-1"}, "b": {"response_id": "gen-1"},
                    "c": {"response_id": "gen-2"}, "d": {"response_id": "missing"}}

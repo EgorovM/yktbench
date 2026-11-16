@@ -36,10 +36,10 @@ Pricing snapshot: 2026-11-16T02:22:54+00:00. Input and output prices are USD per
 
 | Model Name | Company | Latency records | Avg (s) | Median (s) | p95 (s) | Max (s) | Timeouts | Input tokens | Output tokens | Usage coverage | Input $/1M | Output $/1M | Estimated cost (USD) | Known API cost (USD) | Cost coverage |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Claude Fable 5.2 | Anthropic | 60/60 | 15.6 | 7.3 | 33.5 | 173.3 | 0 | 25,038 | 74,507 | 60/60 | 8 | 40 | 3.1806* | — | 0/60 |
+| Claude Fable 5.2 | Anthropic | 60/60 | 15.6 | 7.3 | 33.5 | 173.3 | 0 | 25,038 | 74,507 | 60/60 | 8 | 40 | 3.1806* | 3.1806* | 0/60 |
 | Gemini 4 Argon | Google | 60/60 | 58.0 | 20.3 | 317.9 | 543.4 | 0 | 20,758 | 223,681 | 60/60 | 2 | 10 | 2.2783* | 2.2783 | 60/60 |
-| GPT-6 Astra | OpenAI | 60/60 | 90.7 | 26.6 | 180.8 | 1247.2 | 0 | 18,254 | 122,186 | 60/60 | 10 | 50 | 6.2918* | — | 0/60 |
-| GPT-6.1 Sol **(judge model)** | OpenAI | 60/60 | 49.9 | 20.3 | 146.7 | 597.9 | 0 | 18,254 | 136,065 | 60/60 | 2 | 10 | 1.3972* | — | 0/60 |
+| GPT-6 Astra | OpenAI | 60/60 | 90.7 | 26.6 | 180.8 | 1247.2 | 0 | 18,254 | 122,186 | 60/60 | 10 | 50 | 6.2918* | 6.2918* | 0/60 |
+| GPT-6.1 Sol **(judge model)** | OpenAI | 60/60 | 49.9 | 20.3 | 146.7 | 597.9 | 0 | 18,254 | 136,065 | 60/60 | 2 | 10 | 1.3972* | 1.3972* | 0/60 |
 | Grok 4.7 | SpaceX (xAI) | 60/60 | 720.9 | 763.2 | 1293.4 | 2034.8 | 0 | 92,555 | 2,339,249 | 60/60 | 2 | 6 | 14.2206* | 14.1087 | 60/60 |
 | DeepSeek V4.1 Flash | DeepSeek | 60/60 | 69.0 | 47.6 | 219.4 | 290.4 | 0 | 20,391 | 753,350 | 60/60 | 0.14 | 0.42 | 0.3193* | 0.4516 | 60/60 |
 | DeepSeek V4 Pro | DeepSeek | 60/60 | 111.7 | 63.8 | 462.6 | 528.7 | 0 | 18,989 | 580,190 | 60/60 | 0.9 | 1.5 | 0.8874* | 0.6149 | 60/60 |
@@ -50,14 +50,14 @@ Pricing snapshot: 2026-11-16T02:22:54+00:00. Input and output prices are USD per
 | GLM 5.3 | Z.ai | 60/60 | 130.3 | 141.9 | 278.9 | 317.2 | 0 | 19,569 | 1,125,047 | 60/60 | 0.0699 | 1.4 | 1.5764* | 2.0704 | 60/60 |
 | Qwen3.8 27B | Alibaba | 60/60 | 36.3 | 18.7 | 129.9 | 178.6 | 0 | 20,113 | 353,543 | 60/60 | 0.15 | 1.875 | 0.6659* | 0.7695 | 60/60 |
 | Gemma 4 31B | Google | 60/60 | 15.3 | 7.9 | 47.1 | 142.7 | 0 | 19,653 | 93,707 | 60/60 | 0.2 | 0.4 | 0.0414* | 0.0380 | 60/60 |
-| GigaChat 3.5 Ultra | Sber | 60/60 | 2.7 | 2.2 | 6.5 | 14.2 | 0 | 22,171 | 5,520 | 60/60 | 1.07 | 3.21 | 0.0414* | — | 0/60 |
+| GigaChat 3.5 Ultra | Sber | 60/60 | 2.7 | 2.2 | 6.5 | 14.2 | 0 | 22,171 | 5,520 | 60/60 | 1.07 | 3.21 | 0.0414* | 0.0414* | 0/60 |
 
 \* Estimated cost = (reported input tokens × input price + reported output tokens × output price) / 1,000,000.
 Estimates use the current OpenRouter catalog's standard base rates; GigaChat uses user-supplied rates of $1.07 input and $3.21 output per 1M tokens.
 These are API-equivalent estimates for logged usage, not historical bills or Modal GPU costs. Missing usage is not extrapolated to the full dataset.
 Caching, batch discounts, time-of-day offers, and context-tier adjustments are not applied; recorded charges can differ.
-Known API cost is the sum of retrieved OpenRouter charges for the selected answers, not total benchmark spend.
-A dash means unavailable, not free. Cost coverage counts answers with a retrieved charge; duplicate request IDs are charged once.
+Known API cost shows the sum of retrieved OpenRouter charges when available; otherwise it shows the token-based estimate marked with \*. It is not total benchmark spend.
+A dash means no reported token usage or charge is available, not free. Cost coverage counts only answers with a retrieved charge, including when a starred estimate is displayed; duplicate request IDs are charged once.
 Judging, discarded/failed attempts, Modal token or GPU hosting charges (including warmup), storage, and net credit adjustments are excluded.
 Provider changes and native reasoning translations remain documented in the run notes; latency figures are not measurements of thinking time.
 [Metric and pricing snapshot](data/leaderboard_metrics.json) · [Current OpenRouter pricing catalog](https://openrouter.ai/api/v1/models) · [OpenRouter cost metadata](https://openrouter.ai/docs/api/api-reference/generations/get-generation)
