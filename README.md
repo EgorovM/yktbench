@@ -1,4 +1,4 @@
-# SakhaBench: Sakha (Yakut) Language Primary School Knowledge Benchmark
+# YktBench: Sakha (Yakut) Language Primary School Knowledge Benchmark
 
 This benchmark evaluates how well language models understand, write, and reason in Sakha (Yakut). Questions are drawn from text-only exercises in Sakha primary school textbooks (grades 1-4).
 
